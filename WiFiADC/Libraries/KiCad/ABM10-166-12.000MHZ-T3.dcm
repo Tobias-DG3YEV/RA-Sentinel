@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ABM10-166-12.000MHZ-T3
+D ABRACON - ABM10-166-12.000MHZ-T3 - CRYSTAL, 12MHZ, 8PF, 2.5MM X 2MM
+K
+F https://abracon.com/Resonators/ABM10.pdf
+$ENDCMP
+#
+#End Doc Library
