@@ -1,4 +1,4 @@
-# RA-Sentinel
+# Project RASentinel - a Radio Access Sentinel
 FPGA-based Radio Receiver for securing Wifi against hacking attacks
 
 RAsentinel is an open-source project focused on creating a cost-effective, small, and low-power wide band radio receiver device that employs an FPGA to automatically detect malicious attacks on Wifi access points, such as Man in the Middle and Denial of Service attacks. By monitoring any Wifi cell, the device enhances internet safety for everyday users.
