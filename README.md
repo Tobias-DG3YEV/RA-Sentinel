@@ -10,7 +10,7 @@ The hardware is a wide band SDR receiver that receives at least one komplete WiF
 
 # The software:
 
-The cast majority of the code will be written in Verilog anbd run on the FPGA. There will also be some helper microcontrollers which help controlling the frontend-hardware and maybe the intercennctivity with other systems (alarm forwarding)
+The vast majority of the code will be written in Verilog anbd run on the FPGA. There will also be some helper microcontrollers which help controlling the frontend-hardware and maybe the intercennctivity with other systems (alarm forwarding)
 
 Project Maintainer: Tobias Weber
 
