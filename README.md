@@ -6,15 +6,15 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 
 # The hardware:
 
-The hardware is a wide band SDR receiver that receives at least one komplete WiFi Channel with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists on an 12 Bit ADC which is able to convert a 40MHz part of the 2.4GHZ radip spectrum that feeds this 960MBit/s (2 channels I+Q * 12 bits @ 40MS) via LVDS into a XLINIX Artix7 FPGA evaluation board.
+The hardware is a wide band SDR receiver that receives at least one komplete WiFi Channel with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists on an 12 Bit ADC (TI ADC3222) which is able to convert a 40MHz part of the 2.4GHZ radio spectrum into a 4 x 240Bit/s LVDS streams into a XLINIX Artix7 FPGA evaluation board.
 
 # The software:
 
-The vast majority of the code will be written in Verilog anbd run on the FPGA. There will also be some helper microcontrollers which help controlling the frontend-hardware and maybe the intercennctivity with other systems (alarm forwarding)
+The vast majority of the code will be written in Verilog anbd run on the FPGA. There will also be some helper microcontrollers which helps controlling the frontend-hardware and maybe the interconnctivity with other systems (alarm forwarding)
 
 Project Maintainer: Tobias Weber
 
-Last update of this file: 11.3.2024
+Last updated: 15.5.2024
 
 
 ![Alt text](/RAsentinel-Blockdiagram.JPG "Optional title")
