@@ -8,6 +8,10 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 
 The hardware is a wide band SDR receiver that receives at least one komplete WiFi Channel with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists on an 12 Bit ADC (TI ADC3222) which is able to convert a 40MHz part of the 2.4GHZ radio spectrum into a 4 x 240Bit/s LVDS streams into a XLINIX Artix7 FPGA evaluation board.
 
+Link to the FPGA dev. board
+[https://de.aliexpress.com/item/1005006473783593.html]
+
+
 # The software:
 
 The vast majority of the code will be written in Verilog anbd run on the FPGA. There will also be some helper microcontrollers which helps controlling the frontend-hardware and maybe the interconnctivity with other systems (alarm forwarding)
