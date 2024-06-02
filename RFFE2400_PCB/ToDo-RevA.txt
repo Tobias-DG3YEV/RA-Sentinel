@@ -1,0 +1,3 @@
+- add buffer amplfier after 40MHt TXCO
+- add Pi Filter in front of oscillator inputs of ADC and MAX
+- Change ground testpads from SMD to THT
