@@ -8,6 +8,8 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 
 The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists on an 12 Bit ADC (TI ADC3222) which is able to convert a 40MHz part of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams into a XILNIX/AMD Artix7 FPGA evaluation board.
 
+![Alt text](/RFFE2400_QMTech.png "QMTech Wukong board and RFFE2400")
+
 **/RFFE2400_PCB** in this folder of this repository you find the PCB design files in KiCAD format and gerbers for the 2.4GHz PMOD frontend evaluation/test board.
 
 Link to the FPGA dev. board
@@ -37,5 +39,4 @@ The output of the HDMI port of the QMTECH Wukong board.
 
 Project Maintainer: Tobias Weber
 
-Last updated: 1.6.2024
-
+Last updated: 2.6.2024
