@@ -1,33 +1,32 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
 // 
-// Create Date: 01.05.2024 15:49:45
-// Design Name: 
+// Design Name: RASM2400
 // Module Name: top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: Radio Access Spectrum Monitor 2400MHz
+// Engineer: Tobias Weber
+// Target Devices: Artix 7, XC7A100T
+// Create Date: 25.04.2024 10:29:54
+// Tool Versions: Vivado 2024.1
+// Description:  the top level module
 // 
-// Dependencies: 
+// Dependencies: none
 // 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Revision: 
+// Revision 1.00 - File Created
+// Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
 //////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
 module top(
-    /* Master Clock Input */
+    // Master Clock Input
     input wire SYS_clk,
-    /* HDMI */
+    // HDMI
     output wire TMDS_clk_n,
     output wire TMDS_clk_p,
     output wire [2:0]TMDS_data_n,
     output wire [2:0]TMDS_data_p,
-    /* ADC LVDS */
+    // ADC LVDS
     input wire         ADC_idataH_P, /* ADC I serial Data */
     input wire         ADC_idataH_N, /* ADC I serial Data */
     input wire         ADC_idataL_P, /* ADC I serial Data */
@@ -40,30 +39,27 @@ module top(
     input wire         ADC_frame_N,
     input wire         ADC_bitclk_P, /* ADC bit clock*/
     input wire         ADC_bitclk_N, /* ADC bit clock*/
-    //output wire dbgClk
+    // Debug output (optional)
     output wire [11:0]  dbgOutI,
     output wire [11:0]  dbgOutQ,
     output wire         dbgFrameRdy,
 	output wire			dbgBitClk,
-    /* keys */
-    input wire          Key0, /* Wukong board key 0 - NRESET */
+    // keys
+    input wire          Key0, /* Wukong board key 0 - RESET */
     input wire          Key1,  /* Wukong board key 1 */
-	/* jumpers */
+	// jumpers
 	input wire [5:0]    Jumpers
-	
-           
 );
+
 // -----------------------------------------------------------------------------
 // Module flags
 // -----------------------------------------------------------------------------
 `define USE_WATERFALL
 `define USE_SPECTRUM
-//`define USE_PAR_DBG_OUT //route parallell ADC data to a debug pout port
 
 // -----------------------------------------------------------------------------
 // Parameters
 // -----------------------------------------------------------------------------
-//parameter FFTBITS = 12;
 parameter FFTLEN = 10; //FFT length in bits
 parameter ADCBITS = 12;
 parameter SCREENWIDTH = 1024;
@@ -93,13 +89,13 @@ assign dbgBitClk = 0;
 wire global_rst;
 assign global_rst = ~Key0;
 
-/* LVDS ADC signals*/
-(* keep = "true" *) wire [ADCBITS-1:0] adc_ipar; /* ADC I paralell data */
-(* keep = "true" *) wire [ADCBITS-1:0] adc_qpar; /* ADC Q paralell data */
-wire adc_frameStrobe; /* a frame from the ADC deserializer is ready */
+// LVDS ADC signals
+(* keep = "true" *) wire [ADCBITS-1:0] adc_ipar; // ADC I paralell data
+(* keep = "true" *) wire [ADCBITS-1:0] adc_qpar; // ADC Q paralell data
+wire adc_frameStrobe; // a frame from the ADC deserializer is ready
 
 
-/* HDMI video signals */
+// HDMI video signals
 wire clk_65M;
 wire clk_325M;
 `ifdef USE_SPECTRUM
@@ -110,21 +106,19 @@ wire[7:0] video_r;
 wire[7:0] video_g;
 wire[7:0] video_b;
 
-/* spectrum to Screen transfer wires */
+// spectrum to Screen transfer wires
 wire[7:0]   scr_rdSpecAmpl;
 wire        scr_rdStrobe;
 wire[9:0]   scr_rdAddr;
 
 
-wire[FFTLEN-1:0]        mem_wrAddr;
-wire                    fft_lineSync; /* goes high if a new line of 2^FFTLEN points is ready to be written out */
-wire[31:0]              fft_result; /* the result of one fft process step, cosinst of {imaginary[], real[]}*/
-/* LOG function */
-wire                    logfn_lineSync; /* goes high if a new sequence of log() processed points is ready to be written out */
-wire[7:0]               logfn_result; /* the result of one log() process step, equals about 2.66dB per step */
+wire[FFTLEN-1:0]    mem_wrAddr;
+wire                fft_lineSync; /* goes high if a new line of 2^FFTLEN points is ready to be written out */
+wire[31:0]          fft_result; /* the result of one fft process step, cosinst of {imaginary[], real[]}*/
+// LOG function
 
-/* Waterfall */
-wire [7:0]              wf_rdSpecAmpl; /* one value of the spectrum read from the waterfall memory */
+// Waterfall
+wire [7:0]          wf_rdSpecAmpl; /* one value of the spectrum read from the waterfall memory */
 `endif
 
 /*******************/
@@ -137,7 +131,6 @@ video_clk video_clk0 (
     .o_clk_65M(clk_65M),
     .o_clk_325M(clk_325M),
     .o_clk_200M(clk_200M),
-    //.o_clk_15M(clk_15M),
     .reset(1'b0),
     .locked()
 );
@@ -180,12 +173,12 @@ IBUFDS #(
 	.DIFF_TERM("TRUE"),
 	.IOSTANDARD("DEFAULT")
 )  IBUFDS_adc_frame0 (
-	.O(lvds_fclk_BUFDS), /* 40 MHz */
+	.O(lvds_fclk_BUFDS), // 40 MHz
 	.I(ADC_frame_P),
 	.IB(ADC_frame_N)
 );
 
-wire lvds_fclk; /* 40MHz buffered and delayed */
+wire lvds_fclk; // 40MHz buffered and delayed
 (* keep = "true" *) wire [4:0] fclk_cntval;
 
 IDELAYE2 #(
@@ -272,7 +265,7 @@ wire [3:0] lvds_ddly; /* delayed ADC data */
 wire [3:0] din_p;
 wire [3:0] din_n;
 
-/* dr0   dr1,  di0,  di1 */
+// dr0   dr1,  di0,  di1
 assign din_p[0] = ADC_idataL_P;
 assign din_p[1] = ADC_idataH_P;
 assign din_p[2] = ADC_qdataL_P;
@@ -347,21 +340,14 @@ wire testClk_360M;
 adc_clk adc_clk_inst 
 (
     // Clock out ports
-    //.o_clk_120M(adcpll_2xBitClk),
     .o_clk_360M(testClk_360M),
     .o_clk_240M(testClk_240M),
     .o_clk_120M(testClk_120M),
-    //.o_clk_120M(adcpll_bitClk),
-    //.o_clk_60M(adc_processClock),
-    //.o_clk_framestrobe(adc_frameStrobe),
-    // Status and control signals
     .reset(global_rst),
     .locked(),
     // Clock in ports
     .i_clk_fclk(lvds_fclk)
 );
-
-//assign dbgBitClk = testClk_240M;
 
 /*******************************************************************************************************
 	#        #     #  ######    #####           #####   #######  ######   ######   #######   #####
@@ -373,19 +359,17 @@ adc_clk adc_clk_inst
 	#######     #     ######    #####           #####   #######  #     #  ######   #######   #####
 ********************************************************************************************************/
 
-/* decoding from serial to parallel */
-//wire adc_frameRdy;
+// decoding from serial to parallel
 lvds_rx #(
 	12
 ) lvds_irx0 (
-    .i_lvds_dclk(lvds_dclk), /* 120MHZ */
-    .i_lvds_fclk(lvds_fclk), /* 40MHz */
-    .i_lvds_dr0(lvds_ddly[0]), /* real, lower bits */
-    .i_lvds_dr1(lvds_ddly[1]), /* real, upper bits */
-    .i_lvds_di0(lvds_ddly[2]), /* imaginary, lower bits */
-    .i_lvds_di1(lvds_ddly[3]), /* imaginary, upper bits */
+    .i_lvds_dclk(lvds_dclk), // 120MHZ
+    .i_lvds_fclk(lvds_fclk), // 40MHz
+    .i_lvds_dr0(lvds_ddly[0]), // real, lower bits
+    .i_lvds_dr1(lvds_ddly[1]), // real, upper bits
+    .i_lvds_di0(lvds_ddly[2]), // imaginary, lower bits
+    .i_lvds_di1(lvds_ddly[3]), // imaginary, upper bits
 	.i_rst(global_rst),
-	//.o_parFrameRdy(adc_frameRdy),
 	.o_dataOut_I(adc_ipar),
 	.o_dataOut_R(adc_qpar)
 );
@@ -413,7 +397,7 @@ assign dbgOutQ[ADCBITS-1:0] = 0;
 	 #####   #######   #### #   #####   #######  #     #   #####   #######  #     #
 ****************************************************************************************/
 
-wire fft_frameStrobe; /* */
+wire fft_frameStrobe;
 wire mem_wordWrStrobe;
 
 /* we buffer the clock here for firther blocks to avoid that the synth. Tool
@@ -470,6 +454,10 @@ fftmain fft0(
 /***************************/
 /*  Calculate the log of the squared output  */
 /***************************/
+
+wire        logfn_lineSync; /* goes high if a new sequence of log() processed points is ready to be written out */
+wire[7:0]   logfn_result; /* the result of one log() process step, equals about 2.66dB per step */
+
 logfn log0(
     .i_clk(lvds_dclk_buffered),
     .i_reset(global_rst),
@@ -507,16 +495,15 @@ blk_specMemory(
 
 /* waterfall to Screen transfer wires */
 reg signed [7:0]                wf_RdLinePtr;
-wire [WFMEMWIDTH-1:0]           wf_RdAddr; /* read adress pointer 18 bits wide to address 256*1024 */
+wire [WFMEMWIDTH-1:0]           wf_RdAddr; // read adress pointer 18 bits wide to address 256*1024
 assign                          wf_RdAddr = { wf_RdLinePtr, scr_rdAddr };
 (* keep = "true" *) reg [11:0]  wf_timeDivider;
 initial                         wf_timeDivider = 0;
-wire                            wf_RdScreenSync; /* goes high when the screen starts with the first line of the waterfall */
+wire                            wf_RdScreenSync; // goes high when the screen starts with the first line of the waterfall
 reg [7:0]                       wf_wrLinePtr;
 initial                         wf_wrLinePtr = 0;
 reg [WFMEMWIDTH-1:0]            wf_pixelWrPointer;
 initial                         wf_pixelWrPointer = 0;
-//assign                          wf_pixelWrPointer = { wf_wrLinePtr, mem_wrAddr };
 reg                             wf_CE;
 initial                         wf_CE = 0;
 
@@ -552,7 +539,6 @@ always @(negedge mem_wordWrStrobe)
 begin
     wf_pixelWrPointer <= (wf_wrLinePtr << 10) + mem_wrAddr;
 end
-//assign wf_pixelWrPointer = { wf_wrLinePtr, mem_wrAddr };
 
 /* waterfall WRITE */
 always @(posedge logfn_lineSync)
@@ -591,11 +577,6 @@ end
 `else
 
 `endif //USE_WATERFALL
-
-//always @(negedge scr_rdStrobe)
-//begin
-//    wf_RdAddr <= scr_rdAddr + wf_RdLinePtr << 10;
-//end
 
 /***********************************************************
      #####    #####   ######   #######  #######  #     #
@@ -704,4 +685,3 @@ begin
 end
 */
 endmodule
-

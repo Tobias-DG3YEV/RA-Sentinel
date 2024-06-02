@@ -1,4 +1,3 @@
-
 //////////////////////////////////////////////////////////////////////////////////
 // 
 // Design Name: RASM2400
@@ -8,8 +7,8 @@
 // Target Devices: Artix 7, XC7A100T
 // Create Date: 25.04.2024 10:29:54
 // Tool Versions: Vivado 2024.1
-// Description:  HDMI Video generator. Ide based on color_bar.v from
-//               ALINX(shanghai) Technology Co.,Ltd
+// Description:  Video screen generator. Ide based on color_bar.v from
+//               ALINX(shanghai) Technology Co.,Ltd (details see video_define.v)
 // 
 // Dependencies: none
 // 
@@ -18,11 +17,10 @@
 // Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
 //////////////////////////////////////////////////////////////////////////////////
-`include "video_define.v"
 
 module screen #(
-    parameter SPECTRUMSIZE   = 512, /* th amplitude of the spctrum is 8 bits , so 256 pixel in height are used by it */
-    parameter WATERFALLSIZE  = 256
+    parameter SPECTRUMSIZE   = 512, // number of lines for the spectrum display
+    parameter WATERFALLSIZE  = 256	// number of lines for the spectrogram/history display
 )
 (    
     input  wire [7:0]   i_amplitude, /* power in dB */
@@ -42,133 +40,8 @@ module screen #(
 	output wire[7:0]    rgb_b          //video blue data
 );
 
-
-//video timing parameter definition
-`ifdef  VIDEO_1280_720
-parameter H_ACTLINES = 16'd1280;         //horizontal active time (pixels)
-parameter H_FP = 16'd110;                //horizontal front porch (pixels)
-parameter H_SYNC = 16'd40;               //horizontal sync time(pixels)
-parameter H_BP = 16'd220;                //horizontal back porch (pixels)
-parameter V_ACTIVE = 16'd720;            //vertical active Time (lines)
-parameter V_FP  = 16'd5;                 //vertical front porch (lines)
-parameter V_SYNC  = 16'd5;               //vertical sync time (lines)
-parameter V_BP  = 16'd20;                //vertical back porch (lines)
-parameter HS_POL = 1'b1;                 //horizontal sync polarity, 1 : POSITIVE,0 : NEGATIVE;
-parameter VS_POL = 1'b1;                 //vertical sync polarity, 1 : POSITIVE,0 : NEGATIVE;
-`endif
-
-//480x272 9Mhz
-`ifdef  VIDEO_480_272
-parameter H_ACTLINES = 16'd480; 
-parameter H_FP = 16'd2;       
-parameter H_SYNC = 16'd41;    
-parameter H_BP = 16'd2;       
-parameter V_ACTIVE = 16'd272; 
-parameter V_FP  = 16'd2;     
-parameter V_SYNC  = 16'd10;   
-parameter V_BP  = 16'd2;     
-parameter HS_POL = 1'b0;
-parameter VS_POL = 1'b0;
-`endif
-
-//640x480 25.175Mhz
-`ifdef  VIDEO_640_480
-parameter H_ACTLINES = 16'd640; 
-parameter H_FP = 16'd16;      
-parameter H_SYNC = 16'd96;    
-parameter H_BP = 16'd48;      
-parameter V_ACTIVE = 16'd480; 
-parameter V_FP  = 16'd10;    
-parameter V_SYNC  = 16'd2;    
-parameter V_BP  = 16'd33;    
-parameter HS_POL = 1'b0;
-parameter VS_POL = 1'b0;
-`endif
-
-//800x480 33Mhz
-`ifdef  VIDEO_800_480
-parameter H_ACTLINES = 16'd800; 
-parameter H_FP = 16'd40;      
-parameter H_SYNC = 16'd128;   
-parameter H_BP = 16'd88;      
-parameter V_ACTIVE = 16'd480; 
-parameter V_FP  = 16'd1;     
-parameter V_SYNC  = 16'd3;    
-parameter V_BP  = 16'd21;    
-parameter HS_POL = 1'b0;
-parameter VS_POL = 1'b0;
-`endif
-
-//800x600 40Mhz
-`ifdef  VIDEO_800_600
-parameter H_ACTLINES = 16'd800; 
-parameter H_FP = 16'd40;      
-parameter H_SYNC = 16'd128;   
-parameter H_BP = 16'd88;      
-parameter V_ACTIVE = 16'd600; 
-parameter V_FP  = 16'd1;     
-parameter V_SYNC  = 16'd4;    
-parameter V_BP  = 16'd23;    
-parameter HS_POL = 1'b1;
-parameter VS_POL = 1'b1;
-`endif
-
-//1024x768 65Mhz
-`ifdef  VIDEO_1024_768
-parameter H_ACTLINES = 16'd1024;
-parameter H_FP = 16'd24;      
-parameter H_SYNC = 16'd136;   
-parameter H_BP = 16'd160;     
-parameter V_ACTIVE = 16'd768; 
-parameter V_FP  = 16'd3;      
-parameter V_SYNC  = 16'd6;    
-parameter V_BP  = 16'd29;     
-parameter HS_POL = 1'b0;
-parameter VS_POL = 1'b0;
-`endif
-
-//1920x1080 148.5Mhz (clk2 742.5MHz)
-`ifdef  VIDEO_1920_1080
-parameter H_ACTLINES = 16'd1920;
-parameter H_FP = 16'd88;
-parameter H_SYNC = 16'd44;
-parameter H_BP = 16'd148; 
-parameter V_ACTIVE = 16'd1080;
-parameter V_FP  = 16'd4;
-parameter V_SYNC  = 16'd5;
-parameter V_BP  = 16'd36;
-parameter HS_POL = 1'b1;
-parameter VS_POL = 1'b1;
-`endif
-
-parameter H_TOTAL = H_ACTLINES + H_FP + H_SYNC + H_BP;//horizontal total time (pixels)
-parameter V_TOTAL = V_ACTIVE + V_FP + V_SYNC + V_BP;//vertical total time (lines)
-//define the RGB values for 8 colors
-parameter WHITE_R       = 8'hff;
-parameter WHITE_G       = 8'hff;
-parameter WHITE_B       = 8'hff;
-parameter YELLOW_R      = 8'hff;
-parameter YELLOW_G      = 8'hff;
-parameter YELLOW_B      = 8'h00;                                
-parameter CYAN_R        = 8'h00;
-parameter CYAN_G        = 8'hff;
-parameter CYAN_B        = 8'hff;                                
-parameter GREEN_R       = 8'h00;
-parameter GREEN_G       = 8'hff;
-parameter GREEN_B       = 8'h00;
-parameter MAGENTA_R     = 8'hff;
-parameter MAGENTA_G     = 8'h00;
-parameter MAGENTA_B     = 8'hff;
-parameter RED_R         = 8'hff;
-parameter RED_G         = 8'h00;
-parameter RED_B         = 8'h00;
-parameter BLUE_R        = 8'h00;
-parameter BLUE_G        = 8'h00;
-parameter BLUE_B        = 8'hff;
-parameter BLACK_R       = 8'h00;
-parameter BLACK_G       = 8'h00;
-parameter BLACK_B       = 8'h00;
-
+// get the resolution depending definitions
+`include "video_define.v"
 
 reg hs_reg;                      //horizontal sync register
 reg vs_reg;                      //vertical sync register
@@ -217,13 +90,13 @@ always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
 		h_cnt <= 12'd0;
-	else if(h_cnt == H_TOTAL - 1)//horizontal counter maximum value
+	else if(h_cnt == H_TOTAL - 1) //horizontal counter maximum value
 		h_cnt <= 12'd0;
 	else
 		h_cnt <= h_cnt + 12'd1;
 end
 
-/* Horizontal line handling */
+// Horizontal line handling
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -236,7 +109,7 @@ begin
 		active_x <= active_x;
 end
 
-/* Vertical line handling */
+// Vertical line handling
 always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
@@ -244,9 +117,9 @@ begin
 	       v_cnt <= 12'd0;
 	       active_y <= 12'b0;
 	   end
-	else if(h_cnt == H_FP  - 1)//horizontal sync time
+	else if(h_cnt == H_FP  - 1) //horizontal sync time
 	   begin
-            if(v_cnt == V_TOTAL - 1)//vertical counter maximum value
+            if(v_cnt == V_TOTAL - 1) //vertical counter maximum value
                 v_cnt <= 12'd0;
             else
                 v_cnt <= v_cnt + 12'd1;
@@ -263,9 +136,9 @@ always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
 		hs_reg <= 1'b0;
-	else if(h_cnt == H_FP - 1)//horizontal sync begin
+	else if(h_cnt == H_FP - 1) //horizontal sync begin
 		hs_reg <= HS_POL;
-	else if(h_cnt == H_FP + H_SYNC - 1)//horizontal sync end
+	else if(h_cnt == H_FP + H_SYNC - 1) //horizontal sync end
 		hs_reg <= ~hs_reg;
 	else
 		hs_reg <= hs_reg;
@@ -275,9 +148,9 @@ always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
 		h_active <= 1'b0;
-	else if(h_cnt == H_FP + H_SYNC + H_BP - 1)//horizontal active begin
+	else if(h_cnt == H_FP + H_SYNC + H_BP - 1) //horizontal active begin
 		h_active <= 1'b1;
-	else if(h_cnt == H_TOTAL - 1)//horizontal active end
+	else if(h_cnt == H_TOTAL - 1) //horizontal active end
 		h_active <= 1'b0;
 	else
 		h_active <= h_active;
@@ -287,9 +160,9 @@ always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
 		vs_reg <= 1'd0;
-	else if((v_cnt == V_FP - 1) && (h_cnt == H_FP - 1))//vertical sync begin
+	else if((v_cnt == V_FP - 1) && (h_cnt == H_FP - 1)) //vertical sync begin
 		vs_reg <= HS_POL;
-	else if((v_cnt == V_FP + V_SYNC - 1) && (h_cnt == H_FP - 1))//vertical sync end
+	else if((v_cnt == V_FP + V_SYNC - 1) && (h_cnt == H_FP - 1)) //vertical sync end
 		vs_reg <= ~vs_reg;  
 	else
 		vs_reg <= vs_reg;
@@ -299,7 +172,7 @@ always@(posedge clk or posedge rst)
 begin
 	if(rst == 1'b1)
 		v_active <= 1'd0;
-	else if((v_cnt == V_FP + V_SYNC + V_BP - 1) && (h_cnt == H_FP - 1))//vertical active begin
+	else if((v_cnt == V_FP + V_SYNC + V_BP - 1) && (h_cnt == H_FP - 1)) //vertical active begin
 		v_active <= 1'b1;
 	else if((v_cnt == V_TOTAL - 1) && (h_cnt == H_FP - 1)) //vertical active end
 		v_active <= 1'b0;   
@@ -329,7 +202,7 @@ begin
     end
     else if(video_active)
 	    begin
-	        /*** spectrum amplitude ***/
+	        //*** spectrum amplitude ***
             if(active_y < SPECTRUMSIZE) 
             begin
                 if(i_amplitude >= scopePos_y[8:1])
@@ -337,7 +210,7 @@ begin
                 else
                     rgb_g_reg <= 8'h00;
 
-                /* horizontal grid */                    
+                // horizontal grid
                 if(active_x[4:0] == 0)
                     rgb_b_reg <= BLUE_B;
                 else /* vertical grid */
@@ -350,7 +223,7 @@ begin
                     o_wf_sync <= 1;
             end
             else
-            /*** waterfall ***/
+            //*** waterfall ***
             begin
                 o_wf_sync <= 0;
                 rgb_r_reg <= wfRed;
@@ -369,8 +242,7 @@ begin
         end
 end
 
-
 assign o_ReadStrobe = ~clk;
 assign o_addr = active_x;
 
-endmodule 
+endmodule

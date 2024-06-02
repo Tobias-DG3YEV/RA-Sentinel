@@ -1,30 +1,30 @@
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
 // 
-// Create Date: 08.03.2023 03:43:16
-// Design Name: 
-// Module Name: lvds_rx
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Design Name: RASM2400
+// Module Name: LVDS_RX
+// Project Name: Radio Access Spectrum Monitor 2400MHz
+// Engineer: Tobias Weber
+// Target Devices: Artix 7, XC7A100T
+// Create Date: 25.04.2024 10:29:54
+// Tool Versions: Vivado 2024.1
+// Description:  Receives and deserializes sample data coming from
+//               the ADC via 2x2 LVDS data lines.
 // 
-// Dependencies: 
+// Dependencies: none
 // 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Revision: 
+// Revision 1.00 - File Created
+// Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
 //////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
 module lvds_rx #(
-	parameter WORDWIDTH = 12 
+	parameter WORDWIDTH = 12 //sample width in bits
 )
 (
-    input wire i_lvds_dclk, /* 120MHZ */
-    input wire i_lvds_fclk, /* 40MHz */
+    input wire i_lvds_dclk, // 120MHz
+    input wire i_lvds_fclk, // 40MHz
     input wire i_lvds_dr0,
     input wire i_lvds_di0,
     input wire i_lvds_dr1,
@@ -45,7 +45,7 @@ reg [2:0] ctr;
 reg trig;
 initial trig = 0;
 
-reg [1:0] initSM; //* Initialisation State Machine
+reg [1:0] initSM; // Initialisation State Machine
 initial initSM = 0;
 reg serdesNreset;
 initial serdesNreset = 1'b0;
@@ -69,7 +69,6 @@ begin
             fclk_delayed <= 0;
 		end
         else begin
-			//serdesNreset <= 1;
             ctr <= ctr + 1;
             trig <= 0;
         end
