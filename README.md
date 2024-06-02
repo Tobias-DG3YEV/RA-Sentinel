@@ -27,6 +27,10 @@ The following diagram shows the system architecture of the RASM2400.
 
 ![Alt text](/RASM2400_Blockdiagram.png "RASM2400 Block Diagram")
 
+The output of the HDMI port of the QMTECH Wukong board.
+
+![Alt text](/RASM2400_screenshot.png "Screenshot of the RASM2400 HDMI output")
+
 ## System architecture
 
 ![Alt text](/RAsentinel-Blockdiagram.JPG "RA-Sentinel Block Diagram")
