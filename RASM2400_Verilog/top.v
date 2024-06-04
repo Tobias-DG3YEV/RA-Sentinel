@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // 
 // Design Name: RASM2400
-// Module Name: top
+// Module Name: top of RASM2400
 // Project Name: Radio Access Spectrum Monitor 2400MHz
 // Engineer: Tobias Weber
 // Target Devices: Artix 7, XC7A100T
@@ -9,24 +9,36 @@
 // Tool Versions: Vivado 2024.1
 // Description:  the top level module
 // 
-// Dependencies: none
+// Dependencies: adc_cequencer.v, screen.v, lvds_rx.v, midmap.v, fft/*.v
 // 
-// Revision: 
+// Revision: 1.01 adde peak hold & decay functionality
 // Revision 1.00 - File Created
 // Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
 //////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2024 Tobias Weber
+// License: GNU GPL v3
+//
+// This project is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTIBILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see
+// <http://www.gnu.org/licenses/> for a copy.
+//////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
 module top(
-    // Master Clock Input
+    // Master Clock Input (50MHz)
     input wire SYS_clk,
-    // HDMI
+    // HDMI output
     output wire TMDS_clk_n,
     output wire TMDS_clk_p,
     output wire [2:0]TMDS_data_n,
     output wire [2:0]TMDS_data_p,
-    // ADC LVDS
+    // ADC LVDS input
     input wire         ADC_idataH_P, /* ADC I serial Data */
     input wire         ADC_idataH_N, /* ADC I serial Data */
     input wire         ADC_idataL_P, /* ADC I serial Data */
@@ -44,7 +56,7 @@ module top(
     output wire [11:0]  dbgOutQ,
     output wire         dbgFrameRdy,
 	output wire			dbgBitClk,
-    // keys
+    // keys / buttons
     input wire          Key0, /* Wukong board key 0 - RESET */
     input wire          Key1,  /* Wukong board key 1 */
 	// jumpers
@@ -54,20 +66,20 @@ module top(
 // -----------------------------------------------------------------------------
 // Module flags
 // -----------------------------------------------------------------------------
-`define USE_WATERFALL
-`define USE_SPECTRUM
+`define USE_SPECTRUM //show a spectrum on the screen
+`define USE_WATERFALL //add a spectrogram (aka waterfall)
 
 // -----------------------------------------------------------------------------
 // Parameters
 // -----------------------------------------------------------------------------
 parameter FFTLEN = 10; //FFT length in bits
 parameter ADCBITS = 12;
-parameter SCREENWIDTH = 1024;
+parameter SCREENWIDTH = 1024; //must match 2^FFTLEN
 parameter WATERFALLHEIGHT = 256;
 parameter WFMEMWIDTH = 18; /* number of bits the waterfall memory address uses */
 parameter C_IODELAY_GROUP = "adc_if_delay_group";
 
-localparam DATA_DELAY_VALUE_DR0 = 31; /* */
+localparam DATA_DELAY_VALUE_DR0 = 31; /* data line delay */
 localparam DATA_DELAY_VALUE_DR1 = 28;
 localparam DATA_DELAY_VALUE_DI0 = 28;
 localparam DATA_DELAY_VALUE_DI1 = 28;
@@ -75,7 +87,7 @@ localparam DCLK_DELAY = 0; // Bit Clock Delay
 localparam FS_DELAY = 0;  // Frame Sync delay
 localparam DLYTYPE = "FIXED";
 
-reg [5:0] lineDelayCS; /* the CS lines of the delays. */
+reg [5:0] lineDelayCS; /* the CS lines of the delaIDELAYE units. */
 initial lineDelayCS = 6'b111111;
 wire lineDelayInc;
 assign lineDelayInc = 0;
@@ -94,7 +106,6 @@ assign global_rst = ~Key0;
 (* keep = "true" *) wire [ADCBITS-1:0] adc_qpar; // ADC Q paralell data
 wire adc_frameStrobe; // a frame from the ADC deserializer is ready
 
-
 // HDMI video signals
 wire clk_65M;
 wire clk_325M;
@@ -111,8 +122,6 @@ wire[7:0]   scr_rdSpecAmpl;
 wire        scr_rdStrobe;
 wire[9:0]   scr_rdAddr;
 
-
-wire[FFTLEN-1:0]    mem_wrAddr;
 wire                fft_lineSync; /* goes high if a new line of 2^FFTLEN points is ready to be written out */
 wire[31:0]          fft_result; /* the result of one fft process step, cosinst of {imaginary[], real[]}*/
 // LOG function
@@ -124,13 +133,13 @@ wire [7:0]          wf_rdSpecAmpl; /* one value of the spectrum read from the wa
 /*******************/
 /* Video Clock Gen */
 /*******************/
-wire clk_200M;
+wire clk_195M;
 
-video_clk video_clk0 (
+Video_clk video_clk0 (
     .i_clk_50M(SYS_clk),
     .o_clk_65M(clk_65M),
     .o_clk_325M(clk_325M),
-    .o_clk_200M(clk_200M),
+    .o_clk_195M(clk_195M),
     .reset(1'b0),
     .locked()
 );
@@ -141,7 +150,7 @@ video_clk video_clk0 (
 
 IDELAYCTRL IDELAYCTRL0 (
    .RDY(),       // 1-bit output: Ready output
-   .REFCLK(clk_200M), // 1-bit input: Reference clock input
+   .REFCLK(clk_195M), // 1-bit input: Reference clock input
    .RST(global_rst)        // 1-bit input: Active high reset input
 );
 
@@ -197,12 +206,13 @@ IDELAYE2_fclk (
  .DATAIN (1'b0),
  .CINVCTRL (1'b0),
  .REGRST (1'b0),
- .C (clk_200M),
+ .C (clk_195M),
  .IDATAIN (lvds_fclk_BUFDS),
  .DATAOUT (lvds_fclk),
  .LD (1'b0),
  .CNTVALUEIN (1'b0),
- .CNTVALUEOUT(fclk_cntval)
+ .CNTVALUEOUT(fclk_cntval),
+ .LDPIPEEN(1'b0) // added to keep Vivado quiet
 );
 
 //    ######    #####   #        #    #
@@ -242,12 +252,13 @@ IDELAYE2_dclk (
  .DATAIN (1'b0),
  .LDPIPEEN (1'b0),
  .CINVCTRL (1'b0),
- .C (clk_200M),
+ .C (clk_195M),
  .IDATAIN (lvds_dclk_BUFDS),
  .DATAOUT (lvds_dclk),
  .LD (1'b0),
  .CNTVALUEIN (1'b0),
- .CNTVALUEOUT()
+ .CNTVALUEOUT(),
+ .REGRST(1'b0) // added to keep Vivado quiet
 );
 
 //	######   ######   ######          ######      #     #######     #
@@ -313,7 +324,7 @@ generate
 			.LDPIPEEN (1'b0),
 			.CINVCTRL (1'b0),
 			.REGRST (1'b0),
-			.C (clk_200M),
+			.C (clk_195M),
 			.IDATAIN (ibufds_out[i]),
 			.DATAOUT (lvds_ddly[i]),
 			.LD ("VARIABLE"),
@@ -332,7 +343,7 @@ endgenerate
 	#     #  #     #  #     #         #        #        #
 	#     #  ######    #####          #        #######  #######
 ******************************************************************/
-
+/*
 (* keep = "true" *) wire testClk_120M;
 wire testClk_240M;
 wire testClk_360M;
@@ -348,6 +359,7 @@ adc_clk adc_clk_inst
     // Clock in ports
     .i_clk_fclk(lvds_fclk)
 );
+*/
 
 /*******************************************************************************************************
 	#        #     #  ######    #####           #####   #######  ######   ######   #######   #####
@@ -431,6 +443,7 @@ adc_sequencer adc_sequencer0
 );
 
 /* reform the spectrum parts so the upper and lower parts fit */
+wire[FFTLEN-1:0]    mem_wrAddr;
 assign mem_wrAddr = {~adc_frameCounter[FFTLEN-1], adc_frameCounter[FFTLEN-2:0]};
 
 /**********************************************************************************
@@ -454,11 +467,15 @@ fftmain fft0(
 /***************************/
 /*  Calculate the log of the squared output  */
 /***************************/
+localparam logfn_ow = 9; //witdh of the output of the log() module
 
-wire        logfn_lineSync; /* goes high if a new sequence of log() processed points is ready to be written out */
-wire[7:0]   logfn_result; /* the result of one log() process step, equals about 2.66dB per step */
+wire                logfn_lineSync; /* goes high if a new sequence of log() processed points is ready to be written out */
+wire[logfn_ow-1:0]  logfn_result; /* the result of one log() process step, equals about 2.66dB per step */
 
-logfn log0(
+logfn #(
+    16, 8
+) logfn_0 (
+
     .i_clk(lvds_dclk_buffered),
     .i_reset(global_rst),
     .i_ce(fft_frameStrobe),
@@ -478,19 +495,111 @@ logfn log0(
     #     #  #        #        #     #     #     #    #   #     #  #     #       #    #   #     #  #     #
      #####   #        #######   #####      #     #     #   #####   #     #       #     #  #     #  #     #
 ***********************************************************************************************************/
+
+wire spectrumActive;
+
+(* keep = "true" *) reg [1:0] wrSpec_state;
+localparam state_wrSpec_read  = 2'b00;
+localparam state_wrSpec_write = 2'b01;
+localparam state_wrSpec_wait  = 2'b10;
+initial wrSpec_state = state_wrSpec_read;
+
+(* keep = "true" *) reg wrSpec_wea;
+initial wrSpec_wea = 0;
+(* keep = "true" *) reg wrPeak_wea;
+initial wrPeak_wea = 0;
+(* keep = "true" *) reg [7:0] wrSpec_new;
+(* keep = "true" *) reg [7:0] wrSpec_peak;
+wire [7:0] wrSpec_old;
+wire [7:0] wrPeak_old;
+reg [2:0] wrPeak_decCtr; //decline counter
+
+always@(posedge wf_RdScreenSync)
+begin
+    wrPeak_decCtr <= wrPeak_decCtr - 1;
+end
+
+wire peakDec;
+assign peakDec = (wrPeak_decCtr == 0);
+
+always@(negedge lvds_dclk_buffered)
+begin
+
+    case(wrSpec_state)
+
+        state_wrSpec_read:
+        begin
+            if(mem_wordWrStrobe == 1'b1) begin
+                
+                wrSpec_peak <= (wrSpec_old < wrPeak_old) ? (wrPeak_old - peakDec) : wrSpec_old;
+                if(wf_RdScreenSync == 1) begin
+                    wrSpec_new <= 0;
+                    wrPeak_wea <= 1;
+                end
+                else begin
+                    wrSpec_new <= (wrSpec_old < logfn_result) ? logfn_result : wrSpec_old;
+                end
+                wrSpec_wea <= 1;
+                wrSpec_state <= state_wrSpec_write;
+            end
+        end
+
+        state_wrSpec_write:
+        begin
+            wrSpec_wea <= 0;
+            wrPeak_wea <= 0;
+            wrSpec_state <= state_wrSpec_wait;
+        end
+
+        state_wrSpec_wait:
+        begin
+            wrSpec_state <= state_wrSpec_read;
+        end
+
+    endcase
+
+end
+
 blk_mem_gen_0
 #(
 )
 blk_specMemory(
     //RAM input
-    .clka(mem_wordWrStrobe),
+    .clka(lvds_dclk_buffered),
     .addra(mem_wrAddr),
-    .dina(logfn_result),
-    .wea(1),
+    .dina(wrSpec_new),
+    .douta(wrSpec_old),
+    .ena(1'b1),
+    .wea(wrSpec_wea),
+    //RAM output
+    .enb(1'b1),
+    .clkb(scr_rdStrobe),
+    .addrb(scr_rdAddr),
+    .doutb(scr_rdSpecAmpl),
+    .dinb(0),
+    .web(1'b0)
+);
+
+
+wire [7:0] scr_rdPeak;
+
+blk_PeakMem 
+#(
+)
+blk_specPeakMemory(
+    //RAM input
+    .clka(lvds_dclk_buffered),
+    .addra(mem_wrAddr),
+    .dina(wrSpec_peak),
+    .douta(wrPeak_old),
+    .ena(1'b1),
+    .wea(wrPeak_wea),
     //RAM output
     .clkb(scr_rdStrobe),
     .addrb(scr_rdAddr),
-    .doutb(scr_rdSpecAmpl)
+    .doutb(scr_rdPeak),
+    .dinb(1'b0),
+    .web(1'b0)
 );
 
 /* waterfall to Screen transfer wires */
@@ -517,14 +626,19 @@ initial                         wf_CE = 0;
      ## ##   #     #     #     #######  #     #  #        #     #  #######  #######      #     #  #     #  #     #
 **********************************************************************************************************************/
 
+wire wfActive;
+
 `ifdef USE_WATERFALL
 waterfallMem wfMem0(
     //RAM input
-    .clka(mem_wordWrStrobe),
+    //.clka(mem_wordWrStrobe),
+    .clka(lvds_dclk_buffered),
     .addra(wf_pixelWrPointer),
-    .dina(logfn_result),
-    .wea(wf_CE),
+    //.dina(logfn_result),
+    .dina(wrSpec_new),
+    .wea(wrSpec_wea),
     //RAM output
+    .enb(wfActive),
     .clkb(scr_rdStrobe),
     .addrb(wf_RdAddr),
     .doutb(wf_rdSpecAmpl),
@@ -594,20 +708,23 @@ screen #(
 screen_0 (
     /* spectrum ports */
     .i_amplitude(scr_rdSpecAmpl),
+    .i_peak(scr_rdPeak),
     .o_ReadStrobe(scr_rdStrobe),
     .o_addr(scr_rdAddr),
+    .o_spectrumActive(spectrumActive),
     /* waterfall ports */
     .i_wfPixel(wf_rdSpecAmpl),
     .o_wf_sync(wf_RdScreenSync),
+    .o_wfActive(wfActive),
     /* HDMI access */
-	.clk(clk_65M),
-	.rst(global_rst),
-	.hs(video_hs),
-	.vs(video_vs),
-	.de(video_de),
-	.rgb_r(video_r),
-	.rgb_g(video_g),
-	.rgb_b(video_b)
+	.i_pixClk(clk_65M), // Pixel clock = 65MHz @ 1024x768
+	.i_rst(global_rst),
+	.o_hs(video_hs),
+	.o_vs(video_vs),
+	.o_de(video_de),
+	.o_rgb_r(video_r),
+	.o_rgb_g(video_g),
+	.o_rgb_b(video_b)
 );
 
 `else

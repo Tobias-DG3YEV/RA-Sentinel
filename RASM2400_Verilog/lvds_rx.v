@@ -12,12 +12,34 @@
 // 
 // Dependencies: none
 // 
-// Revision: 
-// Revision 1.00 - File Created
+// Revision 1.01
 // Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
 //////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2024 Tobias Weber
+// License: GNU GPL v3
+//
+// This project is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTIBILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see
+// <http://www.gnu.org/licenses/> for a copy.
+//////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
+
+/* this depicts the input data stream we get from the ADC322x
+				  _________         ___
+Frame FCLK		_|        |________|
+                  ______      ___
+Data			_|     |_____|  |______
+				   ___   ___   ___   __
+Data DCLK		__|  |__|  |__|  |__|  
+Bit #			  0  1  2  3  4  5  0  
+Value (LSB first) 1  1  0  0  1  0  0 => reversed to 10011 = 13 hex.
+*/
 
 module lvds_rx #(
 	parameter WORDWIDTH = 12 //sample width in bits
@@ -25,16 +47,17 @@ module lvds_rx #(
 (
     input wire i_lvds_dclk, // 120MHz
     input wire i_lvds_fclk, // 40MHz
-    input wire i_lvds_dr0,
-    input wire i_lvds_di0,
-    input wire i_lvds_dr1,
-    input wire i_lvds_di1,
-	input wire i_rst,
-    output wire o_parFrameRdy,
-    output wire [11:0] o_dataOut_I,
-    output wire [11:0] o_dataOut_R
+    input wire i_lvds_dr0,  // data lane real part, lower bits
+    input wire i_lvds_di0,  // data lane imaginary part, higher 6 bits
+    input wire i_lvds_dr1,  // data lane real part, lower 6 bits
+    input wire i_lvds_di1,  // data lane imaginary part, higher 6 bits
+	input wire i_rst,       // module reset, active high
+    output wire o_parFrameRdy, // paralell frame can be read when this goes high.
+    output wire [11:0] o_dataOut_R  // parallel data, real part
+    output wire [11:0] o_dataOut_I, // parallel data, imaginary part
 );
 
+// sync states
 localparam state_powerOn 	= 2'b00;
 localparam state_syncing 	= 2'b01;
 localparam state_init       = 2'b10;
@@ -45,12 +68,14 @@ reg [2:0] ctr;
 reg trig;
 initial trig = 0;
 
-reg [1:0] initSM; // Initialisation State Machine
+reg [1:0] initSM; // sync state machine counter
 initial initSM = 0;
 reg serdesNreset;
 initial serdesNreset = 1'b0;
 reg serdesCS;
 initial serdesCS = 1'b0;
+
+// sync state machine. It syncs the ISERDESE2 modules to the ADC frame clock
 
 always @(posedge i_lvds_dclk or posedge i_rst) // 60MHz driven
 begin
@@ -61,7 +86,6 @@ begin
     end
     // sync everything with frame start
     else begin
-	
 		// work signal generator
         if(i_lvds_fclk == 1 && trig == 0) begin
             trig <= 1;

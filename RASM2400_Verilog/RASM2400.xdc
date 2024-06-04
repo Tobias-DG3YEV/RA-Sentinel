@@ -111,24 +111,6 @@ set_property PACKAGE_PIN V26 [get_ports {dbgOutQ[4]}]
 set_property PACKAGE_PIN W21 [get_ports {dbgOutQ[2]}]
 set_property PACKAGE_PIN Y22 [get_ports {dbgOutQ[0]}]
 
-#create_clock -period 16.666 -name LVDS_bitClk_Pins -waveform {0.000 8.333} [get_ports {ADC_bitclk_N ADC_bitclk_P}]
-#create_generated_clock -name adc_processClock -source [get_pins lvds_bitClk_BUFG_inst/O] -divide_by 2 [get_pins adc_processClock_reg/Q]
-#create_clock -period 50.000 -name LVDS_frameClk_pins -waveform {0.000 25.000} [get_ports {ADC_frame_N ADC_frame_P}]
-#create_generated_clock -name LVDS_bitClk_pins -source [get_ports ADC_frame_P] -multiply_by 6 [get_ports {ADC_bitclk_N ADC_bitclk_P}]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_adc_frame0_n_0_BUFG_inst_n_0]
-#set_clock_groups -name lvds_clk_group -asynchronous -group [get_clocks {LVDS_bitClk_pins LVDS_frameClk_pins}]
-#set_input_delay -clock LVDS_bitClk_Pins -max 3.000 [get_ports {ADC_qdataL_P ADC_qdataL_N ADC_idataL_P ADC_idataL_N}]
-#create_clock -period 16.667 -name ADC_bitclk_P -waveform {0.000 8.334} [get_ports ADC_bitclk_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -clock_fall -min -add_delay 0.500 [get_ports ADC_idataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -clock_fall -max -add_delay 4.500 [get_ports ADC_idataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -min -add_delay 0.500 [get_ports ADC_idataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -max -add_delay 4.500 [get_ports ADC_idataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -clock_fall -min -add_delay 0.500 [get_ports ADC_qdataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -clock_fall -max -add_delay 4.500 [get_ports ADC_qdataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -min -add_delay 0.500 [get_ports ADC_qdataL_P]
-#set_input_delay -clock [get_clocks ADC_bitclk_P] -max -add_delay 4.500 [get_ports ADC_qdataL_P]
-
-
 create_clock -period 8.333 -name ADC_bitclk_P -waveform {0.000 4.167} -add [get_ports ADC_bitclk_P]
 create_clock -period 25.000 -name ADC_frame_P -waveform {0.000 12.500} -add [get_ports ADC_frame_P]
 
@@ -174,12 +156,6 @@ set_disable_timing [get_ports {dbgOutQ[9]}]
 set_disable_timing [get_ports {dbgOutQ[10]}]
 set_disable_timing [get_ports {dbgOutQ[11]}]
 
-
-
-#set_property LOC IDELAY_X1Y117 [get_cells IDELAYE2_frameClk]
-#set_property LOC IDELAY_X1Y127 [get_cells IDELAYE2_qdataL]
-#set_property LOC IDELAY_X1Y147 [get_cells IDELAYE2_idataL]
-
 set_property PACKAGE_PIN U19 [get_ports {Jumpers[0]}]
 set_property PACKAGE_PIN T19 [get_ports {Jumpers[1]}]
 set_property PACKAGE_PIN U20 [get_ports {Jumpers[2]}]
@@ -203,7 +179,4 @@ set_property PACKAGE_PIN V22 [get_ports dbgBitClk]
 set_property IOSTANDARD LVCMOS33 [get_ports dbgBitClk]
 set_property DRIVE 16 [get_ports dbgBitClk]
 set_property SLEW FAST [get_ports dbgBitClk]
-
-set_property MARK_DEBUG true [get_nets adc_frameStrobe]
-
 
