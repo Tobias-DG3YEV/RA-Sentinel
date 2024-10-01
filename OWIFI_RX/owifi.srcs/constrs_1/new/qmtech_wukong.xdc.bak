@@ -1,0 +1,195 @@
+############## NET - IOSTANDARD ##################
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property BITSTREAM.CONFIG.UNUSEDPIN PULLUP [current_design]
+#############SPI Configurate Setting ##################
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+set_property CONFIG_MODE SPIx4 [current_design]
+set_property BITSTREAM.CONFIG.CONFIGRATE 50 [current_design]
+############## clock and reset define##################
+#create_generated_clock -name adc_process_clk -source [get_pins lvds_irx0/CLK] -divide_by 2 [get_pins fft0/adc_processClock_BUFG]
+
+set_property IOSTANDARD LVCMOS33 [get_ports SYS_clk]
+set_property PACKAGE_PIN M21 [get_ports SYS_clk]
+set_property PACKAGE_PIN B5 [get_ports ADC_bitclk_P]
+set_property PACKAGE_PIN A5 [get_ports ADC_bitclk_N]
+set_property PACKAGE_PIN B4 [get_ports ADC_frame_P]
+set_property PACKAGE_PIN A4 [get_ports ADC_frame_N]
+set_property PACKAGE_PIN E6 [get_ports ADC_idataL_P]
+set_property PACKAGE_PIN D6 [get_ports ADC_idataL_N]
+set_property PACKAGE_PIN G4 [get_ports ADC_qdataL_P]
+set_property PACKAGE_PIN F4 [get_ports ADC_qdataL_N]
+set_property PACKAGE_PIN E5 [get_ports ADC_idataH_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_idataH_P]
+set_property PACKAGE_PIN J4 [get_ports ADC_qdataH_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_qdataH_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_frame_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_idataL_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_qdataL_P]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports ADC_bitclk_P]
+set_property PACKAGE_PIN H7 [get_ports Key0]
+set_property PACKAGE_PIN M6 [get_ports Key1]
+set_property IOSTANDARD LVCMOS18 [get_ports Key0]
+set_property IOSTANDARD LVCMOS18 [get_ports Key1]
+set_disable_timing [get_ports Key0]
+set_disable_timing [get_ports Key1]
+#set_property IODELAY_GROUP DDR_GROUP [get_cells idelay_Q0]
+#set_property IODELAY_GROUP "DDR_GROUP" [get_ports {ADC_frame_P}]
+#set_property IODELAY_GROUP "DDR_GROUP" [get_clocks {clk_ref}]
+############## HDMIOUT define##################
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports TMDS_clk_n]
+#set_property PACKAGE_PIN D4 [get_ports TMDS_clk_p]
+#set_property PACKAGE_PIN C4 [get_ports TMDS_clk_n]
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports TMDS_clk_p]
+
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_n[0]}]
+#set_property PACKAGE_PIN E1 [get_ports {TMDS_data_p[0]}]
+#set_property PACKAGE_PIN D1 [get_ports {TMDS_data_n[0]}]
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_p[0]}]
+
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_n[1]}]
+#set_property PACKAGE_PIN F2 [get_ports {TMDS_data_p[1]}]
+#set_property PACKAGE_PIN E2 [get_ports {TMDS_data_n[1]}]
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_p[1]}]
+
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_n[2]}]
+#set_property PACKAGE_PIN G2 [get_ports {TMDS_data_p[2]}]
+#set_property PACKAGE_PIN G1 [get_ports {TMDS_data_n[2]}]
+#set_property IOSTANDARD DIFF_SSTL18_I [get_ports {TMDS_data_p[2]}]
+
+############## SPI PORT ###################
+set_property PACKAGE_PIN J21 [get_ports SPI_nss]
+set_property PACKAGE_PIN K21 [get_ports SPI_mosi]
+set_property PACKAGE_PIN H22 [get_ports SPI_miso]
+set_property PACKAGE_PIN H21 [get_ports SPI_clk]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets SPI_clk_IBUF]
+
+
+#### DEBUG PINS
+
+create_clock -period 16.666 -name ADC_bitclk_P -waveform {0.000 8.333} -add [get_ports ADC_bitclk_P]
+create_clock -period 50.000 -name ADC_frame_P -waveform {0.000 25.000} -add [get_ports ADC_frame_P]
+
+set_input_delay -clock [get_clocks ADC_bitclk_P] -min 0.000 [get_ports ADC_idataL_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -max 1.000 [get_ports ADC_idataL_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -min 0.000 [get_ports ADC_idataH_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -max 1.000 [get_ports ADC_idataH_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -min 0.000 [get_ports ADC_qdataL_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -max 1.000 [get_ports ADC_qdataL_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -min 0.000 [get_ports ADC_qdataH_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -max 1.000 [get_ports ADC_qdataH_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -min 0.000 [get_ports ADC_frame_P]
+set_input_delay -clock [get_clocks ADC_bitclk_P] -max 1.000 [get_ports ADC_frame_P]
+
+
+
+
+
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_clk]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_miso]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_mosi]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_nss]
+
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[7]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[6]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[5]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[4]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {o_byteOut[0]}]
+
+set_property PACKAGE_PIN AB26 [get_ports {o_byteOut[0]}]
+set_property PACKAGE_PIN AC26 [get_ports {o_byteOut[1]}]
+set_property PACKAGE_PIN AB24 [get_ports {o_byteOut[2]}]
+set_property PACKAGE_PIN AC24 [get_ports {o_byteOut[3]}]
+set_property PACKAGE_PIN AA24 [get_ports {o_byteOut[4]}]
+set_property PACKAGE_PIN AB25 [get_ports {o_byteOut[5]}]
+set_property PACKAGE_PIN AA22 [get_ports {o_byteOut[6]}]
+set_property PACKAGE_PIN AA23 [get_ports {o_byteOut[7]}]
+set_property PACKAGE_PIN Y25 [get_ports o_byteOutStrobe]
+set_property IOSTANDARD LVCMOS18 [get_ports o_byteOutStrobe]
+set_property PACKAGE_PIN AA25 [get_ports demod_is_ongoing]
+set_property IOSTANDARD LVCMOS18 [get_ports demod_is_ongoing]
+set_property PACKAGE_PIN W25 [get_ports {state[0]}]
+set_property PACKAGE_PIN Y26 [get_ports {state[1]}]
+set_property PACKAGE_PIN Y22 [get_ports {state[2]}]
+set_property PACKAGE_PIN Y23 [get_ports {state[3]}]
+set_property PACKAGE_PIN W21 [get_ports {state[4]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {state[4]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {state[3]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {state[2]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {state[1]}]
+set_property IOSTANDARD LVCMOS18 [get_ports {state[0]}]
+set_property DRIVE 12 [get_ports SPI_miso]
+
+
+set_property MARK_DEBUG true [get_nets adc_frameStrobe]
+
+
+set_property PACKAGE_PIN Y21 [get_ports sig_valid]
+set_property IOSTANDARD LVCMOS18 [get_ports sig_valid]
+set_property DRIVE 12 [get_ports sig_valid]
+
+set_clock_latency -clock [get_clocks ADC_bitclk_P] -source -early 4.166 [get_clocks ADC_bitclk_P]
+create_clock -period 50.000 -name fclk_delayed -waveform {0.000 25.000} lvds_irx0/fclk_delayed
+set_clock_latency -clock [get_clocks ADC_bitclk_P] -source -late 4.166 [get_clocks ADC_bitclk_P]
+
+connect_debug_port u_ila_0/probe1 [get_nets [list {adc_q[0]} {adc_q[1]} {adc_q[2]} {adc_q[3]} {adc_q[4]} {adc_q[5]} {adc_q[6]} {adc_q[7]} {adc_q[8]} {adc_q[9]} {adc_q[10]} {adc_q[11]}]]
+connect_debug_port u_ila_0/probe2 [get_nets [list {adc_i[0]} {adc_i[1]} {adc_i[2]} {adc_i[3]} {adc_i[4]} {adc_i[5]} {adc_i[6]} {adc_i[7]} {adc_i[8]} {adc_i[9]} {adc_i[10]} {adc_i[11]}]]
+connect_debug_port u_ila_0/probe5 [get_nets [list lvds_irx0/fclk_delayed]]
+
+connect_debug_port u_ila_0/probe0 [get_nets [list {adc_par_R[0]} {adc_par_R[1]} {adc_par_R[2]} {adc_par_R[3]} {adc_par_R[4]} {adc_par_R[5]} {adc_par_R[6]} {adc_par_R[7]} {adc_par_R[8]} {adc_par_R[9]} {adc_par_R[10]} {adc_par_R[11]}]]
+connect_debug_port u_ila_0/probe1 [get_nets [list {adc_par_I[0]} {adc_par_I[1]} {adc_par_I[2]} {adc_par_I[3]} {adc_par_I[4]} {adc_par_I[5]} {adc_par_I[6]} {adc_par_I[7]} {adc_par_I[8]} {adc_par_I[9]} {adc_par_I[10]} {adc_par_I[11]}]]
+connect_debug_port u_ila_0/probe3 [get_nets [list adc_frameStrobe]]
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 2048 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 2 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list clk_system_inst/inst/o_clk_200M]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 4 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {dot11_inst/state[0]} {dot11_inst/state[1]} {dot11_inst/state[2]} {dot11_inst/state[4]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 12 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {adc_q[0]} {adc_q[1]} {adc_q[2]} {adc_q[3]} {adc_q[4]} {adc_q[5]} {adc_q[6]} {adc_q[7]} {adc_q[8]} {adc_q[9]} {adc_q[10]} {adc_q[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 12 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {adc_i[0]} {adc_i[1]} {adc_i[2]} {adc_i[3]} {adc_i[4]} {adc_i[5]} {adc_i[6]} {adc_i[7]} {adc_i[8]} {adc_i[9]} {adc_i[10]} {adc_i[11]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 1 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list demod_is_ongoing_OBUF]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 1 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list pkt_header_valid]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 1 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list dot11_inst/sync_short_inst/short_preamble_detected0]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list o_byteOutStrobe_OBUF]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list lvds_irx0/o_sampleStrobe0]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe8]
+set_property port_width 1 [get_debug_ports u_ila_0/probe8]
+connect_debug_port u_ila_0/probe8 [get_nets [list pkt_header_valid_strobe]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk_200M]

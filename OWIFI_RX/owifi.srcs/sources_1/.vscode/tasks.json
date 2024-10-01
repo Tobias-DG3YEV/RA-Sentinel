@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Verilog",
+            "type": "shell",
+            "command": "iverilog",
+            "args": [
+                "-o", "output_file",
+                "-c", "filelist.txt",
+                "-I", "${workspaceFolder}/openwifi",
+                "-s", "top"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Generated task for Icarus Verilog"
+        },
+        {
+            "label": "Run Simulation",
+            "type": "shell",
+            "command": "vvp",
+            "args": [
+                "output_file"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Generated task for Icarus Verilog"
+        }
+        {
+            "label": "Lint Verilog",
+            "type": "shell",
+            "command": "iverilog -tnull ${file}",
+            "group": {
+            "kind": "build",
+            "isDefault": true
+            },
+            "problemMatcher": {
+            "owner": "iverilog ",
+            "fileLocation": ["relative", "${workspaceFolder}"],
+            "pattern": {
+                "regexp": "^(.*):(\\d+):(\\d+):\\s*(.*)$",
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "message": 4
+            }
+            }
+        }
+    ]
+}
