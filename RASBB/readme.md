@@ -6,7 +6,8 @@ The RASBB comes into play by lifting up the received goods from OSI layer 1 (Phy
 
 # The hardware
 
-The PCB of the RASBB contains several processing unit as well as sensors and radio interfaces.
+The PCB of the RASBB is made of a FR4 eight layer PCB which containins several processing units, sensors, radio and wired interfaces.
+
 Following you find a (incomplete) list of the features its features:
 
 * Two Artix 7 FPGAs with 100k Logic Elements each
@@ -29,7 +30,7 @@ Following you find a (incomplete) list of the features its features:
 * Configuration ond user button
 * FPGAs and STM32 are accessible through JTAG port
 
-The preliminary RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure.
+The preliminary RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure. Layout is made with KiCAD by Mina Daneshpajouh. 
 
 ![Alt text](RASBB_preview.JPG "RASBB first draft")
 [PCB of the RASBB - work still in progress]
