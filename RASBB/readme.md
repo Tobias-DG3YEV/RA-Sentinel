@@ -30,7 +30,7 @@ Following you find a (incomplete) list of the features its features:
 * Configuration ond user button
 * FPGAs and STM32 are accessible through JTAG port
 
-The preliminary RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure. Layout is made with KiCAD by Mina Daneshpajouh. 
+The preliminary RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure. Hardware made by Miss (her majesty) Mina Daneshpajouh.
 
 ![Alt text](RASBB_preview.JPG "RASBB first draft")
 [PCB of the RASBB - work still in progress]
