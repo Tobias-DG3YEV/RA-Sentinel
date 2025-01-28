@@ -4,6 +4,8 @@ The RASBB is the interface between the world of analogue and discrete radio wave
 After the RFFE2400 has electrically been received, down converted to a zero intermediate frequency band and later on converted into a stream of discrete numbers,
 The RASBB comes into play by lifting up the received goods from OSI layer 1 (Physical) to OSI layer 2 (Data link). 
 
+<img src="RASBB Board Layout.svg" alt="Description of SVG" width="1024">
+
 # The hardware
 
 The PCB of the RASBB is made of a FR4 eight layer PCB which containins several processing units, sensors, radio and wired interfaces.
