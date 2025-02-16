@@ -8,7 +8,7 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 
 ![Alt text](/RAsentinel-Blockdiagram.JPG "RA-Sentinel Block Diagram")
 
-## The hardware
+## The hardwaree
 
 The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Tranceiver Chip for 2.4GHz which is widelay used in older WIFi Acess Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. Later, a single PCB that contains all needed parts shall be designed. As I do not know the final requirements regarding FPGA and RAM required to complete the task at this point, I am unable to say what exactly this final hardware will contain. 
 
