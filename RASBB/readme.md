@@ -19,6 +19,7 @@ The **RASBB** board processes the received digital RF data and manages higher-la
 Together, the **RASRF** and **RASBB** boards create a scalable, high-performance platform for RF signal acquisition and real-time processing.
 
 Below is the block diagram illustrating the architecture of both boards and their interconnections:
+
 ![image](https://github.com/user-attachments/assets/2e514202-3a31-4a70-a0d0-1be484fe567c)
 
 ![image](https://github.com/user-attachments/assets/06899e89-e307-487e-bd01-28fa4f841cfd)
@@ -48,10 +49,12 @@ Below is an list of its features:
 - Configuration button
 - FPGAs and STM32 accessible through JTAG port
 
-*The preliminary RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure. Hardware designed by **Mina Daneshpajouh**.*
+*The RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure. Hardware designed by **Mina Daneshpajouh**.*
 
 ![image](https://github.com/user-attachments/assets/bf05c6e6-3777-4b70-b960-ee0d89003453)
 RASBB Rev A (Top View)
+
+
 
 ![image](https://github.com/user-attachments/assets/59683930-f7f0-46f2-9ada-83859a658bdf)
 RASBB Rev B (Bottom View)
