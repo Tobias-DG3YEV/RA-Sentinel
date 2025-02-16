@@ -21,7 +21,7 @@ Together, the **RASRF** and **RASBB** boards create a scalable, high-performance
 Below is the block diagram illustrating the architecture of both boards and their interconnections:
 ![image](https://github.com/user-attachments/assets/2e514202-3a31-4a70-a0d0-1be484fe567c)
 
-
+![image](https://github.com/user-attachments/assets/06899e89-e307-487e-bd01-28fa4f841cfd)
 
 ## The hardware
 
