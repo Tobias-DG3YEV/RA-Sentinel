@@ -19,8 +19,8 @@ The **RASBB** board processes the received digital RF data and manages higher-la
 Together, the **RASRF** and **RASBB** boards create a scalable, high-performance platform for RF signal acquisition and real-time processing.
 
 Below is the block diagram illustrating the architecture of both boards and their interconnections:
-https://github.com/minadanesh/RA-Sentinel/blob/main/RASBB/RASBB-BlockDiagram.png?raw=true
-![Blank diagram](https://github.com/user-attachments/assets/64c93611-4714-4096-a470-6e5f3c072792)
+![image](https://github.com/user-attachments/assets/2e514202-3a31-4a70-a0d0-1be484fe567c)
+
 
 
 ## The hardware
