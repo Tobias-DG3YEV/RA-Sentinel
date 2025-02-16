@@ -1,7 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "2024-01-14_13-50-44")(type "KiCad")(uri "${KIPRJMOD}/ADC_Texas Instruments.kicad_sym")(options "")(descr ""))
-  (lib (name "Max2831")(type "KiCad")(uri "${KIPRJMOD}/Libraries/ul_MAX2831ETM-/KiCADv6/Max2831.kicad_sym")(options "")(descr ""))
-  (lib (name "RF-Transceiver")(type "KiCad")(uri "${KIPRJMOD}/RF-Transceiver.kicad_sym")(options "")(descr ""))
-  (lib (name "RA-Sentinel_FE_Library")(type "KiCad")(uri "${KIPRJMOD}/Libraries/RA-Sentinel_FE_Library.kicad_sym")(options "")(descr ""))
-)
