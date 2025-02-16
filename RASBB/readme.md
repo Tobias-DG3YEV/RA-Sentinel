@@ -3,10 +3,11 @@
 The **RA-Sentinel** system consists of two main boards that work together to enable high-performance RF signal reception, digitization, and processing.
 
 ## RA-Sentinel Radio Front-End Board (RASRF)
-The **RASRF** board is responsible for receiving and conditioning RF signals before digitization.
+The **RASRF** board is responsible for receiving and conditioning, and digitizing RF signals before transmitting them to the baseband processor.
  - The antenna is connected through a Balun to an RF front-end transceiver, which performs signal reception, downconversion, and filtering.
  - The downconverted signal is then conditioned using a driver circuit optimized for impedance matching and signal integrity.
- - A high-speed ADC samples the analog signal, converting it into a digital stream suitable for further processing.
+ - A high-speed 12-bit ADC samples a 40 MHz portion of the 2.4 GHz radio spectrum, converting it into a 960 Mbit/s data stream (2 channels: I+Q, 12-bit each @ 40 
+   MSPS). 
  - The digitized data is transmitted over a PCIe interface to the RASBB board for baseband processing.
 
 ## RA-Sentinel Baseband Board (RASBB)
