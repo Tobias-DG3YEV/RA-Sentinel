@@ -54,8 +54,13 @@ Below is an list of its features:
 ![image](https://github.com/user-attachments/assets/bf05c6e6-3777-4b70-b960-ee0d89003453)
 RASBB Rev A (Top View)
 
-
-
 ![image](https://github.com/user-attachments/assets/59683930-f7f0-46f2-9ada-83859a658bdf)
-RASBB Rev B (Bottom View)
+RASBB Rev AB (Bottom View)
+
+![image](https://github.com/user-attachments/assets/e5c04499-7f3d-45e9-aef9-7aadf43681d6)
+RASRF Rev AB (Top View)
+
+![image](https://github.com/user-attachments/assets/0edbecd5-e06b-4ff3-950f-bfffeb38e53c)
+RASRF Rev AB (Bottom View)
+
 
