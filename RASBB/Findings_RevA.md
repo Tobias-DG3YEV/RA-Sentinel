@@ -19,4 +19,5 @@
 | 15	| open    | MCU LEDs are very bright  	        | increase pre-diode resistors to 1k |
 | 16	| open    | J16, J18 Non-Standard header spacing | increase spacing of J16, J18 to 0.1" / 2.54mm |
 | 17 	| open    | Add human readable labels to pin headers | like "MCU JTAG", "AP JTAG" (for FPGA01) and "DP JRAG" für FPGA02 and add thermal isolation to drill holes |
+| 18 	| open    | Rotate one JTAG pin header so the have the same orientation | |
 |   	| open    |             	                      | |
