@@ -17,4 +17,5 @@
 | 13	| open    | ICON does only have 32 lines        | Needs to be increased to 32+8 total of 40 lines |
 | 14 	| open    | ICON has no protection resistor     | add 100R resistor arrays on each side |
 | 15	| open    | MCU LEDs are very bright  	        | increase pre-diode resistors to 1k |
+| 16	| open    | J16, J18 Non-Standard header spacing | increase spacing of J16, J18 to 0.1" / 2.54mm |
 |   	| open    |             	                      | |
