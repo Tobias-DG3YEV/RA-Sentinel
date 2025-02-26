@@ -12,4 +12,6 @@
 | 10 	| open    | No Indication fur MCU if FPGA is on | Wire the two DONE lines from FPGAs to unused MCU pins |
 | 11 	| open    | No visible feedback from FPGAs | Add some indication LEDS to each FPGA. If 4 have space, go with 4 per FPGA |
 | 12	| open    | Rename DEBUG pins of FPGA           | Better call them ICON01 02 etc |
+| 13	| open    | ICON does only have 32 lines        | Needs to be increased to 32+8 total of 40 lines |
+| 14 	| open    | ICON has no protection resistor     | add 100R resistor arrays on each side |
 |   	| open    |             	                      | |
