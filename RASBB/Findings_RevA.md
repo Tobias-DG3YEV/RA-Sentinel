@@ -14,4 +14,5 @@
 | 12	| open    | Rename DEBUG pins of FPGA           | Better call them ICON01 02 etc |
 | 13	| open    | ICON does only have 32 lines        | Needs to be increased to 32+8 total of 40 lines |
 | 14 	| open    | ICON has no protection resistor     | add 100R resistor arrays on each side |
+| 15	| open    | MCU LEDs are very bright  	        | increase pre-diode resistors to 1k |
 |   	| open    |             	                      | |
