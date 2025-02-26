@@ -1,3 +1,5 @@
+## Errors, Issues and improvements found in RASBB PCB design revision A.
+
 | ID 	| State 	| Description 	                      | Solution          |
 |----	|-------	|-------------	                      |-------            |
 | 1  	| open  	| Footprint J5 and J6 are 1.0mm pitch | change to 1.27mm  |
