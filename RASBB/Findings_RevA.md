@@ -9,4 +9,6 @@
 | 7  	| open  	| Add LEDs to all DC DC Outputs       | |
 | 8  	| open  	| Add shut restistors at the in/output of each DC DC | |
 | 9  	| open  	| 1V DC DC EN voltage too low         | Remove R36 and R37, connect U3A Pin 21 to 5V LDO out Pin 22 |
-| 10 	|       	|             	                      | |
+| 10 	| open    | No Indication fur MCU if FPGA is on | Wire the two DONE lines from FPGAs to unused MCU pins |
+| 11 	| open    |             	                      | |
+|   	| open    |             	                      | |
