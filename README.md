@@ -4,20 +4,22 @@ FPGA-based Radio Receiver for securing Wifi an other access points against hacki
 RA-Sentinel is an open-source project focused on creating a cost-effective, small, and low-power wide band radio receiver device that employs an FPGA to automatically detect malicious attacks on Wifi access points, such as Man in the Middle and Denial of Service attacks. By monitoring any Wifi cell, the device enhances internet safety for everyday users.
 The device features low-cost receive-only chips that digitize 40 MHz of the Wifi radio spectrum at 2.4 GHz. An FPGA extracts relevant properties from demodulated and decoded packets in real-time without storage. These properties are then processed by a neural network, also implemented on the FPGA, to determine if the traffic is genuine or an attack.
 
-**Current state, 26. Feb. 2025**
-Two prototype boards of the RASBB and the RASRF2400 have arrived.
-Testing and bringing up is now ongoing. First results and findings
-can be found in the corresponding Findings_Rev*.md documents.
-
 ## System architecture
 
 ![Alt text](/RAsentinel-Blockdiagram.JPG "RA-Sentinel Block Diagram")
 
 ## The hardware
 
-The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Tranceiver Chip for 2.4GHz which is widelay used in older WIFi Acess Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. Later, a single PCB that contains all needed parts shall be designed. As I do not know the final requirements regarding FPGA and RAM required to complete the task at this point, I am unable to say what exactly this final hardware will contain. 
+The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Tranceiver Chip for 2.4GHz which is widelay used in older WIFi Acess Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. 
+
+![Alt text](/RFFE2400_QMTech.png "First RA-Sentinel prototype with QM-tech board")
+<sub>Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix7 board and a new designed RF front end connected via PMOD connector.</sub>
+
+Based on the experience collected with with first prototype, we designed a new SDR prototypr. Two boards of the RASBB and the RASRF2400 have arrived on 23th. Feb. 2025
+Testing and bringing up is now ongoing. First results and findings can be found in the corresponding Findings_Rev*.md documents.
 
 ![Alt text](/RASBB_RASRF2400WB.JPG "First RA-Sentinel prototype Revision A")
+<sub>Picture 2: RA-Sentinel prototype Revision A with RF front end board RASRF2400WB.</sub>
 
 ### Design files
 
