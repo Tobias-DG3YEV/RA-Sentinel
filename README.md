@@ -127,4 +127,4 @@ The received 802.11 frame info packet that is streamed upon each complete frame 
 
 Project Maintainer: Tobias Weber
 
-Last updated: 13. Oct. 2024
+Last updated: 27. Feb. 2025
