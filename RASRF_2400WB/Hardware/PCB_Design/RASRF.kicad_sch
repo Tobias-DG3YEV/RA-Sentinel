@@ -5165,6 +5165,12 @@
 		)
 	)
 	(junction
+		(at 130.81 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0117b88d-7573-41d1-8e07-b0d3f45c5266")
+	)
+	(junction
 		(at 127 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5175,6 +5181,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "091f6b56-0b0d-4576-bb91-73a82e591e21")
+	)
+	(junction
+		(at 119.38 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a4fdbf0-0286-49a2-92be-38f0e8d6c9be")
 	)
 	(junction
 		(at 74.93 118.11)
@@ -5205,6 +5217,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "48f08dd4-3c00-41d3-a7c2-d5cef6616338")
+	)
+	(junction
+		(at 107.95 24.13)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5263b92c-cadd-4f7c-95ec-2fde8423ff0c")
 	)
 	(junction
 		(at 195.58 151.13)
@@ -5547,6 +5565,16 @@
 			(type default)
 		)
 		(uuid "0b5b79ad-4b67-48cf-8ae7-bbaac4936d71")
+	)
+	(wire
+		(pts
+			(xy 119.38 24.13) (xy 130.81 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bd4aa96-f3a7-413f-baef-61434b5df2d1")
 	)
 	(wire
 		(pts
@@ -7300,6 +7328,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 24.13) (xy 142.24 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9861649-9af3-4bde-abf5-68a1df3ccc1b")
+	)
+	(wire
+		(pts
 			(xy 63.5 167.64) (xy 63.5 148.59)
 		)
 		(stroke
@@ -7497,6 +7535,16 @@
 			(type default)
 		)
 		(uuid "ef93eb51-7964-424d-afdd-856f41862fdc")
+	)
+	(wire
+		(pts
+			(xy 107.95 24.13) (xy 119.38 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efa5ea9d-a860-43d2-b91b-33cb2fad6d83")
 	)
 	(wire
 		(pts
@@ -9196,6 +9244,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 142.24 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "172125d7-295b-4f47-ba01-dc66dc1f8ac7")
+		(property "Reference" "TP25"
+			(at 144.78 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 144.78 22.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 147.32 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 147.32 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d4c8303-87d0-4f1e-afe3-156af9f2dc6c")
+		)
+		(instances
+			(project "RASRF"
+				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
+					(reference "TP25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "GND_3")
 		(lib_id "power:GND")
 		(at 162.56 134.62 0)
@@ -10832,6 +10948,74 @@
 			(project "RA-Sentinel_Front-End_EVM_RevB.kicad_pro"
 				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
 					(reference "TP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 119.38 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54ff42c0-075f-4e99-b358-577968269711")
+		(property "Reference" "TP23"
+			(at 121.92 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 121.92 22.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 124.46 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 124.46 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8710ae73-fb7b-40bd-ae4e-1bb029f61cb1")
+		)
+		(instances
+			(project "RASRF"
+				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
+					(reference "TP23")
 					(unit 1)
 				)
 			)
@@ -13416,6 +13600,73 @@
 		)
 	)
 	(symbol
+		(lib_name "GND_3")
+		(lib_id "power:GND")
+		(at 107.95 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9dbff22f-972b-4ae9-87d8-9f90c7257aa2")
+		(property "Reference" "#PWR068"
+			(at 107.95 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 107.95 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 107.95 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 107.95 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "06510629-c98d-4495-8c66-c58275a1dc4a")
+		)
+		(instances
+			(project "RASRF"
+				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
+					(reference "#PWR068")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 40.64 63.5 0)
 		(unit 1)
@@ -14014,6 +14265,74 @@
 			(project "RA-Sentinel_Front-End_EVM_RevB.kicad_pro"
 				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
 					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 107.95 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd2f60f5-074a-4275-8ec1-9fb7e8c615ce")
+		(property "Reference" "TP22"
+			(at 110.49 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 110.49 22.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 113.03 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 107.95 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e7a43c5-e29a-4748-8dbf-ae17ed37eb1c")
+		)
+		(instances
+			(project "RASRF"
+				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
+					(reference "TP22")
 					(unit 1)
 				)
 			)
@@ -14761,6 +15080,74 @@
 			(project "RA-Sentinel_Front-End_EVM_RevB.kicad_pro"
 				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
 					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 130.81 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d2d4f56d-3faf-46b3-b8d6-0f39b93e3cab")
+		(property "Reference" "TP24"
+			(at 133.35 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 133.35 22.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 135.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9831e237-4d8a-4e66-a8da-8b1e6e0a6ca4")
+		)
+		(instances
+			(project "RASRF"
+				(path "/bf3a6bac-a4ee-4035-8874-c3d0f1615324"
+					(reference "TP24")
 					(unit 1)
 				)
 			)
