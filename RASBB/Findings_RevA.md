@@ -22,5 +22,5 @@
 | 18 	| open    | Rotate one JTAG pin header so the have the same orientation | |
 | 19	| open    | Add one more button for FPGA internal Reset | Maybe use smaller ones and change thos of PROGRAM_B also to save space |
 | 20	| open    | Change U12 to RTL8211FS with PTP support | |
+| 21 	| open    | Cannot measure power requirements of DC sources | Add a dummy resistor (0 Ohms 0805 and a 1.27mm 2 pole header to measure volt. drop) to each output od each DC regulator |
 |   	| open    |             	                      | |
-
