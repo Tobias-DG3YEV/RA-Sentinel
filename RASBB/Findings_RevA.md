@@ -9,7 +9,7 @@
 | 5  	| closed 	| J12 needs a 180deg rotation         | |
 | 6  	| closed 	| DDR3 RAM VSSQ_5 connected to 1.35V  | |
 | 7  	| closed  | Add LEDs to all DC DC Outputs       | |
-| 8  	| open  	| Add shut restistors at the in/output of each DC DC | |
+| 8  	| closed  	| Add shut restistors at the in/output of 1V DC DC | |
 | 9  	| closed 	| 1V DC DC EN voltage too low         | Modify the value of resistor divider R36 and R37|
 | 10 	| closed  | No Indication fur MCU if FPGA is on | Wire the two DONE lines from FPGAs to unused MCU pins |
 | 11 	| closed  | No visible feedback from FPGAs | Add some indication LEDS to each FPGA |
@@ -22,5 +22,3 @@
 | 18 	| closed  | Rotate one JTAG pin header so the have the same orientation | |
 | 19	| open    | Add one more button for FPGA internal Reset | Maybe use smaller ones and change thos of PROGRAM_B also to save space |
 | 20	| open    | Change U12 to RTL8211FS with PTP support | |
-| 21 	| open    | Cannot measure power requirements of DC sources | Add a dummy resistor (0 Ohms 0805 and a 1.27mm 2 pole header to measure volt. drop) to each output od each DC regulator |
-|   	| open    |             	                      | |
