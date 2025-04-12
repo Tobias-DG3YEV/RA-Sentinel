@@ -1,23 +1,25 @@
 
-The Configuration Flash Memories of the two have been tested and programmed sucesfully.
+**These are the test results of the functional blocks of Rev. A that have been found by the board bring-up**
 
-The two FPGAs are accessible via JTAG. They have been programmed with a test software.
+* The Configuration Flash Memories of the two have been tested and programmed sucesfully.
 
-FPGA 1 is capable receiving the LVDS data of the ADC. The sample stream has bee routed 
+* The two FPGAs are accessible via JTAG. They have been programmed with a test software.
+
+* FPGA 1 is capable receiving the LVDS data of the ADC. The sample stream has bee routed 
 to the debug header and verified for validity. We found a termination issue on the 
 LVDS line which will be fixed in Rev. B.
 
-The output for the alarm device has been succesfully tested.
+* The output for the alarm device has been succesfully tested.
 
-All voltages from the DC/DC power converters have been tested. They are stable and supply
+* All voltages from the DC/DC power converters have been tested. They are stable and supply
 enough energy for the prupose of the biard.
 
-The DDR RAM chips could not be tested because of a mistake of one power supply pin. 
+* The DDR RAM chips could not be tested sucessfully because of a mistake of one power supply pin. 
 We expect them to be operational in the next board revision B.
 
-The STM32 microcontroller has been succesfully programmed. A test program has been
+* The STM32 microcontroller has been succesfully programmed. A test program has been
 run to proove correct operation.
 
-Th HDMI output port has been tested with a test pattern generator program. The 
+* The HDMI output port has been tested with a test pattern generator program. The 
 produced image is clean and stable.
 
