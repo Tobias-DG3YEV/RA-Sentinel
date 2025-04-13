@@ -22,5 +22,6 @@
 | 18 	| closed  | Rotate one JTAG pin header so the have the same orientation | |
 | 19	| open    | Add one more button for FPGA internal Reset | Maybe use smaller ones and change thos of PROGRAM_B also to save space |
 | 20	| open    | Change U12 to RTL8211FS with PTP support | |
-| 21	| open    | Add JTAG header target to silkscreen Text | like "STM32", "FPGA 1", "FPGA 2"|
-| 22	| open    | Correct second flash signals to FPGA2 | SO and SI connection should be swapped |
+| 21	| closed  | Add JTAG header target to silkscreen Text | like "STM32", "FPGA 1", "FPGA 2"|
+| 22	| closed  | Correct second flash signals to FPGA2 | SO and SI connection should be swapped |
+| 23	| closed  | Terminate all LVSD signals with 100Ohm |  |
