@@ -1,7 +1,7 @@
 
 **These are the test results of the functional blocks of Rev. A that have been found by the board bring-up**
 
-* The Configuration Flash Memories of the two have been tested and programmed sucesfully.
+* The configuration flash memories of both FPGASs have been tested. Flash 1 worked successfully, while an error was found in Flash 2 and will be corrected in Rev B.
 
 * The two FPGAs are accessible via JTAG. They have been programmed with a test software.
 
@@ -23,3 +23,4 @@ run to proove correct operation.
 * The HDMI output port has been tested with a test pattern generator program. The 
 produced image is clean and stable.
 
+* USB-C functionality has been tested and proved to run successfully."
