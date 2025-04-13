@@ -59,6 +59,10 @@
         }
       ],
       "drc_exclusions": [
+        "clearance|252110000|63108500|f7b945f0-6bd0-4fe1-b0a6-b45bb0e025fa|8902fa8e-ee03-4f46-9b6b-3eaf4c0a9361",
+        "clearance|252110000|75302500|ba7cfd73-692b-4248-95d3-375af3f3c5b5|7a92eee5-9c74-45e9-b623-f9553d9fc78b",
+        "clearance|252110000|82908000|28632f09-ba39-4369-b671-3b40e6aef000|59bbee5e-954b-4664-9403-3e8826cc5d50",
+        "clearance|252110000|95102000|c3f2773d-3d15-415b-aa50-98f98b268860|8ca94ac3-bcd0-443d-a50e-c186648ca755",
         "lib_footprint_mismatch|132400000|44800000|c1e05834-aabf-4175-aa46-f2abe71907a7|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|132987712|118874190|605db1c5-68f1-48db-8880-696cf9759da1|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|133728995|84543848|8155f79b-1486-4eb7-b579-46c471fa8d6c|00000000-0000-0000-0000-000000000000",
@@ -88,6 +92,9 @@
         "lib_footprint_mismatch|254200000|104100000|121f1f0e-c7bc-410c-b6bf-e36ca659f4ee|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|263545000|51867500|36b932d0-64b6-40db-970f-6e3ae8a60ec8|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|264350000|125600000|f22a8a26-4788-440c-994f-d6b769337532|00000000-0000-0000-0000-000000000000",
+        "malformed_courtyard|165600000|83700000|6a63bfee-2102-445f-8990-b50aa5884aaa|00000000-0000-0000-0000-000000000000",
+        "shorting_items|262580000|113020000|ad24ac66-8f67-461c-8560-1220d4a97e19|59ab6e28-2e14-49f1-88a1-4f5e83605ba8",
+        "shorting_items|262580000|117820000|0e47d925-e300-4fad-84cd-63cf8c44df6c|f0b0ac39-b33f-43ce-a59e-50ff34370a90",
         "silk_edge_clearance|102812500|109700000|43043c73-e658-48c1-b9b5-7ac409535d87|a9fdf975-1baa-4056-bdd1-e7a7cafca399",
         "silk_edge_clearance|270010000|110060000|4462b375-3968-45b6-949c-ca6041b36152|99bcff78-baf7-46b7-86f6-eebc400dc03a",
         "silk_edge_clearance|270010000|111250000|4462b375-3968-45b6-949c-ca6041b36152|72228da9-d106-408d-aeee-bce9fa3546eb",
@@ -97,7 +104,9 @@
         "silk_edge_clearance|270010000|80610000|4462b375-3968-45b6-949c-ca6041b36152|991df209-26e6-4a0b-9f31-91e620957b3c",
         "silk_edge_clearance|270010000|97400000|4462b375-3968-45b6-949c-ca6041b36152|de912791-1237-4e1d-993d-e7031f17d328",
         "silk_edge_clearance|270010000|99360000|4462b375-3968-45b6-949c-ca6041b36152|009a30f6-cf94-4a88-ae73-f1263bba10a2",
-        "silk_overlap|114225000|44600000|0c38e6bc-f99c-4124-8318-d833485d9853|57c11591-1dcb-4a74-9da1-d2fef63fd91e"
+        "silk_overlap|114225000|44600000|0c38e6bc-f99c-4124-8318-d833485d9853|57c11591-1dcb-4a74-9da1-d2fef63fd91e",
+        "solder_mask_bridge|262580000|113020000|ad24ac66-8f67-461c-8560-1220d4a97e19|59ab6e28-2e14-49f1-88a1-4f5e83605ba8",
+        "solder_mask_bridge|262580000|117820000|0e47d925-e300-4fad-84cd-63cf8c44df6c|f0b0ac39-b33f-43ce-a59e-50ff34370a90"
       ],
       "meta": {
         "version": 2
@@ -614,7 +623,7 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "DP100_NCP_L1-8",
-        "pcb_color": "rgb(0, 0, 194)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1862,
         "via_diameter": 0.46,
@@ -687,8 +696,8 @@
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "DP100_CP_L1-8",
-        "pattern": ""
+        "netclass": "DP100_NCP_L1-8",
+        "pattern": "/PCIE/*"
       },
       {
         "netclass": "DP100_CP_L1-8",
@@ -733,7 +742,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Gerber-Drill/",
+      "plot": "C:/Users/minad/HW-Designs/RASBB/PCB/RASBB/RASBB-RevB/RASBB-B/RASBB-B_Gerber/",
       "pos_files": "C:/Users/minad/HW-Designs/RASBB/PCB/RASBB/RASBB-RevB/",
       "specctra_dsn": "",
       "step": "",
@@ -884,7 +893,7 @@
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "LCSC Part #"
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {
