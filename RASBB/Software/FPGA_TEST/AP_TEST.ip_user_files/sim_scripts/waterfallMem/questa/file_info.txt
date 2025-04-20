@@ -1,6 +1,0 @@
-xpm_cdc.sv,systemverilog,xpm,C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
-xpm_memory.sv,systemverilog,xpm,C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,
-xpm_VCOMP.vhd,vhdl,xpm,C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_VCOMP.vhd,
-blk_mem_gen_v8_4.v,verilog,blk_mem_gen_v8_4_8,../../../ipstatic/simulation/blk_mem_gen_v8_4.v,
-waterfallMem.v,verilog,xil_defaultlib,../../../ip/waterfallMem/sim/waterfallMem.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

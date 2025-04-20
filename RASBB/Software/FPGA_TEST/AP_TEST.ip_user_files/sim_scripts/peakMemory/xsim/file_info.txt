@@ -1,2 +1,0 @@
-peakMemory.v,verilog,xil_defaultlib,../../../ip/peakMemory/sim/peakMemory.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v
