@@ -4,14 +4,18 @@
 // Engineer: 
 // 
 // Create Date: 02/26/2025 10:31:00 AM
-// Design Name: BlinkingLight
+// Design Name: DP_FPGA basic test design.
 // Module Name: DP_FPGA_top
 // Project Name: RASBB
 // Target Devices: xc7a100Tcsg324i 
-// Tool Versions: 
-// Description: 
+// Tool Versions: 1
+// Description: Provides a basic stgart project and clock test for the digital processing FPGA
 // 
-// Dependencies: 
+// Dependencies: None
+//
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+// Licence: GNU GENERAL PUBLIC LICENSE v2.0. See RA-Sentinel/LICENSE for details.
 // 
 // Revision:
 // Revision 0.01 - File Created

@@ -1,3 +1,8 @@
+
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+// Licence: GNU GENERAL PUBLIC LICENSE v2.0. See RA-Sentinel/LICENSE for details.
+
 module glbl ();
 
     parameter ROC_WIDTH = 100000;

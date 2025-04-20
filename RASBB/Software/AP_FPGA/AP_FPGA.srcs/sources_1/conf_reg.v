@@ -12,6 +12,10 @@
 // 
 // Dependencies: none
 // 
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+// Licence: GNU GENERAL PUBLIC LICENSE.
+//
 // Revision 1.0
 // Additional Comments: Part of https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 

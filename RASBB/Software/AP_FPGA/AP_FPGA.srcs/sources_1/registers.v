@@ -17,6 +17,10 @@
 // 
 // Dependencies: SPI_Peripheral
 // 
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+// Licence: GNU GENERAL PUBLIC LICENSE
+//
 // Revision 1.00 - File Created
 // Project: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 

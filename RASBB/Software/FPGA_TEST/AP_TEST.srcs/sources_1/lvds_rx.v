@@ -15,6 +15,10 @@
 // Revision 1.01
 // Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+// Licence: GNU GENERAL PUBLIC LICENSE v2.0. See RA-Sentinel/LICENSE for details.
+//
 //////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2024 Tobias Weber
 // License: GNU GPL v3
