@@ -1,0 +1,7 @@
+verilog xil_defaultlib  \
+"../../../ip/blk_PeakMem/sim/blk_PeakMem.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
