@@ -25,5 +25,4 @@
 | 21	| closed  | Add JTAG header target to silkscreen Text | like "STM32", "FPGA 1", "FPGA 2"|
 | 22	| closed  | Correct second flash signals to FPGA2 | SO and SI connection should be swapped |
 | 23	| closed  | Terminate all LVSD signals with 100Ohm |  |
-| 24	| open    | Boostrap pin of ethernet chips not properly defined | Add a 10k resistor between Pin 2 and GND. See LAN8742Ai page 38. |
-| 25	| open    | Pin out of ethernet jacks are wrong. | Pins 17-20 are mixed with 13-16 |
+| 24	| closed    | Pin out of ethernet jacks are wrong. | Pins 17-20 are mixed with 13-16 |
