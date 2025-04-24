@@ -24,3 +24,6 @@ run to proove correct operation.
 produced image is clean and stable.
 
 * USB-C functionality has been tested and proved to run successfully."
+
+* Ethernet on uController STM32 works with 100 Mbps full duplex
+  

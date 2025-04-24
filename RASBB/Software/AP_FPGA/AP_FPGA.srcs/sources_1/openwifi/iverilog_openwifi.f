@@ -1,7 +1,6 @@
 bits_to_bytes.v
 calc_mean.v
 common_defs.v
-common_params.v
 complex_mult.v
 complex_to_mag.v
 complex_to_mag_sq.v

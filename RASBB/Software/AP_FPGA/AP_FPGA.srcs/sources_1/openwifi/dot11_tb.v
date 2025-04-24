@@ -12,6 +12,8 @@ module dot11_tb;
 `define THRESHOLD_SCALE 0
 `endif
 
+`define SR_SKIP_SAMPLE 1
+
 reg clock;
 reg reset;
 reg enable;
@@ -110,7 +112,7 @@ integer file_i, file_q, file_rssi_half_db, iq_sample_file;
 
 assign signal_watchdog_enable = (state <= S_DECODE_SIGNAL);
 
-initial begin
+initial begin // open sample file for simulation
     // $dumpfile("dot11.vcd");
     // $dumpvars;
     sample_file_name_fd = $fopen("./sample_file_name.txt", "w");
@@ -132,14 +134,14 @@ initial begin
 
     # 20
     // do not skip sample
-    set_addr = SR_SKIP_SAMPLE;
+    set_addr = 0;
     set_data = 0;
 
     # 20 set_stb = 0;
 end
 
 integer file_open_trigger = 0;
-always @(posedge clock) begin
+always @(posedge clock) begin // sample feeding the simulation
     file_open_trigger = file_open_trigger + 1;
     if (file_open_trigger==1) begin
         iq_sample_file = $fopen(`SAMPLE_FILE, "r");
@@ -202,11 +204,10 @@ always @(posedge clock) begin
         status_code_fd = $fopen("./status_code.txt","w");
 
         phy_len_fd = $fopen("./phy_len.txt", "w");
-
     end
 end
 
-    always begin
+always begin // simulation clock speed
 `ifdef CLK_SPEED_100M
         #5 clock = !clock;
 `elsif CLK_SPEED_200M
@@ -216,7 +217,7 @@ end
 `elsif CLK_SPEED_400M
         #1.25 clock = !clock;
 `endif
-    end
+end
 
 always @(posedge clock) begin
     if (reset) begin
@@ -224,16 +225,9 @@ always @(posedge clock) begin
         clk_count <= 0;
         sample_in_strobe <= 0;
         iq_count <= 0;
-    end else if (enable) begin
-        `ifdef CLK_SPEED_100M
+    end
+    else if (enable) begin
     	if (clk_count == 4) begin  // for 100M; 100/20 = 5
-    	`elsif CLK_SPEED_200M
-        if (clk_count == 9) begin // for 200M; 200/20 = 10
-        `elsif CLK_SPEED_240M
-        if (clk_count == 11) begin // for 200M; 240/20 = 12
-        `elsif CLK_SPEED_400M
-        if (clk_count == 19) begin // for 200M; 400/20 = 20
-        `endif
 //            sample_in_strobe <= 1;
             //$fscanf(iq_sample_file, "%d %d %d", file_i, file_q, file_rssi_half_db);
             iq_count_tmp = $fscanf(iq_sample_file, "%d %d", file_i, file_q);
@@ -246,7 +240,8 @@ always @(posedge clock) begin
             rssi_half_db <= 0;
             iq_count <= iq_count + 1;
             clk_count <= 0;
-        end else begin
+        end
+        else begin
 //            sample_in_strobe <= 0;
             clk_count <= clk_count + 1;
         end
@@ -526,7 +521,6 @@ always @(posedge clock) begin
             $fwrite(equalizer_out_fd, "%d %d %d\n", iq_count, $signed(dot11_inst.equalizer_inst.sample_out[31:16]), $signed(dot11_inst.equalizer_inst.sample_out[15:0]));
             $fflush(equalizer_out_fd);
         end
-
     end
 end
 

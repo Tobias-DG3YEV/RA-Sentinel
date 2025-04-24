@@ -1,3 +1,36 @@
+//////////////////////////////////////////////////////////////////////////////////^M
+// ^M
+// Project Name: RA-Sentinel^M
+// ^M
+// Module Name: glbl^M
+//^M
+// Engineer: Tobias Weber^M
+// Target Devices: Artix 7, XC7A100T^M
+// Tool Versions: Vivado 2024.1^M
+// Description:
+// ^M
+// Dependencies:
+// ^M
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+//
+// Revision 1.00 - File Created^M
+//
+// Project: https://github.com/Tobias-DG3YEV/RA-Sentinel^M
+//////////////////////////////////////////////////////////////////////////////////^M
+// Copyright (C) 2024 Tobias Weber^M
+// License: GNU GPL v3^M
+//^M
+// This project is distributed in the hope that it will be useful,^M
+// but WITHOUT ANY WARRANTY; without even the implied warranty of^M
+// MERCHANTIBILITY or FITNESS FOR A PARTICULAR PURPOSE.^M
+// See the GNU General Public License for more details.^M
+// ^M
+// You should have received a copy of the GNU Lesser General Public License^M
+// along with this program. If not, see^M
+// <http://www.gnu.org/licenses/> for a copy.^M
+//////////////////////////////////////////////////////////////////////////////////^M
+
 module glbl ();
 
     parameter ROC_WIDTH = 100000;

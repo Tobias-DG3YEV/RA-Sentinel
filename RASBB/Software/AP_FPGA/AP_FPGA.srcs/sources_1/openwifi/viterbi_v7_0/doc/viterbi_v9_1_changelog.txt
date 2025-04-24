@@ -1,3 +1,16 @@
+2024.2:
+ * Version 9.1 (Rev. 18)
+ * General: Reduced number of internal subcores used, no functional change
+ * Revision change in one or more subcores
+
+2024.1.2:
+ * Version 9.1 (Rev. 17)
+ * No changes
+
+2024.1.1:
+ * Version 9.1 (Rev. 17)
+ * No changes
+
 2024.1:
  * Version 9.1 (Rev. 17)
  * General: IP packaging adjustments to address warnings from IP Packager integrity check

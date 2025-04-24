@@ -3,7 +3,7 @@
   "ip_inst": {
     "xci_name": "clk_wiz_0",
     "component_reference": "xilinx.com:ip:clk_wiz:6.0",
-    "ip_revision": "14",
+    "ip_revision": "15",
     "gen_directory": "../../../../LVDS_Test.gen/sources_1/ip/clk_wiz_0_1",
     "parameters": {
       "component_parameters": {
@@ -575,12 +575,12 @@
         "C_CLKOUT6_ACTUAL_FREQ": [ { "value": "100.000", "resolve_type": "generated", "usage": "all" } ],
         "C_M_MAX": [ { "value": "64.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
         "C_M_MIN": [ { "value": "2.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
-        "C_D_MAX": [ { "value": "80.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
+        "C_D_MAX": [ { "value": "93.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
         "C_D_MIN": [ { "value": "1.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
         "C_O_MAX": [ { "value": "128.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
         "C_O_MIN": [ { "value": "1.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
         "C_VCO_MIN": [ { "value": "600.000", "resolve_type": "generated", "format": "float", "usage": "all" } ],
-        "C_VCO_MAX": [ { "value": "1200.000", "resolve_type": "generated", "format": "float", "usage": "all" } ]
+        "C_VCO_MAX": [ { "value": "1440.000", "resolve_type": "generated", "format": "float", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "artix7" } ],
@@ -588,22 +588,22 @@
         "BOARD_CONNECTIONS": [ { "value": "" } ],
         "DEVICE": [ { "value": "xc7a100t" } ],
         "NEXTGEN_VERSAL": [ { "value": "0" } ],
-        "PACKAGE": [ { "value": "fgg676" } ],
+        "PACKAGE": [ { "value": "csg324" } ],
         "PREFHDL": [ { "value": "VERILOG" } ],
         "SILICON_REVISION": [ { "value": "" } ],
         "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
-        "SPEEDGRADE": [ { "value": "-1" } ],
+        "SPEEDGRADE": [ { "value": "-2" } ],
         "STATIC_POWER": [ { "value": "" } ],
         "TEMPERATURE_GRADE": [ { "value": "" } ]
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Flow" } ],
-        "IPREVISION": [ { "value": "14" } ],
+        "IPREVISION": [ { "value": "15" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../LVDS_Test.gen/sources_1/ip/clk_wiz_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "." } ],
-        "SWVERSION": [ { "value": "2024.1" } ],
+        "SWVERSION": [ { "value": "2024.2" } ],
         "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
       }
     },

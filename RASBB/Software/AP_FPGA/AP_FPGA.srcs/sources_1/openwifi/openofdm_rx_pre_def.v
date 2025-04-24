@@ -1,5 +1,5 @@
-`define CLK_SPEED_120M
-//`define CLK_SPEED_100M
+//`define CLK_SPEED_120M
+`define CLK_SPEED_100M
 `define BETTER_SENSITIVITY
 `ifdef SIMULATION
 //`define USE_PARALLEL_SAMPLES // simulate with parallel IQ data, do nto go through the  the LVDS block with serial data

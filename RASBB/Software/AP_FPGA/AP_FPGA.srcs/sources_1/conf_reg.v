@@ -12,10 +12,14 @@
 // 
 // Dependencies: none
 // 
+// Funded by NGI0 Entrust nlnet foundation
+// https://nlnet.nl/project/RA-Sentinel/
+//
 // Revision 1.0
 // Additional Comments: Part of https://github.com/Tobias-DG3YEV/RA-Sentinel
 // 
-//////////////////////////////////////////////////////////////////////////////////
+// Project page: https://github.com/Tobias-DG3YEV/RA-Sentinel^M
+///////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2024 Tobias Weber
 // License: GNU GPL v3
 //

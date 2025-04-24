@@ -1,0 +1,7 @@
+verilog xil_defaultlib  \
+"../../../ip/waterfallMem/sim/waterfallMem.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:ip:xlslice:1.0
 // IP Revision: 4
 
-(* X_CORE_INFO = "xlslice_v1_0_4_xlslice,Vivado 2024.1" *)
+(* X_CORE_INFO = "xlslice_v1_0_4_xlslice,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "div_gen_xlslice_0_0,xlslice_v1_0_4_xlslice,{}" *)
-(* CORE_GENERATION_INFO = "div_gen_xlslice_0_0,xlslice_v1_0_4_xlslice,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIN_WIDTH=56,DIN_FROM=55,DIN_TO=24}" *)
+(* CORE_GENERATION_INFO = "div_gen_xlslice_0_0,xlslice_v1_0_4_xlslice,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=xlslice,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,DIN_WIDTH=56,DIN_FROM=55,DIN_TO=24}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module div_gen_xlslice_0_0 (
   Din,
