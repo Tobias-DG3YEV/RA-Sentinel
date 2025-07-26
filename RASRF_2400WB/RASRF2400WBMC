@@ -2,7 +2,7 @@
 
 | ID| State | Description 	                 
 |---|-------|----------------------------------------------------------------
-| 1 | open  | Extend the design to four input channels. 4 MAX downconverters, 2 or 4 ADCs (4x ADC3221 or 2x ADC3421
+| 1 | open  | Extend the design to four phase synchronous input channels. 4 MAX downconverters, 2 or 4 ADCs (4x ADC3221 or 2x ADC3421
 | 2 | open  | Use 7L oscillator with clock distributor. TXVCO has 800mVpp output
 | 3 | open  | Route tune voltage of TXVCO to RASBB connector os some other connector like SMB jack. We need some DAC connected to the ethernet-connected FPGA that creates the PLL feedback voltage for the TXVCO. But this will be part of the RASBB.
 | 4 | open  | Check Power reqirements of the 4ch version.
