@@ -27,3 +27,4 @@
 | 23	| closed  | Terminate all LVSD signals with 100Ohm |  |
 | 24	| closed  | Pin out of ethernet jacks are wrong. | Pins 17-20 are mixed with 13-16 |
 | 25	| open    | DDR3 RAM A14 not connected | wire to free pin on same bank as A13 |
+| 26  | open    | Add LO Phase Sync. over Ethernet. One pair of the 100MBit connection to the STM32 receives a 10MHz Signal into a balanced line driver and the return the signal to the other free wire pair.
