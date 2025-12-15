@@ -36,9 +36,29 @@ Testing and bringing up is now ongoing. First results and findings can be found 
 Link to the FPGA dev. board
 [https://de.aliexpress.com/item/1005006473783593.html]
 
-## The software
+## Software / Firmware
 
-The vast majority of the code will be written in Verilog and run on the FPGA. There is als a first supporting, or as I call it "house keeping unit" microcontroller (STM32C031) which programms and controlling the frontend chips. The may be another additional  and maybe the interconnctivity with other systems (alarm forwarding). This firmware is written in C. 
+The vast majority of the code will be written in Verilog and run on the FPGA. There is also now a firmware for the RASBB_ECU (Embedded Control Unit) and a"house keeping unit" microcontroller (STM32C031) which programms and controlling the frontend chips. The RASBB_ECI provides the interconnctivity with other systems (alarm forwarding) and the web configuration interface. This firmware is written in C. 
+
+The firmware for the RASBB_ECU can be found <a href="https://github.com/Tobias-DG3YEV/RA-Sentinel/tree/main/RASBB/Software/RASBB_ECU">here</a>. 
+
+The RASBB_ECU Firmware for the onboard STM32 provides a versatile configuration interface with GUI that allows to show statistics and maybe UDP for analytic packets transfer and secure TCP/IP configuration over Ethernet.
+To access this, enter the IP of the RAS into your local browser like http://192.168.0.2:4842/. The IP can be easily found via network environment because the RAS supports UPNP over ethernet.
+
+![WebInterface screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/CFGIF_SuspList.png?raw=true)
+
+A suspected WiFi node can be
+
+* Tracked: Monitored by relative signal strength and later with additional direction. These values are forwarded to an IDS host that can combine this information with additional data retrieved from different RAS or other network monitoring systems.
+* Tagged: Marked for internal memory, moving up in watch list.
+* Fingerprinted: Raw IQ data of the frame start is forwarded to a fingerprinting algorythm.
+
+![Suspect Edit Screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/SuspEdit.png?raw=true)
+
+**UPNP support**
+
+To ease the installation process, the RAS can be connected to any ethernet based LAN that provides an IPv4 DHCP server. Through the UPNP support, the RAS is easy to find in any network browser of Windows, Linux and Mac etc. 
+![UPNP Screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/UPNP.png?raw=true)
 
 ### Sub Projects / Project steps
 
