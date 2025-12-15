@@ -8,6 +8,11 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 This project was funded through the NGI0 Entrust Fund, a fund established by NLnet with financial support from the European Commission's Next Generation Internet programme, under the aegis of DG Communications Networks, Content and Technology under grant agreement No 101069594.
 Navigate projects
 
+## Latest Updates [15. Dec. 2025]
+
+Added new firmware für the STM32 microcontroller ECU (Embedded Control Unit) on the Backend Board in "/RASBB/Software/RASBB_ECU".
+It adds support for UPNP device discovery over Ethernet and provides a system configuration web page.
+
 ## System architecture
 
 ![Alt text](/RAsentinel-Blockdiagram.JPG "RA-Sentinel Block Diagram")
