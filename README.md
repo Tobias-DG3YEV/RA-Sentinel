@@ -6,7 +6,6 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 
 <a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
 This project was funded through the NGI0 Entrust Fund, a fund established by NLnet with financial support from the European Commission's Next Generation Internet programme, under the aegis of DG Communications Networks, Content and Technology under grant agreement No 101069594.
-Navigate projects
 
 ## Latest Updates [15. Dec. 2025]
 
@@ -15,20 +14,19 @@ It adds support for UPNP device discovery over Ethernet and provides a system co
 
 ## System architecture
 
-![Alt text](/RAsentinel-Blockdiagram.JPG "RA-Sentinel Block Diagram")
+![RA-Sentinel Block Diagram](/Images/RAsentinel-Blockdiagram.JPG)
 
 ## The hardware
 
 The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Tranceiver Chip for 2.4GHz which is widelay used in older WIFi Acess Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. 
 
-![Alt text](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/RFFE2400_QMTech.png
- "First RA-Sentinel prototype with QM-tech board")
+![Picture od the first RA-Sentinel prototype with QM-tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
 <sub>Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix7 board and a new designed RF front end connected via PMOD connector.</sub>
 
 Based on the experience collected with with first prototype, we designed a new SDR prototypr. Two boards of the RASBB and the RASRF2400 have arrived on 23th. Feb. 2025
 Testing and bringing up is now ongoing. First results and findings can be found in the corresponding Findings_Rev*.md documents.
 
-![Alt text](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/RASBB_RASRF2400WB.JPG "First RA-Sentinel prototype Revision A")
+![First RA-Sentinel prototype Revision A](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASBB_RASRF2400WB.JPG)
 <sub>Picture 2: RA-Sentinel prototype Revision A with RF front end board RASRF2400WB.</sub>
 
 ### Design files
@@ -53,11 +51,11 @@ It shall proove that a 40MHz wide radio spectrum can be received and transported
 
 The following diagram shows the system architecture of the RASM2400.
 
-![Alt text](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main//RASM2400_Blockdiagram.png "RASM2400 Block Diagram")
+![RASM2400 Block Diagram](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_Blockdiagram.png)
 
 The output of the HDMI port of the QMTECH Wukong board.
 
-![Alt text](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main//RASM2400_screenshot.png "Screenshot of the RASM2400 HDMI output")
+![Screenshot of the RASM2400 HDMI output](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_screenshot.png)
 
 Watch a short demonstration on Youtube by clicking on the thumbnail below.
 
