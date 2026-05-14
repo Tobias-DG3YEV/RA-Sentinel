@@ -69,7 +69,7 @@ This board connects to the existing RASBB via the PCIe connector and requires no
 
 > This sub-project was funded by NLnet: https://nlnet.nl/project/RA-Sentinel-directional/
 
-<a href="https://nlnet.nl/commonsfund/"><img src="https://nlnet.nl/image/logos/NGI0_tag.svg" alt="NGI0 Commons Fund" width="20%"></a>
+<a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
 
 See [RASRF2400WBMC/README.md](RASRF2400WBMC/README.md) for full details.
 
