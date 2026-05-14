@@ -78,41 +78,6 @@ A suspected WiFi node can be
 To ease the installation process, the RAS can be connected to any ethernet based LAN that provides an IPv4 DHCP server. Through the UPNP support, the RAS is easy to find in any network browser of Windows, Linux and Mac etc. 
 ![UPNP Screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/UPNP.png?raw=true)
 
----
-
-## Sub Projects 
-
-The first step on this project was to have a reliable hardware basis. Initially I planned to have at least 40 Megasamples and with this 20 MHz bandwidth which is sufficient to capture the headers and the most common bandwitdhs used on 2.4GHz WiFi (802.11a,b,g) communications channel. But because 802.11n also defines the possibility to use 40MHz bandwith, I wanted the possibility to cover the complete possible channel bandwidth. This has been achieved with the first prototype hardware and prooved with the sub-project RASM2400, Radio Access Spectrum Monitor for 2400MHz. Subsequent sub-projects build on that base - most recently **RASRF2400WBMC**, which adds directional reception for Angle-of-Arrival estimation.
-
-### RASRF2400WBMC — Directional RF front end (AoA)
-
-The **RASRF2400WBMC** is a 4-channel, phase-coherent 2.4 GHz RF front-end board that extends RA-Sentinel with **Angle of Arrival (AoA)** estimation. By receiving the same signal across four spatially separated antennas, the system can estimate the physical direction of a detected attack — enabling threat localization for jamming, spoofing, and unauthorized events.
-
-The board connects to the existing RASBB via the PCIe connector and requires no hardware changes to the base-band board.
-
-> This sub-project was funded by NLnet: <https://nlnet.nl/project/RA-Sentinel-directional/>
-
-<a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
-
-See **[RASRF2400WBMC/README.md](./RASRF2400WBMC/README.md)** for full details.
-
-### RASM2400 — 2.4 GHz spectrum monitor
-
-RASM2400 stands for Radio Access Spectrum Monitor operationg on 2400MHZ. It offers a visual spectrum analyzer design that runs on the evaluation hardware set of RA-Sentinel the Artix7 XC7A100T Wukong board and the RFFE2400 front end board.
-It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be useable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
-
-The following diagram shows the system architecture of the RASM2400.
-
-![RASM2400 Block Diagram](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_Blockdiagram.png)
-
-The output of the HDMI port of the QMTECH Wukong board.
-
-![Screenshot of the RASM2400 HDMI output](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_screenshot.png)
-
-Watch a short demonstration on Youtube by clicking on the thumbnail below.
-
-[![Watch the video](https://img.youtube.com/vi/tnwXk62DtHw/0.jpg)](https://youtu.be/tnwXk62DtHw)
-
 ### Software
 
 In this repository you'll find also all software paerts needed to get the project up and running.
@@ -175,6 +140,43 @@ Further I needed an interface that is capable transferring header and  metadata 
 So the next step was to design a logic circuit into the FPGA that can mimic the signaling of a digital camera module with DCMI interface. This has been implemented on both sides, the FPGA in Verilog Code and on the STM32H7 in C language. 
 
 The received 802.11 frame info packet that is streamed upon each complete frame reception has the following format:
+
+---
+
+## Sub Projects 
+
+The first step on this project was to have a reliable hardware basis. Initially I planned to have at least 40 Megasamples and with this 20 MHz bandwidth which is sufficient to capture the headers and the most common bandwitdhs used on 2.4GHz WiFi (802.11a,b,g) communications channel. But because 802.11n also defines the possibility to use 40MHz bandwith, I wanted the possibility to cover the complete possible channel bandwidth. This has been achieved with the first prototype hardware and prooved with the sub-project RASM2400, Radio Access Spectrum Monitor for 2400MHz. Subsequent sub-projects build on that base - most recently **RASRF2400WBMC**, which adds directional reception for Angle-of-Arrival estimation.
+
+### RASRF2400WBMC — Directional RF front end (AoA)
+
+The **RASRF2400WBMC** is a 4-channel, phase-coherent 2.4 GHz RF front-end board that extends RA-Sentinel with **Angle of Arrival (AoA)** estimation. By receiving the same signal across four spatially separated antennas, the system can estimate the physical direction of a detected attack — enabling threat localization for jamming, spoofing, and unauthorized events.
+
+The board connects to the existing RASBB via the PCIe connector and requires no hardware changes to the base-band board.
+
+> This sub-project was funded by NLnet: <https://nlnet.nl/project/RA-Sentinel-directional/>
+
+<a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
+
+See **[RASRF2400WBMC/README.md](./RASRF2400WBMC/README.md)** for full details.
+
+### RASM2400 — 2.4 GHz spectrum monitor
+
+RASM2400 stands for Radio Access Spectrum Monitor operationg on 2400MHZ. It offers a visual spectrum analyzer design that runs on the evaluation hardware set of RA-Sentinel the Artix7 XC7A100T Wukong board and the RFFE2400 front end board.
+It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be useable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
+
+The following diagram shows the system architecture of the RASM2400.
+
+![RASM2400 Block Diagram](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_Blockdiagram.png)
+
+The output of the HDMI port of the QMTECH Wukong board.
+
+![Screenshot of the RASM2400 HDMI output](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_screenshot.png)
+
+Watch a short demonstration on Youtube by clicking on the thumbnail below.
+
+[![Watch the video](https://img.youtube.com/vi/tnwXk62DtHw/0.jpg)](https://youtu.be/tnwXk62DtHw)
+
+---
 
 **Resources:**
 
