@@ -20,9 +20,17 @@ Together, the **RASRF** and **RASBB** boards create a scalable, high-performance
 
 Below is the block diagram illustrating the architecture of both boards and their interconnections:
 
-![image](https://github.com/user-attachments/assets/2e514202-3a31-4a70-a0d0-1be484fe567c)
+<p align="center">
+  <img src="https://github.com/MinDans/RA-Sentinel/blob/main/RASBB/RASBB-BlockDiagram.png?raw=true" alt="RASBB block diagram">
+  <br>
+  <em>RASBB block diagram</em>
+</p>
 
-![image](https://github.com/user-attachments/assets/06899e89-e307-487e-bd01-28fa4f841cfd)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASBB/RASRF-BlockDiagram.png" alt="RASRF block diagram">
+  <br>
+  <em>RASRF block diagram</em>
+</p>
 
 ## The hardware
 
@@ -51,14 +59,17 @@ Below is a list of its features:
 
 *The RA-Sentinel Baseband Board design will fit into a 100mm extrusion enclosure.* 
 
-![image](https://github.com/user-attachments/assets/bf05c6e6-3777-4b70-b960-ee0d89003453)
-*RASBB Rev A (Top View)*
-
-![image](https://github.com/user-attachments/assets/59683930-f7f0-46f2-9ada-83859a658bdf)
-*RASBB Rev AB (Bottom View)*
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASBB/RASBB_RevA_top.jpg" alt="RASBB Rev A — top view" width="420">
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASBB/RASBB_RevA_back.JPG" alt="RASBB Rev A — bottom view" width="420">
+  <br>
+  <em>RASBB Rev A - top &nbsp;&nbsp;|&nbsp;&nbsp; bottom</em>
+</p>
 
 
 The PCB of the RASRF is constructed from an FR4 Four-layer PCB, which contains  processing unit, RF-transmitter, and an Analoge/to/Digital converter.
+
 ![image](https://github.com/user-attachments/assets/e5c04499-7f3d-45e9-aef9-7aadf43681d6)
 *RASRF Rev AB (Top View)*
 
