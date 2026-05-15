@@ -7,34 +7,52 @@ The device features low-cost receive-only chips that digitize 40 MHz of the Wifi
 <a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
 This project was funded through the NGI0 Entrust Fund, a fund established by NLnet with financial support from the European Commission's Next Generation Internet programme, under the aegis of DG Communications Networks, Content and Technology under grant agreement No 101069594.
 
-## Latest Updates [15. Dec. 2025]
+---
+
+## Latest Updates [14. May. 2026]
 
 Added new firmware für the STM32 microcontroller ECU (Embedded Control Unit) on the Backend Board in "/RASBB/Software/RASBB_ECU".
 It adds support for UPNP device discovery over Ethernet and provides a system configuration web page.
+| Date | Change | Link |
+|---|---|---|
+| 2026-04-15 | RASRF2400WBMC - directional 4-channel RF front end for Angle-of-Arrival estimation | [/RASRF2400WBMC](./RASRF2400WBMC/README.md) |
+| 2025-12-15 | New RASBB_ECU firmware - adds UPNP discovery over Ethernet and a system configuration web page | [/RASBB/Software/RASBB_ECU](./RASBB/Software/RASBB_ECU) |
+| 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [/RASBB](./RASBB/README.md) |
+
+---
 
 ## System architecture
 
 ![RA-Sentinel Block Diagram](/Images/RAsentinel-Blockdiagram.JPG)
 
-## The hardware
+---
+## Hardware
 
 The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Tranceiver Chip for 2.4GHz which is widelay used in older WIFi Acess Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. 
 
-![Picture od the first RA-Sentinel prototype with QM-tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
-<sub>Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix7 board and a new designed RF front end connected via PMOD connector.</sub>
-
 Based on the experience collected with with first prototype, we designed a new SDR prototypr. Two boards of the RASBB and the RASRF2400 have arrived on 23th. Feb. 2025
-Testing and bringing up is now ongoing. First results and findings can be found in the corresponding Findings_Rev*.md documents.
+Testing and bringing up is now ongoing. First results and findings can be found in the corresponding [Findings_RevA.md](./RASBB/Findings_RevA.md) documents.
 
-![First RA-Sentinel prototype Revision A](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASBB_RASRF2400WB.JPG)
-<sub>Picture 2: RA-Sentinel prototype Revision A with RF front end board RASRF2400WB.</sub>
 
-### Design files
+### Boards
 
-**/RFFE2400WB** in this folder of this repository you find the PCB design files in KiCAD format and gerbers for the 2.4GHz 2x PMOD connected RF frontend evaluation/test board.
+| Board | Description | Location |
+|---|---|---|
+| **RFFE2400WB** | 2.4 GHz PMOD-connected RF front-end evaluation board (used with QM-Tech Artix-7) | [/RFFE2400WB](./RFFE2400WB) |
+| **RASBB** | Base-band board with STM32 ECU, web config, Ethernet/UPNP | [/RASBB](./RASBB) |
+| **RASRF2400WB** | Wideband 2.4 GHz RF front end (production variant) | [/RASRF2400WB](./RASRF2400WB) |
+| **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) — *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
 
-Link to the FPGA dev. board
-[https://de.aliexpress.com/item/1005006473783593.html]
+[![First RA-Sentinel prototype with QM-Tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
+*Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix-7 board and a newly designed RF front end connected via PMOD.*
+
+
+[![RA-Sentinel prototype Revision A](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASBB_RASRF2400WB.JPG)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASBB_RASRF2400WB.JPG)
+*Picture 2: RA-Sentinel prototype Revision A with RF front-end board RASRF2400WB.*
+
+FPGA development board reference: <https://de.aliexpress.com/item/1005006473783593.html>
+
+---
 
 ## Software / Firmware
 
@@ -59,42 +77,6 @@ A suspected WiFi node can be
 
 To ease the installation process, the RAS can be connected to any ethernet based LAN that provides an IPv4 DHCP server. Through the UPNP support, the RAS is easy to find in any network browser of Windows, Linux and Mac etc. 
 ![UPNP Screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/UPNP.png?raw=true)
-
----
-## Sub project: RASRF2400WBMC - Directional RF Front End
-
-The **RASRF2400WBMC** is a 4-channel, phase-coherent 2.4 GHz RF front-end board that extends RA-Sentinel with **Angle of Arrival (AoA)** estimation. By receiving the same signal across four spatially separated antennas, the system can estimate the physical direction of a detected attack - enabling threat localization for jamming, spoofing and unauthorized events.
-
-This board connects to the existing RASBB via the PCIe connector and requires no hardware changes to the base band board.
-
-> This sub-project was funded by NLnet: https://nlnet.nl/project/RA-Sentinel-directional/
-
-<a href="https://nlnet.nl/commonsfund/"><img src="https://nlnet.nl/image/logos/NGI0_tag.svg" alt="NGI0 Commons Fund" width="20%"></a>
-
-See [RASRF2400WBMC/README.md](RASRF2400WBMC/README.md) for full details.
-
----
-
-### Sub Projects / Project steps
-
-The first step on this project was to have a reliable hardware basis. Initially I planned to have at least 40 Megasamples and with this 20 MHz bandwidth which is sufficient to capture the headers and the most common bandwitdhs used on 2.4GHz WiFi (802.11a,b,g) communications channel. But because 802.11n also defines the possibility to use 40MHz bandwith, I wanted the possibility to cover the complete possible channel bandwidth. This has been achieved with the first prototype hardware and prooved with the sub-project RASM2400, Radio Access Spectrum Monitor for 2400MHz. You can find all project details below.
-
-## Sub project #1: RASM2400 - a spectrum monitor
-
-RASM2400 stands for Radio Access Spectrum Monitor operationg on 2400MHZ. It offers a visual spectrum analyzer design that runs on the evaluation hardware set of RA-Sentinel the Artix7 XC7A100T Wukong board and the RFFE2400 front end board.
-It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be useable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
-
-The following diagram shows the system architecture of the RASM2400.
-
-![RASM2400 Block Diagram](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_Blockdiagram.png)
-
-The output of the HDMI port of the QMTECH Wukong board.
-
-![Screenshot of the RASM2400 HDMI output](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_screenshot.png)
-
-Watch a short demonstration on Youtube by clicking on the thumbnail below.
-
-[![Watch the video](https://img.youtube.com/vi/tnwXk62DtHw/0.jpg)](https://youtu.be/tnwXk62DtHw)
 
 ### Software
 
@@ -159,6 +141,43 @@ So the next step was to design a logic circuit into the FPGA that can mimic the 
 
 The received 802.11 frame info packet that is streamed upon each complete frame reception has the following format:
 
+---
+
+## Sub Projects 
+
+The first step on this project was to have a reliable hardware basis. Initially I planned to have at least 40 Megasamples and with this 20 MHz bandwidth which is sufficient to capture the headers and the most common bandwitdhs used on 2.4GHz WiFi (802.11a,b,g) communications channel. But because 802.11n also defines the possibility to use 40MHz bandwith, I wanted the possibility to cover the complete possible channel bandwidth. This has been achieved with the first prototype hardware and prooved with the sub-project RASM2400, Radio Access Spectrum Monitor for 2400MHz. Subsequent sub-projects build on that base - most recently **RASRF2400WBMC**, which adds directional reception for Angle-of-Arrival estimation.
+
+### RASRF2400WBMC — Directional RF front end (AoA)
+
+The **RASRF2400WBMC** is a 4-channel, phase-coherent 2.4 GHz RF front-end board that extends RA-Sentinel with **Angle of Arrival (AoA)** estimation. By receiving the same signal across four spatially separated antennas, the system can estimate the physical direction of a detected attack — enabling threat localization for jamming, spoofing, and unauthorized events.
+
+The board connects to the existing RASBB via the PCIe connector and requires no hardware changes to the base-band board.
+
+> This sub-project was funded by NLnet: <https://nlnet.nl/project/RA-Sentinel-directional/>
+
+<a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="Alt text" width="25%"></a> <a href="https://nlnet.nl/project/RA-Sentinel/"><img src="https://nlnet.nl/logo/banner.svg" alt="Alt text" width="25%"></a><br>
+
+See **[RASRF2400WBMC/README.md](./RASRF2400WBMC/README.md)** for full details.
+
+### RASM2400 — 2.4 GHz spectrum monitor
+
+RASM2400 stands for Radio Access Spectrum Monitor operationg on 2400MHZ. It offers a visual spectrum analyzer design that runs on the evaluation hardware set of RA-Sentinel the Artix7 XC7A100T Wukong board and the RFFE2400 front end board.
+It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be useable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
+
+The following diagram shows the system architecture of the RASM2400.
+
+![RASM2400 Block Diagram](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_Blockdiagram.png)
+
+The output of the HDMI port of the QMTECH Wukong board.
+
+![Screenshot of the RASM2400 HDMI output](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RASM2400_screenshot.png)
+
+Watch a short demonstration on Youtube by clicking on the thumbnail below.
+
+[![Watch the video](https://img.youtube.com/vi/tnwXk62DtHw/0.jpg)](https://youtu.be/tnwXk62DtHw)
+
+---
+
 **Resources:**
 
 [1] https://github.com/open-sdr/openwifi-hw/
@@ -167,6 +186,6 @@ The received 802.11 frame info packet that is streamed upon each complete frame 
 
 [3] https://de.mathworks.com/help/comm/ug/design-a-deep-neural-network-with-simulated-data-to-detect-wlan-router-impersonation.html
 
-Project Maintainer: Tobias Weber
+Project Maintainer: Tobias Weber, Mina Daneshpajouh
 
-Last updated: 27. Feb. 2025
+Last updated: 14. May. 2026
