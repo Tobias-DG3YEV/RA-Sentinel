@@ -16,7 +16,7 @@ The RASRF2400WBMC adds a spatial dimension to RA-Sentinel's detection capability
 
 ### 2.1 Basic Principle
 
-To be added
+Angle of Arrival (AoA) allows the determination of the direction a wireless signal is coming from. Four directional antennas connected to four receivers are arranged to each "look" in a different direction, together covering the full 360° surroundings. When a device transmits a signal, each antenna receives it at a slightly different moment, and by precisely measuring those tiny timing differences the system can calculate the exact angle the signal came from. Using four antennas instead of just two or three improves accuracy and eliminates ambiguities. 
 
 ### 2.4 Algorithms Considered
 
