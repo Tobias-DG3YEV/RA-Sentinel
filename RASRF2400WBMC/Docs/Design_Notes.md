@@ -49,7 +49,7 @@ Data rate estimate per channel:
 
 ## 5. PCB Stack-up 
 
-The RASRF_2400_Directional PCB will use a **6-layer stack-up**:
+The RASRF2400WBMC PCB will use a **6-layer stack-up**:
 
 | Layer | Function                     |
 |-------|------------------------------|
