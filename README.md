@@ -1,12 +1,12 @@
 # Project RA-Sentinel - a Radio Access Sentinel
-FPGA-based Radio Receiver for securing Wifi and other access points against hacking attacks.
+FPGA-based Radio Receiver for securing WiFi and other access points against hacking attacks.
 
-RA-Sentinel is an open-source project focused on creating a cost-effective, small, and low-power wide band radio receiver device that employs an FPGA to automatically detect malicious attacks on Wifi access points, such as Man in the Middle and Denial of Service attacks. By monitoring any Wifi cell, the device enhances internet safety for everyday users.
-The device features low-cost receive-only chips that digitize 40 MHz of the Wifi radio spectrum at 2.4 GHz. An FPGA extracts relevant properties from demodulated and decoded packets in real-time without storage. These properties are then processed by a neural network, also implemented on the FPGA, to determine if the traffic is genuine or an attack.
+RA-Sentinel is an open-source project focused on creating a cost-effective, small, and low-power wideband radio receiver device that employs an FPGA to automatically detect malicious attacks on WiFi access points, such as Man in the Middle and Denial of Service attacks. By monitoring any WiFi cell, the device enhances internet safety for everyday users.
+The device features low-cost receive-only chips that digitize 40 MHz of the WiFi radio spectrum at 2.4 GHz. An FPGA extracts relevant properties from demodulated and decoded packets in real-time without storage. These properties are then processed by a neural network, also implemented on the FPGA, to determine if the traffic is genuine or an attack.
 
 The project was later extended with a directional 4-channel RF front end (RASRF2400WBMC) that adds Angle of Arrival (AoA) estimation, see the Sub Projects section below.
 
-**Funding**
+##Funding
 <p align="center">
   <a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI0 Entrust" height="80"></a>
   &nbsp;&nbsp;
@@ -29,20 +29,20 @@ This sub-project was funded through the [NGI0 Commons Fund](https://nlnet.nl/com
 |---|---|---|
 | 2026-04-15 | RASRF2400WBMC - directional 4-channel RF front end for Angle-of-Arrival estimation | [/RASRF2400WBMC](./RASRF2400WBMC/README.md) |
 | 2025-12-15 | RASBB_ECU firmware - adds UPNP discovery over Ethernet and a system configuration web page | [/RASBB/Software/RASBB_ECU](./RASBB/Software/RASBB_ECU) |
-| 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [/RASBB](./RASBB/README.md) |
+| 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [RASBB README](./RASBB/README.md) &nbsp;\|&nbsp; [Findings Rev A](./RASBB/Findings_RevA.md) |
 
 ---
 
-## System architecture
+## System Architecture
 
 ![RA-Sentinel Block Diagram](/Images/RAsentinel-Blockdiagram.JPG)
 
 ---
 ## Hardware
 
-The hardware is a wide band SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Transceiver Chip for 2.4GHz which is widelyused in older WIFi Access Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. 
+The hardware is a wideband SDR receiver that receives at least one complete WiFi Channel on the 2.4GHz ISM band with high resolution (12 Bits) to be able to detect smallest anomalies in a transmitted signal. The initial evaluation hardware consists of a Downcoverter/Transceiver Chip for 2.4GHz which is widely used in older WiFi Access Points (MAX2831). This is followed by a 12 Bit ADC (Texas Instruments ADC3222) which converts a 40MHz window of the 2.4GHZ radio spectrum into a 4 x 240 Bit/s LVDS streams (960kBit/s total) into a XILNIX/AMD Artix7 FPGA sitting on a evaluation board made by QMTECH. 
 
-Based on the experience collected with with first prototype, we designed a new SDR prototypr. Two boards of the RASBB and the RASRF2400 have arrived on 23th. Feb. 2025
+Based on the experience collected with first prototype, we designed a new SDR prototype. Two boards of the RASBB and the RASRF2400 have arrived on 23rd. Feb. 2025
 Testing and bringing up is now ongoing. First results and findings can be found in the corresponding [Findings_RevA.md](./RASBB/Findings_RevA.md) documents.
 
 
@@ -53,7 +53,7 @@ Testing and bringing up is now ongoing. First results and findings can be found 
 | **RFFE2400WB** | 2.4 GHz PMOD-connected RF front-end evaluation board (used with QM-Tech Artix-7) | [/RFFE2400WB](./RFFE2400WB) |
 | **RASBB** | Base-band board with STM32 ECU, web config, Ethernet/UPNP | [/RASBB](./RASBB) |
 | **RASRF2400WB** | Wideband 2.4 GHz RF front end (production variant) | [/RASRF2400WB](./RASRF2400WB) |
-| **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) — *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
+| **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) - *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
 
 [![First RA-Sentinel prototype with QM-Tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
 *Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix-7 board and a newly designed RF front end connected via PMOD.*
@@ -68,9 +68,9 @@ FPGA development board reference: <https://de.aliexpress.com/item/10050064737835
 
 ## Software / Firmware
 
-The vast majority of the code will be written in Verilog and run on the FPGA. There is also now a firmware for the RASBB_ECU (Embedded Control Unit) and a"house keeping unit" microcontroller (STM32C031) which programms and controlling the frontend chips. The RASBB_ECI provides the interconnctivity with other systems (alarm forwarding) and the web configuration interface. This firmware is written in C. 
+The vast majority of the code will be written in Verilog and run on the FPGA. There is also now a firmware for the RASBB_ECU (Embedded Control Unit) and a"house keeping unit" microcontroller (STM32C031) which programms and controlling the frontend chips. The RASBB_ECU provides the interconnectivity. with other systems (alarm forwarding) and the web configuration interface. This firmware is written in C. 
 
-The firmware for the RASBB_ECU can be found <a href="https://github.com/Tobias-DG3YEV/RA-Sentinel/tree/main/RASBB/Software/RASBB_ECU">here</a>. 
+The firmware for the RASBB_ECU can be found The firmware for the RASBB_ECU can be found [here](./RASBB/Software/RASBB_ECU). 
 
 The RASBB_ECU Firmware for the onboard STM32 provides a versatile configuration interface with GUI that allows to show statistics and maybe UDP for analytic packets transfer and secure TCP/IP configuration over Ethernet.
 To access this, enter the IP of the RAS into your local browser like http://192.168.0.2:4842/. The IP can be easily found via network environment because the RAS supports UPNP over ethernet.
@@ -81,7 +81,7 @@ A suspected WiFi node can be
 
 * Tracked: Monitored by relative signal strength and later with additional direction. These values are forwarded to an IDS host that can combine this information with additional data retrieved from different RAS or other network monitoring systems.
 * Tagged: Marked for internal memory, moving up in watch list.
-* Fingerprinted: Raw IQ data of the frame start is forwarded to a fingerprinting algorythm.
+* Fingerprinted: Raw IQ data of the frame start is forwarded to a fingerprinting algorithm.
 
 ![Suspect Edit Screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/SuspEdit.png?raw=true)
 
@@ -108,7 +108,7 @@ See **[RASRF2400WBMC/README.md](./RASRF2400WBMC/README.md)** for full details.
 ### Sub project: RASM2400 - a spectrum monitor
 
 RASM2400 stands for Radio Access Spectrum Monitor operationg on 2400MHZ. It offers a visual spectrum analyzer design that runs on the evaluation hardware set of RA-Sentinel the Artix7 XC7A100T Wukong board and the RFFE2400 front end board.
-It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be useable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
+It shall proove that a 40MHz wide radio spectrum can be received and transported into the FPGA. Further, this project may already be usable for first RF forensics. Feel free to download all the stuff and build an RASM by yourself.
 
 The following diagram shows the system architecture of the RASM2400.
 
@@ -122,7 +122,7 @@ Watch a short demonstration on Youtube by clicking on the thumbnail below.
 
 [![Watch the video](https://img.youtube.com/vi/tnwXk62DtHw/0.jpg)](https://youtu.be/tnwXk62DtHw)
 
-### Software
+#### Software
 
 In this repository you'll find also all software paerts needed to get the project up and running.
 
@@ -134,9 +134,9 @@ This folder contains the Verilog source files as well as a ready to program bit 
 
 Here you find the firmware for the RF board housekeeping unit. It does not do much a the moment but initializing the Downconverter MAX2831 and the ADC3222. It is planned to receive commands via I2C to change basic parameters wil center frequency, sensitivity and AGC characteristics. This project can be compiled with arm-gcc or with the free available and Eclipse based development environment (IDE) from ST called "STM32CubeIDE". You can download this IDE from ST.com [https://www.st.com/en/development-tools/stm32cubeide.html]
 
-### Project update 13th Oct. 2024
+#### Project update 13th Oct. 2024
 
-The target of the next Milestone #2 was the „Identification and isolation of appropriate software components“ and also to „Additionally apply modifications to the openOFDM module to get extra meta data out of the frame demodulator to have a wider data basis for the later fingerprinting process.“
+The target of the next Milestone #2 was the „Identification and isolation of appropriate software components“ and also to „Additionally apply modifications to the openOFDMmodule to get extra meta data out of the frame demodulator to have a wider data basis for the later fingerprinting process.“
 
 In the following points I describe how I achieved each step of this Milestone.
 
@@ -189,7 +189,7 @@ The received 802.11 frame info packet that is streamed upon each complete frame 
 
 **Resources:**
 
-[1] https://github.com/open-sdr/openwifi-hw/
+[1] https://github.com/open-sdr/openWiFi-hw/
 
 [2] https://github.com/Tobias-DG3YEV/openofdm
 
@@ -197,4 +197,4 @@ The received 802.11 frame info packet that is streamed upon each complete frame 
 
 Project Maintainer: Tobias Weber, Mina Daneshpajouh
 
-Last updated: 14. May. 2026
+Last updated: 17. May. 2026
