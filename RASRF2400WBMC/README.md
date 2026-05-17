@@ -91,5 +91,5 @@ This project was funded through the **NGI0 Commons Fund**, a fund established by
 
 ## Project Maintainer
 
-**Mina Daneshpajouh** - in collaboration with Tobias Weber
+Mina Daneshpajouh, Tobias Weber
 
