@@ -67,9 +67,9 @@ RASRF2400WBMC/
 
 | Board                | Antennas | Purpose                       | Interface        |
 |----------------------|----------|-------------------------------|------------------|
-| RASRF2400WB          | 1        | Wideband detection            | PCIe -> RASBB    |
-| RASRF2400WBMC        | 4        | Detection + direction finding | PCIe -> RASBB    |
-| RASBB                | -        | Base band processing (shared) | -                |
+| [RASRF2400WB](https://github.com/MinDans/RA-Sentinel/tree/main/RASRF2400WB)          | 1        | Wideband detection            | PCIe -> RASBB    |
+| [RASRF2400WBMC](https://github.com/MinDans/RA-Sentinel/tree/main/RASRF2400WBMC)        | 4        | Detection + direction finding | PCIe -> RASBB    |
+| [RASBB](https://github.com/MinDans/RA-Sentinel/tree/main/RASBB)                | -        | Base band processing (shared) | -                |
 | [RASANT2400](https://github.com/MinDans/RA-Sentinel/tree/main/RASANT2400/Hardware/KiCad) | - | 2.4 GHz antenna for RF front ends | - |
 
 Both RF front-end boards are designed to work with the same RASBB.
