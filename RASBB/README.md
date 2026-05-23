@@ -70,11 +70,16 @@ Below is a list of its features:
 
 The PCB of the RASRF is constructed from an FR4 Four-layer PCB, which contains  processing unit, RF-transmitter, and an Analoge/to/Digital converter.
 
-![image](https://github.com/user-attachments/assets/e5c04499-7f3d-45e9-aef9-7aadf43681d6)
-*RASRF Rev AB (Top View)*
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WB/Hardware/Images/RASRF2400WB_RevA_Front.JPG" alt="RASRF2400WB Rev A — top view" width="420">
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WB/Hardware/Images/RASRF2400WB_RevA_Bottom.JPG" alt="RASRF2400WB Rev A — bottom view" width="420">
+  <br>
+  <em>RASBB Rev A - top &nbsp;&nbsp;|&nbsp;&nbsp; bottom</em>
+</p>
 
-![image](https://github.com/user-attachments/assets/0edbecd5-e06b-4ff3-950f-bfffeb38e53c)
-*RASRF Rev AB (Bottom View)*
 
+---
 
-*Hardware designed by **Mina Daneshpajouh**.*
+*Hardware design: Mina Daneshpajouh*
+*Firmware / signal processing: Tobias Weber*
