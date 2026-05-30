@@ -2,6 +2,8 @@
 
 The **RA-Sentinel** system consists of two main boards that work together to enable high-performance RF signal reception, digitization, and processing.
 
+The hardware design is licensed under **CERN-OHL-S**. See LICENSE.TXT for details.
+
 ## RA-Sentinel Radio Front-End Board (RASRF)
 The **RASRF** board is responsible for receiving and conditioning, and digitizing RF signals before transmitting them to the baseband processor.
  - The antenna is connected through a Balun to an RF front-end transceiver, which performs signal reception, downconversion, and filtering.
