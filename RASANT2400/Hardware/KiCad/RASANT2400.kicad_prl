@@ -51,7 +51,11 @@
       "conflict_shadows",
       "shapes"
     ],
+<<<<<<< Updated upstream
     "visible_layers": "ffffffff_ffffffff_ffffffff_7fffffff",
+=======
+    "visible_layers": "ffffffff_ffffffff_ffffffff_fffffffe",
+>>>>>>> Stashed changes
     "zone_display_mode": 0
   },
   "git": {
