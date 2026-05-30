@@ -224,7 +224,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -510,7 +510,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "../Production/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -642,13 +642,18 @@
       {
         "filename": "RASANT2400.kicad_sch",
         "name": "RASANT2400",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "0c5153d6-3051-4795-9b98-8412bf168aed"
       }
     ],
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "0c5153d6-3051-4795-9b98-8412bf168aed",
+      "RASANT2400"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
