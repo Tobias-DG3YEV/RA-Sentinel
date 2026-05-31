@@ -30,3 +30,4 @@
 | 26  | open    | Add LO Phase Sync. over Ethernet. One pair of the 100MBit connection to the STM32 receives a 10MHz Signal into a balanced line driver and the return the signal to the other free wire pair.
 | 27  | open    | Connect a comparator to the 10 MHz signal and feed the digitalized signal into FPGA2.
 | 28  | open    | Connect an output pin of FPGA2 to a RC low pas filter (mimics a PWM DAC)
+| 29  | open    | Add shunt resistor (0805) and 2 pin header paralell in front of PCIE connector to be able to measure front end power consumption.
