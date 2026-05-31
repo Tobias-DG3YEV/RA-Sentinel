@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 35,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -49,13 +49,11 @@
       "drc_exclusions",
       "locked_item_shadows",
       "conflict_shadows",
-      "shapes"
+      "shapes",
+      "board_outline_area",
+      "ly_points"
     ],
-<<<<<<< Updated upstream
-    "visible_layers": "ffffffff_ffffffff_ffffffff_7fffffff",
-=======
-    "visible_layers": "ffffffff_ffffffff_ffffffff_fffffffe",
->>>>>>> Stashed changes
+    "visible_layers": "ffffffff_ffffffff_ffffffff_ffffffff",
     "zone_display_mode": 0
   },
   "git": {
@@ -96,12 +94,12 @@
     "col_widths": [
       162,
       147,
-      98,
-      79,
       91,
-      99,
+      67,
       91,
-      83,
+      91,
+      91,
+      71,
       91,
       91
     ],
