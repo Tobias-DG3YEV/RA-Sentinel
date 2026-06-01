@@ -75,6 +75,8 @@ The firmware for the RASBB_ECU can be found The firmware for the RASBB_ECU can b
 The RASBB_ECU Firmware for the onboard STM32 provides a versatile configuration interface with GUI that allows to show statistics and maybe UDP for analytic packets transfer and secure TCP/IP configuration over Ethernet.
 To access this, enter the IP of the RAS into your local browser like http://192.168.0.2:4842/. The IP can be easily found via network environment because the RAS supports UPNP over ethernet.
 
+All original software/firmware code written for this project is licensed under the GNU General Public License 3.0 (Only).
+
 ![WebInterface screenshot](https://github.com/Tobias-DG3YEV/RA-Sentinel/blob/main/Images/CFGIF_SuspList.png?raw=true)
 
 A suspected WiFi node can be

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 RA-Sentinel, 2026
+#
+# SPDX-License-Identifier: CC0-1.0
+
 RASBB/Hardware/Rev.A/Design/fp-info-cache
 *.lck
 *.cache
