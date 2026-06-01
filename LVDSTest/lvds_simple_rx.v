@@ -17,7 +17,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2024 Tobias Weber
-// License: GNU GPL v3
+// License: GPL-3.0-or-later
 //
 // This project is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
