@@ -64,6 +64,12 @@ The board takes 3.3 V from the PCIe connector and generates the additional rails
 
 ---
 
+## PCB
+![RASRF2400WBMC PCB](https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WBMC/Images/RASRF2400WBMC_PCB.jpg)
+
+
+---
+
 ## Design notes
 
 See [Design Notes](https://github.com/MinDans/RA-Sentinel/blob/main/RASRF2400WBMC/Docs/Design_Notes.md) for antenna spacing derivation, AoA algorithm selection, phase coherence strategy, and the open questions list being worked through during the design phase.
