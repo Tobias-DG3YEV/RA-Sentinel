@@ -64,9 +64,14 @@ The board takes 3.3 V from the PCIe connector and generates the additional rails
 
 ---
 
-## PCB
-![RASRF2400WBMC PCB](https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WBMC/Images/RASRF2400WBMC_PCB.jpg)
-
+## PCBA
+<div align="center">
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WBMC/Images/RASRF2400WBMC_RevA_front.jpg" width="400">
+  <br><em>RASRF2400WBMC Top-side</em>
+  <br><br>
+  <img src="https://raw.githubusercontent.com/MinDans/RA-Sentinel/main/RASRF2400WBMC/Images/RASRF2400WBMC_RevA_back.jpg" width="400">
+  <br><em>RASRF2400WBMC Bottom-side</em>
+</div>
 
 ---
 
