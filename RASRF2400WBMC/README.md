@@ -1,7 +1,7 @@
 # RASRF2400WBMC - 4-Channel Directional RF Front End
 
-Licensed under **CERN-OHL-S**. See LICENSE.TXT for details.
-
+## Licensing
+Licensed under **CERN-OHL-S**. See [LICENSE.HW.TXT](LICENSE.HW.TXT) for details.
 ## Overview
 
 The **RASRF2400WBMC** is a 4-channel, 2.4 GHz RF front-end board designed as a directional extension to the RA-Sentinel WiFi intrusion detection system. While the single-channel RASRF2400WB board can detect malicious WiFi attacks, this board adds the ability to determine the **direction from which an attack originates**.
@@ -80,7 +80,7 @@ Both RF front-end boards are designed to work with the same RASBB.
 
 ## Status
 
->  This board has been sent for manufacturing and not yet delivered. A bring-up log will be added to `/Docs/` once the first boards arrive.
+>  The PCBA has been received and the initial tests show successful results. A bring-up log will be added to `/Docs/` once the first boards arrive.
 
 ---
 

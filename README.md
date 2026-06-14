@@ -6,7 +6,7 @@ The device features low-cost receive-only chips that digitize 40 MHz of the WiFi
 
 The project was later extended with a directional 4-channel RF front end (RASRF2400WBMC) that adds Angle of Arrival (AoA) estimation, see the Sub Projects section below.
 
-##Funding
+## Funding
 <p align="center">
   <a href="https://nlnet.nl/entrust/"><img src="https://nlnet.nl/image/logos/NGI0Entrust_tag.svg" alt="NGI0 Entrust" height="80"></a>
   &nbsp;&nbsp;
