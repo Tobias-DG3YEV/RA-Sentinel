@@ -80,7 +80,7 @@ Both RF front-end boards are designed to work with the same RASBB.
 
 ## Status
 
->  This board has been sent for manufacturing and not yet delivered. A bring-up log will be added to `/Docs/` once the first boards arrive.
+>  The PCBA has been received and the initial tests show successful results. A bring-up log will be added to `/Docs/` once the first boards arrive.
 
 ---
 
