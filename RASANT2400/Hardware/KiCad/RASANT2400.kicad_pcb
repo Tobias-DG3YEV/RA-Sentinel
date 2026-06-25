@@ -83,9 +83,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "../Production/")
 		)
 	)
 	(gr_poly
@@ -149,6 +149,17 @@
 		(fill yes)
 		(layer "F.Cu")
 		(uuid "e2008418-3ec0-4b20-9b3b-6816ac2b22ff")
+	)
+	(gr_rect
+		(start 146.67 122.32)
+		(end 153.74 126.93)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.Mask")
+		(uuid "c6b0f8d7-39fe-40d7-8da7-6ecc0563c3ea")
 	)
 	(gr_poly
 		(pts
@@ -245,6 +256,17 @@
 		(fill yes)
 		(layer "B.Cu")
 		(uuid "0217d3fa-a360-4810-860f-1a8ac221a690")
+	)
+	(gr_rect
+		(start 146.69 122.25)
+		(end 153.72 126.86)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill yes)
+		(layer "B.Mask")
+		(uuid "5545cfd7-eec1-4aaa-abf6-e24948e13929")
 	)
 	(gr_poly
 		(pts
@@ -3351,7 +3373,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "2.4GHz Yagi Antenna\nRev B."
+	(gr_text "2.4GHz Yagi Antenna\nRev C"
 		(at 150.3 86.912533 0)
 		(layer "F.SilkS")
 		(uuid "93628e34-0a45-4b4f-bc9b-8b7374ff7672")
