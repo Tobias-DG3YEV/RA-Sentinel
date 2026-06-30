@@ -27,6 +27,7 @@ This sub-project was funded through the [NGI0 Commons Fund](https://nlnet.nl/com
 
 | Date | Change | Link |
 |---|---|---|
+| 2026-06-30 |RASANT2400 - 2.4 GHz antenna for RF front ends| [/RSANTG2400](./RSANTG2400) |
 | 2026-04-15 | RASRF2400WBMC - directional 4-channel RF front end for Angle-of-Arrival estimation | [/RASRF2400WBMC](./RASRF2400WBMC/README.md) |
 | 2025-12-15 | RASBB_ECU firmware - adds UPNP discovery over Ethernet and a system configuration web page | [/RASBB/Software/RASBB_ECU](./RASBB/Software/RASBB_ECU) |
 | 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [RASBB README](./RASBB/README.md) &nbsp;\|&nbsp; [Findings Rev A](./RASBB/Findings_RevA.md) |
@@ -54,6 +55,8 @@ Testing and bringing up is now ongoing. First results and findings can be found 
 | **RASBB** | Base-band board with STM32 ECU, web config, Ethernet/UPNP | [/RASBB](./RASBB) |
 | **RASRF2400WB** | Wideband 2.4 GHz RF front end (production variant) | [/RASRF2400WB](./RASRF2400WB) |
 | **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) - *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
+| **RASANT2400** | 2.4 GHz antenna for RF front ends| [/RSANTG2400](./RSANTG2400) |
+
 
 [![First RA-Sentinel prototype with QM-Tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
 *Picture 1: First RA-Sentinel prototype based on the QM-Tech Artix-7 board and a newly designed RF front end connected via PMOD.*
