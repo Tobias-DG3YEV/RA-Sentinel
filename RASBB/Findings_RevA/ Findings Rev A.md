@@ -27,7 +27,8 @@
 | 23	| closed  | Terminate all LVSD signals with 100Ohm |  |
 | 24	| closed  | Pin out of ethernet jacks are wrong. | Pins 17-20 are mixed with 13-16 |
 | 25	| closed  | DDR3 RAM A14 not connected | wire to free pin on same bank as A13 |
-| 26  | closed (Rev C)    | Add LO Phase Sync. over Ethernet. One pair of the 100MBit connection to the STM32 receives a 10MHz Signal into a balanced line driver and the return the signal to the other free wire pair.
-| 27  | open  (Rev C)    | Connect a comparator to the 10 MHz signal and feed the digitalized signal into FPGA2.
-| 28  | open  (Rev C)    | Connect an output pin of FPGA2 to a RC low pas filter (mimics a PWM DAC)
+| 26  | open | Add 40MHz and 1MHz sync clock over Ethernet. One pair of the 100MBit connection to the STM32 receives 40MHz and 1MHz clock via line receivers 1+40MHZ and send it (unbalanced is good enogh) into the U10 FPGA.
+| 28  | open  (Rev C) | Connect an output pin of FPGA2 to a RC low pas filter (mimics a PWM DAC)
 | 29  | closed  | Add shunt resistor (0805) and 2 pin header paralell in front of PCIE connector to be able to measure front end power consumption.
+| 30  | open  | WP# of FPGA config flashes is unconnected | Add 10 kΩ pull-up to VCC3V3 
+| 31  | open  | Add solder mask opening squares at the edges to support ground connection for fyling probes
