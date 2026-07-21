@@ -20,7 +20,7 @@
 | 16	| closed  | J16, J18 Non-Standard header spacing | increase spacing of J16, J18 to 0.1" / 2.54mm |
 | 17 	| closed  | Add human readable labels to pin headers | like "MCU JTAG", "AP JTAG" (for FPGA01) and "DP JRAG" für FPGA02 and add thermal isolation to drill holes |
 | 18 	| closed  | Rotate one JTAG pin header so the have the same orientation | |
-| 19	| open    | Add one more button for FPGA internal Reset | Maybe use smaller ones and change thos of PROGRAM_B also to save space |
+| 19	| open    | Add one more button for FPGA internal Reset | Connect the line also to the STM32 so this can also pull the reset of the FPGA. Maybe use smaller ones and change thos of PROGRAM_B also to save space |
 | 20	| rejected    | Change U12 to RTL8211FS with PTP support | |
 | 21	| closed  | Add JTAG header target to silkscreen Text | like "STM32", "FPGA 1", "FPGA 2"|
 | 22	| closed  | Correct second flash signals to FPGA2 | SO and SI connection should be swapped |
