@@ -27,11 +27,11 @@ This sub-project was funded through the [NGI0 Commons Fund](https://nlnet.nl/com
 
 | Date | Change | Link |
 |---|---|---|
+| 2026-07-24 | RASPMO - 4ch Spectrum Monitor/Phase analysis  | [/RASPMO](./RASPMO) |
 | 2026-06-30 |RASANT2400 - 2.4 GHz antenna for RF front ends| [/RASANT2400](./RASANT2400) |
 | 2026-04-15 | RASRF2400WBMC - directional 4-channel RF front end for Angle-of-Arrival estimation | [/RASRF2400WBMC](./RASRF2400WBMC/README.md) |
 | 2025-12-15 | RASBB_ECU firmware - adds UPNP discovery over Ethernet and a system configuration web page | [/RASBB/Software/RASBB_ECU](./RASBB/Software/RASBB_ECU) |
 | 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [RASBB README](./RASBB/README.md) &nbsp;\|&nbsp; [Findings Rev A](./RASBB/Findings_RevA.md) |
-| 2026-07-24 | Added RASPMO 4ch Spectrum Monitor/Phase analysis project | [/RASPMO](./RASPMO) |
 
 ---
 
