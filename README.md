@@ -31,6 +31,7 @@ This sub-project was funded through the [NGI0 Commons Fund](https://nlnet.nl/com
 | 2026-04-15 | RASRF2400WBMC - directional 4-channel RF front end for Angle-of-Arrival estimation | [/RASRF2400WBMC](./RASRF2400WBMC/README.md) |
 | 2025-12-15 | RASBB_ECU firmware - adds UPNP discovery over Ethernet and a system configuration web page | [/RASBB/Software/RASBB_ECU](./RASBB/Software/RASBB_ECU) |
 | 2025-02-23 | First boards of RASBB and RASRF2400WB received; bring-up ongoing | [RASBB README](./RASBB/README.md) &nbsp;\|&nbsp; [Findings Rev A](./RASBB/Findings_RevA.md) |
+| 2026-07-24 | Added RASPMO 4ch Spectrum Monitor/Phase analysis project | [/RASPMO](./RASPMO) |
 
 ---
 
@@ -56,7 +57,6 @@ Testing and bringing up is now ongoing. First results and findings can be found 
 | **RASRF2400WB** | Wideband 2.4 GHz RF front end (production variant) | [/RASRF2400WB](./RASRF2400WB) |
 | **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) - *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
 | **RASANT2400** | 2.4 GHz antenna for RF front ends| [/RASANT2400](./RASANT2400) |
-| **RASPMO** | Radio Access Spectrum Monitor with HDMI Output. A firmware project for the analog processing FPGA (U10). | [/RASPMO](./RASPMO) |
 
 
 [![First RA-Sentinel prototype with QM-Tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
@@ -139,6 +139,11 @@ This folder contains the Verilog source files as well as a ready to program bit 
 **/RASM2400_HKU**
 
 Here you find the firmware for the RF board housekeeping unit. It does not do much a the moment but initializing the Downconverter MAX2831 and the ADC3222. It is planned to receive commands via I2C to change basic parameters wil center frequency, sensitivity and AGC characteristics. This project can be compiled with arm-gcc or with the free available and Eclipse based development environment (IDE) from ST called "STM32CubeIDE". You can download this IDE from ST.com [https://www.st.com/en/development-tools/stm32cubeide.html]
+
+**/RASPMO**
+
+Radio Access Spectrum Monitor with HDMI Output. A firmware project for the analog processing FPGA (U10).
+THis shows all four spectra of all four channels of the RASRF2400BMC front end on the HDMI output at 1080p60 resolution. It also can overlay a polar indicator that gices an coarse indication where the signal is comming from. 
 
 #### Project update 13th Oct. 2024
 
