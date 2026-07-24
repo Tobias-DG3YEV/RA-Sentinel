@@ -33,3 +33,4 @@
 | 30  | open  | WP# and #RESET of FPGA config flashes is unconnected | Add 10 kΩ pull-up to VCC3V3 
 | 31  | open  | Add solder mask opening squares at the edges to support ground connection for flying probes
 | 32  | open  | Enable Voltage U3 uncertain | Change R36 from 100k to 220k to have a safe window 2.0 V < EN < 5.3 V across the full 10.8–13.2 V input
+| 33  | open  | Debug header J8 STM32 has no ground and VCC | Change to 10 pins and add Vcc from the area and GND |
