@@ -56,6 +56,7 @@ Testing and bringing up is now ongoing. First results and findings can be found 
 | **RASRF2400WB** | Wideband 2.4 GHz RF front end (production variant) | [/RASRF2400WB](./RASRF2400WB) |
 | **RASRF2400WBMC** | Directional 4-channel phase-coherent front end (AoA) - *new sub-project* | [/RASRF2400WBMC](./RASRF2400WBMC) |
 | **RASANT2400** | 2.4 GHz antenna for RF front ends| [/RASANT2400](./RASANT2400) |
+| **RASPMO** | Radio Access Spectrum Monitor with HDMI Output. A firmware project for the analog processing FPGA (U10). | [/RASPMO](./RASPMO) |
 
 
 [![First RA-Sentinel prototype with QM-Tech board](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)](https://raw.githubusercontent.com/Tobias-DG3YEV/RA-Sentinel/main/Images/RFFE2400_QMTech.png)
