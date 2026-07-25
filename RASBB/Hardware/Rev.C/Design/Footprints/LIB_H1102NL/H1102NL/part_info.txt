@@ -1,0 +1,9 @@
+Manufacturer=Yageo Group
+PartNumber=H1102NL
+PartCategory=Transformer
+PackageCategory=Small Outline Packages
+PinCount=16
+Version=3.1
+Released=2019-01-20 15:27:06
+Downloaded=2026-07-18 23:00:54
+3D=Y

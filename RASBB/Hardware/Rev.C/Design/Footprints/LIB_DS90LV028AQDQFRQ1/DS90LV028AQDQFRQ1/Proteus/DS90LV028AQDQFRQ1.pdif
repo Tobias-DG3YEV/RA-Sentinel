@@ -1,0 +1,145 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "DS90LV028AQDQFRQ1"
+   (description "LVDS Driver 5-Pin SOT-23 T/R")
+   (family "ANA")
+   (package "SON50P200X200X80-8N")
+   (attribute "Datasheet Link" "https://www.ti.com/lit/ds/symlink/ds90lv028a-q1.pdf?ts=1621932347476&ref_url=https%253A%252F%252Fwww.ti.com%252Fstore%252Fti%252Fen%252Fp%252Fproduct%252F%253Fp%253DDS90LV028AQDQFRQ1")
+   (attribute "Geometry.Height" "0.8mm")
+   (attribute "Mouser Part Number" "595-S90LV028AQDQFRQ1")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/DS90LV028AQDQFRQ1?qs=BJlw7L4Cy79pzlV0%2FL5zww%3D%3D")
+   (attribute "Manufacturer_Name" "Texas Instruments")
+   (attribute "Manufacturer_Part_Number" "DS90LV028AQDQFRQ1")
+   (gate
+    (symbol "DS90LV028AQDQFRQ1")
+    (pin "RIN1-" 1 PS)
+    (pin "RIN1+" 2 PS)
+    (pin "RIN2+" 3 PS)
+    (pin "RIN2-" 4 PS)
+    (pin "VCC" 8 PS)
+    (pin "ROUT1" 7 PS)
+    (pin "ROUT2" 6 PS)
+    (pin "GND" 5 PS)
+   )
+  )
+  (symbol "DS90LV028AQDQFRQ1"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1000 100) (pt 1000 -400) (pt 200 -400) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1200 -300) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "SON50P200X200X80-8N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -1.625 1.3)
+      (pt 1.625 1.3)
+      (pt 1.625 -1.3)
+      (pt -1.625 -1.3)
+      (pt -1.625 1.3))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1 1)
+      (pt 1 1)
+      (pt 1 -1)
+      (pt -1 -1)
+      (pt -1 1))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -1 0.5)
+      (pt -0.5 1))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -0.075 1)
+      (pt 0.075 1)
+      (pt 0.075 -1)
+      (pt -0.075 -1)
+      (pt -0.075 1))))
+   (layer TSLK
+    (graphic
+     (stroke 0.25)
+     (circle
+      (pt -1.25 1.4) (pt -1.5 1.4)
+     )
+    )
+   )
+   (leg 1 (pt -0.9 0.75) (padstack 0))
+   (leg 2 (pt -0.9 0.25) (padstack 0))
+   (leg 3 (pt -0.9 -0.25) (padstack 0))
+   (leg 4 (pt -0.9 -0.75) (padstack 0))
+   (leg 5 (pt 0.9 -0.75) (padstack 0))
+   (leg 6 (pt 0.9 -0.25) (padstack 0))
+   (leg 7 (pt 0.9 0.25) (padstack 0))
+   (leg 8 (pt 0.9 0.75) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.3 0.95 0 0 0))
+   )
+   (model "DS90LV028AQDQFRQ1.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

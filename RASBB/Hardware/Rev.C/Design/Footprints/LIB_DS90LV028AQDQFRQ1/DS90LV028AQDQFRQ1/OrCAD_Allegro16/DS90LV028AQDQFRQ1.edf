@@ -1,0 +1,160 @@
+
+(EDIF
+  (rename &DS90LV028AQDQFRQ1 "DS90LV028AQDQFRQ1")
+  (EDIFVersion 2 0 0)
+  (EDIFLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timestamp 2026 07 19 18 53 17)
+      (dataOrigin "10694259/763899/2.50/8/3/Integrated Circuit")
+      (program "SamacSys ECAD Model DS90LV028AQDQFRQ1"
+        (version "1.1"))))
+  (library
+  (rename &DS90LV028AQDQFRQ1 "DS90LV028AQDQFRQ1")
+    (EDIFLevel 0)
+    (technology
+      (numberDefinition (scale 1 (e 254 -6) (unit DISTANCE)))
+      (userData GRIDRESOLUTION (integer 50 50))
+      (figureGroup DEFAULT (pathWidth 10) (textHeight 100))
+      (figureGroup PROPERTY (pathWidth 10) (textHeight 90))
+      (figureGroup PINNUMBER (pathWidth 10) (textHeight 90))
+      (figureGroup PINNAME (pathWidth 10) (textHeight 90))
+      (figureGroup COMMENT (pathWidth 10) (textHeight 90))
+      (figureGroup PIN (pathWidth 10) (textHeight 90))
+      (figureGroup GRAPHIC (pathWidth 10) (textHeight 100))
+    )
+    (cell
+      (rename &DS90LV028AQDQFRQ1 "DS90LV028AQDQFRQ1")
+      (cellType GENERIC)
+      (view
+        (rename NORMAL "Normal")
+        (viewType SCHEMATIC)
+        (interface
+          (designator "IC")
+          (property (rename PACKAGENAME "PackageName") (string "DS90LV028AQDQFRQ1"))
+          (property (rename ISHETEROGENEOUS "IsHeterogeneous") (string "False"))
+          (property (rename DEVICESINVIEW "DevicesInView") (string "1"))
+          (property (rename DEVICESINPACKAGE "DevicesInPackage") (string "1"))
+          (property (rename DEVICEDESIGNATOR "DeviceDesignator") (string "A"))
+          (property (rename DEVICENUMBERING "DeviceNumbering") (string "Alpha"))
+          (property (rename PCB_32_FOOTPRINT "PCB Footprint") (string "SON50P200X200X80-8N"))
+          (property (rename &Mouser_Part_Number "Mouser Part Number") (string "595-S90LV028AQDQFRQ1"))
+          (property (rename &Mouser_Price_Stock "Mouser Price/Stock") (string "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/DS90LV028AQDQFRQ1?qs=BJlw7L4Cy79pzlV0%2FL5zww%3D%3D"))
+          (property (rename &Manufacturer_Name "Manufacturer_Name") (string "Texas Instruments"))
+          (property (rename &Manufacturer_Part_Number "Manufacturer_Part_Number") (string "DS90LV028AQDQFRQ1"))
+          (property (rename &Description "Description") (string "LVDS Driver 5-Pin SOT-23 T/R"))
+          (property (rename &Datasheet_Link "Datasheet Link") (string "https://www.ti.com/lit/ds/symlink/ds90lv028a-q1.pdf?ts=1621932347476&ref_url=https%253A%252F%252Fwww.ti.com%252Fstore%252Fti%252Fen%252Fp%252Fproduct%252F%253Fp%253DDS90LV028AQDQFRQ1"))
+          (property (rename &Height "Height") (string "0.8 mm"))
+          (property (rename &_60__32_VALUE_32__62_ "Value") (string "DS90LV028AQDQFRQ1"))
+          (property (rename VALUE "Value") (string "Value"))
+          (port
+            (rename &RIN1M "RIN1M")
+            (designator "1")
+            (property (rename ORDER "Order") (string "0") (owner "OrCAD"))
+          )
+          (port
+            (rename &RIN1P "RIN1P")
+            (designator "2")
+            (property (rename ORDER "Order") (string "1") (owner "OrCAD"))
+          )
+          (port
+            (rename &RIN2P "RIN2P")
+            (designator "3")
+            (property (rename ORDER "Order") (string "2") (owner "OrCAD"))
+          )
+          (port
+            (rename &RIN2M "RIN2M")
+            (designator "4")
+            (property (rename ORDER "Order") (string "3") (owner "OrCAD"))
+          )
+          (port
+            (rename &GND "GND")
+            (designator "5")
+            (property (rename ORDER "Order") (string "4") (owner "OrCAD"))
+          )
+          (port
+            (rename &ROUT2 "ROUT2")
+            (designator "6")
+            (property (rename ORDER "Order") (string "5") (owner "OrCAD"))
+          )
+          (port
+            (rename &ROUT1 "ROUT1")
+            (designator "7")
+            (property (rename ORDER "Order") (string "6") (owner "OrCAD"))
+          )
+          (port
+            (rename &VCC "VCC")
+            (designator "8")
+            (property (rename ORDER "Order") (string "7") (owner "OrCAD"))
+          )
+          (symbol
+            (portImplementation
+              (name &RIN1M (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -100) (pt 0 -100))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -100))))
+            )
+            (portImplementation
+              (name &RIN1P (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -200) (pt 0 -200))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -200))))
+            )
+            (portImplementation
+              (name &RIN2P (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -300) (pt 0 -300))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -300))))
+            )
+            (portImplementation
+              (name &RIN2M (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -400) (pt 0 -400))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -400))))
+            )
+            (portImplementation
+              (name &VCC (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 800 -100) (pt 1000 -100))))
+              (connectLocation (figure GRAPHIC (dot (pt 1000 -100))))
+            )
+            (portImplementation
+              (name &ROUT1 (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 800 -200) (pt 1000 -200))))
+              (connectLocation (figure GRAPHIC (dot (pt 1000 -200))))
+            )
+            (portImplementation
+              (name &ROUT2 (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 800 -300) (pt 1000 -300))))
+              (connectLocation (figure GRAPHIC (dot (pt 1000 -300))))
+            )
+            (portImplementation
+              (name &GND (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt 800 -400) (pt 1000 -400))))
+              (connectLocation (figure GRAPHIC (dot (pt 1000 -400))))
+            )
+            (figure GRAPHIC
+              (figureGroupOverride GRAPHIC
+                (pathWidth 10))
+              (path
+                (pointList
+                  (pt 0 0)
+                  (pt 800 0)
+                  (pt 800 -500)
+                  (pt 0 -500)
+                  (pt 0 0)
+                )
+              )
+            )
+            (keywordDisplay DESIGNATOR (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 850 130))))
+            (propertyDisplay &_60__32_VALUE_32__62_ (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 850 30))))
+          )
+        )
+      )
+    )
+  )
+)

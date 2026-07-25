@@ -1,0 +1,16 @@
+.H1102NL :1 ;PULSE ELECTRONICS - H1102NL - TRANSFORMER, 1:1, 1PORT, 100BASE-TX, SMT
+SOIC127P940X597-16N
+*STM T
+*NGS
+*PLB 1="TD+" 2="CT_1" 3="TD-" 4="NC_1" 5="NC_2" 6="RD+" 7="CT_2" 8="RD-" 9="RX-" 10="NC_3" 11="RX+" 12="NC_4" 13="NC_5" 14="TX-" 15="NC_6" 16="TX+"
+*MXP 16
+*DFN H1102NL
+~!Mouser Part Number (673-H1102NL)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Pulse-Electronics/H1102NL?qs=EKu32SdDin%2FHU33L94JZxw%3D%3D)
+~!Manufacturer_Name (Yageo Group)
+~!Manufacturer_Part_Number (H1102NL)
+~!Link Datasheet (https://productfinder.pulseeng.com/products/datasheets/h1102nl.pdf)
+~!Height (5.97mm)
+~!3D_Model (H1102NL)
+H1102NL
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 16.1!U 15.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP H1102NL
+D PULSE ELECTRONICS - H1102NL - TRANSFORMER, 1:1, 1PORT, 100BASE-TX, SMT
+K
+F https://productfinder.pulseeng.com/products/datasheets/h1102nl.pdf
+$ENDCMP
+#
+#End Doc Library

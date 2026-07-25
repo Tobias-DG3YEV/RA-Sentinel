@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "FH12-50S-0.5SV_55_") (type "KiCad") (uri "${KICAD_PROJECT_RASBB}/FH12-50S-0.5SV_55_/FH12-50S-0.5SV_55_.kicad_sym") (options "") (descr ""))
+)

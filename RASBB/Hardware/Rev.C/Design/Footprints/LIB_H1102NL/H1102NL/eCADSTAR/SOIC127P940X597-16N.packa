@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "H1102NL"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2026-02-03-00:36:00)
+    (mountForm default
+        (footprintRef "SOIC127P940X597-16N")
+        (spec "System")
+    )
+)
