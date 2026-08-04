@@ -34,3 +34,4 @@
 | 31  | open (Rev C)| Add solder mask opening squares at the edges to support ground connection for flying probes
 | 32  | open (Rev C) | Enable Voltage U3 uncertain | Change R36 from 100k to 220k to have a safe window 2.0 V < EN < 5.3 V across the full 10.8–13.2 V input
 | 33  | open (Rev C)  | Debug header J8 STM32 has no ground and VCC | Change to 10 pins and add Vcc from the area and GND |
+| 34  | open (Rev C)  | DC phantom powering over HDMI causes startup problems | Block DC of HDMI port J3 by inserting 8x 100nF 0402 in the path. Also add 270R pull-ups to 3.3V on the other side of IC11 towards FPGA1 |
