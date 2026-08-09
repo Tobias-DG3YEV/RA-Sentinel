@@ -4,9 +4,12 @@ RASPMO is an FPGA design (Artix-7 XC7A100T, Vivado/Verilog) that turns the
 RA-Sentinel hardware into a standalone four-channel 2.4 GHz spectrum monitor
 with a live HDMI display — no PC or host software involved.
 
+![alt text](RASPMO_4Ch_liveSpectrum.png "RASPMO doing 4 channel live spetrum anlysis")
+See it live in action on [youtube](https://www.youtube.com/watch?v=SnHPaw8y9vc)
+
 ## What it does
 
-The RF front-end board receives four independent 2.4 GHz channels (four
+The RF front-end board (RASRF receives four independent 2.4 GHz channels (via four
 MAX2831 zero-IF transceivers); two TI ADC3424 quad ADCs digitize the four I/Q
 baseband pairs at 12 bit / 20 MSPS and ship them to the FPGA as eight
 one-wire LVDS lanes. RASPMO deserializes the lanes with a self-calibrating
@@ -20,8 +23,9 @@ above the display rate.
 
 Output is 1080p HDMI, split into four 960×540 panes, one per receive channel.
 Each pane shows the two-sided (complex) spectrum with a scrolling waterfall
-below it, plus a readout of the averaged signal level in ADC LSB and dBFS.
-Composited over the centre of the four panes sits a polar direction-finding
+below it, plus a readout of the averaged signal level in ADC absolute values and dBFS.
+(dB from full scale away)
+Right over the centre of the four panes sits a polar direction-finding
 indicator driven by amplitude comparison between the channels. An optional
 build switch (`SHOW_BER_RATES`) overlays per-lane bit-error counters for link
 verification while the front-end runs its ADC ramp-test firmware.
