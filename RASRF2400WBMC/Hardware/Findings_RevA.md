@@ -8,3 +8,5 @@
 | 4  	| open  | Wire IC5/IC6 pin 24 (RESET) to spare STM32 GPIOs; optionally pin 37 (PDN) as well. | add |
 | 5  	| open  | Wire SYSREF_CLK of each ADC to a pin header | add |
 | 6  	| open  | Add ferrite bead and decoupling C at the input of 3.3V to suppress 1.8MHz spurious signal | add |
+| 7  	| open  | Add opening in solder mask at a PCB corner to allow connecting debug ground clamps | add |
+
