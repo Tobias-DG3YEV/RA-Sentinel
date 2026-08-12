@@ -1,0 +1,11 @@
+===================================
+Configuration Memory information
+===================================
+File Format        BIN
+Interface          SPIX1
+Size               16M
+Start Address      0x00000000
+End Address        0x00FFFFFF
+
+Addr1         Addr2         Date                    File(s)
+0x00000000    0x003A607B    Aug  2 20:29:58 2026    /media/tobiw/LocalData/Data/RASentinel/RASBB/Software/AP_FPGA/AP_FPGA.runs/impl_1/system_top_rasbb.bit
