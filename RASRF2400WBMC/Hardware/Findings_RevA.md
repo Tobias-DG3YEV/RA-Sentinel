@@ -10,6 +10,9 @@
 | 6  	| open  | Add opening in solder mask at a PCB corner to allow connecting debug ground clamps | add |
 | *7  	| open  | Replace the two 4 channel ADCs with one 8 channel ADC to have better phase alignement between all channels | exchange |
 | **8     | open  | Replace MAX2831 should be exchange with MAX2837| exchange |
+| 9   | open  | Add Tx capabilites to one MAX. With this reference signal it produces, we can calibrate amplitudes between channels. Highest accuracy is needed for AOA. | add |
+| 10  | open  | Add RF switch in front of each MAX RF input to make it switchable to the reference signal | add |
+| 11  | open  | Add additional DAC including LVDS wiring to FPGA for MAX test signal generator facility | add |
 
 \* Items 7 and 8 are not cosmetic fixes like 1 to 6. Both came out of chasing phase
 errors that would not calibrate away. Neither can be fixed by adding a component,
@@ -42,3 +45,21 @@ so with four chips that must be set identically we cannot confirm that they are.
 Solution: MAX2837. Balanced wiring shields that node, and SPI readback lets us
 verify all four chips.
 
+### 9 to 11. Received signal amplitude improvement
+
+Issue: The MAX sensitivity and amplification varies over its channels. 
+With this effect, an estimation of bearing foa WiFi node is difficult
+based on received signal amplitude. We need that function as a complement and
+fallback for phase AOA detection. 
+
+Technical details: It looks like it has a class C amplifier and as we know, the bias current is sensitive for drift
+over temperature. There might me a correction circuit inside the MAX but that is not doing
+well. We hope to get better reception results with the MAX2837.
+The variation is also caused by internal part tolerances amplified by different temperatures
+we have at different board areas. To calibrate this away,
+we need a reference signal. As the MAX family aready contains a complete 2.4GHz tranceiver,
+it makes sense to make this assiable to all 4 input channels through tiny RF switches.
+With a reference level transmitted from one max at different levels, we can also calibrate away non-linearities
+in the amplification of the complete Rx path.
+
+Solution: Add Tx and switching matrix capabilites to MAX tranceiver chip.
