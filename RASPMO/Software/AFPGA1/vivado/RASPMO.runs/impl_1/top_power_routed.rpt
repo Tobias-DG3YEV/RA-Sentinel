@@ -1,0 +1,270 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date             : Thu Aug 13 13:57:24 2026
+| Host             : R10DT01 running 64-bit Ubuntu 26.04 LTS
+| Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
+| Design           : top
+| Device           : xc7a100tcsg324-2
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.961        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.854        |
+| Device Static (W)        | 0.107        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 80.6         |
+| Junction Temperature (C) | 29.4         |
+| Confidence Level         | Low          |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.085 |       12 |       --- |             --- |
+| Slice Logic              |     0.056 |    65678 |       --- |             --- |
+|   LUT as Logic           |     0.043 |    19457 |     63400 |           30.69 |
+|   CARRY4                 |     0.009 |     4006 |     15850 |           25.27 |
+|   Register               |     0.004 |    35357 |    126800 |           27.88 |
+|   F7/F8 Muxes            |    <0.001 |       68 |     63400 |            0.11 |
+|   LUT as Distributed RAM |    <0.001 |      768 |     19000 |            4.04 |
+|   LUT as Shift Register  |    <0.001 |      299 |     19000 |            1.57 |
+|   Others                 |     0.000 |      533 |       --- |             --- |
+| Signals                  |     0.058 |    52115 |       --- |             --- |
+| Block RAM                |     0.224 |    116.5 |       135 |           86.30 |
+| MMCM                     |     0.228 |        2 |         6 |           33.33 |
+| DSPs                     |     0.030 |       48 |       240 |           20.00 |
+| I/O                      |     0.174 |       33 |       210 |           15.71 |
+| Static Power             |     0.107 |          |           |                 |
+| Total                    |     0.961 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |     0.462 |       0.441 |      0.021 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.165 |       0.146 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.044 |       0.040 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.023 |       0.019 |      0.003 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.6                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++----------------------+--------------------------------------+-----------------+
+| Clock                | Domain                               | Constraint (ns) |
++----------------------+--------------------------------------+-----------------+
+| ADC2_dclk_P          | i_ADC2_dclk_P                        |             8.3 |
+| ADC_dclk_P           | i_ADC_dclk_P                         |             8.3 |
+| SYS_clk              | i_SYS_clk                            |            20.0 |
+| SYS_clk              | i_SYS_clk_IBUF                       |            20.0 |
+| clk_pix_unbuf        | hdmi_clk0/clk_pix_unbuf              |             6.7 |
+| clk_serial_unbuf     | hdmi_clk0/clk_serial_unbuf           |             1.3 |
+| clkfb                | hdmi_clk0/clkfb                      |            20.0 |
+| clkfbout_Video_clk   | video_clk0/inst/clkfbout_Video_clk   |            20.0 |
+| o_clk_120M_Video_clk | video_clk0/inst/o_clk_120M_Video_clk |             8.2 |
+| o_clk_195M_Video_clk | video_clk0/inst/o_clk_195M_Video_clk |             5.1 |
++----------------------+--------------------------------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------------------+-----------+
+| Name                               | Power (W) |
++------------------------------------+-----------+
+| top                                |     0.854 |
+|   adc2_cdc                         |     0.001 |
+|   df_0                             |     0.038 |
+|     angTbl                         |     0.002 |
+|     cordic_df                      |     0.026 |
+|     gen_snap[0].snapMem            |     0.002 |
+|     gen_snap[1].snapMem            |     0.002 |
+|     gen_snap[2].snapMem            |     0.002 |
+|     gen_snap[3].snapMem            |     0.002 |
+|   gen_ch[0].iq_bal                 |     0.003 |
+|   gen_ch[1].iq_bal                 |     0.003 |
+|   gen_ch[2].iq_bal                 |     0.003 |
+|   gen_ch[3].iq_bal                 |     0.002 |
+|   gen_fft[0].fftx                  |     0.024 |
+|     stage_1024                     |     0.002 |
+|       HWBFLY.bfly                  |     0.002 |
+|     stage_128                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_16                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_256                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_32                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_512                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_64                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_8                        |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|   gen_fft[1].fftx                  |     0.023 |
+|     stage_1024                     |     0.002 |
+|       HWBFLY.bfly                  |     0.002 |
+|     stage_128                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_16                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_256                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_32                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_512                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_64                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_8                        |     0.003 |
+|       HWBFLY.bfly                  |     0.002 |
+|   gen_fft[2].fftx                  |     0.024 |
+|     stage_1024                     |     0.002 |
+|       HWBFLY.bfly                  |     0.002 |
+|     stage_128                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_16                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_256                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_32                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_512                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_64                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_8                        |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|   gen_fft[3].fftx                  |     0.024 |
+|     stage_1024                     |     0.002 |
+|       HWBFLY.bfly                  |     0.002 |
+|     stage_128                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_16                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_256                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_32                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_512                      |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_64                       |     0.003 |
+|       HWBFLY.bfly                  |     0.003 |
+|     stage_8                        |     0.003 |
+|       HWBFLY.bfly                  |     0.002 |
+|   gen_membank[0].peakMem           |     0.003 |
+|   gen_membank[0].specMem           |     0.002 |
+|   gen_membank[0].wfMem             |     0.049 |
+|   gen_membank[1].peakMem           |     0.003 |
+|   gen_membank[1].specMem           |     0.002 |
+|   gen_membank[1].wfMem             |     0.049 |
+|   gen_membank[2].peakMem           |     0.003 |
+|   gen_membank[2].specMem           |     0.002 |
+|   gen_membank[2].wfMem             |     0.049 |
+|   gen_membank[3].peakMem           |     0.003 |
+|   gen_membank[3].specMem           |     0.002 |
+|   gen_membank[3].wfMem             |     0.049 |
+|   gen_overlay[0].pane_overlay_i    |     0.003 |
+|   gen_overlay[1].pane_overlay_i    |     0.002 |
+|   gen_overlay[2].pane_overlay_i    |     0.003 |
+|   gen_overlay[3].pane_overlay_i    |     0.002 |
+|   hdmi_clk0                        |     0.107 |
+|   lvds_irx0                        |     0.021 |
+|   lvds_irx1                        |     0.022 |
+|   polar_0                          |     0.046 |
+|     cordic_pix                     |     0.043 |
+|   rgb2dvi_m0                       |     0.139 |
+|     ClockSerializer                |     0.034 |
+|     DataEncoders[0].DataSerializer |     0.034 |
+|     DataEncoders[1].DataSerializer |     0.034 |
+|     DataEncoders[2].DataSerializer |     0.034 |
+|   screen_0                         |     0.007 |
+|   video_clk0                       |     0.122 |
+|     inst                           |     0.122 |
++------------------------------------+-----------+
+
+

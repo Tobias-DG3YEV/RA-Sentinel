@@ -1,0 +1,863 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 13:57:16 2026
+| Host         : R10DT01 running 64-bit Ubuntu 26.04 LTS
+| Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
+| Design       : top
+| Device       : xc7a100tcsg324-2
+| Speed File   : -2
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 157
++-------------+----------+-------------------------------------------------------------+--------+
+| Rule        | Severity | Description                                                 | Checks |
++-------------+----------+-------------------------------------------------------------+--------+
+| DPIP-1      | Warning  | Input pipelining                                            | 16     |
+| DPOP-1      | Warning  | PREG Output pipelining                                      | 28     |
+| DPOP-2      | Warning  | MREG Output pipelining                                      | 32     |
+| PDRC-153    | Warning  | Gated clock check                                           | 2      |
+| PLCK-12     | Warning  | Clock Placer Checks                                         | 2      |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2      |
+| PORTPROP-2  | Warning  | selectio_diff_term                                          | 24     |
+| REQP-101    | Warning  | enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND          | 20     |
+| REQP-107    | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O            | 10     |
+| REQP-1580   | Warning  | Phase alignment                                             | 20     |
+| RTSTAT-10   | Warning  | No routable loads                                           | 1      |
++-------------+----------+-------------------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIP-1#1 Warning
+Input pipelining  
+DSP gen_fft[0].logfnx/rp_reg input gen_fft[0].logfnx/rp_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP gen_fft[0].logfnx/rp_reg input gen_fft[0].logfnx/rp_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP gen_fft[0].logfnx/squard_reg input gen_fft[0].logfnx/squard_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP gen_fft[0].logfnx/squard_reg input gen_fft[0].logfnx/squard_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP gen_fft[1].logfnx/rp_reg input gen_fft[1].logfnx/rp_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP gen_fft[1].logfnx/rp_reg input gen_fft[1].logfnx/rp_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#7 Warning
+Input pipelining  
+DSP gen_fft[1].logfnx/squard_reg input gen_fft[1].logfnx/squard_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#8 Warning
+Input pipelining  
+DSP gen_fft[1].logfnx/squard_reg input gen_fft[1].logfnx/squard_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#9 Warning
+Input pipelining  
+DSP gen_fft[2].logfnx/rp_reg input gen_fft[2].logfnx/rp_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#10 Warning
+Input pipelining  
+DSP gen_fft[2].logfnx/rp_reg input gen_fft[2].logfnx/rp_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#11 Warning
+Input pipelining  
+DSP gen_fft[2].logfnx/squard_reg input gen_fft[2].logfnx/squard_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#12 Warning
+Input pipelining  
+DSP gen_fft[2].logfnx/squard_reg input gen_fft[2].logfnx/squard_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#13 Warning
+Input pipelining  
+DSP gen_fft[3].logfnx/rp_reg input gen_fft[3].logfnx/rp_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#14 Warning
+Input pipelining  
+DSP gen_fft[3].logfnx/rp_reg input gen_fft[3].logfnx/rp_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#15 Warning
+Input pipelining  
+DSP gen_fft[3].logfnx/squard_reg input gen_fft[3].logfnx/squard_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#16 Warning
+Input pipelining  
+DSP gen_fft[3].logfnx/squard_reg input gen_fft[3].logfnx/squard_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP gen_ch[0].iq_bal/corr_sum output gen_ch[0].iq_bal/corr_sum/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#2 Warning
+PREG Output pipelining  
+DSP gen_ch[1].iq_bal/corr_sum output gen_ch[1].iq_bal/corr_sum/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#3 Warning
+PREG Output pipelining  
+DSP gen_ch[2].iq_bal/corr_sum output gen_ch[2].iq_bal/corr_sum/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#4 Warning
+PREG Output pipelining  
+DSP gen_ch[3].iq_bal/corr_sum output gen_ch[3].iq_bal/corr_sum/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#5 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#6 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#7 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#8 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#9 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#10 Warning
+PREG Output pipelining  
+DSP gen_fft[0].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[0].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#11 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#12 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#13 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#14 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#15 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#16 Warning
+PREG Output pipelining  
+DSP gen_fft[1].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[1].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#17 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#18 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#19 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#20 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#21 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#22 Warning
+PREG Output pipelining  
+DSP gen_fft[2].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[2].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#23 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#24 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#25 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#26 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#27 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-1#28 Warning
+PREG Output pipelining  
+DSP gen_fft[3].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 output gen_fft[3].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg multiplier stage gen_fft[0].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#2 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#3 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#4 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#5 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#6 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0 multiplier stage gen_fft[0].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#7 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#8 Warning
+MREG Output pipelining  
+DSP gen_fft[0].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[0].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#9 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg multiplier stage gen_fft[1].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#10 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#11 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#12 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#13 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#14 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0 multiplier stage gen_fft[1].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#15 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#16 Warning
+MREG Output pipelining  
+DSP gen_fft[1].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[1].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#17 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg multiplier stage gen_fft[2].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#18 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#19 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#20 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#21 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#22 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0 multiplier stage gen_fft[2].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#23 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#24 Warning
+MREG Output pipelining  
+DSP gen_fft[2].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[2].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#25 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg multiplier stage gen_fft[3].fftx/stage_1024/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#26 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_128/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#27 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_16/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#28 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_256/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#29 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_32/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#30 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0 multiplier stage gen_fft[3].fftx/stage_512/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out_reg__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#31 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_64/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-2#32 Warning
+MREG Output pipelining  
+DSP gen_fft[3].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0 multiplier stage gen_fft[3].fftx/stage_8/HWBFLY.bfly/CKPCE_THREE.mpy_pipe_out0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net lvds_irx0/wordsync is a gated clock net sourced by a combinational pin lvds_irx0/fclk_shifted_inst/O, cell lvds_irx0/fclk_shifted_inst. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net lvds_irx1/wordsync is a gated clock net sourced by a combinational pin lvds_irx1/fclk_shifted_inst/O, cell lvds_irx1/fclk_shifted_inst. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PLCK-12#1 Warning
+Clock Placer Checks  
+Poor placement for routing between an IO pin and BUFG. 
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+ This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	lvds_irx0/IBUFDS_adc_dclk/IBUFDS (in lvds_irx0/IBUFDS_adc_dclk macro) (IBUFDS.O) is locked to G4
+	BUFG_lvds_dclk_1 (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
+
+Related violations: <none>
+
+PLCK-12#2 Warning
+Clock Placer Checks  
+Poor placement for routing between an IO pin and BUFG. 
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+ This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+
+	lvds_irx1/IBUFDS_adc_dclk/IBUFDS (in lvds_irx1/IBUFDS_adc_dclk macro) (IBUFDS.O) is locked to E6
+	BUFG_lvds_dclk_2 (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y3
+
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT lvds_irx0/fclk_shifted_inst is driving clock pin of 10 cells. This could lead to large hold time violations. Involved cells are:
+lvds_irx0/ISERDESE2_FCLK_EVEN_inst, lvds_irx0/ISERDESE2_FCLK_ODD_inst,
+lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst,
+lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst,
+lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst,
+lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst,
+lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst,
+lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst,
+lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst
+lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT lvds_irx1/fclk_shifted_inst is driving clock pin of 10 cells. This could lead to large hold time violations. Involved cells are:
+lvds_irx1/ISERDESE2_FCLK_EVEN_inst, lvds_irx1/ISERDESE2_FCLK_ODD_inst,
+lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst,
+lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst,
+lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst,
+lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst,
+lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst,
+lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst,
+lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst
+lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst
+Related violations: <none>
+
+PORTPROP-2#1 Warning
+selectio_diff_term  
+The port i_ADC2_chA_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#2 Warning
+selectio_diff_term  
+The port i_ADC2_chA_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#3 Warning
+selectio_diff_term  
+The port i_ADC2_chB_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#4 Warning
+selectio_diff_term  
+The port i_ADC2_chB_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#5 Warning
+selectio_diff_term  
+The port i_ADC2_chC_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#6 Warning
+selectio_diff_term  
+The port i_ADC2_chC_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#7 Warning
+selectio_diff_term  
+The port i_ADC2_chD_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#8 Warning
+selectio_diff_term  
+The port i_ADC2_chD_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#9 Warning
+selectio_diff_term  
+The port i_ADC2_dclk_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#10 Warning
+selectio_diff_term  
+The port i_ADC2_dclk_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#11 Warning
+selectio_diff_term  
+The port i_ADC2_fclk_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#12 Warning
+selectio_diff_term  
+The port i_ADC2_fclk_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#13 Warning
+selectio_diff_term  
+The port i_ADC_chA_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#14 Warning
+selectio_diff_term  
+The port i_ADC_chA_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#15 Warning
+selectio_diff_term  
+The port i_ADC_chB_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#16 Warning
+selectio_diff_term  
+The port i_ADC_chB_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#17 Warning
+selectio_diff_term  
+The port i_ADC_chC_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#18 Warning
+selectio_diff_term  
+The port i_ADC_chC_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#19 Warning
+selectio_diff_term  
+The port i_ADC_chD_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#20 Warning
+selectio_diff_term  
+The port i_ADC_chD_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#21 Warning
+selectio_diff_term  
+The port i_ADC_dclk_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#22 Warning
+selectio_diff_term  
+The port i_ADC_dclk_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#23 Warning
+selectio_diff_term  
+The port i_ADC_fclk_N has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+PORTPROP-2#24 Warning
+selectio_diff_term  
+The port i_ADC_fclk_P has an invalid DIFF_TERM property value. For the target architecture, IOSTANDARD value DIFF_SSTL18_I does not support on-chip input differential termination. The DIFF_TERM property value will be ignored.
+Related violations: <none>
+
+REQP-101#1 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/ISERDESE2_FCLK_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#2 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/ISERDESE2_FCLK_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#3 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#4 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#5 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#6 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#7 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#8 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#9 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#10 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#11 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/ISERDESE2_FCLK_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#12 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/ISERDESE2_FCLK_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#13 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#14 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#15 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#16 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#17 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#18 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#19 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#20 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-107#1 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx0/ISERDESE2_FCLK_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#2 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#3 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#4 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#5 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#6 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx1/ISERDESE2_FCLK_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#7 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#8 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#9 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#10 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-1580#1 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/ISERDESE2_FCLK_EVEN_inst. This can result in corrupted data. The lvds_irx0/ISERDESE2_FCLK_EVEN_inst/CLK / lvds_irx0/ISERDESE2_FCLK_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#2 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/ISERDESE2_FCLK_ODD_inst. This can result in corrupted data. The lvds_irx0/ISERDESE2_FCLK_ODD_inst/CLK / lvds_irx0/ISERDESE2_FCLK_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#3 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst/CLK / lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#4 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst/CLK / lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#5 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst/CLK / lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#6 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst/CLK / lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#7 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst/CLK / lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#8 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst/CLK / lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#9 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst/CLK / lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#10 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst/CLK / lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#11 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/ISERDESE2_FCLK_EVEN_inst. This can result in corrupted data. The lvds_irx1/ISERDESE2_FCLK_EVEN_inst/CLK / lvds_irx1/ISERDESE2_FCLK_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#12 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/ISERDESE2_FCLK_ODD_inst. This can result in corrupted data. The lvds_irx1/ISERDESE2_FCLK_ODD_inst/CLK / lvds_irx1/ISERDESE2_FCLK_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#13 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst/CLK / lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#14 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst/CLK / lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#15 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst/CLK / lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#16 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst/CLK / lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#17 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst/CLK / lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#18 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst/CLK / lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#19 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst/CLK / lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#20 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst. This can result in corrupted data. The lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst/CLK / lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+61 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_adc_ipar[11:0], dbg_adc_qpar[11:0], dbg_cal_best_tap[4:0],
+dbg_cal_done, dbg_cal_tap[4:0], dbg_chA_expected[11:0],
+dbg_chB_expected[11:0], dbg_frameStrobe, dbg_logfn_result[8].
+Related violations: <none>
+
+

@@ -1,0 +1,34 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sun Aug  9 16:33:23 2026
+| Host         : R10DT01 running 64-bit Ubuntu 26.04 LTS
+| Command      : report_clock_interaction -file /media/tobiw/LocalData/Data/RASentinel/RASPMO/RASPMO/reports/clock_interaction.rpt
+| Design       : top
+| Device       : 7a100t-csg324
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                                      WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock          
+From Clock                 To Clock                   Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints          
+-------------------------  -------------------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -------------------  
+ADC2_dclk_P                ADC2_dclk_P                fall - rise     1.34     0.00            0          455             4.17  Clean                Partial False Path   
+ADC2_dclk_P                ADC_dclk_P                                                          0           64                   Ignored              Asynchronous Groups  
+ADC_dclk_P                 ADC_dclk_P                 fall - rise     0.08     0.00            0        25154             4.17  Clean                Partial False Path   
+ADC_dclk_P                 clk_pix_unbuf                                                       0           83                   Ignored              Asynchronous Groups  
+ADC_dclk_P                 o_clk_120M_Video_clk                                                0           61                   Ignored              Asynchronous Groups  
+clk_pix_unbuf              ADC_dclk_P                                                          0            1                   Ignored              Asynchronous Groups  
+clk_pix_unbuf              clk_pix_unbuf              rise - rise     0.12     0.00            0         3647             6.72  Clean                Partial False Path   
+o_clk_120M_Video_clk       ADC2_dclk_P                                                         0          148                   Ignored              Asynchronous Groups  
+o_clk_120M_Video_clk       ADC_dclk_P                                                          0         3569                   Ignored              Asynchronous Groups  
+o_clk_120M_Video_clk       clk_pix_unbuf                                                       0          454                   Ignored              Asynchronous Groups  
+o_clk_120M_Video_clk       o_clk_120M_Video_clk       rise - rise     3.87     0.00            0          114             8.21  Clean                Partial False Path   
+o_clk_195M_Video_clk       o_clk_195M_Video_clk       rise - rise     3.66     0.00            0            8             5.13  Clean                Partial False Path   
+
+

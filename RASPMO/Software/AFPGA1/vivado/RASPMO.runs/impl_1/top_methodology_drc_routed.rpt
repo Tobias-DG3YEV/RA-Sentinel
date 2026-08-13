@@ -1,0 +1,529 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Thu Aug 13 13:57:19 2026
+| Host         : R10DT01 running 64-bit Ubuntu 26.04 LTS
+| Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+| Design       : top
+| Device       : xc7a100tcsg324-2
+| Speed File   : -2
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 95
++-----------+------------------+------------------------------------------------------------------+--------+
+| Rule      | Severity         | Description                                                      | Checks |
++-----------+------------------+------------------------------------------------------------------+--------+
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree               | 1      |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell                                      | 20     |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin                        | 1      |
+| CKLD-2    | Warning          | Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads | 4      |
+| LUTAR-1   | Warning          | LUT drives async reset alert                                     | 1      |
+| SYNTH-6   | Warning          | Timing of a RAM block might be sub-optimal                       | 61     |
+| TIMING-9  | Warning          | Unknown CDC Logic                                                | 1      |
+| TIMING-10 | Warning          | Missing property on synchronizer                                 | 1      |
+| TIMING-28 | Warning          | Auto-derived clock referenced by a timing constraint             | 4      |
+| XDCB-1    | Warning          | Runtime intensive exceptions                                     | 1      |
++-----------+------------------+------------------------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock video_clk0/inst/i_clk_50M is defined downstream of clock SYS_clk and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/ISERDESE2_FCLK_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/ISERDESE2_FCLK_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[0].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[0].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[1].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[1].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[2].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[2].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[3].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx0/gen_data_block[3].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/ISERDESE2_FCLK_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/ISERDESE2_FCLK_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[0].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[0].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[1].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[1].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[2].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[2].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[3].ISERDESE2_EVEN_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin lvds_irx1/gen_data_block[3].ISERDESE2_ODD_inst/CLKDIV is not reached by a timing clock
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock video_clk0/inst/i_clk_50M is created on an inappropriate internal pin video_clk0/inst/i_clk_50M. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+CKLD-2#1 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net lvds_irx0/IBUFDS_adc_dclk/o is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): lvds_irx0/IBUFDS_adc_dclk/O
+Related violations: <none>
+
+CKLD-2#2 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net lvds_irx0/IBUFDS_adc_dclk/ob is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): lvds_irx0/IBUFDS_adc_dclk/O
+Related violations: <none>
+
+CKLD-2#3 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net lvds_irx1/IBUFDS_adc_dclk/o is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): lvds_irx1/IBUFDS_adc_dclk/O
+Related violations: <none>
+
+CKLD-2#4 Warning
+Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  
+Clock net lvds_irx1/IBUFDS_adc_dclk/ob is directly driven by an IO rather than a Clock Buffer or may be an IO driving a mix of Clock Buffer and non-Clock loads. This connectivity should be reviewed and corrected as appropriate. Driver(s): lvds_irx1/IBUFDS_adc_dclk/O
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell lvds_irx1/lvds_irx0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) lvds_irx1/initctr_reg[12]/CLR, lvds_irx1/initctr_reg[13]/CLR,
+lvds_irx1/initctr_reg[14]/CLR, lvds_irx1/initctr_reg[15]/CLR,
+lvds_irx1/initctr_reg[1]/CLR, lvds_irx1/initctr_reg[2]/CLR,
+lvds_irx1/initctr_reg[3]/CLR, lvds_irx1/initctr_reg[4]/CLR,
+lvds_irx1/initctr_reg[5]/CLR, lvds_irx1/initctr_reg[6]/CLR,
+lvds_irx1/initctr_reg[7]/CLR, lvds_irx1/initctr_reg[8]/CLR,
+lvds_irx1/initctr_reg[9]/CLR, lvds_irx1/serdes_CS_reg/CLR,
+lvds_irx1/serdes_rst_reg/PRE (the first 15 of 40 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance df_0/angTbl/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[0].fftx/stage_1024/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[0].fftx/stage_128/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[0].fftx/stage_256/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[0].fftx/stage_512/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#6 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[0].fftx/stage_64/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#7 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[1].fftx/stage_1024/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#8 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[1].fftx/stage_128/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#9 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[1].fftx/stage_256/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#10 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[1].fftx/stage_512/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#11 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[1].fftx/stage_64/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#12 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[2].fftx/stage_1024/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#13 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[2].fftx/stage_128/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#14 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[2].fftx/stage_256/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#15 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[2].fftx/stage_512/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#16 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[2].fftx/stage_64/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#17 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[3].fftx/stage_1024/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#18 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[3].fftx/stage_128/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#19 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[3].fftx/stage_256/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#20 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[3].fftx/stage_512/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#21 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_fft[3].fftx/stage_64/omem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#22 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].peakMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#23 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].specMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#24 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#25 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#26 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#27 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#28 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#29 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#30 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#31 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[0].wfMem/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#32 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].peakMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#33 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].specMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#34 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#35 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#36 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#37 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#38 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#39 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#40 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#41 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[1].wfMem/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#42 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].peakMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#43 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].specMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#44 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#45 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#46 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#47 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#48 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#49 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#50 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#51 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[2].wfMem/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#52 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].peakMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#53 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].specMem/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#54 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#55 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_1, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#56 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_2, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#57 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_3, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#58 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_4, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#59 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_5, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#60 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_6, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#61 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance gen_membank[3].wfMem/mem_reg_1_7, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-28#1 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock clkfbout_Video_clk is referenced by name inside timing constraint (see constraint position 20 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins video_clk0/inst/mmcm_adv_inst/CLKFBOUT]
+Related violations: <none>
+
+TIMING-28#2 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock o_clk_120M_Video_clk is referenced by name inside timing constraint (see constraint position 20 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins video_clk0/inst/mmcm_adv_inst/CLKOUT3]
+Related violations: <none>
+
+TIMING-28#3 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock o_clk_120M_Video_clk is referenced by name inside timing constraint (see constraint position 24 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins video_clk0/inst/mmcm_adv_inst/CLKOUT3]
+Related violations: <none>
+
+TIMING-28#4 Warning
+Auto-derived clock referenced by a timing constraint  
+The auto-derived clock o_clk_195M_Video_clk is referenced by name inside timing constraint (see constraint position 20 in the Timing Constraint window in Vivado IDE). It is recommended to reference an auto-derived clock by the pin name attached to the clock: get_clocks -of_objects [get_pins video_clk0/inst/mmcm_adv_inst/CLKOUT2]
+Related violations: <none>
+
+XDCB-1#1 Warning
+Runtime intensive exceptions  
+The following constraint contains more than 10000 objects. To preserve runtime and memory performance, it is recommended to include minimum number of objects. Check whether this list can be simplified.
+-to = expands to 35592 design objects. 
+set_false_path -to [get_pins -hierarchical -filter {IS_CLEAR || IS_PRESET || IS_RESET}]
+/media/tobiw/LocalData/Data/RASentinel/RASPMO/rtl/constrs/RASPMO.xdc (Line: 196)
+Related violations: <none>
+
+
