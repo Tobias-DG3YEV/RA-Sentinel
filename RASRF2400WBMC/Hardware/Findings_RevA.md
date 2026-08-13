@@ -11,21 +11,34 @@
 | *7  	| open  | Replace the two 4 channel ADCs with one 8 channel ADC to have better phase alignement between all channels | exchange |
 | **8     | open  | Replace MAX2831 should be exchange with MAX2837| exchange |
 
+\* Items 7 and 8 are not cosmetic fixes like 1 to 6. Both came out of chasing phase
+errors that would not calibrate away. Neither can be fixed by adding a component,
+the parts themselves have to change.
 
-Items 7 and 8 are not cosmetic or convenience fixes like 1–6. Both came out of the same investigation: we were chasing phase errors that would not calibrate away, and traced them to two structural properties of the rev A signal chain. Neither can be fixed by adding a component — the parts themselves have to change. Detail below.
+## Findings behind items 7 and 8
 
-##
-Findings behind items 7 and 8:
+### 7. Two ADC3424 -> one 8 channel ADC
 
-7 - Two 4-channel ADCs -> one 8-channel ADC
+Issue: two converters mean two clock paths and two LVDS links to length match, and
+two startup alignments that both have to come up correctly. On top of that,
+channels on the same chip match well and drift together, while channels on two
+separate chips only match within the datasheet range, and that gap moves with
+temperature.
 
-Four transceivers × I/Q = 8 ADC inputs. Split across two converters, the two devices run from independent internal timing - dividers, startup state, reset sequencing. Inter-device sample skew is therefore an unknown that must be measured and calibrated out, and it can change on any power cycle. 
+Solution: one 8 channel converter. All eight channels sit on one die, in a single
+timing and alignment domain. That removes an inter device calibration term and
+halves the capture logic.
 
-A single 8-channel part puts all eight channels behind one sampling clock and one internal timing domain. Channel-to-channel skew reduces to a fixed, characterizable device parameter instead of a per-boot variable. This is the reason the change is needed - it converts a moving error into a constant one.
 
-8 - MAX2831 -> MAX2837
+### 8. MAX2831 -> MAX2837
 
-The MAX2837's balanced loop-filter wiring shields the PLL's most noise-sensitive node from supply and neighbouring-channel interference, giving a more robust loop filter and therefore lower phase noise.
+Issue: the MAX2831 leaves the PLL's most noise sensitive node unshielded, so
+supply and neighbouring channel noise reaches it. Each channel has its own PLL, so
+this noise is independent per channel and does not cancel when we compare phase
+between antennas. It goes straight into the bearing as jitter, and the coupling is
+inside the chip, so nothing on the board fixes it. The MAX2831 is also write only,
+so with four chips that must be set identically we cannot confirm that they are.
 
-That is what we observed in rev A, and it is why the exchange is needed: the noise path is internal to the part, so no amount of filtering or layout work on our side closes it. The result of the change is more accurate, more stable bearings and far fewer intermittent one-channel faults, which are expensive to chase.
+Solution: MAX2837. Balanced wiring shields that node, and SPI readback lets us
+verify all four chips.
 
