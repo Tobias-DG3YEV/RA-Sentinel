@@ -1,0 +1,5 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "RASBB") (type "KiCad") (uri "${KIPRJMOD}/Footprints") (options "") (descr ""))
+	(lib (name "Footprints") (type "KiCad") (uri "${KIPRJMOD}/Footprints.pretty") (options "") (descr ""))
+)

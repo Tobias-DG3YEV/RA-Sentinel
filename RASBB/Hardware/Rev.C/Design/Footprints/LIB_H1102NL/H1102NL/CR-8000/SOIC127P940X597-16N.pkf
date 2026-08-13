@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "SOIC127P940X597-16N"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "SOIC127P940X597-16N")
+        (spec "default")
+    )
+)

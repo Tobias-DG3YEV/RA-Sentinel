@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=DS90LV028AQDQFRQ1
+PartCategory=Integrated Circuit
+PackageCategory=Small Outline No-lead
+PinCount=8
+Version=1.1
+Released=2021-05-25 09:19:41
+Downloaded=2026-07-19 18:53:17
+3D=Y

@@ -1,0 +1,192 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "H1102NL"
+   (description "PULSE ELECTRONICS - H1102NL - TRANSFORMER, 1:1, 1PORT, 100BASE-TX, SMT")
+   (family "XFR")
+   (package "SOIC127P940X597-16N")
+   (attribute "Datasheet Link" "https://productfinder.pulseeng.com/products/datasheets/h1102nl.pdf")
+   (attribute "Geometry.Height" "5.97mm")
+   (attribute "Mouser Part Number" "673-H1102NL")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Pulse-Electronics/H1102NL?qs=EKu32SdDin%2FHU33L94JZxw%3D%3D")
+   (attribute "Manufacturer_Name" "Yageo Group")
+   (attribute "Manufacturer_Part_Number" "H1102NL")
+   (gate
+    (symbol "H1102NL")
+    (pin "TD+" 1 PS)
+    (pin "CT_1" 2 PS)
+    (pin "TD-" 3 PS)
+    (pin "NC_1" 4 PS)
+    (pin "NC_2" 5 PS)
+    (pin "RD+" 6 PS)
+    (pin "CT_2" 7 PS)
+    (pin "RD-" 8 PS)
+    (pin "TX+" 16 PS)
+    (pin "NC_6" 15 PS)
+    (pin "TX-" 14 PS)
+    (pin "NC_5" 13 PS)
+    (pin "NC_4" 12 PS)
+    (pin "RX+" 11 PS)
+    (pin "NC_3" 10 PS)
+    (pin "RX-" 9 PS)
+   )
+  )
+  (symbol "H1102NL"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 900 100) (pt 900 -800) (pt 200 -800) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -600) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -700) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -200) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -300) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -400) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -500) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -600) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1100 -700) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "SOIC127P940X597-16N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -5.45 6.6)
+      (pt 5.45 6.6)
+      (pt 5.45 -6.6)
+      (pt -5.45 -6.6)
+      (pt -5.45 6.6))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -3.555 6.35)
+      (pt 3.555 6.35)
+      (pt 3.555 -6.35)
+      (pt -3.555 -6.35)
+      (pt -3.555 6.35))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -3.555 5.08)
+      (pt -2.285 6.35))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -3.205 6.35)
+      (pt 3.205 6.35)
+      (pt 3.205 -6.35)
+      (pt -3.205 -6.35)
+      (pt -3.205 6.35))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt -5.2 5.195)
+      (pt -3.555 5.195))))
+   (leg 1 (pt -4.378 4.445) (padstack 0))
+   (leg 2 (pt -4.378 3.175) (padstack 0))
+   (leg 3 (pt -4.378 1.905) (padstack 0))
+   (leg 4 (pt -4.378 0.635) (padstack 0))
+   (leg 5 (pt -4.378 -0.635) (padstack 0))
+   (leg 6 (pt -4.378 -1.905) (padstack 0))
+   (leg 7 (pt -4.378 -3.175) (padstack 0))
+   (leg 8 (pt -4.378 -4.445) (padstack 0))
+   (leg 9 (pt 4.378 -4.445) (padstack 0))
+   (leg 10 (pt 4.378 -3.175) (padstack 0))
+   (leg 11 (pt 4.378 -1.905) (padstack 0))
+   (leg 12 (pt 4.378 -0.635) (padstack 0))
+   (leg 13 (pt 4.378 0.635) (padstack 0))
+   (leg 14 (pt 4.378 1.905) (padstack 0))
+   (leg 15 (pt 4.378 3.175) (padstack 0))
+   (leg 16 (pt 4.378 4.445) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.8 1.645 0 0 0))
+   )
+   (model "H1102NL.stp"
+    (euler 90 0 90)
+    (offset 0 0 0.20000000298023224)
+   )
+  )
+ )
+)
