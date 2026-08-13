@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/tobiw/LocalData/Data/RASentinel/RASPMO/RASPMO.srcs/sources_1/top.v" into library work
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/tobiw/LocalData/Data/RASentinel/RASPMO/RASPMO.srcs/sources_1/pane_overlay.v" into library work
+INFO: [VRFC 10-311] analyzing module pane_overlay

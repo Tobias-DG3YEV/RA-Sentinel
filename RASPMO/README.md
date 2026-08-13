@@ -15,7 +15,9 @@ baseband pairs at 12 bit / 20 MSPS and ship them to the FPGA as eight
 one-wire LVDS lanes. RASPMO deserializes the lanes with a self-calibrating
 link (per-ADC IDELAY tap sweep plus per-lane word alignment, trained against
 the ADC's built-in ramp test pattern at startup), removes the DC/zero-IF
-offset, and runs four 1024-point complex FFT parallel across the four channels.
+offset, and runs a single 1024-point complex FFT time-multiplexed round-robin
+across the four channels — each channel's spectrum updates at ~4.9 kHz, far
+above the display rate.
 
 ## Display
 
