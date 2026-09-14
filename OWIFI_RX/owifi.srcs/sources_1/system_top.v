@@ -1,42 +1,38 @@
-// ***************************************************************************
-// Xianjun jiao. putaoshu@msn.com; xianjun.jiao@imec.be;
-// based on Analog Devices HDL reference design. openwifi add necessary modules/modifications.
-// ***************************************************************************
-// Copyright 2014 - 2017 (c) Analog Devices, Inc. All rights reserved.
+//////////////////////////////////////////////////////////////////////////////////
+// 
+// Project Name: RA-Sentinel
+// 
+// Module Name: system_top
 //
-// In this HDL repository, there are many different and unique modules, consisting
-// of various HDL (Verilog or VHDL) components. The individual modules are
-// developed independently, and may be accompanied by separate and unique license
-// terms.
+// Engineer: Tobias Weber
+// Target Devices: Artix 7, XC7A100T
+// Tool Versions: Vivado 2024.1
+// Description:
+// 
+// Fork of the openofdm project
+// https://github.com/jhshi/openofdm
+// 
+// Dependencies: 
+// 
+// Revision 1.00 - File Created
+// Project: https://github.com/Tobias-DG3YEV/RA-Sentinel
+// 
+//////////////////////////////////////////////////////////////////////////////////
+// Copyright (C) 2024 Tobias Weber
+// License: GNU GPL v3
 //
-// The user should read each of these license terms, and understand the
-// freedoms and responsibilities that he or she has by using this source/core.
-//
-// This core is distributed in the hope that it will be useful, but WITHOUT ANY
-// WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-// A PARTICULAR PURPOSE.
-//
-// Redistribution and use of source or resulting binaries, with or without modification
-// of this file, are permitted under one of the following two license terms:
-//
-//   1. The GNU General Public License version 2 as published by the
-//      Free Software Foundation, which can be found in the top level directory
-//      of this repository (LICENSE_GPL2), and also online at:
-//      <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
-//
-// OR
-//
-//   2. An ADI specific BSD license, which can be found in the top level directory
-//      of this repository (LICENSE_ADIBSD), and also on-line at:
-//      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
-//      This will allow to generate bit files and not release the source code,
-//      as long as it attaches to an ADI device.
-//
-// ***************************************************************************
-// ***************************************************************************
+// This project is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTIBILITY or FITNESS FOR A PARTICULAR PURPOSE.
+// See the GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program. If not, see
+// <http://www.gnu.org/licenses/> for a copy.
+//////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
-`include "openwifi/common_defs.v"
+`include "common_defs.v"
 
 module system_top(
     /* Master Clock Input */
@@ -47,7 +43,7 @@ module system_top(
     //output wire [2:0]TMDS_data_n,
     //output wire [2:0]TMDS_data_p,
     output wire [3:0] o_state,
-    output wire demod_is_ongoing,
+    //output wire o_demod_is_ongoing,
     output wire sig_valid,
     output wire o_short_sync,
 
@@ -60,6 +56,7 @@ module system_top(
 `ifdef SIMULATION
     output wire pkt_header_valid_strobe,
     output wire legacy_sig_stb,
+    output o_demod_is_ongoing,
 `endif // SIMULATION
     /* ADC LVDS */
     input wire         ADC_idataH_P, /* ADC I (real) serial Data */
@@ -82,8 +79,10 @@ module system_top(
     output wire         SPI_miso, // master in slave out
     //output wire dbgClk
     //output wire [11:0]  dbgOutI,
-    output wire [7:0]  o_byteOut,
-    output wire        o_byteOutStrobe,
+    output reg [7:0]    o_byteOut,
+    output reg          o_byteOutStrobe, //pixel clock
+    output reg          o_DCMI_hsync,
+    output reg          o_DCMI_vsync,
     //output wire         dbgFftStrobe,
     //output wire         dbgOutQ0,
     //output wire         dbgOutQ1,
@@ -95,7 +94,7 @@ module system_top(
 
 );
 
-`include "openwifi/common_params.v"
+`include "common_params.v"
 
 `ifdef BETTER_SENSITIVITY
 `define THRESHOLD_SCALE 1
@@ -104,6 +103,12 @@ module system_top(
 `define THRESHOLD_SCALE 0
 `define MIN_PLATEAU 32'd100
 `endif
+
+`define OUTSTREAM_META_SIZE      256 // the first 256 bytes of our forwarded info frame are metadata (phase misalignement currently)
+`define OUTSTREAM_HDR_SIZE       64 // the amount of header data we store and forward in bytes
+`define OUTSTREAM_HDR_BITS       6 // range of the HDR info address range. 2^6 = 64
+`define OUTSTREAM_META_BITS      8 // range of the meta info address range. 2^8 = 256
+`define OUTSTREAM_ADDR_BITS      9 // 2^9 = 256 we can store up to 512 bytes
 
     parameter ADCBITS = 12;
     parameter REG_SIZE = 32;
@@ -130,6 +135,8 @@ module system_top(
     wire master_clk; // the master process clock, usually 120MHz
     wire sample_clk; // sample clock generated by the ADC usually 20 MHz
 
+    wire o_demod_is_ongoing;
+
     /* LVDS ADC signals*/
     (* keep = "true" *) wire    sampleStrobe; /* a frame from the ADC deserializer is ready */
 
@@ -138,36 +145,24 @@ module system_top(
     wire [4:0] state;
     assign o_state = state[3:0];
 
-    wire    [31:0]  gp_out_s;
-    wire    [31:0]  gp_in_s;
-    wire    [63:0]  gpio_i;
-    wire    [63:0]  gpio_o;
-    wire    [63:0]  gpio_t;
-    wire    [7:0]   gpio_status_dummy;
-
     wire signal_watchdog_enable;
     
     wire pkt_header_valid_strobe;
     reg ht_unsupport;
-    wire [7 : 0] pkt_rate;
+    //wire [7 : 0] pkt_rate;
     wire [15 : 0] pkt_len;
     reg ht_aggr;
     reg ht_aggr_last;
     reg ht_sgi;
-    //reg byte_out_strobe;
     wire [7 : 0] byte_out;
     wire byte_out_strobe;
-    wire [15 : 0] byte_count;
-    reg fcs_out_strobe;
-    reg fcs_ok;
-    reg [31 : 0] csi;
-    reg csi_valid;
-    wire [31 : 0] phase_offset_taken;
-    //wire [31 : 0] equalizer;
-    //wire equalizer_valid;
-    reg ofdm_symbol_eq_out_pulse;
-    reg [14 : 0] n_ofdm_sym;
-    reg [9 : 0] n_bit_in_last_sym;
+    wire fcs_ok;
+    //reg [31 : 0] csi;
+    (* keep = "true" *) wire csi_valid;
+    //wire [31 : 0] phase_offset_taken;
+    //reg ofdm_symbol_eq_out_pulse;
+    //reg [14 : 0] n_ofdm_sym;
+    //reg [9 : 0] n_bit_in_last_sym;
 
     reg [10 : 0] rssi_half_db;
     reg enable;
@@ -177,10 +172,10 @@ module system_top(
     wire gpio_status_delay_valid;
     wire signed [(IQ_RSSI_HALF_DB_WIDTH-1):0] iq_rssi_half_db;
     wire iq_rssi_half_db_valid;
-    wire rssi_half_db_valid;
+    //wire rssi_half_db_valid;
   
-    assign o_byteOut = byte_out;
-    assign o_byteOutStrobe = byte_out_strobe;
+    //assign o_byteOut = byte_out;
+    //assign o_byteOutStrobe = byte_out_strobe;
 
     assign signal_watchdog_enable = (state <= S_DECODE_SIGNAL);
     wire [31:0] equalizer;
@@ -192,6 +187,7 @@ module system_top(
   
 wire clk_200M;
 wire clk_100M;
+wire clk_DCMI;
 //wire clk_120M;
 //wire clk_50M;
 (* keep = "true" *) wire    testClk_300M;
@@ -204,6 +200,7 @@ clk_system clk_system_inst (
     .o_clk_200M(clk_200M),
     .o_clk_300M(testClk_300M),
     //.o_clk_50M(clk_50M),
+    .o_clk_20M(clk_DCMI),
     .reset(reset_hw),
     .locked(clk_locked)
 );
@@ -267,22 +264,18 @@ lvds_rx #(
 
 `endif // USE_PARALLEL_SAMPLES
 
-wire [31:0] statusReg;
-reg  [31:0] packetReg;
-wire [31:0] phaseReg;
-wire [31:0] byteCountReg;
-wire [31:0] rssiReg;
-wire [31:0] versionReg;
-
-//wire demod_is_ongoing; externalized
-wire short_preamble_detected;
-wire long_preamble_detected;
+//wire short_preamble_detected;
+//wire long_preamble_detected;
 wire pkt_header_valid;
 wire phy_len_valid;
+//wire sig_valid;
 
 assign sig_valid = (pkt_header_valid_strobe & pkt_header_valid);
 
 wire receiver_rst;
+wire dot11_reset;
+assign dot11_reset = reset_system | receiver_rst;
+
 wire[31:0] sample_in;
 
 //`ifdef SIMULATION
@@ -294,18 +287,6 @@ wire[31:0] sample_in;
     //assign i_sample_in_strobe = ~sampleStrobe;
     assign sample_in = { {4{adc_i[ADCBITS-1]}}, adc_i,  {4{adc_q[ADCBITS-1]}}, adc_q };
 `endif // USE_LVDS_SIMULATION
-
-assign statusReg[0] = demod_is_ongoing;
-assign statusReg[1] = short_preamble_detected;
-assign statusReg[2] = long_preamble_detected;
-assign statusReg[3] = pkt_header_valid;
-assign statusReg[4] = phy_len_valid;
-assign rssiReg      = { 21'd0, rssi_half_db };
-assign byteCountReg = { 16'h0000, byte_count };
-
-//assign packetReg = { byte_count, 8'b00000000, byte_out };
-assign phaseReg = phase_offset_taken;
-assign versionReg[31:0] = 32'd1;
 
 /****************************
 
@@ -327,7 +308,7 @@ wire [SPI_REG_REGISTER_WIDTH-1:0] regRdData;
 SPI_Peripheral  #(
     .ADDR_WIDTH(SPI_REG_ADDRESS_WIDTH)
 ) spip_inst (
-    .i_sysclk(SPI_clk),          // System clock
+    .i_sysclk(clk_100M),          // System clock
     .i_reset(reset_hw),    // Active low reset
     .i_sclk(SPI_clk),         // SPI clock
     .i_copi(SPI_mosi),        // Master out slave in
@@ -352,9 +333,9 @@ SPI_Peripheral  #(
 *************************************************************************/
 
 signal_watchdog signal_watchdog_inst (
-    .i_clk(clk_100M),
+    .i_clk(master_clk),
     .i_rstn(~reset_hw),
-//    .enable(~demod_is_ongoing),
+//    .enable(~o_demod_is_ongoing),
     .i_enable(signal_watchdog_enable),
     
     .i_data(sample_in[31:16]),
@@ -398,21 +379,24 @@ signal_watchdog signal_watchdog_inst (
 
 ***********************************************************************/
 
-wire [SPI_REG_REGISTER_WIDTH-1:0] reg_powerThresh;
-wire [SPI_REG_REGISTER_WIDTH-1:0] reg_window_size;
-wire [SPI_REG_REGISTER_WIDTH-1:0] reg_num_sample_to_skip;
+(* keep = "true" *) wire [15:0] reg_powerThresh;
+(* keep = "true" *) wire [15:0] reg_window_size;
+(* keep = "true" *) wire [SPI_REG_REGISTER_WIDTH-1:0] reg_num_sample_to_skip;
+(* keep = "true" *) wire [31:0] reg_minPlateau;
 wire num_sample_changed;
 
 conf_registers conf_registers_inst (
-    .i_clock(clk_100M),
+    .i_clock(master_clk),
     .i_reset(reset_system),
     .i_SPI_addr(regAddr),
-    .o_SPIdata(regWrData),
-    .i_SPIdata(regRdData),
-    .o_regPowerThreshold(reg_powerThresh),
+    .o_SPIdata(regRdData),
+    .i_SPIdata(regWrData),
+    .i_SPI_wrStrobe(reg_wrStrobe),
+    .o_regPowerThreshold( reg_powerThresh ),
     .o_num_sample_to_skip_stb(num_sample_changed),
     .o_reg_num_sample_to_skip(reg_num_sample_to_skip),
-    .o_reg_window_size(reg_window_size)
+    .o_reg_window_size( reg_window_size ),
+    .o_reg_minPlateau(reg_minPlateau)
 );
 
 /****************************************
@@ -427,10 +411,14 @@ conf_registers conf_registers_inst (
 
 *****************************************/
 
+wire [15:0] eq_phase_out;
+wire eq_phase_out_stb;
+wire fcs_out_strobe;
+
 dot11 dot11_inst (
-    .i_clock(clk_100M),
+    .i_clock(master_clk),
     .i_enable(enable),
-    .i_reset(reset_system | receiver_rst),
+    .i_reset(dot11_reset),
 
     // Configuration connection
     .i_num_sample_changed(num_sample_changed),
@@ -438,8 +426,8 @@ dot11 dot11_inst (
     .i_reg_num_sample_to_skip(reg_num_sample_to_skip[31:0]),
     .i_reg_window_size(reg_window_size[15:0]),
 
-    .i_power_thres(11'd0),
-    .i_min_plateau(`MIN_PLATEAU),
+    //.i_power_thres(11'd0),
+    .i_min_plateau(reg_minPlateau),
     .i_threshold_scale(`THRESHOLD_SCALE),
 
     .i_rssi_half_db(rssi_half_db),
@@ -450,25 +438,203 @@ dot11 dot11_inst (
     .i_disable_all_smoothing(1'b0),
     .i_fft_win_shift(4'b1),
 
-    .demod_is_ongoing(demod_is_ongoing),
-    .short_preamble_detected(o_short_sync),
-    .pkt_header_valid(pkt_header_valid),
-    .pkt_header_valid_strobe(pkt_header_valid_strobe),
-    .pkt_len(pkt_len),
+    .o_demod_is_ongoing(o_demod_is_ongoing),
+    .o_short_preamble_detected(o_short_sync),
+    .o_pkt_header_valid(pkt_header_valid),
+    .o_pkt_header_valid_strobe(pkt_header_valid_strobe),
+    .o_pkt_len(pkt_len),
     
-    .state(state),
-	.equalizer_out(equalizer),
-    .equalizer_out_strobe(equalizer_valid),
+    .o_state(state),
+	.o_equalizer_out(equalizer),
+    .o_equalizer_out_strobe(equalizer_valid),
+    
+    .o_csi_valid(csi_valid),
 
-    .byte_out_strobe(byte_out_strobe),
-    .byte_out(byte_out)
+    .o_byte_out_strobe(byte_out_strobe),
+    .o_byte_out(byte_out),
+
+    .o_eq_phase_out_stb(eq_phase_out_stb),
+    .o_eq_phase_out(eq_phase_out),
+
+    .o_fcs_out_strobe(fcs_out_strobe),
+    .o_fcs_ok(fcs_ok)
 );
 
+/****************************************
 
-    always @(posedge reset_system) begin
-        rssi_half_db <= 0;
-        enable <= 1;
+    ######    #####   #     #  ###
+    #     #  #     #  ##   ##   #
+    #     #  #        # # # #   #
+    #     #  #        #  #  #   #
+    #     #  #        #     #   #
+    #     #  #     #  #     #   #
+    ######    #####   #     #  ###
+
+*****************************************/
+
+`define DCMI_START_DEBOUNCE     15
+
+reg [`OUTSTREAM_HDR_BITS -1:0] addr_in_hdr; //half the RAM buffer is reserved for header + payload data
+reg [`OUTSTREAM_META_BITS-1:0] addr_in_meta;
+reg [`OUTSTREAM_HDR_BITS   :0] addr_out_hdr;
+reg [`OUTSTREAM_META_BITS  :0] addr_out_meta;
+reg ram_in_hdr_stb;
+reg ram_in_meta_stb;
+wire [7:0] meta_out;
+wire [7:0] hdr_out;
+reg [31:0] bufferWord; // allow storing up to 32 bit values
+reg [2:0] bytesToStore; // 0 to 3 byte offet in the buffer word
+
+// the DCMI frame buffer
+ram_2port #(.DWIDTH(8), .AWIDTH(`OUTSTREAM_META_BITS)) output_ram_meta (
+    .i_clka(master_clk),
+    .i_ena(1),
+    .i_wea(ram_in_meta_stb),
+    .i_addra(addr_in_meta),
+    .i_dia(bufferWord[7:0]),
+    .o_doa(),
+    //--------------------
+    .i_clkb(master_clk),
+    .i_enb(1),
+    .i_web(0),
+    .i_addrb(addr_out_meta),
+    .i_dib(32'hFFFF),
+    .o_dob(meta_out)
+);
+
+ram_2port #(.DWIDTH(8), .AWIDTH(`OUTSTREAM_HDR_BITS)) output_ram_hdr (
+    .i_clka(master_clk),
+    .i_ena(1),
+    .i_wea(ram_in_hdr_stb),
+    .i_addra(addr_in_hdr),
+    .i_dia(bufferWord[7:0]),
+    .o_doa(),
+    //--------------------
+    .i_clkb(master_clk),
+    .i_enb(1),
+    .i_web(0),
+    .i_addrb(addr_out_hdr[`OUTSTREAM_HDR_BITS-1:0]),
+    .i_dib(32'hFFFF),
+    .o_dob(hdr_out)
+);
+
+// the data INPUT receiver circuit
+reg meta_full;
+reg hdr_full;
+
+always @(negedge master_clk or posedge dot11_reset) begin
+    if(dot11_reset == 1) begin
+        addr_in_meta <= 0;
+        addr_in_hdr <= 0;
+        meta_full <= 0;
+        hdr_full <= 0;
+        bytesToStore <= 0;
+        bufferWord <= 0;
     end
+    else begin 
+        // payload header data, comes in bytewise
+        if(byte_out_strobe == 1 && hdr_full == 0) begin
+            bufferWord[7:0] <= byte_out;
+            bytesToStore <= 1;
+            ram_in_hdr_stb <= 1;
+            if(addr_in_hdr == {`OUTSTREAM_HDR_BITS{1'b1}})
+              hdr_full <= 1;
+        end
+        // meta data, comes in word wise
+        if(eq_phase_out_stb == 1 && meta_full == 0) begin
+            bufferWord[15:0] <= eq_phase_out;
+            bytesToStore <= 2;
+            ram_in_meta_stb <= 1;
+            if(addr_in_meta == {`OUTSTREAM_META_BITS{1'b1}})
+              meta_full <= 1;
+        end
+        else if(bytesToStore > 1) begin
+            //ram_in_strobe <= 1;
+            bytesToStore <= bytesToStore - 1;
+            bufferWord <= { 8'h00, bufferWord[15:8] };
+        end
+
+        // check if we are alread in a store phase, and if, disable the write signal
+        if(ram_in_hdr_stb == 1) begin
+            ram_in_hdr_stb <= 0;
+            addr_in_hdr <= addr_in_hdr + 1;
+        end
+        if(ram_in_meta_stb == 1) begin
+            ram_in_meta_stb <= 0;
+            addr_in_meta <= addr_in_meta + 1;
+        end
+    end
+end
+
+// the OUTPUT frame generator
+reg dcmi_frame; // low means we are idle, high means frame must be streamed out
+
+// frame signal generator
+always @(negedge master_clk) begin
+    if(reset_system == 1) begin
+        dcmi_frame <= 0;
+    end
+    else begin
+        if(fcs_out_strobe == 1 && dcmi_frame == 0) begin //new data and idle?
+            dcmi_frame <= 1;
+        end
+
+        if(addr_out_hdr == (`OUTSTREAM_HDR_SIZE+1)) begin //reached end of frame buffer?
+            dcmi_frame <= 0;
+        end
+    end
+end
+
+// 
+always @(posedge clk_DCMI or posedge reset_system) begin
+    if(reset_system == 1) begin
+        addr_out_meta <= 0;
+        addr_out_hdr <= 0;
+        o_byteOutStrobe <= 0;
+        o_byteOut <= 8'hAA;
+        o_DCMI_vsync <= 1; // high inactive
+        o_DCMI_hsync <= 1;
+    end
+    else if(dcmi_frame == 0) begin
+        addr_out_meta <= 0;
+        addr_out_hdr <= 0;
+        //o_byteOutStrobe <= 0;
+        o_byteOutStrobe <= ~o_byteOutStrobe; // pixel clock is alway running
+    end
+    else begin
+        o_byteOutStrobe <= ~o_byteOutStrobe; // pixel clock is alway running
+        if(dcmi_frame == 1) begin // idle state
+            //are we in clock high phase?
+            if (o_byteOutStrobe == 0) begin
+                // did we reach the end of both parts?
+                if(addr_out_meta != (`OUTSTREAM_META_SIZE)) begin
+                    o_DCMI_hsync <= 0;
+                    o_DCMI_vsync <= 0; // set frame active signal
+                    //o_byteOutStrobe <= 1;  // generate pixel clock
+                    addr_out_meta <= addr_out_meta + 1;
+                    o_byteOut <= meta_out;
+                end
+                else if(addr_out_hdr != (`OUTSTREAM_HDR_SIZE)) begin
+                    //o_byteOutStrobe <= 1;  // generate pixel clock
+                    addr_out_hdr <= addr_out_hdr + 1;
+                    o_byteOut <= hdr_out;
+                end
+                else begin
+                    addr_out_hdr <= addr_out_hdr + 1;
+                    o_DCMI_vsync <= 1; // high inactive
+                    o_DCMI_hsync <= 1;
+                    o_byteOut <= 0;
+                end
+            end
+        end
+    end
+    // serialize into bytes
+end
+
+always @(posedge reset_system) begin
+    rssi_half_db <= 0;
+    enable <= 1;
+end
 
 endmodule
 

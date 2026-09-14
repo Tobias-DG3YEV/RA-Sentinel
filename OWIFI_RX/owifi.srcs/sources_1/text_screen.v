@@ -47,7 +47,15 @@ module text_screen #(
     parameter COLS      = 128,   // 1024 / 8
     parameter ROWS      = 48,    // 768 / 16
     parameter HDR_ROWS  = 2,     // fixed header rows at the top
-    parameter FONT_FILE = "font8x16.mem"
+    parameter FONT_FILE = "font8x16.mem",
+    /* Window origin on the active screen. At the 0/0 default with a video
+       mode the text fills exactly (1024x768), behaviour is bit-identical to
+       the pre-window version. On a larger mode (VIDEO_1920_1080) the char
+       matrix keeps its COLSx8 x ROWSx16 pixel size and renders as a window
+       at this position; everything outside it is black - which is what lets
+       system_top_wbmc composite the polar DF display next to it. */
+    parameter TEXT_X0   = 0,
+    parameter TEXT_Y0   = 0
 )(
     /* pixel domain */
     input  wire        i_pixClk,
@@ -120,11 +128,23 @@ always @(*) begin
 end
 
 /*------------------------------------------------------------------*/
-/* address generation                                                */
+/* address generation - window-relative. win_x/win_y underflow       */
+/* outside the window, but every use is gated on in_win, and the     */
+/* window is what keeps col/scr_row from wrapping on screens wider   */
+/* than 1024 (act_x[9:3] alone repeats every 1024 pixels).           */
 /*------------------------------------------------------------------*/
-wire [6:0] col      = act_x[9:3];
-wire [5:0] scr_row  = act_y[9:4];
-wire [3:0] char_y   = act_y[3:0];
+localparam TEXT_W = COLS * 8;
+localparam TEXT_H = ROWS * 16;
+
+wire [11:0] win_x = act_x - TEXT_X0;
+wire [11:0] win_y = act_y - TEXT_Y0;
+wire in_win = de_raw &&
+              (act_x >= TEXT_X0) && (act_x < TEXT_X0 + TEXT_W) &&
+              (act_y >= TEXT_Y0) && (act_y < TEXT_Y0 + TEXT_H);
+
+wire [6:0] col      = win_x[9:3];
+wire [5:0] scr_row  = win_y[9:4];
+wire [3:0] char_y   = win_y[3:0];
 
 /* Header rows address themselves; log rows walk the ring starting at
    top_bin, so the newest line sits directly under the header. */
@@ -193,16 +213,17 @@ always @(posedge i_pixClk) font_q <= font[{char_q[5:0], char_y_d1}];
 /* pixel pipeline: address -> char (1) -> font (1) -> bit (1)        */
 /* Syncs are delayed by the same 3 stages so everything lines up.    */
 /*------------------------------------------------------------------*/
-reg [2:0]  hs_d, vs_d, de_d;
+reg [2:0]  hs_d, vs_d, de_d, win_d;
 reg [2:0]  cx_d0, cx_d1;
 reg [11:0] rgb_d1, rgb_d2;
 
 always @(posedge i_pixClk) begin
-    hs_d <= {hs_d[1:0], hs_raw};
-    vs_d <= {vs_d[1:0], vs_raw};
-    de_d <= {de_d[1:0], de_raw};
+    hs_d  <= {hs_d[1:0], hs_raw};
+    vs_d  <= {vs_d[1:0], vs_raw};
+    de_d  <= {de_d[1:0], de_raw};
+    win_d <= {win_d[1:0], in_win};
 
-    cx_d0 <= act_x[2:0];
+    cx_d0 <= win_x[2:0];
     cx_d1 <= cx_d0;
 
     rgb_d1 <= char_q[17:6];
@@ -218,7 +239,7 @@ always @(posedge i_pixClk) begin
     o_hs <= hs_d[2];
     o_vs <= vs_d[2];
     o_de <= de_d[2];
-    if (!de_d[2] || !pix) begin
+    if (!de_d[2] || !win_d[2] || !pix) begin
         o_r <= 8'h00; o_g <= 8'h00; o_b <= 8'h00;
     end
     else begin

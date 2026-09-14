@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 // Copyright (C) 2024 Tobias Weber
-// License: GPL-3.0-or-later
+// License: GNU GPL v3
 //
 // This project is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -32,7 +32,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns / 1ps
 
-`include "openwifi/common_defs.v"
+`include "common_defs.v"
 
 module system_top(
     /* Master Clock Input */
@@ -94,7 +94,7 @@ module system_top(
 
 );
 
-`include "openwifi/common_params.v"
+`include "common_params.v"
 
 `ifdef BETTER_SENSITIVITY
 `define THRESHOLD_SCALE 1

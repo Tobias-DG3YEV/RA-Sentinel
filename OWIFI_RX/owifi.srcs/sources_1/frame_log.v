@@ -8,9 +8,9 @@
 // Description:
 //   Live STATION LIST in text_screen's character RAM: one line per transmitter
 //   MAC (SA), updated IN PLACE rather than scrolled, most recently heard
-//   station always on the top row. The list holds as many stations as there
-//   are screen rows below the header (MAX_STA = 46); when it is full, the
-//   least recently heard station is evicted.
+//   station always on the top row. The list holds MAX_STA stations (default:
+//   every screen row below the header; the WBMC direction finder caps it at
+//   8); when it is full, the least recently heard station is evicted.
 //
 //   Admission policy - the two rules that keep the list meaningful on air:
 //     * a frame whose SA is ALREADY listed updates that line and moves it to
@@ -23,10 +23,16 @@
 //     * ACK/CTS (no address-2 field) and frames shorter than 16 bytes carry
 //       no SA at all and never touch the list.
 //
-//   The line format is unchanged from the scrolling log:
+//   The line format is the scrolling log's plus the BRG bearing column:
 //
-//     SEQ      TIME_US  LEN  RT FCS CFO  PWR SNR LTS_CORR FC   DEST. ADDR.  SOURCE ADDR. BYTES@16
-//     0000012A 0A3F91C4   1C 0B OK  -12K -35 24    12ABCD C000 0000DEADBEEF 0000C0FEBABE 99 99 ...
+//     SEQ      TIME_US  LEN  RT FCS CFO  PWR SNR LTS_CORR BRG  FC   DEST. ADDR.  SOURCE ADDR. BYTES@16
+//     0000012A 0A3F91C4   1C 0B OK  -12K -35 24    12ABCD 047  C000 0000DEADBEEF 0000C0FEBABE 99 99 ...
+//
+//   BRG     estimated arrival bearing in whole degrees, 000..359 compass
+//           style (df_frame's amplitude-comparison estimate, latched with
+//           the frame's own STF powers). "---" when the four beams did not
+//           disagree enough for a trustworthy bearing (DIR_MIN gate) or the
+//           preamble power sat below the ray floor.
 //
 //   so every station line shows the LAST frame heard from it. SEQ is still
 //   the global frame counter - a station's SEQ standing still is its "last
@@ -114,6 +120,11 @@ module frame_log #(
     parameter ROWS     = 48,
     parameter HDR_ROWS = 2,
     parameter LINE_W   = 128,
+    /* stations the list holds = rows painted below the header. Default fills
+       the screen (the original behaviour); system_top_wbmc caps it at 8 so
+       the list is a compact block above the polar disc. Eviction is LRU
+       either way. */
+    parameter MAX_STA  = ROWS - HDR_ROWS,
     /* readability floor for the hashed station colour: the brightest of its
        three 4-bit channels is never allowed below this. 4'hA renders as 0xAA,
        in the same band as the fixed colours around it (grey is 0xCC), and
@@ -148,35 +159,71 @@ module frame_log #(
     input  wire [15:0] i_iqbal_wp,
     input  wire [15:0] i_iqbal_eg,
 
+    /* raw deserialized FCLK words of the two ADCs (pre-rotation), ADC1 clock
+       domain, 2FF-synced HERE. Freeze forensics: a healthy link shows a
+       STABLE rotation of 000000111111 (any of 03F/07E/0FC/1F8...F81 and
+       complements); 000/FFF = FCLK lane stuck; a stable OTHER pattern = the
+       ADC is framing at the wrong rate (lost its SPI config); churning
+       digits = no bit lock. The word changes every strobe when broken, so
+       the 2FF sample may tear - fine for reading a PATTERN CLASS by eye. */
+    input  wire [11:0] i_fclk1,
+    input  wire [11:0] i_fclk2,
+
+    /* self-heal watchdog fire count (clk domain, quasi-static) - header
+       "HL:" field. Increments = the front-end deserializer was dead for 2s
+       and got force-retrained; 00 forever = every link drop recovered by
+       the supervisor's own re-sweep. */
+    input  wire [7:0]  i_heal,
+
+    /* bearing from df_frame - same clock domain, held from STF time until
+       the next detection, captured here at hdr_stb like the CFO */
+    input  wire [8:0]  i_brg_idx,   // angle table index, 0.703deg per LSB
+    input  wire        i_brg_ok,
+
+    /* freeze-forensics word for the header DBG field (assembled and synced
+       in the top; refreshed here with the ~1Hz WP/EG pass) */
+    input  wire [15:0] i_dbg,
+
     /* character RAM write port */
     output reg         o_wr,
     output reg  [12:0] o_wrAddr,
     output reg  [17:0] o_wrData,
-    output wire [5:0]  o_topRowGray
+    output wire [5:0]  o_topRowGray,
+
+    /* station event for the polar rim labels: one pulse per frame that
+       passes the list's admission gate, carrying the SA, its hashed list
+       colour and the frame's bearing - so label, ray and list line all
+       describe the same transmitter */
+    output reg         o_sta_stb,
+    output wire [47:0] o_sta_mac,
+    output wire [11:0] o_sta_rgb,
+    output wire [8:0]  o_sta_brg,
+    output wire        o_sta_brg_ok,
+    output wire        o_sta_fcs     // the frame's FCS verdict, for the
+                                     // labels' OK-frames-only bearing average
 );
 
-localparam LOG_ROWS = ROWS - HDR_ROWS;
-localparam MAX_STA  = LOG_ROWS;      // stations = rows below the header
 
 /* line layout:
-     0  .. 51   pre-rendered from `line`
-     52 .. 55   FC   (bytes 0-1)      56 blank
-     57 .. 68   DA   (bytes 4-9)      69 blank
-     70 .. 81   SA   (bytes 10-15)    82 blank
-     83 ..127   byte dump from byte 16, "XX " cells - 15 bytes fill the
-                remaining 45 columns exactly.
+     0  .. 51   pre-rendered from `line` (through LTS_CORR + blank)
+     52 .. 54   BRG (3 degree digits)   55,56 blank
+     57 .. 60   FC   (bytes 0-1)        61 blank
+     62 .. 73   DA   (bytes 4-9)        74 blank
+     75 .. 86   SA   (bytes 10-15)      87 blank
+     89 ..127   byte dump from byte 16, "XX " cells - 13 bytes fill the
+                remaining 39 columns exactly (88 stays blank).
    The three hex fields are muxed straight out of ren_bytes by column, so
    they cost a nibble mux rather than 31 more bytes of `line` register.
-   NOTE the prefix used to be 55 wide; narrowing CFO from seven Hz digits to
-   four kHz ones moved everything right of it three columns LEFT, which is
-   why the dump now starts at 83 and gets one more byte. */
-localparam PFX_W     = 52;
-localparam FC_COL    = 52;
-localparam DA_COL    = 57;
-localparam SA_COL    = 70;
-localparam PAY_COL   = 83;
+   NOTE the 5-column BRG field moved everything right of LTS_CORR five
+   columns RIGHT and the dump lost two bytes (15 -> 13) - the price of the
+   bearing column on a 128-column line. */
+localparam PFX_W     = 57;
+localparam FC_COL    = 57;
+localparam DA_COL    = 62;
+localparam SA_COL    = 75;
+localparam PAY_COL   = 89;
 localparam PAY_START = 16;   // first byte in the dump (skips FC/dur/DA/SA)
-localparam PAY_N     = 31;   // bytes captured: PAY_START + 15 shown
+localparam PAY_N     = 31;   // bytes captured: PAY_START + 13 shown
 
 /* Colours are 4:4:4 RGB carried in every character cell - text_screen has no
    palette left to index. These are the old 8-bit palette entries with each
@@ -274,9 +321,10 @@ function [11:0] rgb_of;
         else if (ci <= 7'd38) rgb_of = C_ORN;                // PWR
         else if (ci <= 7'd42) rgb_of = C_YEL;                // SNR
         else if (ci <= 7'd51) rgb_of = C_HDR;                // LTS_CORR
-        else if (ci <= 7'd56) rgb_of = C_GREY;               // FC
-        else if (ci <= 7'd69) rgb_of = C_WHT;                // DA
-        else if (ci <= 7'd82) rgb_of = sta;                  // SA - per station
+        else if (ci <= 7'd56) rgb_of = C_ORN;                // BRG
+        else if (ci <= 7'd61) rgb_of = C_GREY;               // FC
+        else if (ci <= 7'd74) rgb_of = C_WHT;                // DA
+        else if (ci <= 7'd87) rgb_of = sta;                  // SA - per station
         else                  rgb_of = fcs ? C_GOOD : C_BAD; // byte dump
     end
 endfunction
@@ -296,9 +344,12 @@ wire tick_1s = i_us_tick && (us_ctr[19:0] == 20'hFFFFF);
 /* IQ-imbalance coefficients: 2FF from the ADC clock domain          */
 /*------------------------------------------------------------------*/
 (* ASYNC_REG = "true" *) reg [15:0] wp_m, wp_s, eg_m, eg_s;
+(* ASYNC_REG = "true" *) reg [11:0] f1_m, f1_s, f2_m, f2_s;
 always @(posedge i_clk) begin
     wp_m <= i_iqbal_wp;  wp_s <= wp_m;
     eg_m <= i_iqbal_eg;  eg_s <= eg_m;
+    f1_m <= i_fclk1;     f1_s <= f1_m;
+    f2_m <= i_fclk2;     f2_s <= f2_m;
 end
 
 /*------------------------------------------------------------------*/
@@ -359,6 +410,8 @@ reg [31:0]        seq;
 reg [15:0]        cap_cfo;
 reg [31:0]        cap_pwr, cap_lts;
 reg [21:0]        cap_ai, cap_aq;
+reg [8:0]         cap_brg;
+reg               cap_brg_ok;
 
 always @(posedge i_clk) begin
     if (i_rst) begin
@@ -367,6 +420,7 @@ always @(posedge i_clk) begin
         cap_len <= 16'd0; cap_rate <= 8'd0;
         cap_cfo <= 16'd0; cap_pwr <= 32'd0; cap_lts <= 32'd0;
         cap_ai <= 22'd0; cap_aq <= 22'd0;
+        cap_brg <= 9'd0; cap_brg_ok <= 1'b0;
     end
     else begin
         if (i_hdr_stb) begin
@@ -382,6 +436,8 @@ always @(posedge i_clk) begin
                 cap_lts  <= hold_lts;
                 cap_ai   <= acc_i;         // SIGNAL done long before hdr_stb
                 cap_aq   <= acc_q;
+                cap_brg  <= i_brg_idx;     // held by df_frame since STF
+                cap_brg_ok <= i_brg_ok;
             end
         end
         else if (i_byte_stb && active && byte_cnt != PAY_N[4:0]) begin
@@ -474,6 +530,30 @@ wire [7:0] cfo_ck = 8'h4B;                     // 'K'
 wire [7:0] pwr_bcd = bcd99(pwr_db);
 wire [7:0] snr_bcd = bcd99(snr_db);
 
+/*------------------------------------------------------------------*/
+/* BRG rendering: table index (0.703deg/LSB) -> whole degrees,       */
+/* 000..359 compass style, always three digits.                      */
+/*   deg = idx * 360/512 = (idx * 45) >> 6, exact - and 45 is a      */
+/* 4-term shift-add, so no multiplier. Hundreds by compare (bcd99    */
+/* only reaches 99), remainder through the shared converter. "---"   */
+/* when the measurement failed its confidence gate - a bearing that  */
+/* is really just noise must not print as a number.                  */
+/*------------------------------------------------------------------*/
+wire [14:0] brg_x45 = {1'b0, cap_brg, 5'b0} + {3'b0, cap_brg, 3'b0}
+                    + {4'b0, cap_brg, 2'b0} + {6'b0, cap_brg};
+wire [8:0]  brg_deg = brg_x45[14:6];
+wire [1:0]  brg_h   = (brg_deg >= 9'd300) ? 2'd3 :
+                      (brg_deg >= 9'd200) ? 2'd2 :
+                      (brg_deg >= 9'd100) ? 2'd1 : 2'd0;
+wire [8:0]  brg_rem = brg_deg - ((brg_h == 2'd3) ? 9'd300 :
+                                 (brg_h == 2'd2) ? 9'd200 :
+                                 (brg_h == 2'd1) ? 9'd100 : 9'd0);
+wire [7:0]  brg_bcd = bcd99(brg_rem[6:0]);
+
+wire [7:0] brg_c2 = cap_brg_ok ? nib({2'b00, brg_h})   : 8'h2D;
+wire [7:0] brg_c1 = cap_brg_ok ? nib(brg_bcd[7:4])     : 8'h2D;
+wire [7:0] brg_c0 = cap_brg_ok ? nib(brg_bcd[3:0])     : 8'h2D;
+
 /* a function call cannot be part-selected, so the dabble adjust needs a
    named intermediate */
 wire [23:0] dab_w = dab_adj(dab_bcd);
@@ -544,7 +624,8 @@ wire [PFX_W*8-1:0] line_next = {
     8'h20,
     nib(snr_bcd[7:4]), nib(snr_bcd[3:0]), 8'h20, 8'h20,
     lts_c7, lts_c6, lts_c5, lts_c4, lts_c3, lts_c2, lts_c1, lts_c0,
-    8'h20
+    8'h20,
+    brg_c2, brg_c1, brg_c0, 8'h20, 8'h20
 };
 
 /*------------------------------------------------------------------*/
@@ -554,25 +635,36 @@ wire [PFX_W*8-1:0] line_next = {
 localparam integer HW = COLS;
 localparam [HW*8-1:0] HDR0 = {
     "RA-SENTINEL OWIFI_RX   802.11 STATIONS BY LAST SEEN",   // cols 0..50
-    {49{8'h20}},                                 // cols 51..99
+    {29{8'h20}},                                 // cols 51..79
+    "HL:", "--",                                 // cols 80..82, 83..84
+    8'h20,                                       // col  85
+    "F1:", "---",                                // cols 86..88, 89..91
+    " F2:", "---",                               // cols 92..95, 96..98
+    8'h20,                                       // col  99
     "IQ WP:", "----",                            // cols 100..105, 106..109
     " EG:",   "----",                            // cols 110..113, 114..117
-    {10{8'h20}}                                  // cols 118..127
+    " DBG:",  "----",                            // cols 118..122, 123..126
+    8'h20                                        // col  127
 };
-/* column-exact against the layout table above: 55 + 5 + 13 + 13 + 8 = 94,
+/* column-exact against the layout table above: 52 + 5 + 5 + 13 + 13 + 9 = 97,
    padded to 128. */
 localparam [HW*8-1:0] HDR1 = {
     "SEQ      TIME_US  LEN  RT FCS CFO  PWR SNR LTS_CORR ",     // 0..51
-    "FC   ",                                                    // 52..56
-    "DEST. ADDR.  ",                                            // 57..69
-    "SOURCE ADDR. ",                                            // 70..82
-    "BYTES@16",                                                 // 83..90
-    {37{8'h20}}
+    "BRG  ",                                                    // 52..56
+    "FC   ",                                                    // 57..61
+    "DEST. ADDR.  ",                                            // 62..74
+    "SOURCE ADDR. ",                                            // 75..87
+    " BYTES@16",                                                // 88..96
+    {31{8'h20}}
 };
 
-/* the dynamic WP/EG hex digits live at these header-row-0 columns */
+/* the dynamic WP/EG/DBG/F1/F2 hex digits live at these header-row-0 columns */
 localparam [6:0] IQ_WP_COL = 7'd106;
 localparam [6:0] IQ_EG_COL = 7'd114;
+localparam [6:0] DBG_COL   = 7'd123;
+localparam [6:0] F1_COL    = 7'd89;
+localparam [6:0] F2_COL    = 7'd96;
+localparam [6:0] HL_COL    = 7'd83;
 
 /*------------------------------------------------------------------*/
 /* MRU station table: position -> {MAC, line-store slot}.            */
@@ -602,7 +694,7 @@ reg [12:0] fill_addr;
 reg [6:0]  ci;             // character index within the line / header
 reg        hdr_row;
 reg [4:0]  conv_cnt;
-reg [2:0]  iq_cnt;
+reg [4:0]  iq_cnt;
 reg [4:0]  pay_idx;        // payload byte being rendered
 reg [1:0]  pay_sub;        // 0: high nibble, 1: low nibble, 2: space
 reg        refresh_due;
@@ -731,15 +823,36 @@ wire [7:0] line_char = (ci < PFX_W[6:0])       ? line[(PFX_W-1-ci)*8 +: 8] :
                        (in_fc | in_da | in_sa) ? hex_char :
                        (ci >= PAY_COL[6:0])    ? pay_char : 8'h20;
 
-/* WP/EG hex digit for the current S_IQ step */
-wire [6:0] iq_col = (iq_cnt < 3'd4) ? (IQ_WP_COL + {4'd0, iq_cnt})
-                                    : (IQ_EG_COL - 7'd4 + {4'd0, iq_cnt});
-wire [3:0] iq_nib = (iq_cnt < 3'd4) ? wp_s[(2'd3 - iq_cnt[1:0])*4 +: 4]
-                                    : eg_s[(2'd3 - iq_cnt[1:0])*4 +: 4];
+/* WP/EG/DBG/F1/F2/HL hex digit for the current S_IQ step: three 4-digit
+   fields, two 3-digit fields, one 2-digit field - 20 steps total */
+wire [6:0] iq_col = (iq_cnt < 5'd4)  ? (IQ_WP_COL + {2'd0, iq_cnt})
+                  : (iq_cnt < 5'd8)  ? (IQ_EG_COL - 7'd4 + {2'd0, iq_cnt})
+                  : (iq_cnt < 5'd12) ? (DBG_COL - 7'd8 + {2'd0, iq_cnt})
+                  : (iq_cnt < 5'd15) ? (F1_COL - 7'd12 + {2'd0, iq_cnt})
+                  : (iq_cnt < 5'd18) ? (F2_COL - 7'd15 + {2'd0, iq_cnt})
+                  :                    (HL_COL - 7'd18 + {2'd0, iq_cnt});
+wire [3:0] iq_nib = (iq_cnt < 5'd4)  ? wp_s[(2'd3 - iq_cnt[1:0])*4 +: 4]
+                  : (iq_cnt < 5'd8)  ? eg_s[(2'd3 - iq_cnt[1:0])*4 +: 4]
+                  : (iq_cnt < 5'd12) ? i_dbg[(2'd3 - iq_cnt[1:0])*4 +: 4]
+                  : (iq_cnt < 5'd15) ? f1_s[(5'd14 - iq_cnt)*4 +: 4]
+                  : (iq_cnt < 5'd18) ? f2_s[(5'd17 - iq_cnt)*4 +: 4]
+                  :                    i_heal[(5'd19 - iq_cnt)*4 +: 4];
 
 /* the display no longer scrolls: display row == character-RAM row, and
    text_screen's ring arithmetic degenerates to identity at top = 0 */
 assign o_topRowGray = 6'd0;
+
+/* station event: S_TAB0 is the one cycle where a frame has just been
+   admitted (known SA, or unknown with good FCS) and ren_sa / sta_rgb /
+   cap_brg are all valid and frozen; the pulse fires one clock later, well
+   inside S_LINE where they still hold. */
+always @(posedge i_clk)
+    o_sta_stb <= i_rst ? 1'b0 : (st == S_TAB0);
+assign o_sta_mac    = ren_sa;
+assign o_sta_rgb    = sta_rgb;
+assign o_sta_brg    = cap_brg;
+assign o_sta_brg_ok = cap_brg_ok;
+assign o_sta_fcs    = cap_fcs;
 
 /*------------------------------------------------------------------*/
 /* line store: one 128-character rendered line per station slot.      */
@@ -801,7 +914,7 @@ always @(posedge i_clk) begin
         cap_fcs   <= 1'b0;
         cap_n     <= 5'd0;
         conv_cnt  <= 5'd0;
-        iq_cnt    <= 3'd0;
+        iq_cnt    <= 5'd0;
         pay_idx   <= PAY_START[4:0];
         pay_sub   <= 2'd0;
         refresh_due <= 1'b0;
@@ -850,7 +963,7 @@ always @(posedge i_clk) begin
                 ci <= 7'd0;
                 if (hdr_row) begin
                     st <= S_IQ;        // paint the initial WP/EG values
-                    iq_cnt <= 3'd0;
+                    iq_cnt <= 5'd0;
                 end
                 else
                     hdr_row <= 1'b1;
@@ -872,7 +985,7 @@ always @(posedge i_clk) begin
                 st       <= S_CONV;
             end
             else if (refresh_due) begin
-                iq_cnt <= 3'd0;
+                iq_cnt <= 5'd0;
                 st     <= S_IQ;
             end
         end
@@ -918,7 +1031,7 @@ always @(posedge i_clk) begin
                     /* a bad-FCS frame may not CREATE a station: its SA bytes
                        are exactly what the FCS says they are - unreliable.
                        (Mostly 11ax/VHT PPDUs decoded as 6M garbage.) */
-                    iq_cnt <= 3'd0;
+                    iq_cnt <= 5'd0;
                     st     <= S_IQ;
                 end
                 else if (sta_cnt != MAX_STA[5:0]) begin
@@ -1018,7 +1131,7 @@ always @(posedge i_clk) begin
             end
             if (cp_ci == 8'd128) begin
                 if (cd + 6'd1 == rows_k) begin
-                    iq_cnt <= 3'd0;
+                    iq_cnt <= 5'd0;
                     st     <= S_IQ;
                 end
                 else begin
@@ -1030,16 +1143,16 @@ always @(posedge i_clk) begin
                 cp_ci <= cp_ci + 8'd1;
         end
 
-        /* refresh the WP/EG hex digits in header row 0 */
+        /* refresh the WP/EG/DBG/F1/F2 hex digits in header row 0 */
         S_IQ: begin
             o_wr        <= 1'b1;
             o_wrAddr    <= {6'd0, iq_col};
             o_wrData    <= chcell(nib(iq_nib), C_WHT);
             refresh_due <= 1'b0;
-            if (iq_cnt == 3'd7)
+            if (iq_cnt == 5'd19)
                 st <= S_IDLE;
             else
-                iq_cnt <= iq_cnt + 3'd1;
+                iq_cnt <= iq_cnt + 5'd1;
         end
 
         default: st <= S_IDLE;

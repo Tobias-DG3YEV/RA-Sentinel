@@ -29,8 +29,14 @@
 //                                                                              //
 //////////////////////////////////////////////////////////////////////////////////
 
-/*  this is the resoltion the project will use. Change it to your needs. */
+/*  this is the resoltion the project will use. Change it to your needs.
+    A build flow may override it instead of editing this file - passing
+    e.g. VIDEO_1920_1080=1 via -verilog_define (build_wbmc.tcl does) wins,
+    and without any override the historical 1024x768 default applies
+    (build_rasbb.tcl relies on that). */
+`ifndef VIDEO_1920_1080
 `define	VIDEO_1024_768
+`endif
 
 //video timing localparam definition
 `ifdef  VIDEO_1280_720
