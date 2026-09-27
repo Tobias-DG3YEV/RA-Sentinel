@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -6947,6 +6947,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "Clock Test Output"
 		(exclude_from_sim no)
@@ -7209,6 +7324,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "0ef022b8-f7a6-4020-88e1-5ba845520af2")
 	)
@@ -7269,6 +7385,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "2c4d2a32-8c25-4af8-8840-b284e1c2b2e2")
 	)
@@ -7309,6 +7426,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "3ff79bfa-651d-4a00-a40b-9c0572a6ee44")
 	)
@@ -7339,6 +7457,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "417d3c2d-a26b-42bf-857a-8bbe5ab23aef")
 	)
@@ -7369,6 +7488,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "5381a4e2-0134-4b62-9a07-231141b8ce53")
 	)
@@ -7389,6 +7509,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "562ff702-6978-4745-92a4-3392da257020")
 	)
@@ -7429,6 +7550,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "752cf002-f6c5-4254-baed-7202020e0b32")
 	)
@@ -7449,6 +7571,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "783e6718-ecc0-4ff5-975f-d64c469b2625")
 	)
@@ -7459,6 +7582,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "83b69783-f7a9-474c-94e7-d5ec331bd212")
 	)
@@ -7469,6 +7593,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "8878b68b-7187-4a98-a064-bb2ca06e46a3")
 	)
@@ -7479,6 +7604,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "8c8995e0-b416-4037-9466-1792698145d3")
 	)
@@ -7499,6 +7625,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "93517206-7aaa-4f7c-8629-a39e92aaae31")
 	)
@@ -7579,6 +7706,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a66be9b0-0b69-4efb-89a7-25a054e9c17b")
 	)
@@ -7589,6 +7717,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a8641a65-6d1b-472d-99f4-c2e4c90c7297")
 	)
@@ -7649,6 +7778,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "b4040030-370f-4b9d-8ce2-200e33e0fb49")
 	)
@@ -7669,6 +7799,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "bbfebe49-2909-4d8f-8ed8-abb0ceef3784")
 	)
@@ -7679,6 +7810,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "bc064e68-2b2f-4a82-908d-3721ba1e00eb")
 	)
@@ -7729,6 +7861,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e34be212-e621-498a-9afc-8686cebbc0dc")
 	)
@@ -7739,6 +7872,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e576da1b-2aa0-46b4-bef2-18a5dfff94ef")
 	)
@@ -7769,6 +7903,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ebe686b5-b033-467c-b501-72ad832f00b2")
 	)
@@ -7809,6 +7944,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "f9dfb9b0-a95b-47e5-a1a0-9b3e371b539f")
 	)
@@ -8721,6 +8857,17 @@
 		)
 		(uuid "8cd84272-9338-479a-a59c-32646ef94af9")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 87.63 125.73 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b3179847-d4ef-43ed-a2b6-fe1dc4518fa2")
+	)
 	(hierarchical_label "F2_B35_A1"
 		(shape output)
 		(at 140.97 127 180)
@@ -8957,7 +9104,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 118.11 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9247,7 +9394,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 125.73 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9439,17 +9586,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 163.83 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 163.83 64.77 0)
 			(hide yes)
@@ -9621,7 +9757,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -9714,17 +9850,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 104.14 64.77 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 104.14 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -10006,7 +10131,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 87.63 130.81 0)
 			(hide yes)
 			(show_name no)
@@ -10049,84 +10174,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/07a5a2f3-3ce6-4945-b18c-18d4cab18b87"
 					(reference "R72")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 87.63 125.73 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "aea18406-81ce-44d6-9a0d-6c74a84f9ed1")
-		(property "Reference" "#PWR0236"
-			(at 87.63 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 80.772 124.968 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 87.63 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 87.63 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 87.63 125.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fab20b18-0174-4175-86d3-62ef344fe455")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/07a5a2f3-3ce6-4945-b18c-18d4cab18b87"
-					(reference "#PWR0236")
 					(unit 1)
 				)
 			)
@@ -10185,7 +10232,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 123.19 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -10255,7 +10302,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "FPGA2_CLK_OUT"
 			(at 107.315 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10403,7 +10450,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 134.62 64.77 0)
 			(hide yes)
 			(show_name no)
@@ -10493,7 +10540,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 96.52 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -10596,17 +10643,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 214.63 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 214.63 134.62 0)
 			(hide yes)
 			(show_name no)
@@ -11616,6 +11652,85 @@
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/07a5a2f3-3ce6-4945-b18c-18d4cab18b87"
 					(reference "U11")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 58.42 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f9f4cfc8-7a4c-4157-ae53-eb5260d123e4")
+		(property "Reference" "#FLG017"
+			(at 58.42 122.555 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 58.42 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 58.42 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 58.42 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 58.42 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "980ea596-7a1e-44b8-ac4b-dd67ff2571f5")
+		)
+		(instances
+			(project "RASBB"
+				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/07a5a2f3-3ce6-4945-b18c-18d4cab18b87"
+					(reference "#FLG017")
+					(unit 1)
 				)
 			)
 		)

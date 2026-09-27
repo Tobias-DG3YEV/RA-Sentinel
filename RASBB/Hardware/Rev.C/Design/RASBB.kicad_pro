@@ -196,7 +196,7 @@
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.25,
         "min_microvia_drill": 0.15,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
         "min_text_height": 1.0,
         "min_text_thickness": 0.15,
@@ -323,7 +323,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "C"
+      "sch_revision": "C.6"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -748,6 +748,9 @@
       "/DDR3-01/DDR301_nCS": "rgb(255, 0, 0)",
       "/DDR3-01/DDR301_nRAS": "rgb(255, 0, 0)",
       "/DDR3-01/DDR301_nWE": "rgb(255, 0, 0)",
+      "/FPGA-01/1V0": "rgb(255, 153, 0)",
+      "/PCIE/12V": "rgb(255, 0, 0)",
+      "/VDC_IN": "rgb(194, 0, 194)",
       "GND": "rgb(194, 194, 194)",
       "unconnected-(IC9-A14-PadT7)": "rgb(0, 194, 194)",
       "unconnected-(U10A-IO_L6N_T0_VREF_15-PadD13)": "rgb(255, 0, 0)"
@@ -808,7 +811,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "..\\Production\\RASBB_REVC_01.csv",
+    "bom_export_filename": "..\\..\\..\\Production\\RASBB.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -830,7 +833,7 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Value",
           "name": "Value",
           "show": true
@@ -839,10 +842,10 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -851,16 +854,16 @@
           "group_by": false,
           "label": "Qty",
           "name": "${QUANTITY}",
-          "show": true
+          "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "DNP",
           "name": "${DNP}",
           "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "LCSC Part #",
           "name": "LCSC Part #",
           "show": true
@@ -879,12 +882,6 @@
         },
         {
           "group_by": false,
-          "label": "LCSC Part # ",
-          "name": "LCSC Part # ",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Manufacturer_Name",
           "name": "Manufacturer_Name",
           "show": false
@@ -897,15 +894,9 @@
         },
         {
           "group_by": false,
-          "label": "Mfr. Part # ",
-          "name": "Mfr. Part # ",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Description",
           "name": "Description",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -927,38 +918,8 @@
         },
         {
           "group_by": false,
-          "label": "Mfr. Part #  ",
-          "name": "Mfr. Part #  ",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC Part #  ",
-          "name": "LCSC Part #  ",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC Order #",
-          "name": "LCSC Order #",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Manufacturer_Part_Number",
-          "name": "Manufacturer_Part_Number",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "Availability",
           "name": "Availability",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "MP",
-          "name": "MP",
           "show": false
         },
         {
@@ -1017,12 +978,6 @@
         },
         {
           "group_by": false,
-          "label": "MF",
-          "name": "MF",
-          "show": false
-        },
-        {
-          "group_by": false,
           "label": "SnapEDA_Link",
           "name": "SnapEDA_Link",
           "show": false
@@ -1043,12 +998,6 @@
           "group_by": false,
           "label": "Created Date",
           "name": "Created Date",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Part Number",
-          "name": "Part Number",
           "show": false
         },
         {
@@ -1105,7 +1054,7 @@
       "include_excluded_from_bom": false,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Footprint"
+      "sort_field": "Reference"
     },
     "bus_aliases": {},
     "connection_grid_size": 50.0,
@@ -1201,7 +1150,7 @@
     ],
     [
       "b61e5587-9e9e-46ae-ba64-07a8572f9f48",
-      "Interconnect (page 11)"
+      "Interconnect"
     ],
     [
       "4076aa04-90aa-440d-a5e6-7a7144feeeac",

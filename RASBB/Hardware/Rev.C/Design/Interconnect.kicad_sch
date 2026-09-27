@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -1894,6 +1894,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "162c2ed8-2171-4cc3-bf92-64b4acc8343c")
 	)
@@ -2294,6 +2295,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "59b77adb-5f52-405e-9276-33675cab6eca")
 	)
@@ -2564,6 +2566,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "9227bcc6-e272-4172-8eeb-8b7455d74911")
 	)
@@ -3014,6 +3017,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e52ff530-71f4-4959-a502-65d880100f63")
 	)
@@ -4057,6 +4061,17 @@
 		)
 		(uuid "46e19fe1-d2ed-4603-9a21-2bcb10f4b984")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 31.75 102.87 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "49c0c3bc-6a36-48d2-8393-7b69319d7259")
+	)
 	(hierarchical_label "DEBUG_D12_F"
 		(shape output)
 		(at 201.93 100.33 0)
@@ -4111,6 +4126,17 @@
 			(justify right)
 		)
 		(uuid "6129e52d-99d5-4c7e-8942-403d2d3ecb1b")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 31.75 52.07 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6b8c9d8e-ae90-479c-936d-9e52d157a86b")
 	)
 	(hierarchical_label "DEBUG_A3_F"
 		(shape output)
@@ -4386,86 +4412,6 @@
 			(justify right)
 		)
 		(uuid "fb013703-82c2-49dd-89ac-15ab638e8b23")
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 31.75 102.87 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "07b08407-a960-470a-811e-5eb7440618dd")
-		(property "Reference" "#PWR0256"
-			(at 31.75 106.68 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 29.21 101.5999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 31.75 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 31.75 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0d9fdaf1-aaab-4582-8fb2-26e290660ace")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/b61e5587-9e9e-46ae-ba64-07a8572f9f48"
-					(reference "#PWR0256")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "Device:C_Small")
@@ -4887,86 +4833,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 31.75 52.07 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "53d643d9-afda-40e2-b01a-99e16fc7e6c6")
-		(property "Reference" "#PWR097"
-			(at 31.75 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 29.21 50.7999 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 31.75 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 31.75 52.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6390e756-21a5-496e-8d90-451a8ba16c38")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/b61e5587-9e9e-46ae-ba64-07a8572f9f48"
-					(reference "#PWR097")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 31.75 58.42 0)
 		(mirror y)
@@ -5173,18 +5039,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 256.54 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 240.03 119.38 0)
 			(hide yes)
@@ -5341,9 +5195,8 @@
 				)
 			)
 		)
-		(property "Value" "FH12-50S-0.5SV"
+		(property "Value" "ICON"
 			(at 81.28 85.09 0)
-			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6033,18 +5886,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 191.77 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 175.26 57.15 0)
 			(hide yes)
@@ -6217,18 +6058,6 @@
 		)
 		(property "Manufacturer_Name" "Bourns"
 			(at 256.54 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 256.54 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6421,18 +6250,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 191.77 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 175.26 77.47 0)
 			(hide yes)
@@ -6604,18 +6421,6 @@
 		)
 		(property "Manufacturer_Name" "Bourns"
 			(at 256.54 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 256.54 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6886,18 +6691,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 256.54 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 240.03 57.15 0)
 			(hide yes)
@@ -7070,18 +6863,6 @@
 		)
 		(property "Manufacturer_Name" "Bourns"
 			(at 191.77 154.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 191.77 157.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7274,18 +7055,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 191.77 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 175.26 97.79 0)
 			(hide yes)
@@ -7468,18 +7237,6 @@
 				(justify left)
 			)
 		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 256.54 157.48 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(property "LCSC Part #" "C1731024"
 			(at 240.03 142.24 0)
 			(hide yes)
@@ -7652,18 +7409,6 @@
 		)
 		(property "Manufacturer_Name" "Bourns"
 			(at 191.77 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Manufacturer_Part_Number" "CAY10-330J4LF"
-			(at 191.77 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

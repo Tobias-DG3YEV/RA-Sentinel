@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -6959,6 +6959,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "0975597a-c682-4cff-bafb-e672c052cfe0")
 	)
@@ -6999,6 +7000,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "14335e38-ad01-4692-acd7-5ece211c86f7")
 	)
@@ -7049,6 +7051,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "1a1b3fd4-c493-4534-944e-4ca4b2f10576")
 	)
@@ -7059,6 +7062,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "1aadacaa-53da-4413-aef0-e54adf20b15a")
 	)
@@ -7089,6 +7093,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "1ec6fedc-cb84-4319-bac0-1363f8e8386a")
 	)
@@ -7119,6 +7124,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "23ac0132-fbe5-44b1-9e67-5823ae4c784b")
 	)
@@ -7129,6 +7135,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "2abd9c08-73dd-4f2e-bdc2-e16f0ab6521d")
 	)
@@ -7189,6 +7196,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "31735cdb-5b8d-43c0-97d6-a049e4534022")
 	)
@@ -7209,6 +7217,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "36579d5a-f5dc-43e2-a925-2265e2a1c912")
 	)
@@ -7279,6 +7288,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "417e07b2-d282-43b8-b3d3-45811d915cb1")
 	)
@@ -7289,6 +7299,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4367ccb1-9bd6-4975-8d62-bbf8d38e3b9b")
 	)
@@ -7309,6 +7320,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "43e2a05e-115f-48d2-9d8c-4416e1146cec")
 	)
@@ -7319,6 +7331,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4434faca-c17b-4d8c-b05c-b63a355c8ff9")
 	)
@@ -7329,6 +7342,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "45030d8f-c8a0-462c-b9e8-a67d9861bd22")
 	)
@@ -7339,6 +7353,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4691f169-cda2-4dd1-91c0-2c357f76f0c1")
 	)
@@ -7399,6 +7414,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4ae8b887-649a-480c-8691-36a2ba807e44")
 	)
@@ -7409,6 +7425,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4b62902e-cc73-4dad-9f59-6b389af64f69")
 	)
@@ -7419,6 +7436,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4e9c29e3-4a52-4eaf-bfa7-5b1d82cb21a1")
 	)
@@ -7459,6 +7477,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "538a6a9b-52b5-4f97-872b-7be3d5cb3936")
 	)
@@ -7499,6 +7518,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "5886fbb9-b4b4-46bb-b6e7-98f8b1a82c98")
 	)
@@ -7519,6 +7539,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "5f97dfa0-6ecb-4147-81e4-dd06a9172ea2")
 	)
@@ -7559,6 +7580,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "6674a53b-e12d-4a13-b5ed-cd54d8cfc24c")
 	)
@@ -7609,6 +7631,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "6e445efe-90eb-4be1-a0b7-07ca31db59bd")
 	)
@@ -7619,6 +7642,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "70e7e77a-437b-4fca-a997-7fecec5a8bb0")
 	)
@@ -7649,6 +7673,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "78ee86f9-37dd-4a8c-98a3-aded5ff502fd")
 	)
@@ -7689,6 +7714,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "809b4df9-dbf5-431d-a4fc-6f3400522a9d")
 	)
@@ -7699,6 +7725,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "831c5b4f-418b-45f1-bba0-3a3ec8d9d666")
 	)
@@ -7859,6 +7886,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a0f76512-ad63-454c-8226-0153bd3dfce9")
 	)
@@ -7879,6 +7907,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a417455d-472a-425f-b101-d68b9a10486a")
 	)
@@ -7889,6 +7918,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a7e2f0e6-fde2-4549-8f5f-72c270196093")
 	)
@@ -7979,6 +8009,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "bb1380f0-bcd8-44fd-a480-e2fd77d68d62")
 	)
@@ -8019,6 +8050,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "c19b6fb8-00a9-4a98-ac8d-11ccec78d07f")
 	)
@@ -8039,6 +8071,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "c6159c69-1000-4529-8831-28acf54e067e")
 	)
@@ -8049,6 +8082,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "c6e5144a-68f4-4f7d-95ee-fa105a2306cf")
 	)
@@ -8089,6 +8123,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "cc53e08e-6f8f-487c-8940-702106c20f45")
 	)
@@ -8119,6 +8154,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "d7014cee-376a-4b94-8085-076aa0d80e9d")
 	)
@@ -8139,6 +8175,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "dd17507c-46de-4ab3-8a23-b17c5bf03a78")
 	)
@@ -8149,6 +8186,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "dff2843b-b385-41c2-a42c-39b2132cdcfd")
 	)
@@ -8199,6 +8237,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e5d86c8b-badd-4b5f-acf6-89ab62339eeb")
 	)
@@ -8219,6 +8258,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e6d54ba8-37a5-49c0-8a6e-19e770ca1788")
 	)
@@ -8239,6 +8279,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e8770054-9bd6-4f06-a42c-4818ff3a6d88")
 	)
@@ -8299,6 +8340,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "fbbce620-acff-41ba-80b7-7da85c155674")
 	)
@@ -9908,7 +9950,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 78.74 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10101,17 +10143,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 107.95 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 107.95 80.01 0)
 			(hide yes)
@@ -10269,7 +10300,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "100mW Thick Film Resistors 50V ±100ppm/℃ ±1% 1kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 54.61 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -10384,7 +10415,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 246.38 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10489,7 +10520,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 69.85 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10681,17 +10712,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 97.79 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 97.79 80.01 0)
 			(hide yes)
@@ -10795,17 +10815,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 217.17 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 217.17 80.01 0)
 			(hide yes)
@@ -10888,17 +10897,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 154.94 149.86 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 154.94 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -11965,7 +11963,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "100mW Thick Film Resistors 50V ±100ppm/℃ ±1% 1kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 66.04 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -12079,7 +12077,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 262.89 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12183,7 +12181,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 236.22 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12287,7 +12285,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 255.27 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12401,17 +12399,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 227.33 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 227.33 80.01 0)
 			(hide yes)
@@ -12505,7 +12492,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 62.23 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12598,17 +12585,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 207.01 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 207.01 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -12825,17 +12801,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
-			(at 45.72 80.01 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C883598"
 			(at 45.72 80.01 0)
 			(hide yes)
@@ -12927,28 +12892,6 @@
 			)
 		)
 		(property "Description" "5mA 285mcd Frosted Orange Lens -40℃~+85℃ 592nm~600nm Positive Stick Orange 130° 20mW 2.4V~3V 0603 LED Indication - Discrete ROHS"
-			(at 54.61 255.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "A-SP192GS1D-C01-4T"
-			(at 54.61 255.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #  " "C5355434"
 			(at 54.61 255.27 0)
 			(hide yes)
 			(show_name no)
@@ -13064,7 +13007,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 88.9 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -13155,28 +13098,6 @@
 			)
 		)
 		(property "Description" "225mcd~450mcd Colorless Transparent Lens -40℃~+85℃ Positive Stick 520nm~535nm Green 120° 70mW 2.4V~3V 0603 LED Indication - Discrete ROHS"
-			(at 66.04 255.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "A-SP192DGHC-C01-4T"
-			(at 66.04 255.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #  " "C19171301"
 			(at 66.04 255.27 0)
 			(hide yes)
 			(show_name no)

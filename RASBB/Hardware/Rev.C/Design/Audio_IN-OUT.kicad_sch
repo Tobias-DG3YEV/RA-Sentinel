@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -1606,145 +1606,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+5V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+5V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -1899,10 +1760,10 @@
 		(uuid "61dad156-30e8-4e78-b04f-4da79469e3b9")
 	)
 	(junction
-		(at 86.36 21.59)
+		(at 76.2 21.59)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8e28de62-3f53-405a-8fab-7bb59747b341")
+		(uuid "67066909-4bfb-449a-b236-beaab944be16")
 	)
 	(junction
 		(at 124.46 120.65)
@@ -1948,11 +1809,12 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 118.11) (xy 111.76 120.65)
+			(xy 99.06 133.35) (xy 101.6 133.35)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "0686aea2-f1f6-4112-8379-6863bf0c6f50")
 	)
@@ -2028,16 +1890,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 20.32) (xy 86.36 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3f83e77b-b28d-455c-a648-e5a6d65cce02")
-	)
-	(wire
-		(pts
 			(xy 134.62 93.98) (xy 134.62 86.36)
 		)
 		(stroke
@@ -2053,6 +1905,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "41dbf934-3b23-4fb1-a2bc-97cfef3c8ce9")
 	)
@@ -2138,16 +1991,6 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 21.59) (xy 86.36 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b89669a-f2fc-4e5b-bd62-60c8931ca70b")
-	)
-	(wire
-		(pts
 			(xy 88.9 31.75) (xy 88.9 21.59)
 		)
 		(stroke
@@ -2228,16 +2071,6 @@
 	)
 	(wire
 		(pts
-			(xy 76.2 24.13) (xy 76.2 21.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "758f2ad1-c3b6-4f43-ad6a-ee0d7573da8b")
-	)
-	(wire
-		(pts
 			(xy 101.6 93.98) (xy 101.6 113.03)
 		)
 		(stroke
@@ -2245,6 +2078,17 @@
 			(type default)
 		)
 		(uuid "76a2f7cd-68c2-4d5c-9afd-afb823ea6c8b")
+	)
+	(wire
+		(pts
+			(xy 101.6 120.65) (xy 124.46 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 220 0 0 1)
+		)
+		(uuid "7a7ca46e-05c0-4159-ba9b-574488d05206")
 	)
 	(wire
 		(pts
@@ -2363,6 +2207,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "8ddfd143-972f-4d63-ac91-6c14d3936f27")
 	)
@@ -2385,6 +2230,17 @@
 			(type default)
 		)
 		(uuid "93ada762-9ebd-4246-b66e-bb51b316d06b")
+	)
+	(wire
+		(pts
+			(xy 76.2 21.59) (xy 76.2 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 200 0 1)
+		)
+		(uuid "9602e5f7-0e2b-4632-85a3-dc37ebb51d48")
 	)
 	(wire
 		(pts
@@ -2428,6 +2284,17 @@
 	)
 	(wire
 		(pts
+			(xy 86.36 21.59) (xy 86.36 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 200 0 1)
+		)
+		(uuid "a6f293bc-2404-4225-aba6-b378b1afcb3a")
+	)
+	(wire
+		(pts
 			(xy 99.06 21.59) (xy 99.06 25.4)
 		)
 		(stroke
@@ -2448,11 +2315,12 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 120.65) (xy 124.46 120.65)
+			(xy 101.6 133.35) (xy 101.6 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "b4c6870b-fbf0-4a4a-a146-54cbca8730b1")
 	)
@@ -2523,6 +2391,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 200 0 1)
 		)
 		(uuid "d2f0af9c-629f-420f-a9e5-0a82de0886c7")
 	)
@@ -2565,6 +2434,17 @@
 			(type default)
 		)
 		(uuid "e09c8d6c-7f94-41e5-b98c-5abb6feb8e76")
+	)
+	(wire
+		(pts
+			(xy 59.69 21.59) (xy 76.2 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 0 200 0 1)
+		)
+		(uuid "e0dbef77-1ce1-4473-96f8-12745b919746")
 	)
 	(wire
 		(pts
@@ -2656,6 +2536,17 @@
 		)
 		(uuid "ff6f0bea-4547-408a-bc37-046f167ee2ff")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 157.48 105.41 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "09c66f24-c58d-4a20-ba81-98daaebf441b")
+	)
 	(hierarchical_label "Audio_PTT"
 		(shape output)
 		(at 196.85 101.6 0)
@@ -2678,6 +2569,39 @@
 		)
 		(uuid "23f00143-8e80-4fe5-bb03-c32a19cb344a")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 181.61 105.41 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "50961f93-d90a-4aeb-96c3-07691feb2cdb")
+	)
+	(hierarchical_label "5V0"
+		(shape input)
+		(at 59.69 21.59 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74e7e15d-82fa-402c-a40a-c56b914d4a8d")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 193.04 92.71 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "92d49e9d-0741-4044-aea2-ff61b20e9cc4")
+	)
 	(hierarchical_label "Audio_IN"
 		(shape output)
 		(at 66.04 113.03 180)
@@ -2688,6 +2612,17 @@
 			(justify right)
 		)
 		(uuid "baf8686f-af3a-4a5c-aa19-83b22fe5f3cb")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 99.06 133.35 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f8a1e705-7cff-43f4-ae23-4553810c815e")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -2762,85 +2697,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
 					(reference "#PWR0166")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 157.48 105.41 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "14503ad1-8088-42ec-8c5c-80d709a5140d")
-		(property "Reference" "#PWR0165"
-			(at 157.48 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 160.02 104.1399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 157.48 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 157.48 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 157.48 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "111df9c3-9200-4f75-bb0b-bd8ce6b93b42")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
-					(reference "#PWR0165")
 					(unit 1)
 				)
 			)
@@ -2977,7 +2833,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 10kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 193.04 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -3078,7 +2934,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 1.2kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 93.98 60.96 0)
 			(hide yes)
 			(show_name no)
@@ -3283,7 +3139,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 100kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 157.48 123.19 0)
 			(hide yes)
 			(show_name no)
@@ -3767,17 +3623,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "LM386D"
-			(at 88.9 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C510560"
 			(at 88.9 39.37 0)
 			(hide yes)
@@ -4111,84 +3956,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
 					(reference "#PWR0156")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 86.36 20.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6fb142be-de42-456b-abdf-c9ad91567c52")
-		(property "Reference" "#PWR0157"
-			(at 86.36 24.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 86.36 15.24 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 86.36 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 86.36 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 86.36 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5c7dce95-dc39-48d6-8230-85f98c2ebfe4")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
-					(reference "#PWR0157")
 					(unit 1)
 				)
 			)
@@ -4585,85 +4352,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 193.04 92.71 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "845f00f9-0019-4195-a693-e8744c4c9e2e")
-		(property "Reference" "#PWR0169"
-			(at 193.04 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 195.58 91.4399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 193.04 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "384f7b0a-b09f-4616-9634-17b778e8fa8c")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
-					(reference "#PWR0169")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 120.65 86.36 270)
 		(unit 1)
@@ -4975,7 +4663,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 10kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 134.62 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -5045,7 +4733,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "AudioJack4"
+		(property "Value" "AUDIO"
 			(at 221.742 123.698 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5080,17 +4768,6 @@
 		)
 		(property "Description" "-25℃~+70℃ 3.5mm Headphone Jack 30V Nickel 500mA Phosphor Bronze SMD Audio Connectors ROHS"
 			(at 226.314 85.852 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Order #" ""
-			(at 227.584 121.412 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5208,7 +4885,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±200ppm/℃ ±1% 10Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -5322,18 +4999,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "WR06X5102FTL "
-			(at 119.38 93.98 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C227390"
+		(property "LCSC Part #" "C163933"
 			(at 119.38 93.98 90)
 			(hide yes)
 			(show_name no)
@@ -5423,7 +5089,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 5.6kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 181.61 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -5466,85 +5132,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
 					(reference "R127")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 181.61 105.41 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b669921b-8ae6-4379-9039-44f53120ba93")
-		(property "Reference" "#PWR0167"
-			(at 181.61 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 184.15 104.1399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 181.61 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 181.61 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 181.61 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "59a3040c-0a36-4026-9ada-ed22a69fac2c")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
-					(reference "#PWR0167")
 					(unit 1)
 				)
 			)
@@ -5681,7 +5268,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 100kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 157.48 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -5724,85 +5311,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
 					(reference "R125")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 111.76 118.11 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e0a031d2-69b8-4385-a5e9-6ab6e1dacaea")
-		(property "Reference" "#PWR0160"
-			(at 111.76 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 114.3 116.8399 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 111.76 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7c240c82-2c1f-437a-936f-fea16abae152")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/9fa197ec-1c40-47db-bcd1-3860fe581f0f"
-					(reference "#PWR0160")
 					(unit 1)
 				)
 			)
@@ -5889,18 +5397,6 @@
 		)
 		(property "Manufacturer_Name" "Nichicon"
 			(at 134.62 53.34 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Mfr. Part # " "UUD1A221MCL1GS"
-			(at 134.62 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

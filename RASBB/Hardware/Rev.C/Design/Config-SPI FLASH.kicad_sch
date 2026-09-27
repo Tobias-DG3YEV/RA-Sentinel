@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -592,8 +592,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "IC2"
-				(at 13.97 7.62 0)
+			(property "Reference" "IC8"
+				(at 22.098 -22.352 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -612,7 +612,7 @@
 					)
 				)
 			)
-			(property "Footprint" "SOP64P600X175-16N"
+			(property "Footprint" "RASBB:SOP64P600X175-16N"
 				(at 24.13 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -647,44 +647,8 @@
 					)
 				)
 			)
-			(property "Description_1" "Analog SW Quad SPDT 3.6V 16-Pin SSOP Texas Instruments TS3A5018DBQR, Analogue SPDT Switch Quad SPDT, 3 V, 16-Pin SSOP"
-				(at 24.13 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
 			(property "Height" "1.75"
 				(at 24.13 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Mouser Part Number" "595-TS3A5018DBQR"
-				(at 24.13 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TS3A5018DBQR?qs=0O%2FZFlpUpJXUD9jZrSvpcw%3D%3D"
-				(at 24.13 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -707,7 +671,7 @@
 					(justify left)
 				)
 			)
-			(property "Manufacturer_Part_Number" "TS3A5018DBQR"
+			(property "Mfr. Part #" "TS3A5018DBQR"
 				(at 24.13 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -717,6 +681,17 @@
 						(size 1.27 1.27)
 					)
 					(justify left)
+				)
+			)
+			(property "LCSC Part #" "C202285"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
 				)
 			)
 			(symbol "TS3A5018DBQR_0_0"
@@ -756,7 +731,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin bidirectional line
 					(at 27.94 -10.16 180)
 					(length 5.08)
 					(name "COM4"
@@ -808,7 +783,7 @@
 				)
 			)
 			(symbol "TS3A5018DBQR_1_0"
-				(pin input line
+				(pin bidirectional line
 					(at 0 -2.54 0)
 					(length 5.08)
 					(name "NC1"
@@ -826,7 +801,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 0 -5.08 0)
 					(length 5.08)
 					(name "NO1"
@@ -844,7 +819,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin bidirectional line
 					(at 0 -7.62 0)
 					(length 5.08)
 					(name "COM1"
@@ -862,7 +837,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin bidirectional line
 					(at 0 -10.16 0)
 					(length 5.08)
 					(name "NC2"
@@ -880,7 +855,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin bidirectional line
 					(at 0 -12.7 0)
 					(length 5.08)
 					(name "NO2"
@@ -898,7 +873,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 0 -15.24 0)
 					(length 5.08)
 					(name "COM2"
@@ -916,7 +891,7 @@
 						)
 					)
 				)
-				(pin output line
+				(pin bidirectional line
 					(at 27.94 -17.78 180)
 					(length 5.08)
 					(name "COM3"
@@ -934,7 +909,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 27.94 -15.24 180)
 					(length 5.08)
 					(name "NO3"
@@ -952,7 +927,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 27.94 -12.7 180)
 					(length 5.08)
 					(name "NC3"
@@ -970,7 +945,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 27.94 -7.62 180)
 					(length 5.08)
 					(name "NO4"
@@ -988,7 +963,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin bidirectional line
 					(at 27.94 -5.08 180)
 					(length 5.08)
 					(name "NC4"
@@ -1292,6 +1267,425 @@
 						)
 					)
 					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "TS3A5018DBQR_1"
+			(pin_names
+				(offset 0.762)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "IC6"
+				(at 22.098 -22.352 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TS3A5018DBQR"
+				(at 13.97 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "RASBB:SOP64P600X175-16N"
+				(at 24.13 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ts3a5018.pdf"
+				(at 24.13 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Description" "Analog SW Quad SPDT 3.6V 16-Pin SSOP Texas Instruments TS3A5018DBQR, Analogue SPDT Switch Quad SPDT, 3 V, 16-Pin SSOP"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "1.75"
+				(at 24.13 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Manufacturer_Name" "Texas Instruments"
+				(at 24.13 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Mfr. Part #" "TS3A5018DBQR"
+				(at 24.13 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "LCSC Part #" "C202285"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TS3A5018DBQR_1_0_0"
+				(pin input line
+					(at 0 0 0)
+					(length 5.08)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 0)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -10.16 180)
+					(length 5.08)
+					(name "COM4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 27.94 0 180)
+					(length 5.08)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TS3A5018DBQR_1_0_1"
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 22.86 2.54) (xy 22.86 -20.32) (xy 5.08 -20.32) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TS3A5018DBQR_1_1_0"
+				(pin bidirectional line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "NC1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "NO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "COM1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "NC2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "NO2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "COM2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -17.78 180)
+					(length 5.08)
+					(name "COM3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -15.24 180)
+					(length 5.08)
+					(name "NO3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -12.7 180)
+					(length 5.08)
+					(name "NC3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -7.62 180)
+					(length 5.08)
+					(name "NO4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -5.08 180)
+					(length 5.08)
+					(name "NC4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 27.94 -2.54 180)
+					(length 5.08)
+					(name "~{EN}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1610,6 +2004,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "0958920b-8b83-45fa-828d-cb46bb5dddff")
 	)
@@ -1695,11 +2090,12 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 88.9) (xy 242.57 76.2)
+			(xy 237.49 88.9) (xy 237.49 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "243a0865-7e42-4d3e-80ea-84433e090a43")
 	)
@@ -1810,16 +2206,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "42474705-0f18-4a71-8c35-7c9261ba9c67")
 	)
 	(wire
 		(pts
-			(xy 246.38 76.2) (xy 254 76.2)
+			(xy 246.38 76.2) (xy 248.92 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "459a209f-955d-4f62-b8ca-74da2c146cdd")
 	)
@@ -1830,6 +2228,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "46b94b85-3bb9-4ba1-8a54-ae63f6448d34")
 	)
@@ -1845,23 +2244,14 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 74.93) (xy 118.11 74.93)
+			(xy 110.49 74.93) (xy 113.03 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "4f9d65d5-efd8-45c7-bff0-d87610b6a1e4")
-	)
-	(wire
-		(pts
-			(xy 237.49 88.9) (xy 242.57 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5277f61b-13df-444d-a634-2d19a02eda9a")
 	)
 	(wire
 		(pts
@@ -1890,6 +2280,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "57d27806-a8be-4fd4-9fcb-60e25841b347")
 	)
@@ -1920,6 +2311,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "5c4e0237-e984-4e65-832d-db22d8994497")
 	)
@@ -1980,6 +2372,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "6cfe7567-a944-4b88-9972-3eeb517f85e3")
 	)
@@ -2040,6 +2433,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "7f76e220-d7a9-4702-ba5f-35b73574d589")
 	)
@@ -2130,6 +2524,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "8b0ce822-3e8b-4990-a04f-2bcdf060651d")
 	)
@@ -2155,21 +2550,23 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 74.93) (xy 110.49 74.93)
+			(xy 101.6 74.93) (xy 110.49 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "8d601068-feda-481c-b876-f185f73b4dcd")
 	)
 	(wire
 		(pts
-			(xy 242.57 76.2) (xy 246.38 76.2)
+			(xy 237.49 76.2) (xy 246.38 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "919b1d90-85b6-4088-bed8-06af3bbfefd7")
 	)
@@ -2195,16 +2592,6 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 144.78) (xy 53.34 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98b3d923-675a-46d2-9c16-6ff993f54f6a")
-	)
-	(wire
-		(pts
 			(xy 45.72 46.99) (xy 45.72 95.25)
 		)
 		(stroke
@@ -2215,11 +2602,12 @@
 	)
 	(wire
 		(pts
-			(xy 127 46.99) (xy 140.97 46.99)
+			(xy 127 46.99) (xy 134.62 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "9bf06b1b-fd19-4b62-aa47-e68418d94234")
 	)
@@ -2230,6 +2618,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a2394aa1-5209-411e-ac0b-4fb2cc5cfb13")
 	)
@@ -2250,6 +2639,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a447f0c0-84e0-4fcd-bc66-bb190a36f644")
 	)
@@ -2260,6 +2650,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "a87f24bb-2923-4833-ab54-bf3b97cc65a6")
 	)
@@ -2280,6 +2671,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ae87955b-db0a-4a0a-b79c-9033d504dbb2")
 	)
@@ -2335,11 +2727,12 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 87.63) (xy 106.68 74.93)
+			(xy 101.6 87.63) (xy 101.6 74.93)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "c525a740-5073-41bd-ba9f-1fc47264f5c1")
 	)
@@ -2362,16 +2755,6 @@
 			(type default)
 		)
 		(uuid "c943ebf7-527f-453b-9c9b-c87294599146")
-	)
-	(wire
-		(pts
-			(xy 35.56 140.97) (xy 35.56 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cec486bb-d5d0-44f5-835c-915ddf923353")
 	)
 	(wire
 		(pts
@@ -2405,16 +2788,6 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 87.63) (xy 106.68 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d59d9c3d-1015-4994-b885-442e57bf5540")
-	)
-	(wire
-		(pts
 			(xy 240.03 104.14) (xy 237.49 104.14)
 		)
 		(stroke
@@ -2440,6 +2813,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "dc24ae1e-5dab-4ddd-a363-cc5dc10267fd")
 	)
@@ -2460,6 +2834,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "df6f0087-faf6-4852-b262-5ff5e8dd98e2")
 	)
@@ -2470,6 +2845,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e1c6a08c-9e40-4b20-9483-d1b88233fced")
 	)
@@ -2490,6 +2866,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ea083aef-e9f7-4ef0-b22d-7b47c147070f")
 	)
@@ -2500,16 +2877,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ead188c4-9950-4ac4-8241-f2cbd41aab7b")
 	)
 	(wire
 		(pts
-			(xy 262.89 48.26) (xy 276.86 48.26)
+			(xy 262.89 48.26) (xy 270.51 48.26)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "f18ef582-438f-47fc-a9e0-b34e9b47ccd1")
 	)
@@ -2550,118 +2929,9 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "fcb325af-da13-43fa-a4fe-85d8be90cc01")
-	)
-	(label "VCC3V3"
-		(at 186.69 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "032c682a-1fe3-45bc-b1bc-4668e1295d2d")
-	)
-	(label "VCC3V3"
-		(at 109.22 33.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0a173d65-f84a-427b-947f-8a838c0c6d92")
-	)
-	(label "VCC3V3"
-		(at 168.91 43.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "782cda51-60f5-4172-98dc-0059e7d70115")
-	)
-	(label "VCC3V3"
-		(at 118.11 74.93 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "92457c28-0b6d-48af-8bbf-72c23f559e05")
-	)
-	(label "VCC3V3"
-		(at 53.34 144.78 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "96662a69-2565-42f3-9b05-f94e6b98a466")
-	)
-	(label "VCC3V3"
-		(at 254 76.2 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "9c47a4ab-3806-4583-ad7a-cb711d46b08d")
-	)
-	(label "VCC3V3"
-		(at 241.3 30.48 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ad99b0db-32d2-456a-acdf-8d05fd717ca4")
-	)
-	(label "VCC3V3"
-		(at 35.56 35.56 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b5c3eb95-ee06-45e7-871c-79122ce71f63")
-	)
-	(label "VCC3V3"
-		(at 140.97 46.99 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "da081de0-8497-40bf-ad63-6d5eab45a5ff")
-	)
-	(label "VCC3V3"
-		(at 50.8 34.29 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ed011fe9-308f-4879-beb4-98be86e44a3f")
-	)
-	(label "VCC3V3"
-		(at 276.86 48.26 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f4708c6e-95d3-4152-b7c7-38247c88facd")
 	)
 	(hierarchical_label "SCK_Flash_FPGA1"
 		(shape input)
@@ -2674,7 +2944,7 @@
 		)
 		(uuid "0bd3313f-0a40-400f-bb71-d3d741b4a4c9")
 	)
-	(hierarchical_label "SCK_Flash_FPGA2"
+	(hierarchical_label "SCK_FLASH_FPGA2"
 		(shape input)
 		(at 240.03 93.98 0)
 		(effects
@@ -2685,7 +2955,7 @@
 		)
 		(uuid "0ef73153-1da4-4f05-8d99-88516b02a9dc")
 	)
-	(hierarchical_label "CS_Flash_FPGA2"
+	(hierarchical_label "CS_FLASH_FPGA2"
 		(shape input)
 		(at 203.2 91.44 180)
 		(effects
@@ -2696,7 +2966,7 @@
 		)
 		(uuid "1372fc9c-d8bf-47de-9a60-e7f79e767100")
 	)
-	(hierarchical_label "SO_Flash_FPGA2"
+	(hierarchical_label "SO_FLASH_FPGA2"
 		(shape output)
 		(at 203.2 99.06 180)
 		(effects
@@ -2707,7 +2977,7 @@
 		)
 		(uuid "1597cd6c-43df-4590-b007-0df742b642ac")
 	)
-	(hierarchical_label "SCK_Flash_uC"
+	(hierarchical_label "SCK_FLASH_uC"
 		(shape input)
 		(at 240.03 96.52 0)
 		(effects
@@ -2718,7 +2988,7 @@
 		)
 		(uuid "1afdfa40-c038-45c0-87bc-2b85a71547e8")
 	)
-	(hierarchical_label "SI_Flash_FPGA2"
+	(hierarchical_label "SI_FLASH_FPGA2"
 		(shape input)
 		(at 240.03 101.6 0)
 		(effects
@@ -2740,7 +3010,29 @@
 		)
 		(uuid "1d87661e-5c7b-476c-b339-c9125385a06f")
 	)
-	(hierarchical_label "SO_Flash_uC"
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 109.22 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2c9c7e03-44f6-402a-ba07-03ee559431f2")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 113.03 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2eb57b93-b801-4c06-9bf7-35a8090b6b84")
+	)
+	(hierarchical_label "SO_FLASH_uC"
 		(shape output)
 		(at 66.04 100.33 180)
 		(effects
@@ -2773,7 +3065,18 @@
 		)
 		(uuid "70614276-0297-4ceb-8dd9-e07ca22c9282")
 	)
-	(hierarchical_label "SCK_Flash_uC"
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 168.91 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "74189a0c-8bff-44af-8f62-ab3577006427")
+	)
+	(hierarchical_label "SCK_FLASH_uC"
 		(shape input)
 		(at 104.14 95.25 0)
 		(effects
@@ -2784,7 +3087,7 @@
 		)
 		(uuid "7ac92845-3758-4e8f-b825-e18f96232e53")
 	)
-	(hierarchical_label "SO_Flash_uC"
+	(hierarchical_label "SO_FLASH_uC"
 		(shape output)
 		(at 203.2 101.6 180)
 		(effects
@@ -2805,6 +3108,50 @@
 			(justify right)
 		)
 		(uuid "963214b7-7ff4-49f3-b5eb-24653a1afce0")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 134.62 46.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "abecac31-e9d6-483f-9f6c-35c8110bcada")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 35.56 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "be583805-d84b-4260-9559-4d8cb33c3713")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 248.92 76.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c5f0ec96-5dc6-4144-8dbf-9a617789bd62")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 186.69 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c62df4c5-9acf-4714-8b56-5e1654d21170")
 	)
 	(hierarchical_label "MUX_EN1"
 		(shape input)
@@ -2828,7 +3175,7 @@
 		)
 		(uuid "cb1d7ff8-c23e-47e6-99ed-9c5204a03212")
 	)
-	(hierarchical_label "SI_Flash_uC"
+	(hierarchical_label "SI_FLASH_uC"
 		(shape input)
 		(at 104.14 102.87 0)
 		(effects
@@ -2839,7 +3186,18 @@
 		)
 		(uuid "cb322546-6410-4bfa-89c1-f03a30f11eda")
 	)
-	(hierarchical_label "CS_Flash_uC"
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 50.8 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d1b73b20-7e32-4fb8-8fbe-ac53969110cb")
+	)
+	(hierarchical_label "CS_FLASH_uC"
 		(shape input)
 		(at 203.2 93.98 180)
 		(effects
@@ -2850,7 +3208,7 @@
 		)
 		(uuid "d245a85e-b3ee-4e63-b13d-cbf3cbef6c03")
 	)
-	(hierarchical_label "CS_Flash_uC"
+	(hierarchical_label "CS_FLASH_uC"
 		(shape input)
 		(at 67.31 92.71 180)
 		(effects
@@ -2860,6 +3218,17 @@
 			(justify right)
 		)
 		(uuid "d83e22eb-edd4-40ef-9e91-15342ca7bdcb")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 270.51 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "de3032b2-76a8-408d-b9a2-16a43cf63f94")
 	)
 	(hierarchical_label "MUX_EN2"
 		(shape input)
@@ -2872,7 +3241,18 @@
 		)
 		(uuid "e9d78550-ebed-4fd6-8f50-11c0bec9d685")
 	)
-	(hierarchical_label "SI_Flash_uC"
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 241.3 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f6201fa8-1632-4f4f-ac24-c10843c1bd64")
+	)
+	(hierarchical_label "SI_FLASH_uC"
 		(shape input)
 		(at 240.03 104.14 0)
 		(effects
@@ -3225,6 +3605,7 @@
 		)
 	)
 	(symbol
+		(lib_name "TS3A5018DBQR_1")
 		(lib_id "RASBB_Library:TS3A5018DBQR")
 		(at 73.66 87.63 0)
 		(unit 1)
@@ -3395,84 +3776,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 35.56 140.97 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "687286e3-fd4a-41e6-a6b2-7c7361f8969c")
-		(property "Reference" "#PWR0251"
-			(at 35.56 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 28.702 140.208 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 35.56 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 35.56 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 35.56 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9240643f-b45e-40f0-a7a2-2e29b408f7ca")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/42a7f077-44a1-43cb-b656-b7d389080fcf"
-					(reference "#PWR0251")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 246.38 81.28 0)
 		(unit 1)
@@ -3630,7 +3933,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 250.19 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -3641,7 +3944,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 250.19 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -3652,7 +3955,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 250.19 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -3812,7 +4115,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -3823,7 +4126,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -3834,7 +4137,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 40.64 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -3915,7 +4218,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -3926,7 +4229,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 114.3 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -3937,7 +4240,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 114.3 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -4528,7 +4831,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 55.88 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -4539,7 +4842,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 55.88 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -4550,7 +4853,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 55.88 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -4710,7 +5013,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 173.99 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -4721,7 +5024,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 173.99 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -4732,7 +5035,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 173.99 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -4813,7 +5116,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 191.77 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -4824,7 +5127,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 191.77 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -4835,7 +5138,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 191.77 41.91 0)
 			(hide yes)
 			(show_name no)

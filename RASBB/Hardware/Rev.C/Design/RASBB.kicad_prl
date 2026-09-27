@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 7,
+    "active_layer": 14,
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
@@ -15,7 +15,7 @@
       "shapes": 1.0,
       "tracks": 1.0,
       "vias": 0.8399999737739563,
-      "zones": 0.0
+      "zones": 0.30000001192092896
     },
     "prototype_zone_fills": false,
     "selection_filter": {
@@ -26,10 +26,10 @@
       "lockedItems": false,
       "otherItems": false,
       "pads": false,
-      "text": true,
+      "text": false,
       "tracks": true,
       "vias": true,
-      "zones": false
+      "zones": true
     },
     "visible_items": [
       "vias",
@@ -52,7 +52,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_0aaa8020_00000020",
+    "visible_layers": "00000000_00000000_55555555_d7557577",
     "zone_display_mode": 0
   },
   "git": {
@@ -119,30 +119,27 @@
       114,
       114,
       114,
-      114
+      119
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
     "filter_by_net_name": true,
     "filter_by_netclass": true,
-    "filter_text": "/DDR3-01",
+    "filter_text": "/PCIE/RX",
     "group_by_constraint": false,
     "group_by_netclass": false,
     "show_time_domain_details": false,
     "show_unconnected_nets": false,
     "show_zero_pad_nets": false,
     "sort_ascending": true,
-    "sorting_column": 0
+    "sorting_column": 2
   },
   "open_jobsets": [],
   "project": {
     "files": []
   },
   "schematic": {
-    "hierarchy_collapsed": [
-      "/1efd7ecd-e12c-405e-abb8-3a24a5e37beb/",
-      "/1039afa1-78bb-4140-9ce0-f929b7009905/"
-    ],
+    "hierarchy_collapsed": [],
     "selection_filter": {
       "graphics": true,
       "images": true,

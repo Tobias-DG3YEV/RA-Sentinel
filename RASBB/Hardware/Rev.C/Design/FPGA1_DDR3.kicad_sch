@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -2271,6 +2271,121 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 276.86 35.56)
@@ -2283,6 +2398,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "01f71476-fd5f-4da2-8290-50bf583f5632")
+	)
+	(junction
+		(at 161.29 26.67)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "05ae618c-44fa-472e-aea6-9260961060ee")
 	)
 	(junction
 		(at 161.29 111.76)
@@ -2591,12 +2712,6 @@
 		(uuid "a776ad6e-2c76-462c-a668-07d7a611cd65")
 	)
 	(junction
-		(at 161.29 26.67)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "af720cf3-d24a-4bc3-ac45-08e034789248")
-	)
-	(junction
 		(at 157.48 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2643,6 +2758,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "be9414d6-506f-434b-a27c-bded7445298d")
+	)
+	(junction
+		(at 247.65 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0da0673-125d-4b48-b88a-88bcbfe5a12c")
 	)
 	(junction
 		(at 66.04 48.26)
@@ -2763,6 +2884,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "017a9955-e26b-4484-ae48-55b730183fb2")
 	)
@@ -2813,6 +2935,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "0754a9a1-fbf0-4987-8aa0-e0659de51704")
 	)
@@ -2823,6 +2946,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "0765703b-a8c5-452b-abd8-3e8d3cee9460")
 	)
@@ -2853,6 +2977,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "0a714d05-4547-40a7-bc0b-c6b438854db0")
 	)
@@ -2923,6 +3048,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "0f7f2edb-efe2-4f7d-8b2d-0b0495146f88")
 	)
@@ -2943,6 +3069,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "104265db-9464-47fc-a7af-c8c342386d50")
 	)
@@ -2965,6 +3092,17 @@
 			(type default)
 		)
 		(uuid "1305a9cc-4f45-4bce-a2c2-737386ec9951")
+	)
+	(wire
+		(pts
+			(xy 238.76 73.66) (xy 247.65 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 150 0 200 1)
+		)
+		(uuid "14d9b2da-10a4-4010-8445-a4b7a5197f4a")
 	)
 	(wire
 		(pts
@@ -3003,6 +3141,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "194e0101-d14d-4722-958b-2dac332d30f1")
 	)
@@ -3023,6 +3162,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "19f29c31-e8ea-4159-b09e-5b12cff2603d")
 	)
@@ -3043,6 +3183,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "1ac77dce-5f36-49ec-9a29-d3284c779bf6")
 	)
@@ -3053,6 +3194,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "1be68a93-7ee7-4475-ba86-6c6198753bfd")
 	)
@@ -3073,6 +3215,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "1f9696ff-5840-4b86-9b71-885e82ce7496")
 	)
@@ -3083,6 +3226,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "21efa0c2-be94-4869-b583-b2502b57713f")
 	)
@@ -3113,6 +3257,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "23a785e2-f64a-48c7-8e52-81715f5701b6")
 	)
@@ -3173,6 +3318,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "2ae577cd-899f-4f8f-b7ce-a5c289851a2d")
 	)
@@ -3183,6 +3329,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "2b47fc04-f177-4be5-9d12-30f62a0f8eff")
 	)
@@ -3223,6 +3370,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "3487ab86-4e79-47d1-8aaf-5ed52cd3f218")
 	)
@@ -3233,6 +3381,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "35e14a9b-2a71-40b3-9931-94f18aea2d1f")
 	)
@@ -3243,6 +3392,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "37dd40b1-f891-41ec-a237-3e2135d96765")
 	)
@@ -3263,6 +3413,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "3a1b8411-9aac-46b9-8590-36260f871b9a")
 	)
@@ -3283,6 +3434,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "3cfdef02-7333-4a72-adcd-d7c42e51b679")
 	)
@@ -3323,6 +3475,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "435c8907-149c-49f4-b031-b2e51031aa1f")
 	)
@@ -3413,6 +3566,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "49289169-a9c8-4cc3-ac00-68fe30c82d9a")
 	)
@@ -3423,6 +3577,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "494ca283-984b-4471-8ccb-22f099d48255")
 	)
@@ -3443,6 +3598,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4db6c6d6-da50-469a-aa80-31ec4e197034")
 	)
@@ -3453,6 +3609,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4e951f08-c358-43b7-aa17-28699b650054")
 	)
@@ -3463,6 +3620,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4ed23622-32e1-4c89-b0e3-4dfc101adfe1")
 	)
@@ -3493,6 +3651,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "50c5c17f-2e31-4392-a7c2-5d7f22139550")
 	)
@@ -3553,6 +3712,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "57ae81d1-b93c-4a48-ba06-0fb8a4461192")
 	)
@@ -3575,6 +3735,17 @@
 			(type default)
 		)
 		(uuid "59f63fe1-e955-45d6-9798-099ca15f7919")
+	)
+	(wire
+		(pts
+			(xy 247.65 73.66) (xy 269.24 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 150 0 200 1)
+		)
+		(uuid "5ac665c2-ddd6-495f-a43d-49c746798d52")
 	)
 	(wire
 		(pts
@@ -3633,18 +3804,9 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "62e06385-9284-41dc-8428-fcf21f9939c2")
-	)
-	(wire
-		(pts
-			(xy 269.24 73.66) (xy 247.65 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "635d8935-3b90-411c-a270-cd82301373ef")
 	)
 	(wire
 		(pts
@@ -3713,6 +3875,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "6b8b5835-389e-488e-af1e-1322bfd4e3b5")
 	)
@@ -3733,6 +3896,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "6dd77942-9890-4753-9426-3f800c5173ea")
 	)
@@ -3743,6 +3907,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "6e695522-cd0b-4643-808f-45921f92b5d3")
 	)
@@ -3773,6 +3938,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "702f4f3a-1138-47e7-8c52-f00cfdc30645")
 	)
@@ -3863,6 +4029,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "78d52af8-7573-44fc-85a1-917c6126eb8f")
 	)
@@ -3883,6 +4050,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "7bd63613-3236-47a6-9191-f105e2422502")
 	)
@@ -3913,6 +4081,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "805812c9-7e7d-4662-90fe-8e9d161e90a5")
 	)
@@ -3943,6 +4112,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8570857b-3c09-4d7a-aafd-b3779833630b")
 	)
@@ -3983,6 +4153,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "87a83054-fd97-47b5-b3bd-c6994a4fe56e")
 	)
@@ -3993,6 +4164,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "89719ae8-c2e3-4e05-a121-6ae41d6b34c9")
 	)
@@ -4013,6 +4185,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8bf0ee46-43c6-407e-b915-a3de9ce02760")
 	)
@@ -4053,6 +4226,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8ef49308-5ce8-4d59-8130-d0d9fd826f52")
 	)
@@ -4073,6 +4247,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8fd7d824-c77e-48cf-83f1-8d46f5a66468")
 	)
@@ -4103,6 +4278,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "915f0e10-d3a5-4ea6-af26-c02a693cb802")
 	)
@@ -4143,6 +4319,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "92fc9804-2ee7-4a54-b63b-636c2cf2baa9")
 	)
@@ -4173,6 +4350,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "95a977a4-1adc-40fb-b1f5-ee6dd6c7894b")
 	)
@@ -4193,6 +4371,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9871432a-5886-450f-9a2c-5bb9d400d3cd")
 	)
@@ -4263,6 +4442,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9bd8b292-90b2-43f3-b3cd-f76ec2dc507f")
 	)
@@ -4283,6 +4463,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9cfaeebf-ad2a-48cd-9b8d-7b5e9d7c971d")
 	)
@@ -4313,6 +4494,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9fc52eb3-e89b-4e5c-a0f1-dbd801ff5b56")
 	)
@@ -4373,6 +4555,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "a4eeba4c-3572-4579-9473-3a36f386111b")
 	)
@@ -4423,6 +4606,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "a97db5f7-1166-4682-bbc3-d71a03d53b27")
 	)
@@ -4433,6 +4617,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "a9c43b09-059e-410c-a025-6c3acc1b06c5")
 	)
@@ -4493,6 +4678,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "af285312-9324-45be-bb67-1b3878702a27")
 	)
@@ -4503,6 +4689,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "afec0ae3-0a6f-45e3-ab5e-da1739bc9619")
 	)
@@ -4513,6 +4700,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b0ba63b4-c825-42d6-94a3-01ba90178fe9")
 	)
@@ -4533,6 +4721,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b15ca533-7ca5-4bd4-ae1f-12f3cd196a1e")
 	)
@@ -4553,6 +4742,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b2e0cac9-8ec0-4bf0-8bc2-da042221c62e")
 	)
@@ -4613,6 +4803,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b928becb-4577-412a-a216-29cf1eeb4cd2")
 	)
@@ -4653,6 +4844,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "bddb4d6d-bfcc-48c9-bde1-8d4333f079c9")
 	)
@@ -4673,6 +4865,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c04eac1f-1aa2-4e28-8988-b682cf785d28")
 	)
@@ -4683,6 +4876,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c1644911-d880-427e-b875-2defdb0eb236")
 	)
@@ -4713,6 +4907,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c3b72d03-a51f-4e1c-b933-777fe0c21f12")
 	)
@@ -4723,6 +4918,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c60929c2-6693-46af-aa9a-6981dfdf1743")
 	)
@@ -4733,6 +4929,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c644620a-b155-4eba-86c5-5dce6723b64b")
 	)
@@ -4743,6 +4940,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c6ebe1fc-0646-4b53-91c6-56f1455b88e6")
 	)
@@ -4763,6 +4961,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "cd5472fa-b9a1-4df2-83c0-d1defb6e551b")
 	)
@@ -4813,6 +5012,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "d1788782-35bc-4594-b8b1-2e346bec7935")
 	)
@@ -4853,6 +5053,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "d4b236b2-964e-48dc-91a4-bd062e1e0b53")
 	)
@@ -4883,6 +5084,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "d653d312-0c85-4a3b-909e-cac1b4f16e0a")
 	)
@@ -4893,6 +5095,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "d957cd8c-3cf5-4217-8ddb-c7b856f8c8fa")
 	)
@@ -4908,11 +5111,12 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 26.67) (xy 179.07 26.67)
+			(xy 161.29 26.67) (xy 184.15 26.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "ddad99cd-30e2-421f-a64b-193f0ca48879")
 	)
@@ -4973,6 +5177,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "e3530049-7341-407e-9a9d-2df3bd67d5ad")
 	)
@@ -5003,6 +5208,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "e5118a2e-8218-4d15-8c8e-a1581f55fe55")
 	)
@@ -5013,6 +5219,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "e8ccbacb-0494-4abe-87c7-1994ec32eb24")
 	)
@@ -5023,6 +5230,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "e90561ef-549d-4a97-8ea3-ce404400b3c0")
 	)
@@ -5043,6 +5251,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "ecf41d0c-9d29-4947-8827-da10d089d500")
 	)
@@ -5093,6 +5302,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f065a2ba-ba30-430b-8cb4-478d9b2da9ae")
 	)
@@ -5103,6 +5313,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f115522d-b366-4c97-804a-0ec0a69f8722")
 	)
@@ -5113,6 +5324,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f2ed9cfa-beb8-446c-ad2e-3444f84a6bd6")
 	)
@@ -5133,6 +5345,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f3e9cb22-58ee-4476-9fa0-25d44baceabd")
 	)
@@ -5163,6 +5376,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f84e9575-5705-4692-a8e2-42e8747f0662")
 	)
@@ -5173,6 +5387,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f8fa4fa2-cdfa-4b47-81dd-0ea764705349")
 	)
@@ -5193,6 +5408,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fa75fea0-76cf-4f40-8d91-5a86c5e92dc5")
 	)
@@ -5203,6 +5419,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fadc0444-7a17-4b8c-a9da-d8206dd85194")
 	)
@@ -5256,16 +5473,6 @@
 		)
 		(uuid "112d63b4-5b69-4cf7-a757-518f9ac182aa")
 	)
-	(label "VCC_DDR3"
-		(at 260.35 73.66 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "1c753f5a-f19a-4a3f-bc4e-084186d0654c")
-	)
 	(label "CK_P"
 		(at 186.69 36.83 0)
 		(effects
@@ -5286,16 +5493,6 @@
 		)
 		(uuid "3426d1c1-a959-4b62-9334-98c8ed67b9fa")
 	)
-	(label "VCC_DDR3"
-		(at 195.58 20.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4b4dee4a-2d0d-4aac-905d-0d597fcf1f0f")
-	)
 	(label "VREF_DDR3"
 		(at 44.45 144.78 0)
 		(effects
@@ -5306,16 +5503,6 @@
 		)
 		(uuid "6a655574-289d-4ea5-b750-2e54913a32e4")
 	)
-	(label "VCC_DDR3"
-		(at 165.1 26.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "73f415d6-412b-4ae4-b38d-b8ed4ea4ac2e")
-	)
 	(label "CK_N"
 		(at 186.69 45.72 0)
 		(effects
@@ -5325,16 +5512,6 @@
 			(justify left bottom)
 		)
 		(uuid "740646bb-c1f1-4911-b48b-dd9dae143b85")
-	)
-	(label "VCC_DDR3"
-		(at 223.52 50.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8eea26cd-2e18-4ad5-8521-4a170abd5748")
 	)
 	(label "VREF_DDR3"
 		(at 171.45 93.98 0)
@@ -5456,6 +5633,17 @@
 		)
 		(uuid "201cf2c2-0f2d-4de6-ada0-9877c190ec36")
 	)
+	(hierarchical_label "VCCO_DDR3"
+		(shape input)
+		(at 238.76 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "28ad6c78-ef53-4ce2-9835-48e9bbc0aa6e")
+	)
 	(hierarchical_label "DDR301_A13"
 		(shape input)
 		(at 139.7 149.86 0)
@@ -5466,6 +5654,17 @@
 			(justify left)
 		)
 		(uuid "2ce32709-0922-4b9c-a1a5-3b12a81e465c")
+	)
+	(hierarchical_label "VCCO_DDR3"
+		(shape input)
+		(at 170.18 26.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "37ba676d-1442-4b8f-99ef-d9b53020c2a5")
 	)
 	(hierarchical_label "DDR301_A2"
 		(shape input)
@@ -5565,6 +5764,17 @@
 			(justify right)
 		)
 		(uuid "609d6791-e1c3-434c-bbaa-bfa16425e3bc")
+	)
+	(hierarchical_label "VCCO_DDR3"
+		(shape input)
+		(at 223.52 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ef5bc3a-0bdb-4638-9423-f05f0c2341ab")
 	)
 	(hierarchical_label "DDR301_LDQS_P"
 		(shape input)
@@ -5843,7 +6053,7 @@
 	)
 	(hierarchical_label "VCCO_DDR3"
 		(shape input)
-		(at 179.07 26.67 0)
+		(at 184.15 26.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5862,6 +6072,17 @@
 			(justify left)
 		)
 		(uuid "f0842656-6984-4c11-ba89-40c40deadf4a")
+	)
+	(hierarchical_label "VCCO_DDR3"
+		(shape input)
+		(at 195.58 20.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f5fd448e-e6f8-47a7-a201-02d4ad5447ef")
 	)
 	(hierarchical_label "DDR301_DQ12"
 		(shape bidirectional)
@@ -6582,7 +6803,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 167.64 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6593,7 +6814,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 167.64 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6604,7 +6825,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 167.64 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -7190,7 +7411,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 237.49 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -7525,6 +7746,89 @@
 				)
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/6f8b64d8-8393-4b77-963f-30ce402ba441"
 					(reference "C113")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 238.76 86.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85c11342-cb92-4d6b-9c83-550f11f7ffc9")
+		(property "Reference" "#FLG015"
+			(at 238.76 84.455 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 238.76 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 238.76 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 238.76 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 238.76 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2e45502e-17cd-4ad4-8b4b-472cf64a8fb6")
+		)
+		(instances
+			(project "RASBB"
+				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/048801fb-bea6-46b2-aa63-e785fc07de04"
+					(reference "#FLG015")
+					(unit 1)
+				)
+				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/6f8b64d8-8393-4b77-963f-30ce402ba441"
+					(reference "#FLG016")
 					(unit 1)
 				)
 			)
@@ -7905,7 +8209,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "100mW Thick Film Resistors 50V ±100ppm/℃ ±1% 1kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 247.65 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -8415,7 +8719,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 100Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 196.85 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -8710,7 +9014,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thin Film Resistors 50V ±50ppm/℃ ±0.1% 240Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 166.37 82.55 0)
 			(hide yes)
 			(show_name no)
@@ -9042,7 +9346,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 247.65 54.61 0)
 			(hide yes)
 			(show_name no)
@@ -9675,7 +9979,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "100mW Thick Film Resistors 50V ±100ppm/℃ ±1% 1kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 247.65 80.01 0)
 			(hide yes)
 			(show_name no)
@@ -10196,7 +10500,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 176.53 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -10207,7 +10511,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 176.53 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -10218,7 +10522,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 176.53 63.5 0)
 			(hide yes)
 			(show_name no)

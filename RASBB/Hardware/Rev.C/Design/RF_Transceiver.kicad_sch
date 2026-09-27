@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -2319,6 +2319,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "753fb7e0-0cfd-455f-8aae-00d8c1651254")
 	)
@@ -2399,6 +2400,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "7e894ddd-7895-4e61-b7a5-0cb31ae2e43b")
 	)
@@ -3004,6 +3006,17 @@
 		)
 		(uuid "1b0a538f-8f3d-4092-aa07-f74096b34d55")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 22.86 124.46 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "59288975-795f-4555-97a9-5e98e6601fc8")
+	)
 	(hierarchical_label "SPI_MOSI_LORA_G"
 		(shape input)
 		(at 147.32 81.28 0)
@@ -3430,28 +3443,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "MHQ1005P3N0BT000"
-			(at 157.48 53.34 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " ""
-			(at 157.48 53.34 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C433005"
 			(at 157.48 53.34 0)
 			(hide yes)
@@ -3818,7 +3809,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 135.89 118.11 0)
 			(hide yes)
 			(show_name no)
@@ -4365,17 +4356,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "0402N200J500CT"
-			(at 78.74 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C123468"
 			(at 78.74 57.15 0)
 			(hide yes)
@@ -4649,85 +4629,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 22.86 124.46 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "77e18076-d662-4d0f-be09-b8a0aafd14b9")
-		(property "Reference" "#PWR0137"
-			(at 22.86 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 25.4 123.1899 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 22.86 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 22.86 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 22.86 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "916fbe06-97c9-442c-8cce-f2f3d2afc7f6")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/72084100-e3ab-4d46-b067-1f6f7a2f1c80"
-					(reference "#PWR0137")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_Coaxial")
 		(at 228.6 53.34 0)
 		(unit 1)
@@ -4750,7 +4651,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_Coaxial"
+		(property "Value" "LORA_ANT"
 			(at 232.41 54.9031 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4900,18 +4801,6 @@
 		)
 		(property "Manufacturer_Name" " HCI"
 			(at 68.58 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Mfr. Part # " "XC21M4-52.000-F10NNHPL "
-			(at 68.58 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6095,29 +5984,6 @@
 				(justify left)
 			)
 		)
-		(property "Mfr. Part # " "BLM15BD601SH1D "
-			(at 41.91 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "LCSC Part # " ""
-			(at 25.4 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C710334"
 			(at 25.4 128.27 0)
 			(hide yes)
@@ -6733,28 +6599,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "FHW0402UC2N5KST"
-			(at 173.99 53.34 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " ""
-			(at 173.99 53.34 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C317668"
 			(at 173.99 53.34 0)
 			(hide yes)
@@ -6849,17 +6693,6 @@
 			)
 		)
 		(property "Description" "50V 20pF NP0 ±5% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 36.83 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "0402N200J500CT"
 			(at 36.83 60.96 0)
 			(hide yes)
 			(show_name no)

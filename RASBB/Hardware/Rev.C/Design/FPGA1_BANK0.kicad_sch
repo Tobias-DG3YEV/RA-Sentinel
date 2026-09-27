@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -7852,6 +7852,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "137f2d15-4a11-43f5-b957-9d06e439918f")
 	)
@@ -7962,6 +7963,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "3ac689fe-3814-48c2-9f41-78e963a3b5f6")
 	)
@@ -7992,6 +7994,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "40cc67ec-67d4-4bab-a9e6-5bf65436f7bb")
 	)
@@ -8052,6 +8055,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "62c59ba9-9894-4b8f-8932-a9b4f95f9481")
 	)
@@ -8062,6 +8066,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "69407aa2-5bff-48b3-b06a-7cdc7136607d")
 	)
@@ -8102,6 +8107,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "76cfce28-8e90-42a3-a550-cc5e18abcf33")
 	)
@@ -8322,6 +8328,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ac3187c3-2204-4704-98c9-dd018f4a8c22")
 	)
@@ -8362,6 +8369,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "b6a99b15-0e26-40aa-9116-6de7411641d5")
 	)
@@ -8432,6 +8440,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "caa9cc17-0d45-4ee9-ada5-689cb7a72c0e")
 	)
@@ -8462,6 +8471,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "cdb6351f-e0c9-43ad-be3c-e43abaae4d81")
 	)
@@ -8472,6 +8482,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "cfcda475-f80a-4bcd-8544-2beec41b9ba2")
 	)
@@ -8502,6 +8513,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "d56caed0-efb0-4417-a350-a6773c823030")
 	)
@@ -8522,6 +8534,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "d722edf7-c20d-416d-aff2-35271fba6fe8")
 	)
@@ -8552,6 +8565,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "dcf0ad4e-d4b6-4362-a346-73045e1bdc68")
 	)
@@ -8562,6 +8576,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ddd091e4-4383-4480-9e6b-d1c2258d2658")
 	)
@@ -8592,6 +8607,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e1ad3adf-5346-47b2-82d3-d0978f8c23f2")
 	)
@@ -8612,6 +8628,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "e59a3625-5b11-48c2-ad1f-6ec7a3ceb66c")
 	)
@@ -8632,6 +8649,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ebe2392f-7bd3-49f2-a997-96da05617363")
 	)
@@ -8642,6 +8660,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "ec8ebd36-66e4-4542-b2d3-c6952a874bde")
 	)
@@ -8692,6 +8711,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "fb5b8e8f-6156-4b42-bce3-a48aabb4424f")
 	)
@@ -9293,7 +9313,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 50.8 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -9383,7 +9403,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -9590,7 +9610,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 218.44 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9601,7 +9621,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 218.44 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9612,7 +9632,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 218.44 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -9694,7 +9714,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 228.6 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -9705,7 +9725,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 228.6 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -9716,7 +9736,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 228.6 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -9833,7 +9853,7 @@
 		(dnp no)
 		(uuid "68b90dd4-30b7-47f5-bb04-13765c8c039a")
 		(property "Reference" "U10"
-			(at 110.744 152.4 0)
+			(at 60.96 73.152 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9876,17 +9896,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 87.63 109.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 87.63 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -11001,7 +11010,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x06_Socket"
+		(property "Value" "FPGA1_JTAG"
 			(at 72.39 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11159,28 +11168,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part #  " "A-SP192YR6C-C01-4T"
-			(at 228.6 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #  " "C5355433"
-			(at 228.6 115.57 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C5355433"
 			(at 228.6 115.57 0)
 			(hide yes)
@@ -11273,28 +11260,6 @@
 			)
 		)
 		(property "Description" "5mA Colorless Transparent Lens 72mcd 616nm~624nm -40℃~+85℃ Positive Stick Red 120° 60mW 1.7V~2.2V 0603 LED Indication - Discrete ROHS"
-			(at 198.12 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "A-SP192YR6C-C01-4T"
-			(at 198.12 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #  " "C5355433"
 			(at 198.12 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -11409,17 +11374,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "GRM21BR61A476ME15L"
-			(at 40.64 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C124129"
 			(at 40.64 69.85 0)
 			(hide yes)
@@ -11510,7 +11464,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 44.45 0)
 			(hide yes)
 			(show_name no)
@@ -11692,7 +11646,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 4.7kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 198.12 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11703,7 +11657,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "RC0402FR-074K7L "
+		(property "Mfr. Part #" "WR04X4701FTL"
 			(at 198.12 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -11714,7 +11668,7 @@
 				)
 			)
 		)
-		(property "LCSC Part #" "C105871"
+		(property "LCSC Part #" "C163826"
 			(at 198.12 104.14 0)
 			(hide yes)
 			(show_name no)
@@ -12013,7 +11967,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 41.91 0)
 			(hide yes)
 			(show_name no)
@@ -12296,7 +12250,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 49.9Ω 0402 Chip Resistor - Surface Mount ROHS"
 			(at 114.3 49.53 0)
 			(hide yes)
 			(show_name no)
@@ -12397,7 +12351,7 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "62.5mW Thick Film Resistors 50V ±100ppm/℃ ±1% 10kΩ 0402 Chip Resistor - Surface Mount ROHS"
 			(at 157.48 115.57 0)
 			(hide yes)
 			(show_name no)

@@ -6,8 +6,8 @@
 	(paper "A3")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -6325,13 +6325,13 @@
 		(uuid "2c2f7967-f72f-4639-b51f-010580233d27")
 	)
 	(junction
-		(at 83.82 67.31)
+		(at 78.74 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30f8b1a0-6a79-4e9c-902d-77be3ba611b8")
 	)
 	(junction
-		(at 83.82 58.42)
+		(at 78.74 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3bc8a697-8a4b-49d9-9edc-3e8c3ae14ae3")
@@ -6361,7 +6361,7 @@
 		(uuid "5bc00909-b090-4cb2-87d5-b9b459fc25c6")
 	)
 	(junction
-		(at 74.93 58.42)
+		(at 69.85 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6cf6102c-3333-473e-a8f8-6c69dd4a258f")
@@ -6472,11 +6472,12 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 58.42) (xy 74.93 58.42)
+			(xy 68.58 58.42) (xy 69.85 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "0042427c-3a18-4c16-9b83-d14bbd8ab95d")
 	)
@@ -6557,6 +6558,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "2d053356-d3e0-4f84-a155-13a56b7fbd56")
 	)
@@ -6622,7 +6624,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 69.85) (xy 83.82 67.31)
+			(xy 78.74 69.85) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6632,7 +6634,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 67.31) (xy 83.82 67.31)
+			(xy 69.85 67.31) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6657,6 +6659,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4354c6b4-8e49-476c-b549-fe452ff3f8c5")
 	)
@@ -6672,11 +6675,12 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 58.42) (xy 83.82 58.42)
+			(xy 69.85 58.42) (xy 78.74 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "443f43fc-9d0b-43e9-b3f8-5f501950d025")
 	)
@@ -6697,6 +6701,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "496842c6-4bf8-4f83-8118-ebeb8652176f")
 	)
@@ -6717,6 +6722,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4ae738f7-8c97-4b9d-818a-1fbae1ff25f4")
 	)
@@ -6742,7 +6748,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 64.77) (xy 83.82 67.31)
+			(xy 78.74 64.77) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6767,6 +6773,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "56f34c27-5e0e-4659-9b4f-b5b2095f4dd7")
 	)
@@ -6842,7 +6849,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 64.77) (xy 74.93 67.31)
+			(xy 69.85 64.77) (xy 69.85 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6867,6 +6874,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "7c5a37ec-d8cc-4ac9-a854-25d88793a22d")
 	)
@@ -6887,6 +6895,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "848ef06f-91ef-4968-acd2-dbb015684971")
 	)
@@ -6937,6 +6946,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8b66ea8a-bbb5-4076-ae31-30845226753d")
 	)
@@ -6947,6 +6957,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8b6d67e0-402a-4906-a1b7-1d01c3ddb20d")
 	)
@@ -6957,6 +6968,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8c02e1c6-194f-408e-9151-adb16e7043a8")
 	)
@@ -6977,6 +6989,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "92476351-14d0-4bdf-9a67-4b4144cbd5b9")
 	)
@@ -7007,16 +7020,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9bd453b9-aa11-4775-b5f8-971e9b197d71")
 	)
 	(wire
 		(pts
-			(xy 83.82 58.42) (xy 83.82 59.69)
+			(xy 78.74 58.42) (xy 78.74 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "9bde6e71-29ae-4141-b733-d72260ae8e93")
 	)
@@ -7052,11 +7067,12 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 59.69) (xy 74.93 58.42)
+			(xy 69.85 59.69) (xy 69.85 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "a9141cb5-cf7a-4478-a0ea-232be4f71dcf")
 	)
@@ -7067,6 +7083,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "aac6a7c9-0003-4122-a0f1-2b9736d3ae8f")
 	)
@@ -7137,6 +7154,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b2282ab7-d7c1-4e43-9ff7-a6eb97e43576")
 	)
@@ -7147,6 +7165,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b2614b47-16d5-4707-b395-df0de2d1a9dd")
 	)
@@ -7157,6 +7176,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b27d92c9-aebe-45b7-b722-906d49c4b978")
 	)
@@ -7227,6 +7247,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c5177822-4cf0-435d-abef-505801d519fb")
 	)
@@ -7282,11 +7303,12 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 58.42) (xy 138.43 58.42)
+			(xy 78.74 58.42) (xy 138.43 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "dc275cda-0336-45cd-8960-1cc211523d21")
 	)
@@ -7377,6 +7399,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f6bbb8b6-fdeb-42c4-ac0e-687ef099563b")
 	)
@@ -7397,6 +7420,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fb298c85-0732-4802-b4c6-8ae467ff7e76")
 	)
@@ -7407,6 +7431,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fcad3718-9723-4bec-858d-627548c87cd7")
 	)
@@ -7417,6 +7442,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fdb3d3cb-09d8-4975-b77a-197475e105fc")
 	)
@@ -7427,6 +7453,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "ff3ad6c0-e422-4bb2-8f24-41452678bf3f")
 	)
@@ -8498,7 +8525,7 @@
 	)
 	(hierarchical_label "VCCO_16"
 		(shape input)
-		(at 73.66 58.42 180)
+		(at 68.58 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8816,7 +8843,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 260.35 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8920,7 +8947,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 270.51 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8959,7 +8986,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 83.82 62.23 0)
+		(at 78.74 62.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8970,7 +8997,7 @@
 		(fields_autoplaced yes)
 		(uuid "736ddcfd-6bef-449c-9ae3-89811f441b22")
 		(property "Reference" "C224"
-			(at 86.36 60.9662 0)
+			(at 81.28 60.9662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8981,7 +9008,7 @@
 			)
 		)
 		(property "Value" "470nF"
-			(at 86.36 63.5062 0)
+			(at 81.28 63.5062 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8993,7 +9020,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9004,7 +9031,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9015,7 +9042,7 @@
 			)
 		)
 		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9025,8 +9052,8 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
-			(at 83.82 62.23 0)
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9037,7 +9064,7 @@
 			)
 		)
 		(property "LCSC Part #" "C471404"
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9129,7 +9156,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 279.4 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9243,17 +9270,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 241.3 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 241.3 62.23 0)
 			(hide yes)
@@ -9347,17 +9363,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 251.46 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 251.46 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9475,7 +9480,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 74.93 62.23 0)
+		(at 69.85 62.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9485,7 +9490,7 @@
 		(dnp no)
 		(uuid "c77ec38b-b836-4aa2-9df8-5755d3d228dc")
 		(property "Reference" "C223"
-			(at 76.708 61.214 0)
+			(at 71.628 61.214 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9496,7 +9501,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 76.708 63.754 0)
+			(at 71.628 63.754 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9507,7 +9512,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9518,7 +9523,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9529,7 +9534,7 @@
 			)
 		)
 		(property "Description" "10V 4.7uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9540,18 +9545,7 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 74.93 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9562,7 +9556,7 @@
 			)
 		)
 		(property "LCSC Part #" "C77004"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9653,7 +9647,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 287.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9692,7 +9686,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 83.82 69.85 0)
+		(at 78.74 69.85 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9704,7 +9698,7 @@
 		(fields_autoplaced yes)
 		(uuid "d2f7b0b7-9660-46c0-b774-c04df255470e")
 		(property "Reference" "#PWR0211"
-			(at 83.82 76.2 0)
+			(at 78.74 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9715,7 +9709,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 83.82 74.93 0)
+			(at 78.74 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9725,7 +9719,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9736,7 +9730,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9747,7 +9741,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9781,7 +9775,7 @@
 		(dnp no)
 		(uuid "d61685a7-5841-44dc-9ff3-02b901c28e7a")
 		(property "Reference" "U10"
-			(at 219.964 210.312 0)
+			(at 147.066 63.246 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9824,17 +9818,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 179.07 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 179.07 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -10916,7 +10899,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 298.45 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -11009,17 +10992,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 231.14 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 231.14 62.23 0)
 			(hide yes)
 			(show_name no)

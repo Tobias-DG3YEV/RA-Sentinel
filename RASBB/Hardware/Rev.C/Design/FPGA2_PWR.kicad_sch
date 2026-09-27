@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -7161,6 +7161,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "00ae0ca9-1768-470f-8a6b-a0d587d8d085")
 	)
@@ -7171,6 +7172,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "00f4b259-b19b-4165-bf0d-72511e641039")
 	)
@@ -7191,6 +7193,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "02a643fe-9a34-4c70-b7b4-672836b8e922")
 	)
@@ -7211,6 +7214,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "0700cad0-792e-44a1-9f3c-73f3c68ee005")
 	)
@@ -7221,6 +7225,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "070aab10-76e1-4c7a-b971-b4bf5ea8acfa")
 	)
@@ -7231,6 +7236,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "076ff956-f985-4885-9c14-31682b1c6200")
 	)
@@ -7281,6 +7287,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "0fdaddad-ff0b-4d8b-8d38-fac7e89d8268")
 	)
@@ -7291,6 +7298,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "105bd63c-2cb9-40e9-8ee8-d71eee2dd85d")
 	)
@@ -7301,6 +7309,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "147afcbf-b422-4e9c-a8e3-417f3ecf53fd")
 	)
@@ -7311,6 +7320,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "14906d67-1945-4985-82a0-4f50cd32054f")
 	)
@@ -7321,6 +7331,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "14ebb319-da6a-462e-8378-e0be6d221bde")
 	)
@@ -7331,6 +7342,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "1529ca04-32e3-41f5-856e-4a6675a08882")
 	)
@@ -7341,6 +7353,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "15f18b2d-98a0-4a1f-b6b0-fd4ff1f47590")
 	)
@@ -7361,6 +7374,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "16edaad2-c572-4340-a999-5f9ae6b880d0")
 	)
@@ -7381,6 +7395,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "17c64cfc-2bd7-42e9-a7e1-2a53ca72cec4")
 	)
@@ -7391,6 +7406,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "1a0e0ea9-d91b-4476-b1b3-6272f8365c73")
 	)
@@ -7421,16 +7437,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "1f96acca-2575-4689-b0a5-e422c47a5b14")
 	)
 	(wire
 		(pts
-			(xy 19.05 53.34) (xy 26.67 53.34)
+			(xy 25.4 53.34) (xy 26.67 53.34)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "20ad1bce-0eb8-48aa-a6a7-05a0fafe9e10")
 	)
@@ -7441,6 +7459,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "2192c170-203f-4bca-848a-799c3171bb99")
 	)
@@ -7451,6 +7470,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "225c35dd-8ca5-480f-94cf-44d82bdec12f")
 	)
@@ -7471,6 +7491,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "25a0c8d5-8d18-4805-8152-a2d0832a2bba")
 	)
@@ -7501,6 +7522,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "2aa05e50-779e-405e-a550-70a2ddd612b7")
 	)
@@ -7521,6 +7543,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "2c781264-185c-498e-80aa-cfa229e112b9")
 	)
@@ -7531,6 +7554,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "2ca82c53-b03b-42c5-9767-514cf892e426")
 	)
@@ -7561,6 +7585,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "3276bbd0-92a2-4526-9b90-d53276030350")
 	)
@@ -7601,6 +7626,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "34e47aa7-683e-4cb9-9e4d-c32da5cc3ca8")
 	)
@@ -7621,6 +7647,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "35e297ee-de65-41bf-bd2a-92e7694af65f")
 	)
@@ -7641,6 +7668,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "38993550-8c75-48cd-90f7-777adb21c5cc")
 	)
@@ -7651,6 +7679,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "392dc1a3-5de4-4ce4-a396-7628ed809132")
 	)
@@ -7671,6 +7700,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "3dc3cd97-c10a-4153-a65c-33be983bf247")
 	)
@@ -7721,6 +7751,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "499bfb2f-b283-4211-81d7-cb1f55a5e0a8")
 	)
@@ -7731,6 +7762,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "4d54a03e-b404-4ad4-a7dd-29470ca60396")
 	)
@@ -7771,6 +7803,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "50c36b04-3360-4cdc-aabd-e2a255cdc934")
 	)
@@ -7781,6 +7814,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "511454da-18fd-42d1-ac24-3d1813a7894c")
 	)
@@ -7791,6 +7825,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "51f006a3-fa65-4c4d-9079-df69fadcca50")
 	)
@@ -7811,6 +7846,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "569c519c-36f8-4f55-9151-a49756104e80")
 	)
@@ -7821,6 +7857,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "56afb681-dcc1-4100-955c-c3441b65a0c4")
 	)
@@ -7841,6 +7878,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "58459dea-b2dd-48d2-86cb-1e9239bba371")
 	)
@@ -7851,6 +7889,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "585ff87b-058b-43b3-a318-e9338f7589db")
 	)
@@ -7881,6 +7920,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "59f72439-c6de-416f-bdc1-85c982bfc6da")
 	)
@@ -7951,6 +7991,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "6260cc24-5c9d-4696-8fc1-b77234047a24")
 	)
@@ -7961,6 +8002,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "676acc82-8f56-4b68-a179-5ac17d36f733")
 	)
@@ -7971,6 +8013,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "67aa06ec-9cb1-40e2-8605-6414036d160f")
 	)
@@ -7981,6 +8024,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "67ce9fb9-93f7-4676-874c-1ceb87896a09")
 	)
@@ -7991,6 +8035,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "6978b095-47ce-4f8a-99b4-d0db3c94f7f4")
 	)
@@ -8001,6 +8046,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "6aad290d-3b22-4ee2-b824-9ee37fde5cb1")
 	)
@@ -8011,6 +8057,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "6c847c99-6f6e-43b1-9f91-7d6f24e97a29")
 	)
@@ -8041,6 +8088,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "70bbd51b-6138-4fa8-8b42-72575f246cdd")
 	)
@@ -8101,6 +8149,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "7fc8c516-9f4c-48c8-b744-34e7b55039ad")
 	)
@@ -8111,6 +8160,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "8072aa28-0ef4-4a59-bc76-da7e443ed285")
 	)
@@ -8146,11 +8196,12 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 71.12) (xy 121.92 71.12)
+			(xy 118.11 71.12) (xy 121.92 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "83b8a260-ac44-4a17-ae1f-505a494e2d03")
 	)
@@ -8171,6 +8222,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "84370f08-1ef6-4be9-ba30-903a58576845")
 	)
@@ -8181,6 +8233,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "8447a3c6-2dbd-4902-944a-073da4a27035")
 	)
@@ -8211,6 +8264,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "88db4b0b-358f-4f33-91d9-47d8fd077bdb")
 	)
@@ -8231,6 +8285,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "89c3eaaa-36f4-4986-8a50-4a9c0842fac9")
 	)
@@ -8261,6 +8316,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "8b117f04-0db6-47b1-a1f2-c9d1c8e0ee7b")
 	)
@@ -8311,6 +8367,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "90c47b3e-a053-4f77-a57d-252601203f51")
 	)
@@ -8341,6 +8398,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "92b62b19-abe4-450a-8542-613658cc994e")
 	)
@@ -8351,6 +8409,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "932fca9b-bbea-4088-8319-91fcf3c98532")
 	)
@@ -8371,6 +8430,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "999ac7dd-8f00-4bb2-b3d9-b63c34fd5c92")
 	)
@@ -8381,6 +8441,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "9cc1f9f3-fdb5-4726-a6a4-44143342a446")
 	)
@@ -8391,6 +8452,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "9e91277a-d7dc-4e19-94b2-4fbaf6f254fa")
 	)
@@ -8411,6 +8473,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "9f639e8a-22b5-4201-8ae1-5ad0d28513e2")
 	)
@@ -8451,6 +8514,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "a8b33128-ff0a-4ce2-a96d-c95cb5a3714c")
 	)
@@ -8491,6 +8555,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "adb26723-499f-4032-9170-bc0c9a6afbff")
 	)
@@ -8521,6 +8586,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b16a4a8e-bb17-46fa-8a27-e896ba824de4")
 	)
@@ -8531,6 +8597,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b1dd26f1-83e6-4a93-abcb-2517985d16e9")
 	)
@@ -8541,6 +8608,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b25d4f2e-5697-493b-bac3-ebbf087997e7")
 	)
@@ -8551,6 +8619,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b26904c3-841e-4edf-93b9-3518f8ebe2db")
 	)
@@ -8561,6 +8630,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b36b810c-91e3-43f6-bae5-b2a7c6228cd4")
 	)
@@ -8571,6 +8641,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "b8b94665-e040-4a24-8dad-fec0aa519333")
 	)
@@ -8581,6 +8652,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "bbf9f604-45c3-4c8e-9666-cedd379e4235")
 	)
@@ -8591,6 +8663,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "bd38b7ef-3d08-4f2a-8242-097b677a2744")
 	)
@@ -8601,6 +8674,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "bdc448d2-f41d-41ec-93fb-d5fe548317b9")
 	)
@@ -8611,6 +8685,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "bde1dcf9-7d58-484d-99f2-53d83541130f")
 	)
@@ -8621,6 +8696,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "be5e006c-1171-4c7f-a062-314d9796abc4")
 	)
@@ -8631,6 +8707,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "beb64328-4231-43e7-a47b-a3a83733733f")
 	)
@@ -8641,6 +8718,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "c0aaaa5c-f056-4219-ab38-69a890b3922b")
 	)
@@ -8661,6 +8739,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "c1d18b34-4964-4db8-85de-a762cf0ddf9d")
 	)
@@ -8671,6 +8750,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "c1e3d7c2-6912-4d9d-bd14-e253e8ee5cab")
 	)
@@ -8771,6 +8851,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "d255ffe9-8a39-4c8f-a13c-97e1bcb4037b")
 	)
@@ -8781,6 +8862,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "d2747820-6e0f-46e1-8dde-95fc7fc06796")
 	)
@@ -8831,6 +8913,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "d628718d-e724-4bf6-97ed-51941e789c67")
 	)
@@ -8841,6 +8924,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "d69250b6-fd70-48e4-a98c-b7887257a4fd")
 	)
@@ -8851,6 +8935,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "d7105564-0132-42c6-9fbd-533b3caa5a54")
 	)
@@ -8861,6 +8946,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "d7e6dd89-477d-4e87-ba7d-a440af2bcecc")
 	)
@@ -8871,6 +8957,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "d8488305-d272-4813-817c-d566123fbce4")
 	)
@@ -8891,6 +8978,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "da402343-da1b-43a1-879c-be8439a0a53b")
 	)
@@ -8901,6 +8989,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "db2ae8de-4b20-4231-af06-202de381a093")
 	)
@@ -8951,6 +9040,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "dd4f86f0-6a10-4520-85f1-07b766b7c11c")
 	)
@@ -8961,6 +9051,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "de55032c-511d-4106-a829-c7727083586b")
 	)
@@ -9001,6 +9092,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "e1a1511a-578a-4938-841d-62a2c26c5c60")
 	)
@@ -9041,6 +9133,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "ec1f637a-0c28-4b4a-9114-59207680122c")
 	)
@@ -9056,11 +9149,12 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 91.44) (xy 124.46 91.44)
+			(xy 118.11 91.44) (xy 124.46 91.44)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "ed17b632-d9fc-4597-b267-dac00463a703")
 	)
@@ -9101,6 +9195,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "f272b689-eaf5-45a3-9b65-4356ed3f52f2")
 	)
@@ -9141,6 +9236,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "f9f09e68-ba59-403e-badb-e1db5f8540cd")
 	)
@@ -9151,6 +9247,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 128 128 128 1)
 		)
 		(uuid "fa993097-fd25-4773-897f-158eaff0ef0c")
 	)
@@ -9171,6 +9268,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "fc7c5cac-6df3-4960-8550-cb9257c037a0")
 	)
@@ -9214,66 +9312,6 @@
 		)
 		(uuid "ffdf3ac8-e3af-4b78-8a61-38c039cf666a")
 	)
-	(label "VCCAUX"
-		(at 19.05 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "2e544579-16fe-4f72-a8d3-90664c630c6e")
-	)
-	(label "VCCAUX"
-		(at 24.13 38.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "30c3bb33-b47e-450a-ba15-0d7e6010c11d")
-	)
-	(label "VCCBRAM"
-		(at 22.86 58.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7bd22751-06aa-4f17-ad18-d6f00eb3b4c8")
-	)
-	(label "VCCAUX"
-		(at 92.71 91.44 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "89baeb0d-8407-433d-8fd6-20f52b7c9aae")
-	)
-	(label "VCCINT"
-		(at 93.98 33.02 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "cbb7f144-e2f1-4d3c-9081-fc7cc3e90248")
-	)
-	(label "VCCBRAM"
-		(at 104.14 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f30b25cc-8364-44ff-ac09-a530522ba9aa")
-	)
 	(hierarchical_label "VCCBRAM"
 		(shape input)
 		(at 22.86 58.42 180)
@@ -9284,6 +9322,50 @@
 			(justify right)
 		)
 		(uuid "4259df26-f7c3-45a8-a7cb-43ea5359186b")
+	)
+	(hierarchical_label "VCCAUX"
+		(shape input)
+		(at 25.4 53.34 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4b83e75e-3f99-4b3d-86e0-e734b0e43418")
+	)
+	(hierarchical_label "VCCAUX"
+		(shape input)
+		(at 118.11 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5b2de193-6a0b-4643-827f-a1776310b0ec")
+	)
+	(hierarchical_label "1V0"
+		(shape input)
+		(at 118.11 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6b1da021-7f08-4695-994a-232c36cacdde")
+	)
+	(hierarchical_label "1V0"
+		(shape input)
+		(at 276.86 29.21 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "73629313-7081-4466-837a-07634add59c8")
 	)
 	(hierarchical_label "VCCINT"
 		(shape input)
@@ -9374,17 +9456,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 190.5 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 190.5 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9498,17 +9569,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 229.87 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 229.87 36.83 0)
 			(hide yes)
@@ -9592,17 +9652,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 260.35 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 260.35 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9716,7 +9765,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 120.65 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -9819,7 +9868,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 124.46 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -9933,17 +9982,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 199.39 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 199.39 36.83 0)
 			(hide yes)
@@ -10036,7 +10074,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 121.92 76.2 0)
 			(hide yes)
 			(show_name no)
@@ -10085,7 +10123,7 @@
 		(dnp no)
 		(uuid "235e3607-aa6d-4357-9e55-b4d9d4ed7ef2")
 		(property "Reference" "U11"
-			(at 101.854 164.592 0)
+			(at 46.99 34.036 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10128,17 +10166,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 60.96 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 60.96 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -11218,7 +11245,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 143.51 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -11321,17 +11348,6 @@
 				)
 			)
 		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
-			(at 142.24 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C883598"
 			(at 142.24 74.93 0)
 			(hide yes)
@@ -11364,84 +11380,6 @@
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/e94b57f1-6fcb-4c98-bd76-5b6935344cba"
 					(reference "C282")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+1V0")
-		(at 276.86 29.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3f548e70-a453-45cf-a2db-c475f19930a3")
-		(property "Reference" "#PWR0224"
-			(at 276.86 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+1V0"
-			(at 276.86 24.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 276.86 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 276.86 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+1V0\""
-			(at 276.86 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "62687faf-ab7f-47d4-b811-0bdeb82aa66a")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/1039afa1-78bb-4140-9ce0-f929b7009905/e94b57f1-6fcb-4c98-bd76-5b6935344cba"
-					(reference "#PWR0224")
 					(unit 1)
 				)
 			)
@@ -11514,7 +11452,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 177.8 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -11617,7 +11555,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 132.08 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -11720,7 +11658,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 153.67 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -11824,7 +11762,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 160.02 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -11927,7 +11865,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 134.62 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -12030,7 +11968,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 110.49 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -12221,17 +12159,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 162.56 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 162.56 95.25 0)
 			(hide yes)
@@ -12335,17 +12262,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 248.92 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 248.92 36.83 0)
 			(hide yes)
@@ -12429,17 +12345,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 267.97 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 267.97 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -12554,7 +12459,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 130.81 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -12648,17 +12553,6 @@
 			)
 		)
 		(property "Description" "10V 47uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 196.85 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM21BR61A476ME15L"
 			(at 196.85 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -12783,17 +12677,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 209.55 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 209.55 36.83 0)
 			(hide yes)
@@ -12887,7 +12770,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 168.91 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -12991,17 +12874,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 240.03 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 240.03 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -13261,7 +13133,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 151.13 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -13365,17 +13237,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 172.72 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 172.72 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -13567,17 +13428,6 @@
 				)
 			)
 		)
-		(property "LCSC Part # " "C77004"
-			(at 219.71 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC Part #" "C77004"
 			(at 219.71 36.83 0)
 			(hide yes)
@@ -13749,7 +13599,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 140.97 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -13842,17 +13692,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 276.86 36.83 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 276.86 36.83 0)
 			(hide yes)
 			(show_name no)
@@ -13967,17 +13806,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 182.88 95.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 182.88 95.25 0)
 			(hide yes)
 			(show_name no)

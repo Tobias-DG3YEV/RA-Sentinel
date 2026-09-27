@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-20")
-		(rev "C")
+		(date "2026-09-27")
+		(rev "C.6")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -182,6 +182,217 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector_Generic:Conn_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J6"
+				(at 1.2701 -5.08 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "Conn_01x03"
+				(at -1.2699 -5.08 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/product-detail/C2937625.html?s_z=n_q_t_pin%2520header&spm=wm.fly.bg.1.cbh___wm.ssy.tc.0.tz&lcsc_vid=T1RaBgBTQ1ENAlRfFlUKUVAAFlhZBlZWFlJdUFZVFlQxVlNfR1FeVVVVQFhaVDsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "CONN HEADER 3POS 2.54mm SINGLE ROW TH"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part #" "C2937625"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Mfr. Part #" "PZ254V-11-03P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1959,7 +2170,7 @@
 				)
 			)
 			(symbol "X3126WS-98-9TV01_1_0"
-				(pin power_out line
+				(pin power_in line
 					(at -12.7 60.96 0)
 					(length 5.08)
 					(name "A01"
@@ -1977,7 +2188,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at -12.7 58.42 0)
 					(length 5.08)
 					(name "A02"
@@ -1995,7 +2206,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at -12.7 55.88 0)
 					(length 5.08)
 					(name "A03"
@@ -2067,7 +2278,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 12.7 60.96 180)
 					(length 5.08)
 					(name "B01"
@@ -2085,7 +2296,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 12.7 58.42 180)
 					(length 5.08)
 					(name "B02"
@@ -2103,7 +2314,7 @@
 						)
 					)
 				)
-				(pin power_out line
+				(pin power_in line
 					(at 12.7 55.88 180)
 					(length 5.08)
 					(name "B03"
@@ -2510,145 +2721,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+5V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+5V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+5V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -2764,12 +2836,121 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(junction
-		(at 118.11 41.91)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2a51bb21-dc2d-4a2d-af47-ff91be4f6a18")
+		(symbol "power:PWR_FLAG"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#FLG"
+				(at 0 1.905 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PWR_FLAG"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Special symbol for telling ERC where power comes from"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "flag power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(junction
 		(at 147.32 66.04)
@@ -2781,7 +2962,7 @@
 		(at 83.82 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "75eff697-9e22-4aaa-9cf9-663e93ac3adb")
+		(uuid "5a9154f2-98b1-4d1f-b39e-21ec7a1b598e")
 	)
 	(junction
 		(at 118.11 50.8)
@@ -2806,6 +2987,14 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d8921c1b-8cb3-4991-acdc-bd75bfe15d90")
+	)
+	(no_connect
+		(at 113.03 124.46)
+		(uuid "4d2c7fa2-392a-477b-982c-57e840fa3854")
+	)
+	(no_connect
+		(at 113.03 121.92)
+		(uuid "7fd474e5-6b31-479c-bc9b-58f68bf92fc0")
 	)
 	(wire
 		(pts
@@ -2856,16 +3045,6 @@
 			(type default)
 		)
 		(uuid "09d01d81-653e-4451-a343-c1af2c772e54")
-	)
-	(wire
-		(pts
-			(xy 118.11 41.91) (xy 125.73 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0aeceb4c-3bbd-4685-bbd2-79775921caa4")
 	)
 	(wire
 		(pts
@@ -2939,7 +3118,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 48.26) (xy 83.82 41.91)
+			(xy 83.82 48.26) (xy 83.82 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2969,11 +3148,22 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 33.02) (xy 123.19 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "295ebd16-50ab-41cb-adc7-1fdeb3773a39")
+	)
+	(wire
+		(pts
 			(xy 144.78 66.04) (xy 147.32 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "2c400edf-561d-439d-a8a9-ac5e627b578a")
 	)
@@ -3006,6 +3196,16 @@
 			(type default)
 		)
 		(uuid "3169b38d-9597-4f4b-a3c8-dd30a790a792")
+	)
+	(wire
+		(pts
+			(xy 120.65 33.02) (xy 120.65 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32d4e7c8-a75b-43ea-a97a-d6a263bee2bf")
 	)
 	(wire
 		(pts
@@ -3049,16 +3249,6 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 41.91) (xy 118.11 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36387348-1e7f-4dd0-838f-ff4af1c590d5")
-	)
-	(wire
-		(pts
 			(xy 78.74 121.92) (xy 87.63 121.92)
 		)
 		(stroke
@@ -3086,6 +3276,16 @@
 			(type default)
 		)
 		(uuid "3dab08e6-f41f-4f8e-a247-72b2cf673e6a")
+	)
+	(wire
+		(pts
+			(xy 123.19 48.26) (xy 118.11 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4036b7cc-21f7-4369-a511-737c7e5d1b48")
 	)
 	(wire
 		(pts
@@ -3124,6 +3324,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "43f36461-1412-4435-a505-775930b0d916")
 	)
@@ -3144,18 +3345,9 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "48088529-308e-48cb-8176-a4a5d4c8f471")
-	)
-	(wire
-		(pts
-			(xy 133.35 41.91) (xy 139.7 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b679130-b9f4-48ab-9a57-b6f250d5ae4b")
 	)
 	(wire
 		(pts
@@ -3194,6 +3386,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 140 0 1)
 		)
 		(uuid "53522334-33fc-4de0-b8d4-167da88fb953")
 	)
@@ -3204,6 +3397,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "55f55a23-d0c2-495b-af36-e8e96ea4c6e9")
 	)
@@ -3214,6 +3408,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 140 0 1)
 		)
 		(uuid "59996835-749b-4925-b2c7-efc65e6cec43")
 	)
@@ -3229,13 +3424,14 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 48.26) (xy 125.73 48.26)
+			(xy 125.73 41.91) (xy 125.73 33.02)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 140 0 1)
 		)
-		(uuid "64092d06-1726-43c5-b6ad-9d32d08bad52")
+		(uuid "5f4a4c8b-a645-46b2-8259-9bb5712d8404")
 	)
 	(wire
 		(pts
@@ -3359,16 +3555,6 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 41.91) (xy 118.11 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d460340-aca0-42c5-80cf-7daa9f2906e0")
-	)
-	(wire
-		(pts
 			(xy 121.92 96.52) (xy 113.03 96.52)
 		)
 		(stroke
@@ -3384,6 +3570,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "829bbc42-4813-401e-b439-1c63e1c5d1fc")
 	)
@@ -3394,8 +3581,20 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 220 0 0 1)
 		)
 		(uuid "83a77fa6-48bf-462b-8065-1246691163f5")
+	)
+	(wire
+		(pts
+			(xy 125.73 41.91) (xy 139.7 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 255 140 0 1)
+		)
+		(uuid "854cd478-6d4f-4c7e-a305-f955b29d9c68")
 	)
 	(wire
 		(pts
@@ -3464,6 +3663,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 255 140 0 1)
 		)
 		(uuid "8bf27531-1f9c-4372-8e2a-0107ef0d6218")
 	)
@@ -3526,6 +3726,16 @@
 			(type default)
 		)
 		(uuid "98069f06-56c0-47b7-be92-7eda70801188")
+	)
+	(wire
+		(pts
+			(xy 120.65 35.56) (xy 115.57 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ba0539c-2e9c-4b40-9de6-c51acfb57587")
 	)
 	(wire
 		(pts
@@ -3609,11 +3819,12 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 48.26) (xy 146.05 48.26)
+			(xy 115.57 35.56) (xy 109.22 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 200 0 1)
 		)
 		(uuid "b319c82f-6d72-4a01-b177-49538914924a")
 	)
@@ -3736,16 +3947,6 @@
 			(type default)
 		)
 		(uuid "cc073556-385a-40d2-bf43-a369b3d8c155")
-	)
-	(wire
-		(pts
-			(xy 146.05 39.37) (xy 146.05 48.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd43b1f5-ffb8-4afc-8cd5-c96417b818e0")
 	)
 	(wire
 		(pts
@@ -3966,16 +4167,6 @@
 			(type default)
 		)
 		(uuid "ff7c4c16-1fbf-4249-8539-1c46b7707bb4")
-	)
-	(label "3V3"
-		(at 207.01 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0065de10-14a9-4023-aed7-ee3ff03746ad")
 	)
 	(label "GND"
 		(at 121.92 137.16 180)
@@ -4657,16 +4848,6 @@
 		)
 		(uuid "d9cef2d9-1519-4e15-b364-9d26b9e4c8c0")
 	)
-	(label "12V"
-		(at 189.23 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "da0e0f0a-5f36-4061-8db9-c6564b45ac57")
-	)
 	(label "3V3_OUT"
 		(at 121.92 66.04 180)
 		(effects
@@ -4726,16 +4907,6 @@
 			(justify right bottom)
 		)
 		(uuid "ed843435-fa10-4019-ad94-9b6865984dc3")
-	)
-	(label "3V3"
-		(at 156.21 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "eee46540-710e-4f65-8819-bc33364454f1")
 	)
 	(label "RX2_P"
 		(at 78.74 86.36 0)
@@ -4952,6 +5123,28 @@
 		)
 		(uuid "43d7143c-aafa-4d7b-8040-3300326e1cf5")
 	)
+	(hierarchical_label "12V"
+		(shape input)
+		(at 139.7 39.37 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "46f4f507-7563-4b65-a7c1-92c68bb064f3")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 207.01 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4b33d00c-63b7-4ac6-9e12-c332b92e6104")
+	)
 	(hierarchical_label "RX16_N"
 		(shape output)
 		(at 77.47 165.1 180)
@@ -4963,6 +5156,28 @@
 		)
 		(uuid "50aed491-f3d8-48a7-b603-e57e9e4b2604")
 	)
+	(hierarchical_label "12V"
+		(shape input)
+		(at 198.12 55.88 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "517f05b4-7961-47f5-a729-cbab6e6b1acf")
+	)
+	(hierarchical_label "12V"
+		(shape input)
+		(at 189.23 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5325240a-a051-47d7-8a71-0eed022ca856")
+	)
 	(hierarchical_label "RX6_P"
 		(shape output)
 		(at 78.74 109.22 180)
@@ -4973,6 +5188,17 @@
 			(justify right)
 		)
 		(uuid "534d92e6-ca8e-4b11-ba81-dd92d25ada7f")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 156.21 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "576b01ca-c294-4124-9910-72529f6dcff5")
 	)
 	(hierarchical_label "RX16_P"
 		(shape output)
@@ -5062,6 +5288,17 @@
 		)
 		(uuid "8e6b3d69-a545-4c8b-91ba-0b71343a4b67")
 	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 218.44 55.88 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "95390370-4b17-4754-9bab-97f80271e463")
+	)
 	(hierarchical_label "RX7_N"
 		(shape output)
 		(at 121.92 116.84 0)
@@ -5083,6 +5320,19 @@
 			(justify left)
 		)
 		(uuid "9d632d37-72a9-4859-aa4a-c26bea4f2e66")
+	)
+	(hierarchical_label "5V0"
+		(shape input)
+		(at 109.22 35.56 180)
+		(effects
+			(font
+				(size 2.032 2.032)
+				(thickness 0.4064)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "9f147406-4c0f-46c2-bc03-4b7fa3100e17")
 	)
 	(hierarchical_label "RX4_P"
 		(shape output)
@@ -5228,8 +5478,8 @@
 		(uuid "fe59cbc9-d9cc-4ca2-9339-7151dfc0719f")
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 129.54 48.26 90)
+		(lib_id "power:PWR_FLAG")
+		(at 83.82 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5237,31 +5487,32 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "35a4ab42-8a3e-4a06-af9f-cb7c541c6e20")
-		(property "Reference" "R208"
-			(at 131.826 45.974 90)
+		(fields_autoplaced yes)
+		(uuid "1173dba1-8356-486a-9976-1e793e9c1e05")
+		(property "Reference" "#FLG014"
+			(at 83.82 43.815 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "0"
-			(at 130.302 50.8 90)
+		(property "Value" "PWR_FLAG"
+			(at 83.82 40.64 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 129.54 50.038 90)
+		(property "Footprint" ""
+			(at 83.82 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5272,7 +5523,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 129.54 48.26 0)
+			(at 83.82 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5282,41 +5533,8 @@
 				)
 			)
 		)
-		(property "Description" "250mW Thick Film Resistors 200V 0Ω 1206 Chip Resistor - Surface Mount ROHS"
-			(at 129.54 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "1206W4F0000T5E "
-			(at 129.54 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C17888 "
-			(at 129.54 48.26 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #" "1206W4F0000T5E"
-			(at 129.54 48.26 0)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 83.82 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5327,15 +5545,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "819b2771-3ebf-46e5-8327-d112ad272b2a")
-		)
-		(pin "2"
-			(uuid "610a2832-44c2-45c8-884d-c6bbc58edddf")
+			(uuid "67676d2e-8875-4a9b-9744-0fb1b45e48fb")
 		)
 		(instances
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "R208")
+					(reference "#FLG014")
 					(unit 1)
 				)
 			)
@@ -5442,7 +5657,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "FE_3V3_MEAS"
 			(at 143.51 56.5149 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5524,355 +5739,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 218.44 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50e1d737-5fbe-4e57-8a24-57a21e3b739c")
-		(property "Reference" "#PWR093"
-			(at 218.44 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 220.98 54.6099 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 218.44 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 218.44 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 218.44 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2dca4b16-240c-44ac-9a51-3ff0f97e7612")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "#PWR093")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 129.54 41.91 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "73a88947-4848-46ff-8e27-75afbe4c5106")
-		(property "Reference" "R209"
-			(at 131.826 39.624 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0"
-			(at 130.302 44.45 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 129.54 43.688 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "250mW Thick Film Resistors 200V 0Ω 1206 Chip Resistor - Surface Mount ROHS"
-			(at 129.54 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "1206W4F0000T5E "
-			(at 129.54 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part #" "C17888 "
-			(at 129.54 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #" "1206W4F0000T5E"
-			(at 129.54 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dfd9f709-cba5-4837-a499-7cd7d53b0cc0")
-		)
-		(pin "2"
-			(uuid "310a2317-67a6-4a1d-8578-53aad9e0b0e3")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "R209")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 146.05 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7a4c3955-d632-4eee-9fc4-43622bd29890")
-		(property "Reference" "#PWR0275"
-			(at 146.05 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 146.05 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 146.05 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 146.05 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 146.05 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "106cff92-3c20-44a6-9fe0-d86083fe5c02")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "#PWR0275")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+12V")
-		(at 198.12 55.88 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "80a2503a-41a2-4037-b368-556517261e82")
-		(property "Reference" "#PWR092"
-			(at 198.12 59.69 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+12V"
-			(at 198.12 50.8 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 198.12 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 198.12 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 198.12 55.88 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "799e1a3c-5e45-4beb-9425-10b8c35a31ce")
-		)
-		(instances
-			(project "RASBB"
-				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "#PWR092")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 140.97 66.04 90)
 		(unit 1)
@@ -5928,17 +5794,6 @@
 			)
 		)
 		(property "Description" "250mW Thick Film Resistors 200V 0Ω 1206 Chip Resistor - Surface Mount ROHS"
-			(at 140.97 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part #  " "1206W4F0000T5E "
 			(at 140.97 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -6008,7 +5863,7 @@
 				)
 			)
 		)
-		(property "Value" "X3157WS-98-9TV30"
+		(property "Value" "FRONTEND"
 			(at 100.33 177.8 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6062,28 +5917,6 @@
 					(size 1.27 1.27)
 				)
 				(justify bottom)
-			)
-		)
-		(property "Mfr. Part # " "X3157WS-98-9TV30"
-			(at 100.33 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " ""
-			(at 100.33 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part #" "C5711253"
@@ -6412,8 +6245,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 139.7 39.37 0)
+		(lib_id "Connector_Generic:Conn_01x03")
+		(at 123.19 27.94 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6422,9 +6255,31 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d3b5345b-1dc4-4693-bfb8-dc4f272903eb")
-		(property "Reference" "#PWR0276"
-			(at 139.7 43.18 0)
+		(uuid "f0250ebc-9c40-489d-aa47-890d71dfb025")
+		(property "Reference" "J6"
+			(at 128.27 26.6699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_01x03"
+			(at 128.27 29.2099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
+			(at 123.19 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6434,18 +6289,8 @@
 				)
 			)
 		)
-		(property "Value" "+12V"
-			(at 139.7 34.29 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 139.7 39.37 0)
+		(property "Datasheet" "https://www.lcsc.com/product-detail/C2937625.html?s_z=n_q_t_pin%2520header&spm=wm.fly.bg.1.cbh___wm.ssy.tc.0.tz&lcsc_vid=T1RaBgBTQ1ENAlRfFlUKUVAAFlhZBlZWFlJdUFZVFlQxVlNfR1FeVVVVQFhaVDsOAxUeFF5JWBYZEEoKFBINSQcJGk4dAgUUFAk%3D"
+			(at 123.19 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6455,8 +6300,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 139.7 39.37 0)
+		(property "Description" "CONN HEADER 3POS 2.54mm SINGLE ROW TH"
+			(at 123.19 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6466,8 +6311,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 139.7 39.37 0)
+		(property "LCSC Part #" "C2937625"
+			(at 123.19 27.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6476,14 +6321,31 @@
 					(size 1.27 1.27)
 				)
 			)
+		)
+		(property "Mfr. Part #" "PZ254V-11-03P"
+			(at 123.19 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "bb2b33bf-728c-4b98-96ad-cc114b626581")
 		)
 		(pin "1"
-			(uuid "8f37dae0-8266-4dad-a1af-ebfdb5e21f75")
+			(uuid "affc9ae8-97e9-486d-b0cb-71a95f1a5cd9")
+		)
+		(pin "2"
+			(uuid "df5aad8c-42b5-407a-a426-bd6939d34a15")
 		)
 		(instances
 			(project "RASBB"
 				(path "/f6a5c334-5ee5-4dc9-84f1-7866383a3347/0df6d93c-801c-4070-ba40-80b3fddbebe0"
-					(reference "#PWR0276")
+					(reference "J6")
 					(unit 1)
 				)
 			)
