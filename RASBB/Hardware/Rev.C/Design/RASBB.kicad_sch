@@ -6,8 +6,8 @@
 	(paper "A0")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-27")
-		(rev "C.6")
+		(date "2026-09-29")
+		(rev "C")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols

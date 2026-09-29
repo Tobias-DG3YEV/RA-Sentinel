@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.0,
-          "height": 1.7,
-          "width": 1.7
+          "drill": 0.0,
+          "height": 4.1,
+          "width": 2.0
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.2
+          "border_display_style": 0,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.02,
+          "corner_smoothing": 2,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.2,
+          "min_island_area": 10.0,
+          "min_thickness": 0.3,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.15,
+          "thermal_relief_spoke_width": 0.4
         }
       },
       "diff_pair_dimensions": [
@@ -67,30 +83,6 @@
         ],
         [
           "clearance|252110000|75302500|ba7cfd73-692b-4248-95d3-375af3f3c5b5|7a92eee5-9c74-45e9-b623-f9553d9fc78b",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|148390723|48856776|273e0d01-61fc-4912-9316-807b0caaea3e|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|164913149|98750000|828c12c5-da7c-4d5e-89a2-470503de8b8d|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|185332291|117950000|27314e6e-42a0-4010-8ced-526845e665a0|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|187560000|103632916|3a25635f-fbbe-4295-a018-46f9d17e7394|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|203230000|114840000|19a80e72-744e-4df1-abaf-6ab4cbb6c4c1|00000000-0000-0000-0000-000000000000",
-          ""
-        ],
-        [
-          "lib_footprint_mismatch|217000000|96430000|292c382b-2888-46bd-82b5-163ad248be71|00000000-0000-0000-0000-000000000000",
           ""
         ],
         [
@@ -323,7 +315,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": "C.6"
+      "sch_revision": "C"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -694,13 +686,7 @@
       "version": 5
     },
     "net_colors": {
-      "+12V": "rgb(255, 0, 0)",
-      "+1V0": "rgb(255, 0, 255)",
-      "+1V35": "rgb(0, 132, 132)",
-      "+1V8": "rgb(255, 255, 0)",
-      "+3.3V": "rgb(255, 0, 255)",
-      "+3V3": "rgb(255, 153, 0)",
-      "+5V": "rgb(177, 0, 0)",
+      "/Audio_IN-OUT/3V3": "rgb(204, 102, 0)",
       "/DDR3-01/CK_N": "rgb(255, 0, 0)",
       "/DDR3-01/CK_P": "rgb(255, 0, 0)",
       "/DDR3-01/DDR301_A0": "rgb(255, 0, 0)",
@@ -748,11 +734,9 @@
       "/DDR3-01/DDR301_nCS": "rgb(255, 0, 0)",
       "/DDR3-01/DDR301_nRAS": "rgb(255, 0, 0)",
       "/DDR3-01/DDR301_nWE": "rgb(255, 0, 0)",
-      "/FPGA-01/1V0": "rgb(255, 153, 0)",
       "/PCIE/12V": "rgb(255, 0, 0)",
       "/VDC_IN": "rgb(194, 0, 194)",
       "GND": "rgb(194, 194, 194)",
-      "unconnected-(IC9-A14-PadT7)": "rgb(0, 194, 194)",
       "unconnected-(U10A-IO_L6N_T0_VREF_15-PadD13)": "rgb(255, 0, 0)"
     },
     "netclass_assignments": null,
@@ -795,8 +779,8 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "./",
-      "plot": "../../../Production/",
+      "netlist": "RASBB.net",
+      "plot": "C:/Users/minad/OneDrive/Dokumente/GitHub/RA-Sentinel/RASBB/Production/",
       "pos_files": "C:/Users/minad/HW-Designs/RASBB/PCB/RASBB/RASBB-RevB/",
       "specctra_dsn": "",
       "step": "",
@@ -811,7 +795,7 @@
       "method": 0,
       "sort_order": 0
     },
-    "bom_export_filename": "..\\..\\..\\Production\\RASBB.csv",
+    "bom_export_filename": "..\\..\\..\\Production\\RASBB_REVC_06.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -863,7 +847,7 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "LCSC Part #",
           "name": "LCSC Part #",
           "show": true
@@ -887,7 +871,7 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Mfr. Part #",
           "name": "Mfr. Part #",
           "show": true

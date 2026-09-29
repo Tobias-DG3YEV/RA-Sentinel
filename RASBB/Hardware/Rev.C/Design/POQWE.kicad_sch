@@ -6,8 +6,8 @@
 	(paper "A1")
 	(title_block
 		(title "RASBB")
-		(date "2026-09-27")
-		(rev "C.6")
+		(date "2026-09-29")
+		(rev "C")
 		(company "Mina Daneshpajouh")
 	)
 	(lib_symbols
@@ -7118,12 +7118,6 @@
 		(uuid "6c067e0a-f97f-43dd-a81f-04560cd84ca5")
 	)
 	(junction
-		(at 755.65 208.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "71ede758-7f49-442e-8355-ac99310bac4a")
-	)
-	(junction
 		(at 505.46 256.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7212,6 +7206,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8bdab4e1-afbe-4928-af7d-cc050e57b5d9")
+	)
+	(junction
+		(at 773.43 208.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8c7877b5-adaf-48d8-8d40-21d1fb306d25")
 	)
 	(junction
 		(at 646.43 339.09)
@@ -8268,6 +8268,17 @@
 	)
 	(wire
 		(pts
+			(xy 773.43 208.28) (xy 778.51 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+			(color 128 128 128 1)
+		)
+		(uuid "1b2ec41a-2898-42dd-985b-54db06a8afd9")
+	)
+	(wire
+		(pts
 			(xy 746.76 302.26) (xy 746.76 314.96)
 		)
 		(stroke
@@ -8554,16 +8565,6 @@
 			(type default)
 		)
 		(uuid "2a5d50ab-b13f-4aac-a1ae-8cdbe9a5cddd")
-	)
-	(wire
-		(pts
-			(xy 755.65 208.28) (xy 765.81 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b7c35a1-c5f7-4216-ad8a-f8b729a9b17b")
 	)
 	(wire
 		(pts
@@ -9171,7 +9172,7 @@
 	)
 	(wire
 		(pts
-			(xy 770.89 208.28) (xy 778.51 208.28)
+			(xy 760.73 208.28) (xy 773.43 208.28)
 		)
 		(stroke
 			(width 0)
@@ -9857,16 +9858,6 @@
 	)
 	(wire
 		(pts
-			(xy 755.65 238.76) (xy 755.65 208.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71c56f70-ffc5-4915-ae30-a7780ddd7b47")
-	)
-	(wire
-		(pts
 			(xy 688.34 107.95) (xy 693.42 107.95)
 		)
 		(stroke
@@ -10208,13 +10199,13 @@
 	)
 	(wire
 		(pts
-			(xy 740.41 208.28) (xy 755.65 208.28)
+			(xy 760.73 208.28) (xy 773.43 208.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "87f02189-5e81-4d8d-ab47-cbec955bdd14")
+		(uuid "87fd23d7-83a6-4308-bede-b4d18ca19d17")
 	)
 	(wire
 		(pts
@@ -10441,6 +10432,16 @@
 	)
 	(wire
 		(pts
+			(xy 740.41 208.28) (xy 755.65 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92dad33d-a187-48e1-a8b8-1c80f8bc2fdf")
+	)
+	(wire
+		(pts
 			(xy 693.42 107.95) (xy 693.42 111.76)
 		)
 		(stroke
@@ -10556,6 +10557,16 @@
 	)
 	(wire
 		(pts
+			(xy 740.41 205.74) (xy 740.41 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99e41b42-c376-499e-959b-083dfe9cb115")
+	)
+	(wire
+		(pts
 			(xy 297.18 259.08) (xy 251.46 259.08)
 		)
 		(stroke
@@ -10639,7 +10650,7 @@
 	)
 	(wire
 		(pts
-			(xy 681.99 238.76) (xy 755.65 238.76)
+			(xy 681.99 238.76) (xy 773.43 238.76)
 		)
 		(stroke
 			(width 0)
@@ -11493,6 +11504,16 @@
 	)
 	(wire
 		(pts
+			(xy 773.43 238.76) (xy 773.43 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d65652f0-4259-42de-b5e7-a734a2fa04ba")
+	)
+	(wire
+		(pts
 			(xy 208.28 278.13) (xy 215.9 278.13)
 		)
 		(stroke
@@ -12150,6 +12171,16 @@
 			(type default)
 		)
 		(uuid "ffbe1773-2f49-4a9a-90c1-4f50d7b9b75c")
+	)
+	(label "1V0_PRESH"
+		(at 740.41 208.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1c42b064-1b6f-4b63-ad85-0adce10df88f")
 	)
 	(label "PGOOD_3V3"
 		(at 621.03 453.39 0)
@@ -14017,7 +14048,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 770.89 208.28 0)
+		(at 773.43 208.28 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14027,7 +14058,7 @@
 		(dnp no)
 		(uuid "28812cee-d2ab-47e3-a8fb-b9e9091eb374")
 		(property "Reference" "#FLG023"
-			(at 770.89 206.375 0)
+			(at 773.43 206.375 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14038,7 +14069,8 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 770.89 204.47 0)
+			(at 773.43 204.47 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14048,7 +14080,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 770.89 208.28 0)
+			(at 773.43 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14059,7 +14091,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 770.89 208.28 0)
+			(at 773.43 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14070,7 +14102,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 770.89 208.28 0)
+			(at 773.43 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15860,7 +15892,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 768.35 208.28 270)
+		(at 758.19 208.28 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15870,7 +15902,7 @@
 		(dnp no)
 		(uuid "48ab0bbf-1795-4fdc-a077-66e211229e24")
 		(property "Reference" "R165"
-			(at 768.35 209.804 90)
+			(at 758.19 209.804 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15880,7 +15912,7 @@
 			)
 		)
 		(property "Value" "0.005"
-			(at 768.096 206.248 90)
+			(at 757.936 206.248 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15890,7 +15922,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
-			(at 768.35 208.28 0)
+			(at 758.19 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15901,7 +15933,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 768.35 208.28 0)
+			(at 758.19 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15912,7 +15944,7 @@
 			)
 		)
 		(property "Description" "2W 5mΩ ±5% 2512 Current Sense Resistors - SMD/SMT ROHS"
-			(at 768.35 208.28 0)
+			(at 758.19 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15923,7 +15955,7 @@
 			)
 		)
 		(property "Mfr. Part #" "FRM252WJR005TN"
-			(at 768.35 208.28 0)
+			(at 758.19 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15934,7 +15966,7 @@
 			)
 		)
 		(property "LCSC Part #" "C7467241"
-			(at 768.35 208.28 0)
+			(at 758.19 208.28 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16561,7 +16593,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 755.65 208.28 0)
+		(at 740.41 205.74 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16572,7 +16604,7 @@
 		(fields_autoplaced yes)
 		(uuid "59cb0956-e298-48d7-b5d9-acb68379e11d")
 		(property "Reference" "#FLG012"
-			(at 755.65 206.375 0)
+			(at 740.41 203.835 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16583,7 +16615,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 755.65 203.2 0)
+			(at 740.41 200.66 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16594,7 +16626,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 755.65 208.28 0)
+			(at 740.41 205.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16605,7 +16637,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 755.65 208.28 0)
+			(at 740.41 205.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16616,7 +16648,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 755.65 208.28 0)
+			(at 740.41 205.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
