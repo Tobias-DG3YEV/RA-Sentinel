@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 2,
+    "active_layer": 35,
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
@@ -15,7 +15,7 @@
       "shapes": 1.0,
       "tracks": 1.0,
       "vias": 0.8399999737739563,
-      "zones": 0.4000000059604645
+      "zones": 0.30000001192092896
     },
     "prototype_zone_fills": false,
     "selection_filter": {
@@ -25,16 +25,17 @@
       "keepouts": false,
       "lockedItems": false,
       "otherItems": false,
-      "pads": true,
+      "pads": false,
       "text": true,
-      "tracks": true,
-      "vias": true,
+      "tracks": false,
+      "vias": false,
       "zones": false
     },
     "visible_items": [
       "vias",
       "footprint_text",
       "footprint_anchors",
+      "ratsnest",
       "grid",
       "footprints_front",
       "footprints_back",
@@ -51,7 +52,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "00000000_00000000_0fffffff_ffffafaf",
+    "visible_layers": "00000000_00000000_00000008_82002000",
     "zone_display_mode": 0
   },
   "git": {
@@ -103,35 +104,35 @@
       15
     ],
     "col_widths": [
-      162,
-      147,
-      98,
-      79,
-      91,
+      203,
+      184,
+      123,
       99,
-      91,
-      83,
-      91,
-      91,
-      91,
-      91,
-      91,
-      91,
-      91,
-      91
+      114,
+      124,
+      114,
+      104,
+      114,
+      114,
+      114,
+      114,
+      114,
+      114,
+      114,
+      119
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
     "filter_by_net_name": true,
     "filter_by_netclass": true,
-    "filter_text": "/DDR3-01",
+    "filter_text": "/PCIE/RX",
     "group_by_constraint": false,
     "group_by_netclass": false,
     "show_time_domain_details": false,
     "show_unconnected_nets": false,
     "show_zero_pad_nets": false,
     "sort_ascending": true,
-    "sorting_column": 0
+    "sorting_column": 2
   },
   "open_jobsets": [],
   "project": {
