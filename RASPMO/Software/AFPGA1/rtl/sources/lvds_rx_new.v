@@ -58,6 +58,14 @@ module lvds_rx #(
     input wire          i_ctrlClk,
     input wire  [4:0]   i_data_delay_tap,     // IDELAY tap to load
     input wire          i_data_delay_load,    // 1-cycle pulse: load i_data_delay_tap
+    // Per-lane tap offsets (OWIFI_RX WBMC, 2026-10-06; tie to 0 where unused):
+    // lane n's IDELAY loads i_data_delay_tap + i_lane_tap_ofs[6n +: 6] (signed
+    // 6 bit, saturated to 0..31) at every i_data_delay_load; the FCLK lane
+    // keeps i_data_delay_tap - it is the supervisor's metric. Lanes whose
+    // board skew puts their ODD-half eye away from FCLK's need it (main WBMC
+    // ADC1 chD: clean only at taps 0..5 while FCLK centres at 16). Must be
+    // stable in the i_ctrlClk domain whenever a load pulse comes.
+    input wire  [NLANES*6-1:0] i_lane_tap_ofs,
 
     output wire         o_lvds_dclk,          // unbuffered bit clock (BUFG in top.v)
     output wire         o_lvds_fclk,          // buffered frame clock
@@ -72,7 +80,16 @@ module lvds_rx #(
     // position and gets the true frame alignment every boot, deterministically,
     // with no test pattern and immune to the FCLK-anchor sampling ambiguity
     // (a +/-1-cycle anchor difference shifts data and this word together).
-    output wire [SER_BITS-1:0] o_fclk_word
+    output wire [SER_BITS-1:0] o_fclk_word,
+
+    // Fast re-init (OWIFI_RX WBMC, 2026-09-24; tie i_reinit_tog to 0 where
+    // unused): every TOGGLE of i_reinit_tog (any clock domain) re-runs this
+    // receiver's ISERDES reset/CE sequence with the short INIT_DELAY_REINIT,
+    // WITHOUT touching the FCLK anchor (bitctr / wordsync / anchored), so the
+    // word phase and the ADC's latency are unchanged. o_ready = init done.
+    input  wire                 i_reinit_tog,
+    output wire                 o_ready,
+    output wire [7:0]           o_reanchor_count   // diagnostic, this receiver's DCLK domain
 );
 
 // DDR: each DCLK period carries two serial bits, so a word spans SER_BITS/2
@@ -167,6 +184,16 @@ initial serdes_rst = 1'b1;
 initial serdes_CS = 1'b0;
 reg [15:0] initctr;
 
+/* fast re-init request: toggle -> 3-FF synchroniser on this receiver's clock */
+(* ASYNC_REG = "true" *) reg [2:0] reinit_sync = 3'd0;
+always @(posedge lvds_dclk_BUFDS[1]) reinit_sync <= {reinit_sync[1:0], i_reinit_tog};
+wire reinit_pulse = reinit_sync[2] ^ reinit_sync[1];
+/* An ISERDES reset only needs a few CLKDIV cycles (UG471); the 32768-cycle
+   power-on wait is for the ADC clocks to settle and is not repeated here. */
+localparam INIT_DELAY_REINIT = 64;   // 0.53 us at 120 MHz
+reg fast_reinit = 1'b0;
+wire [15:0] init_delay = fast_reinit ? INIT_DELAY_REINIT[15:0] : INIT_DELAY_POR[15:0];
+
 (* mark_debug = "true" *) wire wordsync;
 (* keep = "true", mark_debug = "true" *) reg [3:0] bitctr;
 (* mark_debug = "true" *) reg fclk_shifted;
@@ -178,6 +205,11 @@ reg        fclk_s_d;
 reg  [3:0] mism_ctr;
 (* mark_debug = "true" *) reg        reanchor_pulse;
 (* keep = "true", mark_debug = "true" *) reg [7:0] reanchor_count; // sticky diagnostic
+assign o_reanchor_count = reanchor_count;
+/* registered: a clean level for the consumer's synchroniser (no decode glitch) */
+reg ready_r = 1'b0;
+always @(posedge lvds_dclk_BUFDS[1]) ready_r <= (initSM == state_initdone);
+assign o_ready = ready_r;
 
 always @(posedge lvds_dclk_BUFDS[1] or posedge i_rst) // 120MHz driven
 begin
@@ -186,6 +218,7 @@ begin
         serdes_rst <= 1;
         serdes_CS <= 0;
         initctr <= 0;
+        fast_reinit <= 1'b0;
     end
     else if (reanchor_pulse) begin
         /* The frame anchor slipped: wordsync (= ISERDES CLKDIV) is about to
@@ -196,15 +229,28 @@ begin
         serdes_rst <= 1;
         serdes_CS <= 0;
         initctr <= 0;
+        fast_reinit <= 1'b0;   // re-anchor keeps the long, pre-existing delay
+    end
+    else if (reinit_pulse && initSM == state_initdone) begin
+        /* external fast re-init: ISERDES reset + CE sequence only, short
+           delay; the anchor block below is not touched. Ignored while an
+           init (power-on or re-anchor) is already running - that one resets
+           the ISERDES anyway, and must keep its own delay. A re-anchor in
+           the same clock wins (branch above). */
+        initSM <= state_powerOn;
+        serdes_rst <= 1;
+        serdes_CS <= 0;
+        initctr <= 0;
+        fast_reinit <= 1'b1;
     end
     else begin
         case (initSM)
             state_powerOn: begin
                 // wait for a stable stretch of clocks and a high phase of wordsync before releasing reset
-                if(initctr >= INIT_DELAY_POR && wordsync == 1) begin
+                if(initctr >= init_delay && wordsync == 1) begin
                     serdes_rst <= 0;
                     serdes_CS <= 0;
-                    if(initctr >= INIT_DELAY_POR+INIT_DELAY_CS && wordsync == 1) begin
+                    if(initctr >= init_delay+INIT_DELAY_CS && wordsync == 1) begin
                         initctr <= 0;
                         initSM <= state_syncing;
                     end
@@ -254,6 +300,12 @@ genvar i;
 generate for (i = 0; i < NLANES; i = i + 1)
     begin : gen_data_lane
 
+        /* this lane's tap: common tap + signed offset, saturated to 0..31 */
+        wire signed [6:0] lane_ofs = {i_lane_tap_ofs[6*i+5], i_lane_tap_ofs[6*i +: 6]};
+        wire signed [6:0] lane_sum = $signed({2'b00, i_data_delay_tap}) + lane_ofs;
+        wire        [4:0] lane_tap = (lane_sum < 7'sd0)  ? 5'd0  :
+                                     (lane_sum > 7'sd31) ? 5'd31 : lane_sum[4:0];
+
         IBUFDS_DIFF_OUT #(
             .DIFF_TERM("TRUE"),
             .IOSTANDARD("DEFAULT")
@@ -284,7 +336,7 @@ generate for (i = 0; i < NLANES; i = i + 1)
             .IDATAIN(data_comp[i]),
             .DATAOUT(data_comp_delayed[i]),
             .LD(i_data_delay_load),
-            .CNTVALUEIN(i_data_delay_tap),
+            .CNTVALUEIN(lane_tap),
             .CNTVALUEOUT()
         );
     end

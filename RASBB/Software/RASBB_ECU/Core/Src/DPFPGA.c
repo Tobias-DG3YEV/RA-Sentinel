@@ -148,6 +148,7 @@ static void DPFPGA_thread(void *arg)
 			updateList();
 			m_lasttick = HAL_GetTick();
 		}
+		osDelay(100);   /* HAND EDIT 2026-09-19: busy loop starved EthLink/timers/idle */
 	}
 }
 

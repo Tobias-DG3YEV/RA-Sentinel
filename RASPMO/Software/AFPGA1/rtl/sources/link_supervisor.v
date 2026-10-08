@@ -45,7 +45,8 @@ module link_supervisor #(
     parameter MISS_MAX     = 64,     // monitor: misses/window that count as bad
     parameter BAD_WINS     = 4,      // consecutive bad windows -> retrain
     parameter GRACE_WINS   = 8,      // post-sweep windows ignored by the monitor
-    parameter FAIL_HOLD_CE = 2097152 // backoff before re-trying a failed sweep (~105ms)
+    parameter FAIL_HOLD_CE = 2097152,// backoff before re-trying a failed sweep (~105ms)
+    parameter FREEZE_GRACE = 2       // windows ignored after an i_freeze release in ST_MON
 )(
     input  wire        i_clk,
     input  wire        i_rst,
@@ -55,7 +56,15 @@ module link_supervisor #(
     output reg  [4:0]  o_tap,         // IDELAY tap (to lvds_rx)
     output reg         o_load,        // 1-cycle pulse: load o_tap
     output reg         o_healthy,     // last sweep found a good plateau
-    output reg  [7:0]  o_retrain_count // sweeps run since reset (diagnostic)
+    output reg  [7:0]  o_retrain_count,// sweeps run since reset (diagnostic)
+    // Fast-heal coordination (OWIFI_RX WBMC, 2026-09-24; tie i_freeze to 0
+    // where unused). While i_freeze is high the FSM counts nothing and loads
+    // no tap - an external ISERDES re-init is running and its misses must not
+    // start a 27 ms re-sweep. On release in ST_MON the window counters are
+    // cleared and FREEZE_GRACE windows are ignored. o_mon = monitoring a
+    // good link with no grace pending (the fast heal arms only then).
+    input  wire        i_freeze,
+    output wire        o_mon
 );
 
 localparam ST_LOAD=3'd0, ST_SETTLE=3'd1, ST_MEAS=3'd2, ST_JUDGE=3'd3,
@@ -72,6 +81,7 @@ reg [4:0]  run_len, run_start;
 reg [4:0]  bestrun_len, bestrun_start;
 reg [3:0]  bad_wins;
 reg [3:0]  grace;
+reg        freeze_d;
 
 always @(posedge i_clk) begin
     if (i_rst) begin
@@ -91,9 +101,24 @@ always @(posedge i_clk) begin
         bestrun_start   <= 5'd0;
         bad_wins        <= 4'd0;
         grace           <= 4'd0;
+        freeze_d        <= 1'b0;
     end
     else begin
-        o_load <= 1'b0; // load is a one-cycle pulse; default deasserted
+        o_load   <= 1'b0; // load is a one-cycle pulse; default deasserted
+        freeze_d <= i_freeze;
+        if (i_freeze) begin
+            // external re-init in progress: hold every counter and the tap
+        end
+        else if (freeze_d) begin
+            // release: restart the monitor window cleanly
+            if (state == ST_MON) begin
+                ce_ctr   <= 22'd0;
+                miss_ctr <= 18'd0;
+                bad_wins <= 4'd0;
+                grace    <= FREEZE_GRACE[3:0];
+            end
+        end
+        else
         case (state)
             ST_LOAD: begin              // apply tap_i for measurement
                 o_tap   <= tap_i;
@@ -201,5 +226,7 @@ always @(posedge i_clk) begin
         endcase
     end
 end
+
+assign o_mon = (state == ST_MON) && (grace == 4'd0) && !i_freeze;
 
 endmodule

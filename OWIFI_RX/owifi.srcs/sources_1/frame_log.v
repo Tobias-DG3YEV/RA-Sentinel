@@ -2,10 +2,15 @@
 //
 // Design Name: OWIFI_RX
 // Module Name: frame_log
+//
 // Project Name: RA-Sentinel 802.11 receiver
+//
 // Engineer: Tobias Weber
+//
 // Target Devices: Artix 7, XC7A100T (RASBB baseboard)
+//
 // Description:
+//
 //   Live STATION LIST in text_screen's character RAM: one line per transmitter
 //   MAC (SA), updated IN PLACE rather than scrolled, most recently heard
 //   station always on the top row. The list holds MAX_STA stations (default:
@@ -13,13 +18,16 @@
 //   8); when it is full, the least recently heard station is evicted.
 //
 //   Admission policy - the two rules that keep the list meaningful on air:
+//
 //     * a frame whose SA is ALREADY listed updates that line and moves it to
 //       the top, WHETHER OR NOT its FCS passed - a known station going red is
-//       information;
+//       information
+//
 //     * a frame with an UNKNOWN SA is admitted only when its FCS is OK.
 //       Bad-FCS frames carry unreliable SA bytes - in this band mostly
 //       11ax/VHT PPDUs decoded as garbage - and every one of them would
 //       otherwise insert a phantom station and evict a real one.
+//
 //     * ACK/CTS (no address-2 field) and frames shorter than 16 bytes carry
 //       no SA at all and never touch the list.
 //
@@ -180,6 +188,10 @@ module frame_log #(
     input  wire [8:0]  i_brg_idx,   // angle table index, 0.703deg per LSB
     input  wire        i_brg_ok,
 
+    /* the frame's calibrated J2-vs-J1 phase as an angle */
+    input  wire [8:0]  i_ph_ang,
+    input  wire        i_ph_ok,
+
     /* freeze-forensics word for the header DBG field (assembled and synced
        in the top; refreshed here with the ~1Hz WP/EG pass) */
     input  wire [15:0] i_dbg,
@@ -199,8 +211,13 @@ module frame_log #(
     output wire [11:0] o_sta_rgb,
     output wire [8:0]  o_sta_brg,
     output wire        o_sta_brg_ok,
-    output wire        o_sta_fcs     // the frame's FCS verdict, for the
-                                     // labels' OK-frames-only bearing average
+    output wire        o_sta_fcs,    // the frame FCS verdict
+    output wire [8:0]  o_sta_ph,     // the frame
+    output wire        o_sta_ph_ok,
+
+    /* station pin (DISP_CTRL bit3, the MAC of capture filter slot 0) */
+    input  wire        i_pin_en,
+    input  wire [47:0] i_pin_mac
 );
 
 
@@ -567,6 +584,8 @@ localparam [23:0] TXT_BAD = {8'h42, 8'h41, 8'h44};   // "BAD"
 reg [PFX_W*8-1:0] line;
 reg [31:0]        cap_seq;
 reg               cap_fcs;
+reg [8:0]         cap_ph = 9'd0;     // phase of the frame being listed (per-station dots)
+reg               cap_ph_ok = 1'b0;
 reg [4:0]         cap_n;
 
 /* LEN with its leading zeros blanked: 001C reads "  1C", 0400 reads " 400".
@@ -681,6 +700,8 @@ reg [5:0]  rows_k;               // rows to repaint this event
 reg [5:0]  new_slot;             // line-store slot receiving the render
 reg [5:0]  cp_slot;              // slot being copied out
 reg [7:0]  cp_ci;                // copy column counter, 0..128
+reg [47:0] top_mac;              // mirror of tab[0]'s MAC (valid while sta_cnt != 0)
+reg [5:0]  base_r;               // insertion row of this event: 1 when row 0 holds the pin
 
 /*------------------------------------------------------------------*/
 /* writer state machine                                             */
@@ -853,6 +874,8 @@ assign o_sta_rgb    = sta_rgb;
 assign o_sta_brg    = cap_brg;
 assign o_sta_brg_ok = cap_brg_ok;
 assign o_sta_fcs    = cap_fcs;
+assign o_sta_ph     = cap_ph;
+assign o_sta_ph_ok  = cap_ph_ok;
 
 /*------------------------------------------------------------------*/
 /* line store: one 128-character rendered line per station slot.      */
@@ -919,6 +942,8 @@ always @(posedge i_clk) begin
         pay_sub   <= 2'd0;
         refresh_due <= 1'b0;
         sta_cnt   <= 6'd0;
+        top_mac   <= 48'd0;
+        base_r    <= 6'd0;
         sp        <= 6'd0;
         si        <= 6'd0;
         cd        <= 6'd0;
@@ -979,6 +1004,8 @@ always @(posedge i_clk) begin
                station to attribute them to. */
             if (i_fcs_stb && active && cap_has_sa) begin
                 cap_fcs  <= i_fcs_ok;
+                cap_ph   <= i_ph_ang;
+                cap_ph_ok <= i_ph_ok;
                 cap_seq  <= seq;        // pre-increment value
                 cap_n    <= byte_cnt;
                 conv_cnt <= 5'd0;
@@ -1018,6 +1045,10 @@ always @(posedge i_clk) begin
             else begin
                 line <= line_next;
                 sp   <= 6'd0;
+                /* row 0 holds the pinned station and this frame is not
+                   from it: everything happens from row 1 down */
+                base_r <= (i_pin_en && sta_cnt != 6'd0 && top_mac == i_pin_mac
+                           && ren_sa != i_pin_mac) ? 6'd1 : 6'd0;
                 st   <= S_SEARCH;
             end
         end
@@ -1038,10 +1069,10 @@ always @(posedge i_clk) begin
                     new_slot <= sta_cnt;          // fresh slot
                     rows_k   <= sta_cnt + 6'd1;
                     sta_cnt  <= sta_cnt + 6'd1;
-                    if (sta_cnt == 6'd0)
+                    if (sta_cnt == base_r)
                         st <= S_TAB0;
                     else begin
-                        si <= sta_cnt - 6'd1;     // shift 0..cnt-1 down
+                        si <= sta_cnt - 6'd1;     // shift base..cnt-1 down
                         st <= S_SHIFT;
                     end
                 end
@@ -1052,10 +1083,10 @@ always @(posedge i_clk) begin
                 /* known station: reuse its slot, repaint rows 0..sp */
                 new_slot <= tab_slot_rd;
                 rows_k   <= sp + 6'd1;
-                if (sp == 6'd0)
+                if (sp == base_r)                 // (a hit at row 0 is the pin itself: base 0)
                     st <= S_TAB0;
                 else begin
-                    si <= sp - 6'd1;              // shift 0..sp-1 down
+                    si <= sp - 6'd1;              // shift base..sp-1 down
                     st <= S_SHIFT;
                 end
             end
@@ -1069,21 +1100,23 @@ always @(posedge i_clk) begin
             new_slot <= tab_slot_rd;
             rows_k   <= MAX_STA[5:0];
             si       <= MAX_STA[5:0] - 6'd2;
-            st       <= S_SHIFT;
+            st       <= (MAX_STA[5:0] - 6'd1 == base_r) ? S_TAB0 : S_SHIFT;
         end
 
         /* tab[si+1] <= tab[si], si counting down - the read (async, at si)
            and the write land on different addresses every cycle */
         S_SHIFT: begin
             tab[si + 6'd1] <= {tab_mac_rd, tab_slot_rd};
-            if (si == 6'd0)
+            if (si == base_r)
                 st <= S_TAB0;
             else
                 si <= si - 6'd1;
         end
 
         S_TAB0: begin
-            tab[0]  <= {ren_sa, new_slot};
+            tab[base_r] <= {ren_sa, new_slot};
+            if (base_r == 6'd0)
+                top_mac <= ren_sa;
             ci      <= 7'd0;
             pay_idx <= PAY_START[4:0];
             pay_sub <= 2'd0;
