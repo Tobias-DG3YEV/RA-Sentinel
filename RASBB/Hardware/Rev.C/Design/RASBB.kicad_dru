@@ -53,7 +53,7 @@
 (rule "Pad to Silkscreen"
 	(layer outer)
 	(condition "A.Type == 'pad' && B.Layer == '?.Silkscreen'")
-	(constraint silk_clearance (min 0.15mm))
+	(constraint silk_clearance (min 0.14mm))
 )
 
 (rule "Edge (routed) to track clearance"

@@ -20,7 +20,7 @@
 | 16	| closed  | J16, J18 Non-Standard header spacing | increase spacing of J16, J18 to 0.1" / 2.54mm |
 | 17 	| closed  | Add human readable labels to pin headers | like "MCU JTAG", "AP JTAG" (for FPGA01) and "DP JRAG" für FPGA02 and add thermal isolation to drill holes |
 | 18 	| closed  | Rotate one JTAG pin header so the have the same orientation | |
-| 19	| open (Rev C)    | Add one more button for FPGA internal Reset | Connect the line also to the STM32 so this can also pull the reset of the FPGA. Maybe use smaller ones and change thos of PROGRAM_B also to save space |
+| 19	| closed (Rev C)    | Add one more button for FPGA internal Reset | Connect the line also to the STM32 so this can also pull the reset of the FPGA. Maybe use smaller ones and change thos of PROGRAM_B also to save space |
 | 20	| rejected    | Change U12 to RTL8211FS with PTP support | |
 | 21	| closed  | Add JTAG header target to silkscreen Text | like "STM32", "FPGA 1", "FPGA 2"|
 | 22	| closed  | Correct second flash signals to FPGA2 | SO and SI connection should be swapped |
@@ -28,13 +28,13 @@
 | 24	| closed  | Pin out of ethernet jacks are wrong. | Pins 17-20 are mixed with 13-16 |
 | 25	| closed  | DDR3 RAM A14 not connected | wire to free pin on same bank as A13 |
 | 26  | closed (Rev C) | Add 40MHz and 1MHz sync clock over Ethernet. One pair of the 100MBit connection to the STM32 receives 40MHz and 1MHz clock via line receivers and send it (unbalanced is good enogh) into the U10 FPGA 1 and 2 (1MHz) and the 40MHz shall be provided via SMA/SMB jack via coax wire to the FE. Do not popuilate the jack, i will solder by hand.
-| 27  | open | Add another shunt resistor at the 12V entry of the 1V DC DC converter |
+| 27  | closed( Rev C) | Add another shunt resistor at the 12V entry of the 1V DC DC converter |
 | 28  | closed  (Rev C) | Connect an output pin of FPGA2 to a RC low pas filter (mimics a PWM DAC)
 | 29  | closed  | Add shunt resistor (0805) and 2 pin header paralell in front of PCIE connector to be able to measure front end power consumption.
 | 30  | closed (Rev C)  | WP# and #RESET of FPGA config flashes is unconnected | Add 10 kΩ pull-up to VCC3V3 
-| 31  | open (Rev C)| Add solder mask opening squares at the edges to support ground connection for flying probes
+| 31  | closed (Rev C)| Add solder mask opening squares at the edges to support ground connection for flying probes
 | 32  | closed (Rev C) | Enable Voltage U3 uncertain | Change R36 from 100k to 220k to have a safe window 2.0 V < EN < 5.3 V across the full 10.8–13.2 V input
 | 33  | closed (Rev C)  | Debug header J8 STM32 has no ground and VCC | Change to 10 pins and add Vcc from the area and GND |
-| 34  | open (Rev C)  | DC phantom powering over HDMI causes startup problems | Block DC of HDMI port J3 by inserting 8x 100nF 0402 in the path. Also add 270R pull-ups to 3.3V on the other side of IC11 towards FPGA1 |
-| 35  | open (Rev C)  | Wire 5V from U4 (5V) to PCIe A1,2,3 B1,2,3 via big shunt resistor | The shunt can also be used as jumper. Maybe add 12V to another jumper but populate only the 5V shunt |
+| 34  | closed (Rev C)  | DC phantom powering over HDMI causes startup problems | Block DC of HDMI port J3 by inserting 8x 100nF 0402 in the path. Also add 270R pull-ups to 3.3V on the other side of IC11 towards FPGA1 |
+| 35  | closed (Rev C)  | Wire 5V from U4 (5V) to PCIe A1,2,3 B1,2,3 via big shunt resistor | The shunt can also be used as jumper. Maybe add 12V to another jumper but populate only the 5V shunt |
 
