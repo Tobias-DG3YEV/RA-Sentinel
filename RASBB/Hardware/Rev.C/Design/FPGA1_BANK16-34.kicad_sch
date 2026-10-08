@@ -6,7 +6,7 @@
 	(paper "A3")
 	(title_block
 		(title "RASBB")
-		(date "2026-07-25")
+		(date "2026-09-29")
 		(rev "C")
 		(company "Mina Daneshpajouh")
 	)
@@ -6325,13 +6325,13 @@
 		(uuid "2c2f7967-f72f-4639-b51f-010580233d27")
 	)
 	(junction
-		(at 83.82 67.31)
+		(at 78.74 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30f8b1a0-6a79-4e9c-902d-77be3ba611b8")
 	)
 	(junction
-		(at 83.82 58.42)
+		(at 78.74 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3bc8a697-8a4b-49d9-9edc-3e8c3ae14ae3")
@@ -6361,7 +6361,7 @@
 		(uuid "5bc00909-b090-4cb2-87d5-b9b459fc25c6")
 	)
 	(junction
-		(at 74.93 58.42)
+		(at 69.85 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6cf6102c-3333-473e-a8f8-6c69dd4a258f")
@@ -6426,13 +6426,58 @@
 		(color 0 0 0 0)
 		(uuid "fda9a42e-7461-48b4-871a-13a7ce9253d3")
 	)
+	(no_connect
+		(at 128.27 96.52)
+		(uuid "00c415e0-ed86-423c-96e6-6dbd638b82c4")
+	)
+	(no_connect
+		(at 128.27 93.98)
+		(uuid "1590c1ec-a2f1-4b72-84de-e97c2ffbe5a9")
+	)
+	(no_connect
+		(at 128.27 99.06)
+		(uuid "1b7223b6-7163-4dda-90f3-057a82ca9543")
+	)
+	(no_connect
+		(at 128.27 86.36)
+		(uuid "3696e185-75d6-4b1d-a147-37cb758810b1")
+	)
+	(no_connect
+		(at 128.27 81.28)
+		(uuid "3f25a4ba-dec0-461e-a8e0-6cfdcfbdef41")
+	)
+	(no_connect
+		(at 128.27 78.74)
+		(uuid "633f75b4-9b35-4c7c-9c43-c22bf76810aa")
+	)
+	(no_connect
+		(at 128.27 101.6)
+		(uuid "6d55d897-5b3b-4348-9dd8-ef28940c1c01")
+	)
+	(no_connect
+		(at 128.27 83.82)
+		(uuid "716954e7-c33e-4978-8839-82c752c8ac00")
+	)
+	(no_connect
+		(at 229.87 109.22)
+		(uuid "9029a32e-2c5f-4cbc-b29e-f592f1d8c4d6")
+	)
+	(no_connect
+		(at 128.27 91.44)
+		(uuid "a1528372-49f0-49a2-9521-ba305b86d059")
+	)
+	(no_connect
+		(at 128.27 88.9)
+		(uuid "fac614f4-cf21-45be-b34e-fe1bc7773d9a")
+	)
 	(wire
 		(pts
-			(xy 73.66 58.42) (xy 74.93 58.42)
+			(xy 68.58 58.42) (xy 69.85 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "0042427c-3a18-4c16-9b83-d14bbd8ab95d")
 	)
@@ -6445,16 +6490,6 @@
 			(type default)
 		)
 		(uuid "008b72ae-cefb-44a4-bab3-b492eccd4ff3")
-	)
-	(wire
-		(pts
-			(xy 229.87 137.16) (xy 243.84 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "02ee0214-296d-485a-861a-862838211a4c")
 	)
 	(wire
 		(pts
@@ -6488,6 +6523,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 137.16) (xy 243.84 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ad9dcd1-86d3-4132-b3af-e9990d0eb1b9")
+	)
+	(wire
+		(pts
 			(xy 229.87 119.38) (xy 243.84 119.38)
 		)
 		(stroke
@@ -6513,6 +6558,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "2d053356-d3e0-4f84-a155-13a56b7fbd56")
 	)
@@ -6578,7 +6624,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 69.85) (xy 83.82 67.31)
+			(xy 78.74 69.85) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6588,7 +6634,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 67.31) (xy 83.82 67.31)
+			(xy 69.85 67.31) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6613,6 +6659,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4354c6b4-8e49-476c-b549-fe452ff3f8c5")
 	)
@@ -6628,23 +6675,14 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 58.42) (xy 83.82 58.42)
+			(xy 69.85 58.42) (xy 78.74 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "443f43fc-9d0b-43e9-b3f8-5f501950d025")
-	)
-	(wire
-		(pts
-			(xy 229.87 78.74) (xy 243.84 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "46c7c1f9-f04e-4568-a89c-c5094070201c")
 	)
 	(wire
 		(pts
@@ -6663,6 +6701,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "496842c6-4bf8-4f83-8118-ebeb8652176f")
 	)
@@ -6683,6 +6722,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "4ae738f7-8c97-4b9d-818a-1fbae1ff25f4")
 	)
@@ -6708,7 +6748,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 64.77) (xy 83.82 67.31)
+			(xy 78.74 64.77) (xy 78.74 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6733,6 +6773,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "56f34c27-5e0e-4659-9b4f-b5b2095f4dd7")
 	)
@@ -6808,7 +6849,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 64.77) (xy 74.93 67.31)
+			(xy 69.85 64.77) (xy 69.85 67.31)
 		)
 		(stroke
 			(width 0)
@@ -6833,6 +6874,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "7c5a37ec-d8cc-4ac9-a854-25d88793a22d")
 	)
@@ -6853,8 +6895,19 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "848ef06f-91ef-4968-acd2-dbb015684971")
+	)
+	(wire
+		(pts
+			(xy 229.87 78.74) (xy 243.84 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86f14939-990b-4f82-855b-19a77e4bf89b")
 	)
 	(wire
 		(pts
@@ -6893,6 +6946,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8b66ea8a-bbb5-4076-ae31-30845226753d")
 	)
@@ -6903,6 +6957,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8b6d67e0-402a-4906-a1b7-1d01c3ddb20d")
 	)
@@ -6913,6 +6968,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "8c02e1c6-194f-408e-9151-adb16e7043a8")
 	)
@@ -6933,6 +6989,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "92476351-14d0-4bdf-9a67-4b4144cbd5b9")
 	)
@@ -6963,16 +7020,18 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "9bd453b9-aa11-4775-b5f8-971e9b197d71")
 	)
 	(wire
 		(pts
-			(xy 83.82 58.42) (xy 83.82 59.69)
+			(xy 78.74 58.42) (xy 78.74 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "9bde6e71-29ae-4141-b733-d72260ae8e93")
 	)
@@ -7008,11 +7067,12 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 59.69) (xy 74.93 58.42)
+			(xy 69.85 59.69) (xy 69.85 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "a9141cb5-cf7a-4478-a0ea-232be4f71dcf")
 	)
@@ -7023,6 +7083,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "aac6a7c9-0003-4122-a0f1-2b9736d3ae8f")
 	)
@@ -7093,6 +7154,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b2282ab7-d7c1-4e43-9ff7-a6eb97e43576")
 	)
@@ -7103,6 +7165,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b2614b47-16d5-4707-b395-df0de2d1a9dd")
 	)
@@ -7113,6 +7176,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "b27d92c9-aebe-45b7-b722-906d49c4b978")
 	)
@@ -7183,6 +7247,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "c5177822-4cf0-435d-abef-505801d519fb")
 	)
@@ -7238,11 +7303,12 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 58.42) (xy 138.43 58.42)
+			(xy 78.74 58.42) (xy 138.43 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
+			(color 0 0 0 1)
 		)
 		(uuid "dc275cda-0336-45cd-8960-1cc211523d21")
 	)
@@ -7333,6 +7399,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "f6bbb8b6-fdeb-42c4-ac0e-687ef099563b")
 	)
@@ -7353,6 +7420,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fb298c85-0732-4802-b4c6-8ae467ff7e76")
 	)
@@ -7363,6 +7431,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fcad3718-9723-4bec-858d-627548c87cd7")
 	)
@@ -7373,6 +7442,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "fdb3d3cb-09d8-4975-b77a-197475e105fc")
 	)
@@ -7383,6 +7453,7 @@
 		(stroke
 			(width 0)
 			(type default)
+			(color 150 0 200 1)
 		)
 		(uuid "ff3ad6c0-e422-4bb2-8f24-41452678bf3f")
 	)
@@ -8265,6 +8336,17 @@
 		)
 		(uuid "2b91a7ba-9f61-494f-a31d-7d2affaf9d50")
 	)
+	(hierarchical_label "DDR301_A14"
+		(shape output)
+		(at 243.84 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2eb90a04-826e-4428-8d4f-1ecffc02e6ad")
+	)
 	(hierarchical_label "DDR301_LDM"
 		(shape output)
 		(at 243.84 81.28 0)
@@ -8276,8 +8358,8 @@
 		)
 		(uuid "32a75f3b-7cb8-4d62-a8e9-abc7c7a9277d")
 	)
-	(hierarchical_label "DDR301_UQDS_P"
-		(shape bidirectional)
+	(hierarchical_label "DDR301_UDQS_P"
+		(shape output)
 		(at 243.84 121.92 0)
 		(effects
 			(font
@@ -8319,28 +8401,6 @@
 			(justify left)
 		)
 		(uuid "3b37d38d-1885-4033-b6c0-e20f0f4fc434")
-	)
-	(hierarchical_label "DDR301_nRST"
-		(shape output)
-		(at 243.84 78.74 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3b9b8195-8763-4662-a3a4-4212a2d4e3a0")
-	)
-	(hierarchical_label "DDR301_A14"
-		(shape output)
-		(at 243.84 137.16 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3d29231d-7d4c-466d-9976-5989382f4fc9")
 	)
 	(hierarchical_label "DDR301_DQ4"
 		(shape bidirectional)
@@ -8385,6 +8445,17 @@
 			(justify left)
 		)
 		(uuid "621a6ff3-ed93-4185-96c1-d6daabd9876c")
+	)
+	(hierarchical_label "DDR301_nRST"
+		(shape output)
+		(at 243.84 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "65ee2ac9-e588-44a2-bc78-698b3e1772cb")
 	)
 	(hierarchical_label "DDR301_A11"
 		(shape output)
@@ -8454,7 +8525,7 @@
 	)
 	(hierarchical_label "VCCO_16"
 		(shape input)
-		(at 73.66 58.42 180)
+		(at 68.58 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8750,7 +8821,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
+		(property "Datasheet" ""
 			(at 260.35 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8761,7 +8832,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 260.35 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8772,7 +8843,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 260.35 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8854,7 +8925,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
+		(property "Datasheet" ""
 			(at 270.51 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8865,7 +8936,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 270.51 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8876,7 +8947,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 270.51 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -8915,7 +8986,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 83.82 62.23 0)
+		(at 78.74 62.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8926,7 +8997,7 @@
 		(fields_autoplaced yes)
 		(uuid "736ddcfd-6bef-449c-9ae3-89811f441b22")
 		(property "Reference" "C224"
-			(at 86.36 60.9662 0)
+			(at 81.28 60.9662 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8937,7 +9008,7 @@
 			)
 		)
 		(property "Value" "470nF"
-			(at 86.36 63.5062 0)
+			(at 81.28 63.5062 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8949,7 +9020,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8959,8 +9030,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
-			(at 83.82 62.23 0)
+		(property "Datasheet" ""
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8970,8 +9041,8 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 83.82 62.23 0)
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8981,8 +9052,8 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
-			(at 83.82 62.23 0)
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8993,7 +9064,7 @@
 			)
 		)
 		(property "LCSC Part #" "C471404"
-			(at 83.82 62.23 0)
+			(at 78.74 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9063,7 +9134,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
+		(property "Datasheet" ""
 			(at 279.4 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9074,7 +9145,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 279.4 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9085,7 +9156,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 279.4 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9166,7 +9237,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081617_Murata-Electronics-GRM155R61A475KEAAD_C77004.pdf"
+		(property "Datasheet" ""
 			(at 241.3 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9189,17 +9260,6 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 241.3 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
 			(at 241.3 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9280,7 +9340,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131300_Murata-Electronics-GRM188Z71A475KE15D_C913474.pdf"
+		(property "Datasheet" ""
 			(at 251.46 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9302,18 +9362,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRM155R61A475KEAAD"
-			(at 251.46 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
+		(property "Mfr. Part #" "GRM155R61A475KEAAD "
 			(at 251.46 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9431,7 +9480,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 74.93 62.23 0)
+		(at 69.85 62.23 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9441,7 +9490,7 @@
 		(dnp no)
 		(uuid "c77ec38b-b836-4aa2-9df8-5755d3d228dc")
 		(property "Reference" "C223"
-			(at 76.708 61.214 0)
+			(at 71.628 61.214 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9452,7 +9501,7 @@
 			)
 		)
 		(property "Value" "4.7uF"
-			(at 76.708 63.754 0)
+			(at 71.628 63.754 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9463,7 +9512,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9473,8 +9522,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811081617_Murata-Electronics-GRM155R61A475KEAAD_C77004.pdf"
-			(at 74.93 62.23 0)
+		(property "Datasheet" ""
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9485,7 +9534,7 @@
 			)
 		)
 		(property "Description" "10V 4.7uF X5R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9496,18 +9545,7 @@
 			)
 		)
 		(property "Mfr. Part #" "GRM155R61A475KEAAD "
-			(at 74.93 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC Part # " "C77004"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9518,7 +9556,7 @@
 			)
 		)
 		(property "LCSC Part #" "C77004"
-			(at 74.93 62.23 0)
+			(at 69.85 62.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9587,7 +9625,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
+		(property "Datasheet" ""
 			(at 287.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9598,7 +9636,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 287.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9609,7 +9647,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 287.02 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -9648,7 +9686,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 83.82 69.85 0)
+		(at 78.74 69.85 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -9660,7 +9698,7 @@
 		(fields_autoplaced yes)
 		(uuid "d2f7b0b7-9660-46c0-b774-c04df255470e")
 		(property "Reference" "#PWR0211"
-			(at 83.82 76.2 0)
+			(at 78.74 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9671,7 +9709,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 83.82 74.93 0)
+			(at 78.74 74.93 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9681,7 +9719,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9692,7 +9730,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9703,7 +9741,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 83.82 69.85 0)
+			(at 78.74 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9737,7 +9775,7 @@
 		(dnp no)
 		(uuid "d61685a7-5841-44dc-9ff3-02b901c28e7a")
 		(property "Reference" "U10"
-			(at 219.964 210.312 0)
+			(at 147.066 63.246 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9780,17 +9818,6 @@
 			)
 		)
 		(property "Description" "Artix 7 T 100 XC7A100T-CSG324"
-			(at 179.07 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "XC7A100T-2CSG324I "
 			(at 179.07 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -10850,7 +10877,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206281830_Murata-Electronics-GRT155R71A474KE01D_C711087.pdf"
+		(property "Datasheet" ""
 			(at 298.45 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10861,7 +10888,7 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "16V 470nF X7R ±10% 0402 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
 			(at 298.45 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10872,7 +10899,7 @@
 				)
 			)
 		)
-		(property "Mfr. Part #" "GRT155R71A474KE01D "
+		(property "Mfr. Part #" "GRM155R71C474KE01D"
 			(at 298.45 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10953,7 +10980,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2201131300_Murata-Electronics-GRM188Z71A475KE15D_C913474.pdf"
+		(property "Datasheet" ""
 			(at 231.14 62.23 0)
 			(hide yes)
 			(show_name no)
@@ -10965,17 +10992,6 @@
 			)
 		)
 		(property "Description" "10V 100uF X5R ±20% 1206 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS"
-			(at 231.14 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mfr. Part # " "GRM31CR61A107MEA8L"
 			(at 231.14 62.23 0)
 			(hide yes)
 			(show_name no)
