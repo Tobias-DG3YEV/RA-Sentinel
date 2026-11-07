@@ -47,6 +47,7 @@ void WP_sendSptEditPage(const char *pURL, struct netconn *conn);
 void WP_sendSyscfgEditPage(const char *pURL, struct netconn *conn);
 int WP_get_query_param_u32(const char *query, const char *param, u32 *value);
 void WP_sendRascfgEditPage(const char *pURL, struct netconn *conn);
+void WP_sendIqcapEditPage(const char *pURL, struct netconn *conn);
 int WP_add_table_styles(char *ptr);
 
 #endif //_WEBPAGE_H_

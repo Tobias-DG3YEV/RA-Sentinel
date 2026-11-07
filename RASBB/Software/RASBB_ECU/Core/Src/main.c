@@ -321,7 +321,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  HAL_RCC_MCOConfig(RCC_MCO1, RCC_MCO1SOURCE_PLL1QCLK, RCC_MCODIV_4);
+  /* HAL_RCC_MCOConfig(MCO1 on PA8) removed 2026-09-19: PA8 is I2C3_SCL on RASBB (Nucleo leftover). */
 }
 
 /* USER CODE BEGIN 4 */

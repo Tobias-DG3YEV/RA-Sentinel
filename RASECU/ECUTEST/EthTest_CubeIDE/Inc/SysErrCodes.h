@@ -8,7 +8,7 @@
  *
  *  Project: CP700
  *
- *  Description: Cartain Global System Error Codes
+ *  Description: Global System Error Codes
  *
  *  tw@elektronik-idee.com
  *

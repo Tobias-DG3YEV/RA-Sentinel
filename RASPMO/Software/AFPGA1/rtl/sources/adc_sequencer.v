@@ -47,7 +47,7 @@ module adc_sequencer #(
     output reg o_mem_sampleStrobe // goues high when a processed spectrum word is ready to be written into the memory */
 );
 
-reg [3:0] CKPCEdiv; // the sequencer has 8 phases, I "keep" it for debugging purposes
+reg [3:0] CKPCEdiv; // the sequencer has 8 phases, I keep it for debugging purposes
 initial CKPCEdiv = 0;
 reg [1:0] preSync; //The pre-sync state machine. It runs at start to sync this module to the ADC frame clock
 initial preSync = 0;

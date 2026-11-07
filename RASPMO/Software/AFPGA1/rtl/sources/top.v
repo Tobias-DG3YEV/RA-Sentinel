@@ -34,8 +34,8 @@
 //               is PROGRAM_B). Reset = internal power-up pulse, that's it.
 //
 // Dependencies: adc_sequencer.v, screen.v, lvds_rx_new.v, sample_cdc.v,
-//               dp_ram.v, waterfall_mem.v, pane_overlay.v, hdmi_clk.v,
-//               fft/*.v, hdmi/*.vhd
+//               dp_ram.v, waterfall_mem.v, pane_overlay.v, freq_axis.v,
+//               hdmi_clk.v, fft/*.v, hdmi/*.vhd
 //
 // Additional Comments: https://github.com/Tobias-DG3YEV/RA-Sentinel
 //
@@ -84,6 +84,21 @@ module top(
 parameter FFTLEN = 10; //FFT length in bits (1024 point complex FFT)
 parameter ADCBITS = 12;
 parameter NCH = 4;     // receive channels (panes)
+
+/* COMPLEX sample rate per channel, in Hz - the ONE place the ADC word rate is
+   written down, and the ONE knob for the frequency scale under the spectra.
+   I and Q are two ADC channels of one receiver, so this is the rate of the
+   complex word pair: the 1024-pt transform spans exactly -FS/2..+FS/2, and
+   125MSPS is the -62.5..+62.5MHz scale the panes are labelled for.
+
+   It is DCLK / adc_sequencer's DCLKS_PER_WORD, so it must follow the LVDS
+   framing: 2-wire/6x (lvds_rx_new SER_BITS=6, DCLKS_PER_WORD=3, 375MHz DCLK)
+   gives 125MSPS; the 1-wire/12x framing those two modules still default to
+   (120MHz DCLK, divide by 6) gives 20_000_000 instead.
+
+   Only freq_axis.v reads this - nothing in the datapath depends on it, so a
+   value that does not match the link mislabels the axis and nothing else. */
+parameter FS_HZ = 125_000_000;
 
 /* orange per-lane bit-error numbers under each spectrum. Only means anything
    with the BMC firmware in ADC ramp-test mode. Off -> whole render path incl.
@@ -276,10 +291,14 @@ lvds_rx #(.NLANES(4)) lvds_irx0 (
     .i_ctrlClk(lvds_dclk_buffered),
     .i_data_delay_tap(cal_tap1),
     .i_data_delay_load(cal_load1),
+    .i_lane_tap_ofs(24'd0),            // no per-lane offsets on RASPMO
     .o_lvds_dclk(lvds_dclk),
     .o_lvds_fclk(lvds_fclk),
     .o_data(adc1_data),
-    .o_fclk_word(adc1_fclk_word)
+    .o_fclk_word(adc1_fclk_word),
+    .i_reinit_tog(1'b0),
+    .o_ready(),
+    .o_reanchor_count()
 );
 
 lvds_rx #(.NLANES(4)) lvds_irx1 (
@@ -293,10 +312,14 @@ lvds_rx #(.NLANES(4)) lvds_irx1 (
     .i_ctrlClk(lvds_dclk_buffered), // cal FSM domain, shared with instance 0
     .i_data_delay_tap(cal_tap2),
     .i_data_delay_load(cal_load2),
+    .i_lane_tap_ofs(24'd0),            // no per-lane offsets on RASPMO
     .o_lvds_dclk(lvds_dclk2),
     .o_lvds_fclk(lvds_fclk2),
     .o_data(adc2_data),
-    .o_fclk_word(adc2_fclk_word)
+    .o_fclk_word(adc2_fclk_word),
+    .i_reinit_tog(1'b0),
+    .o_ready(),
+    .o_reanchor_count()
 );
 
 /* Explicit BUFGs - leave it to Vivado and it drops its own in with whatever
@@ -594,7 +617,9 @@ link_supervisor sup_adc1 (
     .o_tap(cal_tap1),
     .o_load(cal_load1),
     .o_healthy(link_ok1),
-    .o_retrain_count(retrain_count1)
+    .o_retrain_count(retrain_count1),
+    .i_freeze(1'b0),
+    .o_mon()
 );
 
 link_supervisor sup_adc2 (
@@ -605,7 +630,9 @@ link_supervisor sup_adc2 (
     .o_tap(cal_tap2),
     .o_load(cal_load2),
     .o_healthy(link_ok2),
-    .o_retrain_count(retrain_count2)
+    .o_retrain_count(retrain_count2),
+    .i_freeze(1'b0),
+    .o_mon()
 );
 
 // legacy names kept for the (normally disabled) ILA snapshot below
@@ -752,6 +779,7 @@ generate for (c = 0; c < NCH; c = c + 1) begin : gen_ch
         .i_ce(adc_frameStrobe),
         .i_i(hp_i_r),
         .i_q(hp_q_r),
+        .i_bypass(1'b0),
         .o_i(bal_i),
         .o_q(bal_q),
         .o_wp(),
@@ -1468,14 +1496,38 @@ generate for (p = 0; p < NCH; p = p + 1) begin : gen_overlay
 end
 endgenerate
 
+/* Frequency scale under the spectra: MHz labels on every 2nd vertical grid
+   line, derived from FS_HZ alone. One instance serves all four panes - the
+   scale is the same in each. Lowest overlay priority, so a pane readout would
+   win over it (they don't overlap today). */
+wire       fax_active;
+wire [7:0] fax_r, fax_g, fax_b;
+
+freq_axis #(
+    .PANE_W(960),
+    .PANE_H(540),
+    .SPEC_H(283),
+    .FFT_N(1 << FFTLEN),
+    .BIN_OFS(32),
+    .FS_HZ(FS_HZ),
+    .LABEL_DIV(16)
+) freq_axis_0 (
+    .i_pixClk(clk_pix),
+    .i_rst(global_rst),
+    .i_video_vs(video_vs),
+    .i_video_de(video_de),
+    .o_active(fax_active),
+    .o_r(fax_r), .o_g(fax_g), .o_b(fax_b)
+);
+
 reg [7:0] ovl_r_mux, ovl_g_mux, ovl_b_mux;
 reg       ovl_any;
 integer oi;
 always @* begin
-    ovl_any   = 1'b0;
-    ovl_r_mux = 8'h00;
-    ovl_g_mux = 8'h00;
-    ovl_b_mux = 8'h00;
+    ovl_any   = fax_active;
+    ovl_r_mux = fax_r;
+    ovl_g_mux = fax_g;
+    ovl_b_mux = fax_b;
     for (oi = 0; oi < NCH; oi = oi + 1) begin
         if (ovl_active[oi]) begin
             ovl_any   = 1'b1;

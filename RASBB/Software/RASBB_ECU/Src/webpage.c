@@ -93,7 +93,8 @@ static const char PAGE_LINKS[] =
 	"<a href=\"/\">Main</a> | \r\n"
 	"<a href=\"/currspt\">Current Suspects</a> | \r\n"
 	"<a href=\"/rascfg\">RA-Sentinel Config</a> | \r\n"
-	"<a href=\"/syscfg\">System Config</a>\r\n"
+	"<a href=\"/syscfg\">System Config</a> | \r\n"
+	"<a href=\"/iqcap\">IQ Capture</a>\r\n"
 	"</div>\r\n";
 
 
@@ -450,3 +451,22 @@ void WP_sendSyscfgEditPage(const char *pURL, struct netconn *conn)
 	sendPageEnd(conn);
 }
 
+
+/****************************************************************************
+* FUNC:		WP_sendIqcapEditPage
+* PARAM:	const char *pURL, struct netconn *conn
+* RET:		void
+* DESC:		Send the IQ Capture configuration/status page (JOB-06). The page
+*			is bigger than the others (8 filter rows + two status columns),
+*			so it renders into a static buffer instead of the 4 KB stack one.
+*****************************************************************************/
+#include "webpage_iqcap.h"
+void WP_sendIqcapEditPage(const char *pURL, struct netconn *conn)
+{
+	static char htmlbuf[8192];
+
+	sendPageHeaderAndTitle(conn, "IQ Capture", false);
+	WP_generate_iqcap_edit(pURL, htmlbuf, sizeof(htmlbuf));
+	netconn_write(conn, htmlbuf, strlen(htmlbuf), NETCONN_COPY);
+	sendPageEnd(conn);
+}

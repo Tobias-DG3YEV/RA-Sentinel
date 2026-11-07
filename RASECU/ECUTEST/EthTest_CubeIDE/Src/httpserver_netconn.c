@@ -77,12 +77,12 @@ static const char xmlInfo[] =
 "<device>" \
 "<deviceType>urn:schemas-upnp-org:device:logw:1</deviceType>" \
 "<friendlyName>Locime Gateway</friendlyName>" \
-"<manufacturer>Cartain</manufacturer>" \
-"<manufacturerURL>http://www.cartain.de</manufacturerURL>" \
+"<manufacturer>RA-Sentinel</manufacturer>" \
+"<manufacturerURL>https://github.com/Tobias-DG3YEV/RA-Sentinel</manufacturerURL>" \
 "<modelDescription>LOGW 2</modelDescription>" \
 "<modelName>Locime LOGW</modelName>" \
 "<modelNumber>2</modelNumber>" \
-"<modelURL>http://www.cartain.de</modelURL>" \
+"<modelURL>https://github.com/Tobias-DG3YEV/RA-Sentinel</modelURL>" \
 "<UDN>uuid:123456789-bccb-5555-4321-0080E1700001</UDN>" \
 "<serviceList>" \
 "<service>" \

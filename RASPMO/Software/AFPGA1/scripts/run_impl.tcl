@@ -47,6 +47,12 @@ foreach f [get_files -quiet -of_objects [get_filesets sources_1]] {
 #set_property STEPS.SYNTH_DESIGN.TCL.POST "$repo/scripts/insert_debug.tcl" [get_runs synth_1]
 set_property STEPS.SYNTH_DESIGN.TCL.POST "" [get_runs synth_1]
 
+# synth_design multithreading. The hook sets synth.maxThreads, which is the
+# only parameter that moves it (general.maxThreads does not, measured) and
+# which caps at 8 - so this buys ONE thread over the default 7, not eight.
+# The -jobs below is what actually uses the rest of the machine.
+set_property STEPS.SYNTH_DESIGN.TCL.PRE "$repo/scripts/synth_pre.tcl" [get_runs synth_1]
+
 reset_run synth_1
 launch_runs synth_1 -jobs 16
 wait_on_run synth_1

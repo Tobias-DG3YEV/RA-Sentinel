@@ -103,6 +103,7 @@ const char c_URL_currspt[] = "GET /currspt";
 const char c_URL_editspt[] = "GET /editspt";
 const char c_URL_syscfg[] = "GET /syscfg";
 const char c_URL_rascfg[] = "GET /rascfg";
+const char c_URL_iqcap[]  = "GET /iqcap";
 const char c_URL_main[] = "GET / ";
 
 /****************************************************************************
@@ -149,6 +150,9 @@ static void http_server_serve(struct netconn *conn)
         }
         else if((strncmp(buf, c_URL_rascfg, sizeof(c_URL_rascfg)-1) == 0)) {
         	WP_sendRascfgEditPage(&buf[sizeof(c_URL_rascfg)], conn);
+        }
+        else if((strncmp(buf, c_URL_iqcap, sizeof(c_URL_iqcap)-1) == 0)) {
+        	WP_sendIqcapEditPage(&buf[sizeof(c_URL_iqcap)], conn);
         }
         else if((strncmp(buf, "GET /upnp/logw.xml", 18) == 0))
         {

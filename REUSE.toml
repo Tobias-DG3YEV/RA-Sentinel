@@ -1,10 +1,26 @@
-# SPDX-FileCopyrightText: 2026 RA-Sentinel
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-FileCopyrightText: 2026 Tobias Weber
+# SPDX-License-Identifier: GPL-3.0-only
 
 version = 1
 
+# Software and firmware written for RA-Sentinel: GPL-3.0-only (see README.md).
+# Third-party code (ST drivers, LwIP, FreeRTOS, Digilent HDMI, Xilinx IP
+# products) keeps its own licence and is not covered by these annotations.
+
 [[annotations]]
-path = "RA-Sentinel/Images/*"
-SPDX-FileCopyrightText = "2026 RA-Sentinel"
+path = "Images/**"
+SPDX-FileCopyrightText = "2026 Tobias Weber"
 SPDX-License-Identifier = "CC-BY-SA-4.0"
 
+# Hardware designs (KiCad schematics, PCB layouts, footprints, production
+# files): CERN Open Hardware Licence v2 - Strongly Reciprocal, see the
+# LICENSE.HW.TXT next to each design.
+[[annotations]]
+path = ["RASBB/Hardware/**", "RASBB/Production/**"]
+SPDX-FileCopyrightText = "2025 - 2026 Tobias Weber"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"
+
+[[annotations]]
+path = ["RASRF2400WBMC/Hardware/**"]
+SPDX-FileCopyrightText = "2026 Tobias Weber"
+SPDX-License-Identifier = "CERN-OHL-S-2.0"

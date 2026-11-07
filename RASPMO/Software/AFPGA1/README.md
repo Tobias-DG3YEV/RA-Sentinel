@@ -25,6 +25,13 @@ Output is 1080p HDMI, split into four 960×540 panes, one per receive channel.
 Each pane shows the two-sided (complex) spectrum with a scrolling waterfall
 below it, plus a readout of the averaged signal level in ADC absolute values and dBFS.
 (dB from full scale away)
+The vertical graticule is labelled in MHz offset from the tuned centre, derived
+from the `FS_HZ` parameter in `top.v` — the complex ADC word rate, 125 MSPS, so
+the transform spans −62.5 … +62.5 MHz. Every second grid line carries a label,
+one every FS/16 = 7.8125 MHz, giving fifteen of them from −54.7 to +54.7 MHz
+across the 960 of 1024 bins a pane actually shows. Change `FS_HZ` and the whole
+scale re-labels itself; nothing else in the design reads it. `LABEL_DIV` sets
+the density (8 for half as many) and `GLYPH_SCALE` the text size.
 Right over the centre of the four panes sits a polar direction-finding
 indicator driven by amplitude comparison between the channels. An optional
 build switch (`SHOW_BER_RATES`) overlays per-lane bit-error counters for link

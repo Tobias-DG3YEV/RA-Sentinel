@@ -119,6 +119,7 @@ lvds_rx #(.NLANES(3)) lvds_irx0 (
     .i_ctrlClk(lvds_dclk_buffered),
     .i_data_delay_tap(cal_tap),
     .i_data_delay_load(cal_load),
+    .i_lane_tap_ofs(18'd0),
     .o_lvds_dclk(lvds_dclk),
     .o_lvds_fclk(lvds_fclk),
     .o_data(adc_data),

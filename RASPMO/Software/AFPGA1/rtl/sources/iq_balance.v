@@ -24,9 +24,15 @@
 //     all internal stages are free-running registers that settle in the gap,
 //     outputs update at the NEXT i_ce - so I and Q leave with the SAME one-
 //     word latency and stay sample-aligned (a skew would be a phase error).
-//   - Accumulators clamp at +/-0.25 (Q1.15) - far beyond any real imbalance,
+//   - Coefficients clamp at +/-0.25 (Q1.15) - far beyond any real imbalance,
 //     and bounds the damage if a degenerate input (e.g. the ADC ramp test,
 //     where I==Q) temporarily slams the gradients. Recovery is automatic.
+//     (Until 2026-10-06 the accumulator limits were +/-2^28, i.e. +/-1.0 on
+//     acc[28:13]: Q gain anywhere from 0 to x2. On the OWIFI_RX WBMC the
+//     corrector then chased a 6.7 dB hardware loss on one Q input towards x2
+//     over half an hour - a slow level drift in every power-based consumer.
+//     A fault that size is hardware; the corrector now saturates at x1.25
+//     and the fault stays visible.)
 //   - Adaptation rate is gear-shifted (see the parameter block): measured
 //     on hardware, MU 8 nulls a -18dBFS tone's image in ~2s but its
 //     coefficient dither sprays a spur comb; MU 12 is clean but needs the
@@ -54,6 +60,8 @@ module iq_balance #(
     input  wire               i_ce,    // one pulse per sample pair
     input  wire signed [11:0] i_i,
     input  wire signed [11:0] i_q,
+    input  wire               i_bypass, // 1: o_q = i_q (same latency), adaptation runs on;
+                                        //    tie 0 where unused (OWIFI_RX IQB_CTRL, 2026-10-06)
     output reg  signed [11:0] o_i,     // = i_i, delayed one word (alignment)
     output reg  signed [11:0] o_q,     // corrected Q, same latency
     // diagnostics (quasi-static)
@@ -61,8 +69,8 @@ module iq_balance #(
     output wire signed [15:0] o_eg     // Q1.15 gain-error coefficient
 );
 
-localparam signed [29:0] ACC_MAX = 30'sd268435455;  //  2^28-1 -> w = +0.25
-localparam signed [29:0] ACC_MIN = -30'sd268435456; // -2^28   -> w = -0.25
+localparam signed [29:0] ACC_MAX = 30'sd67108863;   //  2^26-1 -> acc[28:13] = +8191 = +0.25
+localparam signed [29:0] ACC_MIN = -30'sd67108864;  // -2^26   -> acc[28:13] = -8192 = -0.25
 
 /* coefficient accumulators; coefficient = acc >>> 13 interpreted as Q1.15
    (acc bit 28 -> coeff bit 15 region; see clamp above) */
@@ -140,7 +148,7 @@ always @(posedge i_clk) begin
         if (i_ce) begin
             /* emit the finished pair, capture the next one */
             o_i <= I_r;
-            o_q <= qc_r;
+            o_q <= i_bypass ? Q_r : qc_r;
             I_r <= i_i;
             Q_r <= i_q;
 
